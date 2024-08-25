@@ -108,7 +108,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
         section_lines.append("|:-------------|:------|:---------|:------- |:------|")
 
         # sort papers by date
-        day_content: Tuple[str, Dict[str, str]] = sorted(day_content.items(), key=lambda item: item[0])
+        day_content: Tuple[str, Dict[str, str]] = sorted(day_content.items(), key=lambda item: item[0], reverse=True)
         for paper_key, paper_info in day_content:
             print(paper_key, paper_info["paper_title"])
             paper_line_splits = [
