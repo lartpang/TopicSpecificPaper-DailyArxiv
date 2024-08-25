@@ -1,247 +1,171 @@
 import datetime
-import requests
 import json
-import arxiv
 import os
+from collections import defaultdict
+from typing import Dict, List, Tuple
 
-base_url = "https://arxiv.paperswithcode.com/api/v0/papers/"
-
-def get_authors(authors, first_author = False):
-    output = str()
-    if first_author == False:
-        output = ", ".join(str(author) for author in authors)
-    else:
-        output = authors[0]
-    return output
-def sort_papers(papers):
-    output = dict()
-    keys = list(papers.keys())
-    keys.sort(reverse=True)
-    for key in keys:
-        output[key] = papers[key]
-    return output    
-
-def get_daily_papers(topic,query="SNN", max_results=2):
-    """
-    @param topic: str
-    @param query: str
-    @return paper_with_code: dict
-    """
-
-    # output 
-    content = dict() 
-    content_to_web = dict()
-
-    # content
-    output = dict()
-    
-    search_engine = arxiv.Search(
-        query = query,
-        max_results = max_results,
-        sort_by = arxiv.SortCriterion.SubmittedDate
-    )
-
-    cnt = 0
-
-    for result in search_engine.results():
-
-        paper_id            = result.get_short_id()
-        paper_title         = result.title
-        paper_url           = result.entry_id
-        code_url            = base_url + paper_id
-        paper_abstract      = result.summary.replace("\n"," ")
-        paper_authors       = get_authors(result.authors)
-        paper_first_author  = get_authors(result.authors,first_author = True)
-        primary_category    = result.primary_category
-        publish_time        = result.published.date()
-        update_time         = result.updated.date()
-        comments            = result.comment
+import arxiv
+import requests
+from arxiv import Result
 
 
-      
-        print("Time = ", update_time ,
-              " title = ", paper_title,
-              " author = ", paper_first_author)
+class ArXivPaper:
+    base_url = "https://arxiv.paperswithcode.com/api/v0/papers/"
 
-        # eg: 2108.09112v1 -> 2108.09112
-        ver_pos = paper_id.find('v')
-        if ver_pos == -1:
-            paper_key = paper_id
-        else:
-            paper_key = paper_id[0:ver_pos]    
+    def __init__(self, paper_item: Result) -> None:
+        self.paper_id = paper_item.get_short_id()
+        self.code_url = self.base_url + self.paper_id
 
+        self.paper_key = self.paper_id.split("v")[0]  # eg: 2108.09112v1 -> 2108.09112
+        self.paper_title = paper_item.title
+        self.paper_url = paper_item.entry_id
+        self.paper_abstract = paper_item.summary.replace("\n", " ")
+        self.paper_authors = [str(author) for author in paper_item.authors]
+
+        self.primary_category = paper_item.primary_category
+        self.publish_time = str(paper_item.published.date())
+        self.update_time = str(paper_item.updated.date())
+        self.comments = paper_item.comment
+        self.repo_url = self.get_repo_url()
+
+    def get_repo_url(self) -> str:
+        repo_url = "#"
         try:
-            r = requests.get(code_url).json()
-            # source code link
+            r = requests.get(self.code_url).json()
             if "official" in r and r["official"]:
-                cnt += 1
                 repo_url = r["official"]["url"]
-                content[paper_key] = f"|**{update_time}**|**{paper_title}**|{paper_first_author} et.al.|[{paper_id}]({paper_url})|**[link]({repo_url})**|\n"
-                content_to_web[paper_key] = f"- {update_time}, **{paper_title}**, {paper_first_author} et.al., Paper: [{paper_url}]({paper_url}), Code: **[{repo_url}]({repo_url})**"
-
-            else:
-                content[paper_key] = f"|**{update_time}**|**{paper_title}**|{paper_first_author} et.al.|[{paper_id}]({paper_url})|null|\n"
-                content_to_web[paper_key] = f"- {update_time}, **{paper_title}**, {paper_first_author} et.al., Paper: [{paper_url}]({paper_url})"
-
-            # TODO: select useful comments
-            comments = None
-            if comments != None:
-                content_to_web[paper_key] = content_to_web[paper_key] + f", {comments}\n"
-            else:
-                content_to_web[paper_key] = content_to_web[paper_key] + f"\n"
-
         except Exception as e:
-            print(f"exception: {e} with id: {paper_key}")
+            print(f"exception: {e} with id: {self.paper_key}")
+        return repo_url
 
-    data = {topic:content}
-    data_web = {topic:content_to_web}
-    return data,data_web 
+    def __repr__(self) -> str:
+        return f"Time={self.update_time} title={self.paper_title} author={self.paper_authors[0]}"
 
-def update_json_file(filename,data_all):
-    with open(filename,"r") as f:
-        content = f.read()
-        if not content:
-            m = {}
-        else:
-            m = json.loads(content)
-            
-    json_data = m.copy() 
-    
-    # update papers in each keywords         
-    for data in data_all:
+    def to_dict(self) -> Dict[str, str]:
+        return {
+            "paper_id": self.paper_id,
+            "code_url": self.code_url,
+            "paper_key": self.paper_key,
+            "paper_title": self.paper_title,
+            "paper_url": self.paper_url,
+            "paper_abstract": self.paper_abstract,
+            "paper_authors": self.paper_authors,
+            "primary_category": self.primary_category,
+            "publish_time": self.publish_time,
+            "update_time": self.update_time,
+            "comments": self.comments,
+            "repo_url": self.repo_url,
+        }
+
+
+def update_json_file(json_path, papers: Dict[str, List[ArXivPaper]]) -> None:
+    if os.path.exists(json_path):
+        with open(json_path, "r", encoding="utf-8") as f:
+            json_data: Dict[str, Dict[str, Dict[str, str]]] = json.load(f)
+    else:
+        json_data: Dict[str, Dict[str, Dict[str, str]]] = defaultdict(dict)
+
+    # update papers in each keywords
+    for keyword, paper_items in papers.items():
+        for paper_item in paper_items:
+            json_data[keyword][paper_item.paper_key] = paper_item.to_dict()
+
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2)
+
+
+def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, show_toc=True):
+    current_date = str(datetime.date.today())
+    current_date = current_date.replace("-", ".")
+
+    assert os.path.exists(json_path), f"{json_path} does not exist"
+    with open(json_path, "r", encoding="utf-8") as f:
+        data: Dict[str, Dict[str, Dict[str, str]]] = json.load(f)
+
+    # convert data into the string list
+    title_line = f"# {title}"
+    lines = [title_line]
+    lines.append(f"> Updated on {current_date}")
+
+    if show_badge:
+        lines.append(
+            "[![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) "
+            "[![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) "
+            "[![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) "
+            "[![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) "
+        )
+
+    if show_toc:
+        toc_strings = ["## Table of Contents"]
         for keyword in data.keys():
-            papers = data[keyword]
+            toc_strings.append(f"- [{keyword}](#{keyword.replace(' ', '-')})")
+        lines.append("\n".join(toc_strings))
 
-            if keyword in json_data.keys():
-                json_data[keyword].update(papers)
-            else:
-                json_data[keyword] = papers
+    for keyword, day_content in data.items():
+        # the head of each part
+        section_lines = [f"## {keyword}"]
+        section_lines.append("| Publish Date | Title | Abstract | Authors | Links |")
+        section_lines.append("|:-------------|:------|:---------|:------- |:------|")
 
-    with open(filename,"w") as f:
-        json.dump(json_data,f)
-    
-def json_to_md(filename,md_filename,
-               to_web = False, 
-               use_title = True, 
-               use_tc = True,
-               show_badge = False):
-    """
-    @param filename: str
-    @param md_filename: str
-    @return None
-    """
-    
-    DateNow = datetime.date.today()
-    DateNow = str(DateNow)
-    DateNow = DateNow.replace('-','.')
-    
-    with open(filename,"r") as f:
-        content = f.read()
-        if not content:
-            data = {}
-        else:
-            data = json.loads(content)
+        # sort papers by date
+        day_content: Tuple[str, Dict[str, str]] = sorted(day_content.items(), key=lambda item: item[0])
+        for paper_key, paper_info in day_content:
+            print(paper_key, paper_info["paper_title"])
+            paper_line_splits = [
+                paper_info["publish_time"],
+                paper_info["paper_title"],
+                f"<details><summary>...</summary>{paper_info['paper_abstract']}</details>",
+                ", ".join(paper_info["paper_authors"]),
+                f"[PDF]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
+            ]
+            section_lines.append("|".join(paper_line_splits))
 
-    # clean README.md if daily already exist else create it
-    with open(md_filename,"w+") as f:
-        pass
+        # Add: back to top
+        top_info = title_line.replace(" ", "-").replace(".", "")
+        section_lines.append(f"<p align=right>(<a href={top_info}>back to top</a>)</p>")
+        lines.append("\n".join(section_lines))
 
-    # write data into README.md
-    with open(md_filename,"a+") as f:
+    with open(markdown_path, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(lines))
+    print("finished")
 
-        if (use_title == True) and (to_web == True):
-            f.write("---\n" + "layout: default\n" + "---\n\n")
-        
-        if show_badge == True:
-            f.write(f"[![Contributors][contributors-shield]][contributors-url]\n")
-            f.write(f"[![Forks][forks-shield]][forks-url]\n")
-            f.write(f"[![Stargazers][stars-shield]][stars-url]\n")
-            f.write(f"[![Issues][issues-shield]][issues-url]\n\n")    
-                
-        if use_title == True:
-            f.write("## Updated on " + DateNow + "\n\n")
-        else:
-            f.write("> Updated on " + DateNow + "\n\n")
-        
-        #Add: table of contents
-        if use_tc == True:
-            f.write("<details>\n")
-            f.write("  <summary>Table of Contents</summary>\n")
-            f.write("  <ol>\n")
-            for keyword in data.keys():
-                day_content = data[keyword]
-                if not day_content:
-                    continue
-                kw = keyword.replace(' ','-')      
-                f.write(f"    <li><a href=#{kw}>{keyword}</a></li>\n")
-            f.write("  </ol>\n")
-            f.write("</details>\n\n")
-        
-        for keyword in data.keys():
-            day_content = data[keyword]
-            if not day_content:
-                continue
-            # the head of each part
-            f.write(f"## {keyword}\n\n")
 
-            if use_title == True :
-                if to_web == False:
-                    f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
-                else:
-                    f.write("| Publish Date | Title | Authors | PDF | Code |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
+    # Construct the default API client.
+    client = arxiv.Client(page_size=200, delay_seconds=3, num_retries=5)
 
-            # sort papers by date
-            day_content = sort_papers(day_content)
-        
-            for _,v in day_content.items():
-                if v is not None:
-                    f.write(v)
+    counts = 0
+    papers: Dict[str, List[ArXivPaper]] = {}
+    for keyword, query in keywords.items():
+        print(f"Keyword: {keyword}")
+        search = arxiv.Search(
+            query=query,
+            max_results=max_results_per_keyword,
+            sort_by=arxiv.SortCriterion.SubmittedDate,
+        )
 
-            f.write(f"\n")
-            
-            #Add: back to top
-            top_info = f"#Updated on {DateNow}"
-            top_info = top_info.replace(' ','-').replace('.','')
-            f.write(f"<p align=right>(<a href={top_info}>back to top</a>)</p>\n\n")
-        
-        if show_badge == True:
-            f.write(f"[contributors-shield]: https://img.shields.io/github/contributors/SpikingChen/snn-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[contributors-url]: https://github.com/SpikingChen/snn-arxiv-daily/graphs/contributors\n")
-            f.write(f"[forks-shield]: https://img.shields.io/github/forks/SpikingChen/snn-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[forks-url]: https://github.com/SpikingChen/snn-arxiv-daily/network/members\n")
-            f.write(f"[stars-shield]: https://img.shields.io/github/stars/SpikingChen/snn-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[stars-url]: https://github.com/SpikingChen/snn-arxiv-daily/stargazers\n")
-            f.write(f"[issues-shield]: https://img.shields.io/github/issues/SpikingChen/snn-arxiv-daily.svg?style=for-the-badge\n")
-            f.write(f"[issues-url]: https://github.com/SpikingChen/snn-arxiv-daily/issues\n\n")
-                
-    print("finished")        
+        keyword_specific_papers = []
+        for result in client.results(search):
+            paper = ArXivPaper(result)
+            keyword_specific_papers.append(paper)
 
- 
+            counts += 1
+            print(f"id={counts} {paper}")
+        papers[keyword] = keyword_specific_papers
+    return papers
+
+
+def main():
+    json_file = "arxiv-daily.json"
+    md_file = "README.md"
+    keywords = {
+        "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"',
+    }
+
+    papers = get_papers(keywords, max_results_per_keyword=200)
+    update_json_file(json_file, papers)
+    json_to_md(json_file, md_file)
+
 
 if __name__ == "__main__":
-
-    data_collector = []
-    data_collector_web= []
-    
-    keywords = dict()
-    keywords["Spiking Neural Network"]                 = "\"Spiking Neural Network\"OR\"Spiking Neural Networks\"OR\"Spiking Neuron\""
-
-    for topic,keyword in keywords.items():
- 
-        # topic = keyword.replace("\"","")
-        print("Keyword: " + topic)
-
-        data,data_web = get_daily_papers(topic, query = keyword, max_results = 200)
-        data_collector.append(data)
-        data_collector_web.append(data_web)
-
-        print("\n")
-
-    # 1. update README.md file
-    json_file = "snn-arxiv-daily.json"
-    md_file   = "README.md"
-    # update json data
-    update_json_file(json_file,data_collector)
-    # json data to markdown
-    json_to_md(json_file,md_file)
+    main()
