@@ -104,24 +104,23 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
 
     for keyword, day_content in data.items():
         # the head of each part
-        section_lines = [f"## {keyword}"]
-        section_lines.append(" Publish Date | Title | Abstract | Authors | Links ")
-        section_lines.append(":-------------|:------|:---------|:------- |:------")
+        section_lines = [f"## {keyword}\n"]
 
         sorted_by = "publish_time"  # use the publish_time string as the key to sort
         day_content: Tuple[str, Dict[str, str]] = sorted(
             day_content.items(), key=lambda item: item[1][sorted_by.replace("-", "")], reverse=True
         )
-        for paper_key, paper_info in day_content:
-            print(paper_key, paper_info["paper_title"])
+        for idx, (paper_key, paper_info) in enumerate(day_content):
+            print(idx, paper_key, paper_info["paper_title"])
             paper_line_splits = [
                 paper_info["publish_time"],
-                paper_info["paper_title"],
-                f"<details><summary>...</summary>{paper_info['paper_abstract']}</details>",
-                ", ".join(paper_info["paper_authors"]),
-                f"[{paper_info['paper_id']}]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
+                f"**{paper_info['paper_title']}**",
+                f"*{', '.join(paper_info['paper_authors'])}*",
+                f"[[{paper_info['paper_id']}]({paper_info['paper_url']})]",
+                f"[[Code]({paper_info['repo_url']})]",
+                f"<details><summary>Abstract</summary> {paper_info['paper_abstract']}</details>",
             ]
-            section_lines.append("|".join(paper_line_splits))
+            section_lines.append("- " + ", ".join(paper_line_splits))
 
         # Add: back to top
         top_info = title_line.replace(" ", "-").replace(".", "")
@@ -153,7 +152,7 @@ def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str
             keyword_specific_papers.append(paper)
 
             counts += 1
-            print(f"id={counts} {paper}")
+            print(counts, paper)
         papers[keyword] = keyword_specific_papers
     return papers
 
