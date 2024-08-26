@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+import re
 from collections import defaultdict
 from typing import Dict, List, Tuple
 
@@ -99,12 +100,14 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
     if show_toc:
         toc_strings = ["**Table of Contents**"]
         for keyword in data.keys():
-            toc_strings.append(f"- [{keyword}](#{keyword.replace(' ', '-')})")
+            toc_strings.append(f"- [{keyword}](#{keyword.replace(' ', '-').lower()})")
         lines.append("\n".join(toc_strings))
 
     for keyword, day_content in data.items():
         # the head of each part
         section_lines = [f"## {keyword}\n"]
+        section_lines.append(" Publish Date | Title | Authors | Links ")
+        section_lines.append(":-------------|:------|:------- |:------")
 
         sorted_by = "publish_time"  # use the publish_time string as the key to sort
         day_content: Tuple[str, Dict[str, str]] = sorted(
@@ -114,17 +117,15 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
             print(idx, paper_key, paper_info["paper_title"])
             paper_line_splits = [
                 paper_info["publish_time"],
-                f"**{paper_info['paper_title']}**",
+                f"{paper_info['paper_title']}",
                 f"*{', '.join(paper_info['paper_authors'])}*",
-                f"[[{paper_info['paper_id']}]({paper_info['paper_url']})]",
-                f"[[Code]({paper_info['repo_url']})]",
-                f"<details><summary>Abstract</summary> {paper_info['paper_abstract']}</details>",
+                f"[{paper_info['paper_id']}]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
             ]
-            section_lines.append("- " + ", ".join(paper_line_splits))
+            section_lines.append(" | ".join(paper_line_splits))
 
         # Add: back to top
-        top_info = title_line.replace(" ", "-").replace(".", "")
-        section_lines.append(f"<p align=right>(<a href={top_info}>back to top</a>)</p>")
+        top_info = title_line.replace("# ", "#").replace(" ", "-").replace(".", "").lower()
+        section_lines.append(f'<p align=right>(<a href="{top_info}">back to top</a>)</p>')
         lines.append("\n".join(section_lines))
 
     with open(markdown_path, "w", encoding="utf-8") as f:
@@ -164,8 +165,8 @@ def main():
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"',
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=200)
-    update_json_file(json_file, papers)
+    # papers = get_papers(keywords, max_results_per_keyword=200)
+    # update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
 
