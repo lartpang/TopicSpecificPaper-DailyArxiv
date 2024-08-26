@@ -135,7 +135,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
 
 def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
     # Construct the default API client.
-    client = arxiv.Client(page_size=500, delay_seconds=5, num_retries=5)
+    client = arxiv.Client(page_size=200, delay_seconds=3, num_retries=5)
 
     counts = 0
     papers: Dict[str, List[ArXivPaper]] = {}
@@ -165,7 +165,7 @@ def main():
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"',
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=500)
+    papers = get_papers(keywords, max_results_per_keyword=200)
     update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
