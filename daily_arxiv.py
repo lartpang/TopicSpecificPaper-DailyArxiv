@@ -68,6 +68,7 @@ def update_json_file(json_path, papers: Dict[str, List[ArXivPaper]]) -> None:
     # update papers in each keywords
     for keyword, paper_items in papers.items():
         for paper_item in paper_items:
+            # NOTE: updated by the latest code information
             json_data[keyword][paper_item.paper_key] = paper_item.to_dict()
 
     with open(json_path, "w", encoding="utf-8") as f:
@@ -96,7 +97,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
         )
 
     if show_toc:
-        toc_strings = ["## Table of Contents"]
+        toc_strings = ["**Table of Contents**"]
         for keyword in data.keys():
             toc_strings.append(f"- [{keyword}](#{keyword.replace(' ', '-')})")
         lines.append("\n".join(toc_strings))
@@ -104,11 +105,13 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
     for keyword, day_content in data.items():
         # the head of each part
         section_lines = [f"## {keyword}"]
-        section_lines.append("| Publish Date | Title | Abstract | Authors | Links |")
-        section_lines.append("|:-------------|:------|:---------|:------- |:------|")
+        section_lines.append(" Publish Date | Title | Abstract | Authors | Links ")
+        section_lines.append(":-------------|:------|:---------|:------- |:------")
 
-        # sort papers by date
-        day_content: Tuple[str, Dict[str, str]] = sorted(day_content.items(), key=lambda item: item[0], reverse=True)
+        sorted_by = "publish_time"  # use the publish_time string as the key to sort
+        day_content: Tuple[str, Dict[str, str]] = sorted(
+            day_content.items(), key=lambda item: item[1][sorted_by.replace("-", "")], reverse=True
+        )
         for paper_key, paper_info in day_content:
             print(paper_key, paper_info["paper_title"])
             paper_line_splits = [
@@ -116,7 +119,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
                 paper_info["paper_title"],
                 f"<details><summary>...</summary>{paper_info['paper_abstract']}</details>",
                 ", ".join(paper_info["paper_authors"]),
-                f"[PDF]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
+                f"[{paper_info['paper_id']}]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
             ]
             section_lines.append("|".join(paper_line_splits))
 
@@ -132,7 +135,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
 
 def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
     # Construct the default API client.
-    client = arxiv.Client(page_size=200, delay_seconds=3, num_retries=5)
+    client = arxiv.Client(page_size=500, delay_seconds=5, num_retries=5)
 
     counts = 0
     papers: Dict[str, List[ArXivPaper]] = {}
@@ -162,7 +165,7 @@ def main():
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"',
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=200)
+    papers = get_papers(keywords, max_results_per_keyword=500)
     update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
