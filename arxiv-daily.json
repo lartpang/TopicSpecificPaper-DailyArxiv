@@ -9856,6 +9856,210 @@
       "update_time": "2023-12-14",
       "comments": "ICASSP 2024",
       "repo_url": "https://github.com/alexandrewang915/autost"
+    },
+    "2408.14917": {
+      "paper_id": "2408.14917v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.14917v1",
+      "paper_key": "2408.14917",
+      "paper_title": "PMSN: A Parallel Multi-compartment Spiking Neuron for Multi-scale Temporal Processing",
+      "paper_url": "http://arxiv.org/abs/2408.14917v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) hold great potential to realize brain-inspired, energy-efficient computational systems. However, current SNNs still fall short in terms of multi-scale temporal processing compared to their biological counterparts. This limitation has resulted in poor performance in many pattern recognition tasks with information that varies across different timescales. To address this issue, we put forward a novel spiking neuron model called Parallel Multi-compartment Spiking Neuron (PMSN). The PMSN emulates biological neurons by incorporating multiple interacting substructures and allows for flexible adjustment of the substructure counts to effectively represent temporal information across diverse timescales. Additionally, to address the computational burden associated with the increased complexity of the proposed model, we introduce two parallelization techniques that decouple the temporal dependencies of neuronal updates, enabling parallelized training across different time steps. Our experimental results on a wide range of pattern recognition tasks demonstrate the superiority of PMSN. It outperforms other state-of-the-art spiking neuron models in terms of its temporal processing capacity, training speed, and computation cost. Specifically, compared with the commonly used Leaky Integrate-and-Fire neuron, PMSN offers a simulation acceleration of over 10 $\\times$ and a 30 % improvement in accuracy on Sequential CIFAR10 dataset, while maintaining comparable computational cost.",
+      "paper_authors": [
+        "Xinyi Chen",
+        "Jibin Wu",
+        "Chenxiang Ma",
+        "Yinsong Yan",
+        "Yujie Wu",
+        "Kay Chen Tan"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-27",
+      "update_time": "2024-08-27",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.14909": {
+      "paper_id": "2408.14909v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.14909v1",
+      "paper_key": "2408.14909",
+      "paper_title": "SpikingSSMs: Learning Long Sequences with Sparse and Parallel Spiking State Space Models",
+      "paper_url": "http://arxiv.org/abs/2408.14909v1",
+      "paper_abstract": "Known as low energy consumption networks, spiking neural networks (SNNs) have gained a lot of attention within the past decades. While SNNs are increasing competitive with artificial neural networks (ANNs) for vision tasks, they are rarely used for long sequence tasks, despite their intrinsic temporal dynamics. In this work, we develop spiking state space models (SpikingSSMs) for long sequence learning by leveraging on the sequence learning abilities of state space models (SSMs). Inspired by dendritic neuron structure, we hierarchically integrate neuronal dynamics with the original SSM block, meanwhile realizing sparse synaptic computation. Furthermore, to solve the conflict of event-driven neuronal dynamics with parallel computing, we propose a light-weight surrogate dynamic network which accurately predicts the after-reset membrane potential and compatible to learnable thresholds, enabling orders of acceleration in training speed compared with conventional iterative methods. On the long range arena benchmark task, SpikingSSM achieves competitive performance to state-of-the-art SSMs meanwhile realizing on average 90\\% of network sparsity. On language modeling, our network significantly surpasses existing spiking large language models (spikingLLMs) on the WikiText-103 dataset with only a third of the model size, demonstrating its potential as backbone architecture for low computation cost LLMs.",
+      "paper_authors": [
+        "Shuaijie Shen",
+        "Chao Wang",
+        "Renzhuo Huang",
+        "Yan Zhong",
+        "Qinghai Guo",
+        "Zhichao Lu",
+        "Jianguo Zhang",
+        "Luziwei Leng"
+      ],
+      "primary_category": "cs.CL",
+      "publish_time": "2024-08-27",
+      "update_time": "2024-08-27",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.14437": {
+      "paper_id": "2408.14437v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.14437v1",
+      "paper_key": "2408.14437",
+      "paper_title": "Sparsity-Aware Hardware-Software Co-Design of Spiking Neural Networks: An Overview",
+      "paper_url": "http://arxiv.org/abs/2408.14437v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) are inspired by the sparse and event-driven nature of biological neural processing, and offer the potential for ultra-low-power artificial intelligence. However, realizing their efficiency benefits requires specialized hardware and a co-design approach that effectively leverages sparsity. We explore the hardware-software co-design of sparse SNNs, examining how sparsity representation, hardware architectures, and training techniques influence hardware efficiency. We analyze the impact of static and dynamic sparsity, discuss the implications of different neuron models and encoding schemes, and investigate the need for adaptability in hardware designs. Our work aims to illuminate the path towards embedded neuromorphic systems that fully exploit the computational advantages of sparse SNNs.",
+      "paper_authors": [
+        "Ilkin Aliyev",
+        "Kama Svoboda",
+        "Tosiron Adegbija",
+        "Jean-Marc Fellous"
+      ],
+      "primary_category": "cs.AR",
+      "publish_time": "2024-08-26",
+      "update_time": "2024-08-26",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.13996": {
+      "paper_id": "2408.13996v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.13996v1",
+      "paper_key": "2408.13996",
+      "paper_title": "Research Advances and New Paradigms for Biology-inspired Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2408.13996v1",
+      "paper_abstract": "Spiking neural networks (SNNs) are gaining popularity in the computational simulation and artificial intelligence fields owing to their biological plausibility and computational efficiency. This paper explores the historical development of SNN and concludes that these two fields are intersecting and merging rapidly. Following the successful application of Dynamic Vision Sensors (DVS) and Dynamic Audio Sensors (DAS), SNNs have found some proper paradigms, such as continuous visual signal tracking, automatic speech recognition, and reinforcement learning for continuous control, that have extensively supported their key features, including spike encoding, neuronal heterogeneity, specific functional circuits, and multiscale plasticity. Compared to these real-world paradigms, the brain contains a spiking version of the biology-world paradigm, which exhibits a similar level of complexity and is usually considered a mirror of the real world. Considering the projected rapid development of invasive and parallel Brain-Computer Interface (BCI), as well as the new BCI-based paradigms that include online pattern recognition and stimulus control of biological spike trains, SNNs naturally leverage their advantages in energy efficiency, robustness, and flexibility. The biological brain has inspired the present study of SNNs and effective SNN machine-learning algorithms, which can help enhance neuroscience discoveries in the brain by applying them to the new BCI paradigm. Such two-way interactions with positive feedback can accelerate brain science research and brain-inspired intelligence technology.",
+      "paper_authors": [
+        "Tianyu Zheng",
+        "Liyuan Han",
+        "Tielin Zhang"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-26",
+      "update_time": "2024-08-26",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.13379": {
+      "paper_id": "2408.13379v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.13379v1",
+      "paper_key": "2408.13379",
+      "paper_title": "N-DriverMotion: Driver motion learning and prediction using an event-based camera and directly trained spiking neural networks",
+      "paper_url": "http://arxiv.org/abs/2408.13379v1",
+      "paper_abstract": "Driver motion recognition is a principal factor in ensuring the safety of driving systems. This paper presents a novel system for learning and predicting driver motions and an event-based high-resolution (1280x720) dataset, N-DriverMotion, newly collected to train on a neuromorphic vision system. The system comprises an event-based camera that generates the first high-resolution driver motion dataset representing spike inputs and efficient spiking neural networks (SNNs) that are effective in training and predicting the driver's gestures. The event dataset consists of 13 driver motion categories classified by direction (front, side), illumination (bright, moderate, dark), and participant. A novel simplified four-layer convolutional spiking neural network (CSNN) that we proposed was directly trained using the high-resolution dataset without any time-consuming preprocessing. This enables efficient adaptation to on-device SNNs for real-time inference on high-resolution event-based streams. Compared with recent gesture recognition systems adopting neural networks for vision processing, the proposed neuromorphic vision system achieves comparable accuracy, 94.04\\%, in recognizing driver motions with the CSNN architecture. Our proposed CSNN and the dataset can be used to develop safer and more efficient driver monitoring systems for autonomous vehicles or edge devices requiring an efficient neural network architecture.",
+      "paper_authors": [
+        "Hyo Jong Chung",
+        "Byungkon Kang",
+        "Yoonseok Yang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-23",
+      "update_time": "2024-08-23",
+      "comments": "10 pages, 5 figures",
+      "repo_url": "#"
+    }
+  },
+  "Infrared Small Target Detection": {
+    "2408.09615": {
+      "paper_id": "2408.09615v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.09615v1",
+      "paper_key": "2408.09615",
+      "paper_title": "The First Competition on Resource-Limited Infrared Small Target Detection Challenge: Methods and Results",
+      "paper_url": "http://arxiv.org/abs/2408.09615v1",
+      "paper_abstract": "In this paper, we briefly summarize the first competition on resource-limited infrared small target detection (namely, LimitIRSTD). This competition has two tracks, including weakly-supervised infrared small target detection (Track 1) and lightweight infrared small target detection (Track 2). 46 and 60 teams successfully registered and took part in Tracks 1 and Track 2, respectively. The top-performing methods and their results in each track are described with details. This competition inspires the community to explore the tough problems in the application of infrared small target detection, and ultimately promote the deployment of this technology under limited resource.",
+      "paper_authors": [
+        "Boyang Li",
+        "Xinyi Ying",
+        "Ruojing Li",
+        "Yongxian Liu",
+        "Yangsi Shi",
+        "Miao Li"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-18",
+      "update_time": "2024-08-18",
+      "comments": null,
+      "repo_url": "https://github.com/xinyiying/basicirstd"
+    },
+    "2408.08191": {
+      "paper_id": "2408.08191v4",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.08191v4",
+      "paper_key": "2408.08191",
+      "paper_title": "Beyond Full Label: Single-Point Prompt for Infrared Small Target Label Generation",
+      "paper_url": "http://arxiv.org/abs/2408.08191v4",
+      "paper_abstract": "In this work, we make the first attempt to construct a learning-based single-point annotation paradigm for infrared small target label generation (IRSTLG). Our intuition is that label generation requires just one more point prompt than target detection: IRSTLG can be regarded as an infrared small target detection (IRSTD) task with the target location hint. Based on this insight, we introduce an energy double guided single-point prompt (EDGSP) framework, which adeptly transforms the target detection network into a refined label generation method. Specifically, the proposed EDGSP includes: 1) target energy initialization (TEI) to create a foundational outline for sufficient shape evolution of pseudo label, 2) double prompt embedding (DPE) for rapid localization of interested regions and reinforcement of individual differences to avoid label adhesion, and 3) bounding box-based matching (BBM) to eliminate false alarms. Experimental results show that pseudo labels generated by three baselines equipped with EDGSP achieve 100% object-level probability of detection (Pd) and 0% false-alarm rate (Fa) on SIRST, NUDT-SIRST, and IRSTD-1k datasets, with a pixel-level intersection over union (IoU) improvement of 13.28% over state-of-the-art (SOTA) label generation methods. In the practical application of downstream IRSTD, EDGSP realizes, for the first time, a single-point generated pseudo mask beyond the full label. Even with coarse single-point annotations, it still achieves 99.5% performance of full labeling.",
+      "paper_authors": [
+        "Shuai Yuan",
+        "Hanlin Qin",
+        "Renke Kou",
+        "Xiang Yan",
+        "Zechuan Li",
+        "Chenxu Peng",
+        "Abd-Krim Seghouane"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-15",
+      "update_time": "2024-08-20",
+      "comments": null,
+      "repo_url": "https://github.com/xdfai/edgsp"
+    },
+    "2408.03717": {
+      "paper_id": "2408.03717v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.03717v1",
+      "paper_key": "2408.03717",
+      "paper_title": "Pick of the Bunch: Detecting Infrared Small Targets Beyond Hit-Miss Trade-Offs via Selective Rank-Aware Attention",
+      "paper_url": "http://arxiv.org/abs/2408.03717v1",
+      "paper_abstract": "Infrared small target detection faces the inherent challenge of precisely localizing dim targets amidst complex background clutter. Traditional approaches struggle to balance detection precision and false alarm rates. To break this dilemma, we propose SeRankDet, a deep network that achieves high accuracy beyond the conventional hit-miss trade-off, by following the ``Pick of the Bunch'' principle. At its core lies our Selective Rank-Aware Attention (SeRank) module, employing a non-linear Top-K selection process that preserves the most salient responses, preventing target signal dilution while maintaining constant complexity. Furthermore, we replace the static concatenation typical in U-Net structures with our Large Selective Feature Fusion (LSFF) module, a dynamic fusion strategy that empowers SeRankDet with adaptive feature integration, enhancing its ability to discriminate true targets from false alarms. The network's discernment is further refined by our Dilated Difference Convolution (DDC) module, which merges differential convolution aimed at amplifying subtle target characteristics with dilated convolution to expand the receptive field, thereby substantially improving target-background separation. Despite its lightweight architecture, the proposed SeRankDet sets new benchmarks in state-of-the-art performance across multiple public datasets. The code is available at https://github.com/GrokCV/SeRankDet.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Peiwen Pan",
+        "Yulei Qian",
+        "Yuxuan Li",
+        "Xiang Li",
+        "Jian Yang",
+        "Huan Wan"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-07",
+      "update_time": "2024-08-07",
+      "comments": null,
+      "repo_url": "https://github.com/grokcv/serankdet"
+    },
+    "2408.02780": {
+      "paper_id": "2408.02780v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.02780v1",
+      "paper_key": "2408.02780",
+      "paper_title": "LR-Net: A Lightweight and Robust Network for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2408.02780v1",
+      "paper_abstract": "Limited by equipment limitations and the lack of target intrinsic features, existing infrared small target detection methods have difficulty meeting actual comprehensive performance requirements. Therefore, we propose an innovative lightweight and robust network (LR-Net), which abandons the complex structure and achieves an effective balance between detection accuracy and resource consumption. Specifically, to ensure the lightweight and robustness, on the one hand, we construct a lightweight feature extraction attention (LFEA) module, which can fully extract target features and strengthen information interaction across channels. On the other hand, we construct a simple refined feature transfer (RFT) module. Compared with direct cross-layer connections, the RFT module can improve the network's feature refinement extraction capability with little resource consumption. Meanwhile, to solve the problem of small target loss in high-level feature maps, on the one hand, we propose a low-level feature distribution (LFD) strategy to use low-level features to supplement the information of high-level features. On the other hand, we introduce an efficient simplified bilinear interpolation attention module (SBAM) to promote the guidance constraints of low-level features on high-level features and the fusion of the two. In addition, We abandon the traditional resizing method and adopt a new training and inference cropping strategy, which is more robust to datasets with multi-scale samples. Extensive experimental results show that our LR-Net achieves state-of-the-art (SOTA) performance. Notably, on the basis of the proposed LR-Net, we achieve 3rd place in the \"ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge Track 2: Lightweight Infrared Small Target Detection\".",
+      "paper_authors": [
+        "Chuang Yu",
+        "Yunpeng Liu",
+        "Jinmiao Zhao",
+        "Zelin Shi"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-05",
+      "update_time": "2024-08-05",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.02773": {
+      "paper_id": "2408.02773v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.02773v1",
+      "paper_key": "2408.02773",
+      "paper_title": "Refined Infrared Small Target Detection Scheme with Single-Point Supervision",
+      "paper_url": "http://arxiv.org/abs/2408.02773v1",
+      "paper_abstract": "Recently, infrared small target detection with single-point supervision has attracted extensive attention. However, the detection accuracy of existing methods has difficulty meeting actual needs. Therefore, we propose an innovative refined infrared small target detection scheme with single-point supervision, which has excellent segmentation accuracy and detection rate. Specifically, we introduce label evolution with single point supervision (LESPS) framework and explore the performance of various excellent infrared small target detection networks based on this framework. Meanwhile, to improve the comprehensive performance, we construct a complete post-processing strategy. On the one hand, to improve the segmentation accuracy, we use a combination of test-time augmentation (TTA) and conditional random field (CRF) for post-processing. On the other hand, to improve the detection rate, we introduce an adjustable sensitivity (AS) strategy for post-processing, which fully considers the advantages of multiple detection results and reasonably adds some areas with low confidence to the fine segmentation image in the form of centroid points. In addition, to further improve the performance and explore the characteristics of this task, on the one hand, we construct and find that a multi-stage loss is helpful for fine-grained detection. On the other hand, we find that a reasonable sliding window cropping strategy for test samples has better performance for actual multi-size samples. Extensive experimental results show that the proposed scheme achieves state-of-the-art (SOTA) performance. Notably, the proposed scheme won the third place in the \"ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge Track 1: Weakly Supervised Infrared Small Target Detection\".",
+      "paper_authors": [
+        "Jinmiao Zhao",
+        "Zelin Shi",
+        "Chuang Yu",
+        "Yunpeng Liu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-05",
+      "update_time": "2024-08-05",
+      "comments": null,
+      "repo_url": "#"
     }
   }
 }

@@ -6,12 +6,18 @@
 
 **Table of Contents**
 - [Spiking Neural Network](#spiking-neural-network)
+- [Infrared Small Target Detection](#infrared-small-target-detection)
 
 ## Spiking Neural Network
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-08-27 | PMSN: A Parallel Multi-compartment Spiking Neuron for Multi-scale Temporal Processing | *Xinyi Chen, Jibin Wu, Chenxiang Ma, Yinsong Yan, Yujie Wu, Kay Chen Tan* | [2408.14917v1](http://arxiv.org/abs/2408.14917v1), [Code](#)
+2024-08-27 | SpikingSSMs: Learning Long Sequences with Sparse and Parallel Spiking State Space Models | *Shuaijie Shen, Chao Wang, Renzhuo Huang, Yan Zhong, Qinghai Guo, Zhichao Lu, Jianguo Zhang, Luziwei Leng* | [2408.14909v1](http://arxiv.org/abs/2408.14909v1), [Code](#)
+2024-08-26 | Sparsity-Aware Hardware-Software Co-Design of Spiking Neural Networks: An Overview | *Ilkin Aliyev, Kama Svoboda, Tosiron Adegbija, Jean-Marc Fellous* | [2408.14437v1](http://arxiv.org/abs/2408.14437v1), [Code](#)
+2024-08-26 | Research Advances and New Paradigms for Biology-inspired Spiking Neural Networks | *Tianyu Zheng, Liyuan Han, Tielin Zhang* | [2408.13996v1](http://arxiv.org/abs/2408.13996v1), [Code](#)
 2024-08-23 | Robust Iterative Value Conversion: Deep Reinforcement Learning for Neurochip-driven Edge Robots | *Yuki Kadokawa, Tomohito Kodera, Yoshihisa Tsurumine, Shinya Nishimura, Takamitsu Matsubara* | [2408.13018v1](http://arxiv.org/abs/2408.13018v1), [Code](#)
+2024-08-23 | N-DriverMotion: Driver motion learning and prediction using an event-based camera and directly trained spiking neural networks | *Hyo Jong Chung, Byungkon Kang, Yoonseok Yang* | [2408.13379v1](http://arxiv.org/abs/2408.13379v1), [Code](#)
 2024-08-22 | Adaptive Spiking Neural Networks with Hybrid Coding | *Huaxu He* | [2408.12407v1](http://arxiv.org/abs/2408.12407v1), [Code](https://github.com/hhx0320/asnn)
 2024-08-22 | AT-SNN: Adaptive Tokens for Vision Transformer on Spiking Neural Network | *Donghwa Kang, Youngmoon Lee, Eun-Kyu Lee, Brent Kang, Jinkyu Lee, Hyeongboo Baek* | [2408.12293v1](http://arxiv.org/abs/2408.12293v1), [Code](#)
 2024-08-22 | When In-memory Computing Meets Spiking Neural Networks -- A Perspective on Device-Circuit-System-and-Algorithm Co-design | *Abhishek Moitra, Abhiroop Bhattacharjee, Yuhang Li, Youngeun Kim, Priyadarshini Panda* | [2408.12767v1](http://arxiv.org/abs/2408.12767v1), [Code](#)
@@ -511,4 +517,17 @@
 2023-07-04 | Spike-driven Transformer | *Man Yao, Jiakui Hu, Zhaokun Zhou, Li Yuan, Yonghong Tian, Bo Xu, Guoqi Li* | [2307.01694v1](http://arxiv.org/abs/2307.01694v1), [Code](https://github.com/biclab/spike-driven-transformer)
 2023-07-03 | Resistive memory-based zero-shot liquid state machine for multimodal event data learning | *Ning Lin, Shaocong Wang, Yi Li, Bo Wang, Shuhui Shi, Yangu He, Woyu Zhang, Yifei Yu, Yue Zhang, Xiaojuan Qi, Xiaoming Chen, Hao Jiang, Xumeng Zhang, Peng Lin, Xiaoxin Xu, Qi Liu, Zhongrui Wang, Dashan Shang, Ming Liu* | [2307.00771v1](http://arxiv.org/abs/2307.00771v1), [Code](#)
 2023-07-01 | AutoST: Training-free Neural Architecture Search for Spiking Transformers | *Ziqing Wang, Qidong Zhao, Jinku Cui, Xu Liu, Dongkuan Xu* | [2307.00293v2](http://arxiv.org/abs/2307.00293v2), [Code](https://github.com/alexandrewang915/autost)
+
+<p align=right>(<a href="#daily-arxiv">back to top</a>)</p>
+
+## Infrared Small Target Detection
+
+ Publish Date | Title | Authors | Links 
+:-------------|:------|:------- |:------
+2024-08-18 | The First Competition on Resource-Limited Infrared Small Target Detection Challenge: Methods and Results | *Boyang Li, Xinyi Ying, Ruojing Li, Yongxian Liu, Yangsi Shi, Miao Li* | [2408.09615v1](http://arxiv.org/abs/2408.09615v1), [Code](https://github.com/xinyiying/basicirstd)
+2024-08-15 | Beyond Full Label: Single-Point Prompt for Infrared Small Target Label Generation | *Shuai Yuan, Hanlin Qin, Renke Kou, Xiang Yan, Zechuan Li, Chenxu Peng, Abd-Krim Seghouane* | [2408.08191v4](http://arxiv.org/abs/2408.08191v4), [Code](https://github.com/xdfai/edgsp)
+2024-08-07 | Pick of the Bunch: Detecting Infrared Small Targets Beyond Hit-Miss Trade-Offs via Selective Rank-Aware Attention | *Yimian Dai, Peiwen Pan, Yulei Qian, Yuxuan Li, Xiang Li, Jian Yang, Huan Wan* | [2408.03717v1](http://arxiv.org/abs/2408.03717v1), [Code](https://github.com/grokcv/serankdet)
+2024-08-05 | LR-Net: A Lightweight and Robust Network for Infrared Small Target Detection | *Chuang Yu, Yunpeng Liu, Jinmiao Zhao, Zelin Shi* | [2408.02780v1](http://arxiv.org/abs/2408.02780v1), [Code](#)
+2024-08-05 | Refined Infrared Small Target Detection Scheme with Single-Point Supervision | *Jinmiao Zhao, Zelin Shi, Chuang Yu, Yunpeng Liu* | [2408.02773v1](http://arxiv.org/abs/2408.02773v1), [Code](#)
+
 <p align=right>(<a href="#daily-arxiv">back to top</a>)</p>
