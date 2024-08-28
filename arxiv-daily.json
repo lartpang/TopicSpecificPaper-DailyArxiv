@@ -56,11 +56,11 @@
       "repo_url": "#"
     },
     "2408.09403": {
-      "paper_id": "2408.09403v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.09403v1",
+      "paper_id": "2408.09403v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.09403v2",
       "paper_key": "2408.09403",
       "paper_title": "Obtaining Optimal Spiking Neural Network in Sequence Learning via CRNN-SNN Conversion",
-      "paper_url": "http://arxiv.org/abs/2408.09403v1",
+      "paper_url": "http://arxiv.org/abs/2408.09403v2",
       "paper_abstract": "Spiking neural networks (SNNs) are becoming a promising alternative to conventional artificial neural networks (ANNs) due to their rich neural dynamics and the implementation of energy-efficient neuromorphic chips. However, the non-differential binary communication mechanism makes SNN hard to converge to an ANN-level accuracy. When SNN encounters sequence learning, the situation becomes worse due to the difficulties in modeling long-range dependencies. To overcome these difficulties, researchers developed variants of LIF neurons and different surrogate gradients but still failed to obtain good results when the sequence became longer (e.g., $>$500). Unlike them, we obtain an optimal SNN in sequence learning by directly mapping parameters from a quantized CRNN. We design two sub-pipelines to support the end-to-end conversion of different structures in neural networks, which is called CNN-Morph (CNN $\\rightarrow$ QCNN $\\rightarrow$ BIFSNN) and RNN-Morph (RNN $\\rightarrow$ QRNN $\\rightarrow$ RBIFSNN). Using conversion pipelines and the s-analog encoding method, the conversion error of our framework is zero. Furthermore, we give the theoretical and experimental demonstration of the lossless CRNN-SNN conversion. Our results show the effectiveness of our method over short and long timescales tasks compared with the state-of-the-art learning- and conversion-based methods. We reach the highest accuracy of 99.16% (0.46 $\\uparrow$) on S-MNIST, 94.95% (3.95 $\\uparrow$) on PS-MNIST (sequence length of 784) respectively, and the lowest loss of 0.057 (0.013 $\\downarrow$) within 8 time-steps in collision avoidance dataset.",
       "paper_authors": [
         "Jiahao Su",
@@ -71,7 +71,7 @@
       ],
       "primary_category": "cs.AI",
       "publish_time": "2024-08-18",
-      "update_time": "2024-08-18",
+      "update_time": "2024-08-26",
       "comments": "Accepted by 33rd International Conference on Artificial Neural\n  Networks",
       "repo_url": "#"
     },
@@ -773,11 +773,11 @@
       "repo_url": "#"
     },
     "2407.15152": {
-      "paper_id": "2407.15152v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.15152v1",
+      "paper_id": "2407.15152v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.15152v2",
       "paper_key": "2407.15152",
       "paper_title": "SNNGX: Securing Spiking Neural Networks with Genetic XOR Encryption on RRAM-based Neuromorphic Accelerator",
-      "paper_url": "http://arxiv.org/abs/2407.15152v1",
+      "paper_url": "http://arxiv.org/abs/2407.15152v2",
       "paper_abstract": "Biologically plausible Spiking Neural Networks (SNNs), characterized by spike sparsity, are growing tremendous attention over intellectual edge devices and critical bio-medical applications as compared to artificial neural networks (ANNs). However, there is a considerable risk from malicious attempts to extract white-box information (i.e., weights) from SNNs, as attackers could exploit well-trained SNNs for profit and white-box adversarial concerns. There is a dire need for intellectual property (IP) protective measures. In this paper, we present a novel secure software-hardware co-designed RRAM-based neuromorphic accelerator for protecting the IP of SNNs. Software-wise, we design a tailored genetic algorithm with classic XOR encryption to target the least number of weights that need encryption. From a hardware perspective, we develop a low-energy decryption module, meticulously designed to provide zero decryption latency. Extensive results from various datasets, including NMNIST, DVSGesture, EEGMMIDB, Braille Letter, and SHD, demonstrate that our proposed method effectively secures SNNs by encrypting a minimal fraction of stealthy weights, only 0.00005% to 0.016% weight bits. Additionally, it achieves a substantial reduction in energy consumption, ranging from x59 to x6780, and significantly lowers decryption latency, ranging from x175 to x4250. Moreover, our method requires as little as one sample per class in dataset for encryption and addresses hessian/gradient-based search insensitive problems. This strategy offers a highly efficient and flexible solution for securing SNNs in diverse applications.",
       "paper_authors": [
         "Kwunhang Wong",
@@ -794,7 +794,7 @@
       ],
       "primary_category": "cs.CR",
       "publish_time": "2024-07-21",
-      "update_time": "2024-07-21",
+      "update_time": "2024-08-26",
       "comments": "International Conference on Computer-Aided Design 2024",
       "repo_url": "https://github.com/u3556440/SNNGX_qSNN_encryption"
     },
@@ -9955,6 +9955,218 @@
       "update_time": "2024-08-23",
       "comments": "10 pages, 5 figures",
       "repo_url": "#"
+    },
+    "2408.14499": {
+      "paper_id": "2408.14499v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.14499v1",
+      "paper_key": "2408.14499",
+      "paper_title": "SHEDAD: SNN-Enhanced District Heating Anomaly Detection for Urban Substations",
+      "paper_url": "http://arxiv.org/abs/2408.14499v1",
+      "paper_abstract": "District Heating (DH) systems are essential for energy-efficient urban heating. However, despite the advancements in automated fault detection and diagnosis (FDD), DH still faces challenges in operational faults that impact efficiency. This study introduces the Shared Nearest Neighbor Enhanced District Heating Anomaly Detection (SHEDAD) approach, designed to approximate the DH network topology and allow for local anomaly detection without disclosing sensitive information, such as substation locations. The approach leverages a multi-adaptive k-Nearest Neighbor (k-NN) graph to improve the initial neighborhood creation. Moreover, it introduces a merging technique that reduces noise and eliminates trivial edges. We use the Median Absolute Deviation (MAD) and modified z-scores to flag anomalous substations. The results reveal that SHEDAD outperforms traditional clustering methods, achieving significantly lower intra-cluster variance and distance. Additionally, SHEDAD effectively isolates and identifies two distinct categories of anomalies: supply temperatures and substation performance. We identified 30 anomalous substations and reached a sensitivity of approximately 65\\% and specificity of approximately 97\\%. By focusing on this subset of poor-performing substations in the network, SHEDAD enables more targeted and effective maintenance interventions, which can reduce energy usage while optimizing network performance.",
+      "paper_authors": [
+        "Jonne van Dreven",
+        "Abbas Cheddad",
+        "Sadi Alawadi",
+        "Ahmad Nauman Ghazi",
+        "Jad Al Koussa",
+        "Dirk Vanhoudt"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-08-23",
+      "update_time": "2024-08-23",
+      "comments": "12 pages, 5 figures, FMEC2024",
+      "repo_url": "#"
+    },
+    "2408.04583": {
+      "paper_id": "2408.04583v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.04583v1",
+      "paper_key": "2408.04583",
+      "paper_title": "Unveiling the Power of Sparse Neural Networks for Feature Selection",
+      "paper_url": "http://arxiv.org/abs/2408.04583v1",
+      "paper_abstract": "Sparse Neural Networks (SNNs) have emerged as powerful tools for efficient feature selection. Leveraging the dynamic sparse training (DST) algorithms within SNNs has demonstrated promising feature selection capabilities while drastically reducing computational overheads. Despite these advancements, several critical aspects remain insufficiently explored for feature selection. Questions persist regarding the choice of the DST algorithm for network training, the choice of metric for ranking features/neurons, and the comparative performance of these methods across diverse datasets when compared to dense networks. This paper addresses these gaps by presenting a comprehensive systematic analysis of feature selection with sparse neural networks. Moreover, we introduce a novel metric considering sparse neural network characteristics, which is designed to quantify feature importance within the context of SNNs. Our findings show that feature selection with SNNs trained with DST algorithms can achieve, on average, more than $50\\%$ memory and $55\\%$ FLOPs reduction compared to the dense networks, while outperforming them in terms of the quality of the selected features. Our code and the supplementary material are available on GitHub (\\url{https://github.com/zahraatashgahi/Neuron-Attribution}).",
+      "paper_authors": [
+        "Zahra Atashgahi",
+        "Tennison Liu",
+        "Mykola Pechenizkiy",
+        "Raymond Veldhuis",
+        "Decebal Constantin Mocanu",
+        "Mihaela van der Schaar"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-08-08",
+      "update_time": "2024-08-08",
+      "comments": null,
+      "repo_url": "https://github.com/zahraatashgahi/neuron-attribution"
+    },
+    "2407.20597": {
+      "paper_id": "2407.20597v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.20597v1",
+      "paper_key": "2407.20597",
+      "paper_title": "Joint Diffusion Processes as an Inductive Bias in Sheaf Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2407.20597v1",
+      "paper_abstract": "Sheaf Neural Networks (SNNs) naturally extend Graph Neural Networks (GNNs) by endowing a cellular sheaf over the graph, equipping nodes and edges with vector spaces and defining linear mappings between them. While the attached geometric structure has proven to be useful in analyzing heterophily and oversmoothing, so far the methods by which the sheaf is computed do not always guarantee a good performance in such settings. In this work, drawing inspiration from opinion dynamics concepts, we propose two novel sheaf learning approaches that (i) provide a more intuitive understanding of the involved structure maps, (ii) introduce a useful inductive bias for heterophily and oversmoothing, and (iii) infer the sheaf in a way that does not scale with the number of features, thus using fewer learnable parameters than existing methods. In our evaluation, we show the limitations of the real-world benchmarks used so far on SNNs, and design a new synthetic task -- leveraging the symmetries of n-dimensional ellipsoids -- that enables us to better assess the strengths and weaknesses of sheaf-based models. Our extensive experimentation on these novel datasets reveals valuable insights into the scenarios and contexts where SNNs in general -- and our proposed approaches in particular -- can be beneficial.",
+      "paper_authors": [
+        "Ferran Hernandez Caralt",
+        "Guillermo Bern\u00e1rdez Gil",
+        "Iulia Duta",
+        "Pietro Li\u00f2",
+        "Eduard Alarc\u00f3n Cot"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-07-30",
+      "update_time": "2024-07-30",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2407.08861": {
+      "paper_id": "2407.08861v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.08861v1",
+      "paper_key": "2407.08861",
+      "paper_title": "A Hybrid Spiking-Convolutional Neural Network Approach for Advancing Machine Learning Models",
+      "paper_url": "http://arxiv.org/abs/2407.08861v1",
+      "paper_abstract": "In this article, we propose a novel standalone hybrid Spiking-Convolutional Neural Network (SC-NN) model and test on using image inpainting tasks. Our approach uses the unique capabilities of SNNs, such as event-based computation and temporal processing, along with the strong representation learning abilities of CNNs, to generate high-quality inpainted images. The model is trained on a custom dataset specifically designed for image inpainting, where missing regions are created using masks. The hybrid model consists of SNNConv2d layers and traditional CNN layers. The SNNConv2d layers implement the leaky integrate-and-fire (LIF) neuron model, capturing spiking behavior, while the CNN layers capture spatial features. In this study, a mean squared error (MSE) loss function demonstrates the training process, where a training loss value of 0.015, indicates accurate performance on the training set and the model achieved a validation loss value as low as 0.0017 on the testing set. Furthermore, extensive experimental results demonstrate state-of-the-art performance, showcasing the potential of integrating temporal dynamics and feature extraction in a single network for image inpainting.",
+      "paper_authors": [
+        "Sanaullah",
+        "Kaushik Roy",
+        "Ulrich R\u00fcckert",
+        "Thorsten Jungeblut"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-07-11",
+      "update_time": "2024-07-11",
+      "comments": "7 Pages, 3 figures, and 2 tables",
+      "repo_url": "#"
+    },
+    "2407.06333": {
+      "paper_id": "2407.06333v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.06333v2",
+      "paper_key": "2407.06333",
+      "paper_title": "A third-order finite difference weighted essentially non-oscillatory scheme with shallow neural network",
+      "paper_url": "http://arxiv.org/abs/2407.06333v2",
+      "paper_abstract": "In this paper, we introduce the finite difference weighted essentially non-oscillatory (WENO) scheme based on the neural network for hyperbolic conservation laws. We employ the supervised learning and design two loss functions, one with the mean squared error and the other with the mean squared logarithmic error, where the WENO3-JS weights are computed as the labels. Each loss function consists of two components where the first component compares the difference between the weights from the neural network and WENO3-JS weights, while the second component matches the output weights of the neural network and the linear weights. The former of the loss function enforces the neural network to follow the WENO properties, implying that there is no need for the post-processing layer. Additionally the latter leads to better performance around discontinuities. As a neural network structure, we choose the shallow neural network (SNN) for computational efficiency with the Delta layer consisting of the normalized undivided differences. These constructed WENO3-SNN schemes show the outperformed results in one-dimensional examples and improved behavior in two-dimensional examples, compared with the simulations from WENO3-JS and WENO3-Z.",
+      "paper_authors": [
+        "Kwanghyuk Park",
+        "Xinjuan Chen",
+        "Dongjin Lee",
+        "Jiaxi Gu",
+        "Jae-Hun Jung"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-07-08",
+      "update_time": "2024-07-10",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2406.04178": {
+      "paper_id": "2406.04178v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.04178v1",
+      "paper_key": "2406.04178",
+      "paper_title": "Encoding Semantic Priors into the Weights of Implicit Neural Representation",
+      "paper_url": "http://arxiv.org/abs/2406.04178v1",
+      "paper_abstract": "Implicit neural representation (INR) has recently emerged as a promising paradigm for signal representations, which takes coordinates as inputs and generates corresponding signal values. Since these coordinates contain no semantic features, INR fails to take any semantic information into consideration. However, semantic information has been proven critical in many vision tasks, especially for visual signal representation. This paper proposes a reparameterization method termed as SPW, which encodes the semantic priors to the weights of INR, thus making INR contain semantic information implicitly and enhancing its representational capacity. Specifically, SPW uses the Semantic Neural Network (SNN) to extract both low- and high-level semantic information of the target visual signal and generates the semantic vector, which is input into the Weight Generation Network (WGN) to generate the weights of INR model. Finally, INR uses the generated weights with semantic priors to map the coordinates to the signal values. After training, we only retain the generated weights while abandoning both SNN and WGN, thus SPW introduces no extra costs in inference. Experimental results show that SPW can improve the performance of various INR models significantly on various tasks, including image fitting, CT reconstruction, MRI reconstruction, and novel view synthesis. Further experiments illustrate that model with SPW has lower weight redundancy and learns more novel representations, validating the effectiveness of SPW.",
+      "paper_authors": [
+        "Zhicheng Cai",
+        "Qiu Shen"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-06-06",
+      "update_time": "2024-06-06",
+      "comments": "ICME 2024",
+      "repo_url": "#"
+    },
+    "2405.20088": {
+      "paper_id": "2405.20088v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.20088v1",
+      "paper_key": "2405.20088",
+      "paper_title": "Personalized Predictions from Population Level Experiments: A Study on Alzheimer's Disease",
+      "paper_url": "http://arxiv.org/abs/2405.20088v1",
+      "paper_abstract": "The purpose of this article is to infer patient level outcomes from population level randomized control trials (RCTs). In this pursuit, we utilize the recently proposed synthetic nearest neighbors (SNN) estimator. At its core, SNN leverages information across patients to impute missing data associated with each patient of interest. We focus on two types of missing data: (i) unrecorded outcomes from discontinuing the assigned treatments and (ii) unobserved outcomes associated with unassigned treatments. Data imputation in the former powers and de-biases RCTs, while data imputation in the latter simulates \"synthetic RCTs\" to predict the outcomes for each patient under every treatment. The SNN estimator is interpretable, transparent, and causally justified under a broad class of missing data scenarios. Relative to several standard methods, we empirically find that SNN performs well for the above two applications using Phase 3 clinical trial data on patients with Alzheimer's Disease. Our findings directly suggest that SNN can tackle a current pain point within the clinical trial workflow on patient dropouts and serve as a new tool towards the development of precision medicine. Building on our insights, we discuss how SNN can further generalize to real-world applications.",
+      "paper_authors": [
+        "Dennis Shen",
+        "Anish Agarwal",
+        "Vishal Misra",
+        "Bjoern Schelter",
+        "Devavrat Shah",
+        "Helen Shiells",
+        "Claude Wischik"
+      ],
+      "primary_category": "stat.AP",
+      "publish_time": "2024-05-30",
+      "update_time": "2024-05-30",
+      "comments": null,
+      "repo_url": "https://github.com/deshen24/syntheticNN"
+    },
+    "2405.16769": {
+      "paper_id": "2405.16769v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.16769v1",
+      "paper_key": "2405.16769",
+      "paper_title": "Learning phase transitions by siamese neural network",
+      "paper_url": "http://arxiv.org/abs/2405.16769v1",
+      "paper_abstract": "The wide application of machine learning (ML) techniques in statistics physics has presented new avenues for research in this field. In this paper, we introduce a semi-supervised learning method based on Siamese Neural Networks (SNN), trying to explore the potential of neural network (NN) in the study of critical behaviors beyond the approaches of supervised and unsupervised learning. By focusing on the (1+1) dimensional bond directed percolation (DP) model of nonequilibrium phase transition, we use the SNN to predict the critical values and critical exponents of the system. Different from traditional ML methods, the input of SNN is a set of configuration data pairs and the output prediction is similarity, which prompts to find an anchor point of data for pair comparison during the test. In our study, during test we set different bond probability $p$ as anchors, and discuss the impact of the configurations at this anchors on predictions. More, we use an iterative method to find the optimal training interval to make the algorithm more efficient, and the prediction results are comparable to other ML methods.",
+      "paper_authors": [
+        "Jianmin Shen",
+        "Shiyang Chen",
+        "Feiyi Liu",
+        "Youju Liu",
+        "Wei Li"
+      ],
+      "primary_category": "physics.comp-ph",
+      "publish_time": "2024-05-27",
+      "update_time": "2024-05-27",
+      "comments": "14 pages, 9 figures",
+      "repo_url": "#"
+    },
+    "2405.15540": {
+      "paper_id": "2405.15540v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.15540v1",
+      "paper_key": "2405.15540",
+      "paper_title": "Bundle Neural Networks for message diffusion on graphs",
+      "paper_url": "http://arxiv.org/abs/2405.15540v1",
+      "paper_abstract": "The dominant paradigm for learning on graph-structured data is message passing. Despite being a strong inductive bias, the local message passing mechanism suffers from pathological issues such as over-smoothing, over-squashing, and limited node-level expressivity. To address these limitations we propose Bundle Neural Networks (BuNN), a new type of GNN that operates via message diffusion over flat vector bundles - structures analogous to connections on Riemannian manifolds that augment the graph by assigning to each node a vector space and an orthogonal map. A BuNN layer evolves the features according to a diffusion-type partial differential equation. When discretized, BuNNs are a special case of Sheaf Neural Networks (SNNs), a recently proposed MPNN capable of mitigating over-smoothing. The continuous nature of message diffusion enables BuNNs to operate on larger scales of the graph and, therefore, to mitigate over-squashing. Finally, we prove that BuNN can approximate any feature transformation over nodes on any (potentially infinite) family of graphs given injective positional encodings, resulting in universal node-level expressivity. We support our theory via synthetic experiments and showcase the strong empirical performance of BuNNs over a range of real-world tasks, achieving state-of-the-art results on several standard benchmarks in transductive and inductive settings.",
+      "paper_authors": [
+        "Jacob Bamberger",
+        "Federico Barbero",
+        "Xiaowen Dong",
+        "Michael Bronstein"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-05-24",
+      "update_time": "2024-05-24",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2405.12379": {
+      "paper_id": "2405.12379v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.12379v1",
+      "paper_key": "2405.12379",
+      "paper_title": "Measurement dependence can enhance security in a quantum network",
+      "paper_url": "http://arxiv.org/abs/2405.12379v1",
+      "paper_abstract": "Network Nonlocality is an advanced study of quantum nonlocality that comprises network structure beyond Bell's theorem. The development of quantum networks has the potential to bring a lot of technological applications in sevaral quantum information processing tasks. Here, we are focusing on how the role of the independence of the measurement choices of the end parties in a network works and can be used to enhance the security in a quantum network. In both three-parties two-sources bilocal network and four-parties three-sources star network scenarios, we are able to show, a practical way to understand the relaxation of the assumptions to enhance a real security protocol if someone wants to breach in a network communications. Theoratically, we have proved that by relaxing the independence of the measurement choices of only one end party we can create a Standard Network Nonlocality(SNN) and more stronger Full Network Nonlocality(FNN) and we can get maximum quantum violation by the classical no-signalling local model. We are able to distinguish between two types of network nonlocality in the sense that the FNN is stronger than SNN, i.e., FNN states all the sources in a network need to distribute nonlocal resources.",
+      "paper_authors": [
+        "Amit Kundu",
+        "Debasis Sarkar"
+      ],
+      "primary_category": "quant-ph",
+      "publish_time": "2024-05-20",
+      "update_time": "2024-05-20",
+      "comments": "18 pages, 5 figures, 2 tables, latex2e, comments welcome",
+      "repo_url": "#"
+    },
+    "2405.02949": {
+      "paper_id": "2405.02949v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.02949v1",
+      "paper_key": "2405.02949",
+      "paper_title": "K+K- photoproduction in ultra$-$peripheral Pb$--$Pb collisions",
+      "paper_url": "http://arxiv.org/abs/2405.02949v1",
+      "paper_abstract": "In ultra-peripheral collisions (UPCs) of relativistic heavy ions, photoproduction occurs when a photon emitted from one nucleus interacts with the other nucleus from the opposing beam, producing particles in the final state. Measurements of \\KK photoproduction probe interactions and couplings between the $\\phi (1020)$ and charged kaons with photons and nuclear targets. We report exclusive \\KK photoproduction cross section at midrapidity in \\PbPb collisions at \\snn = 5.02 TeV, which is measured for the first time in UPCs.",
+      "paper_authors": [
+        "Minjung Kim"
+      ],
+      "primary_category": "nucl-ex",
+      "publish_time": "2024-05-05",
+      "update_time": "2024-05-05",
+      "comments": "Proceedings for the contribution presented at the 1st International\n  Workshop on the physics of Ultra Peripheral Collisions (UPC 2023)",
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -10060,6 +10272,999 @@
       "update_time": "2024-08-05",
       "comments": null,
       "repo_url": "#"
+    },
+    "2408.01976": {
+      "paper_id": "2408.01976v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.01976v2",
+      "paper_key": "2408.01976",
+      "paper_title": "Single-Point Supervised High-Resolution Dynamic Network for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2408.01976v2",
+      "paper_abstract": "Infrared small target detection (IRSTD) tasks are extremely challenging for two main reasons: 1) it is difficult to obtain accurate labelling information that is critical to existing methods, and 2) infrared (IR) small target information is easily lost in deep networks. To address these issues, we propose a single-point supervised high-resolution dynamic network (SSHD-Net). In contrast to existing methods, we achieve state-of-the-art (SOTA) detection performance using only single-point supervision. Specifically, we first design a high-resolution cross-feature extraction module (HCEM), that achieves bi-directional feature interaction through stepped feature cascade channels (SFCC). It balances network depth and feature resolution to maintain deep IR small-target information. Secondly, the effective integration of global and local features is achieved through the dynamic coordinate fusion module (DCFM), which enhances the anti-interference ability in complex backgrounds. In addition, we introduce the high-resolution multilevel residual module (HMRM) to enhance the semantic information extraction capability. Finally, we design the adaptive target localization detection head (ATLDH) to improve detection accuracy. Experiments on the publicly available datasets NUDT-SIRST and IRSTD-1k demonstrate the effectiveness of our method. Compared to other SOTA methods, our method can achieve better detection performance with only a single point of supervision.",
+      "paper_authors": [
+        "Jing Wu",
+        "Rixiang Ni",
+        "Feng Huang",
+        "Zhaobing Qiu",
+        "Liqiong Chen",
+        "Changhai Luo",
+        "Yunxiang Li",
+        "Youli Li"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-08-04",
+      "update_time": "2024-08-08",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2407.20090": {
+      "paper_id": "2407.20090v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.20090v1",
+      "paper_key": "2407.20090",
+      "paper_title": "Infrared Small Target Detection based on Adjustable Sensitivity Strategy and Multi-Scale Fusion",
+      "paper_url": "http://arxiv.org/abs/2407.20090v1",
+      "paper_abstract": "Recently, deep learning-based single-frame infrared small target (SIRST) detection technology has made significant progress. However, existing infrared small target detection methods are often optimized for a fixed image resolution, a single wavelength, or a specific imaging system, limiting their breadth and flexibility in practical applications. Therefore, we propose a refined infrared small target detection scheme based on an adjustable sensitivity (AS) strategy and multi-scale fusion. Specifically, a multi-scale model fusion framework based on multi-scale direction-aware network (MSDA-Net) is constructed, which uses input images of multiple scales to train multiple models and fuses them. Multi-scale fusion helps characterize the shape, edge, and texture features of the target from different scales, making the model more accurate and reliable in locating the target. At the same time, we fully consider the characteristics of the infrared small target detection task and construct an edge enhancement difficulty mining (EEDM) loss. The EEDM loss helps alleviate the problem of category imbalance and guides the network to pay more attention to difficult target areas and edge features during training. In addition, we propose an adjustable sensitivity strategy for post-processing. This strategy significantly improves the detection rate of infrared small targets while ensuring segmentation accuracy. Extensive experimental results show that the proposed scheme achieves the best performance. Notably, this scheme won the first prize in the PRCV 2024 wide-area infrared small target detection competition.",
+      "paper_authors": [
+        "Jinmiao Zhao",
+        "Zelin Shi",
+        "Chuang Yu",
+        "Yunpeng Liu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-07-29",
+      "update_time": "2024-07-29",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2407.20078": {
+      "paper_id": "2407.20078v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.20078v1",
+      "paper_key": "2407.20078",
+      "paper_title": "Background Semantics Matter: Cross-Task Feature Exchange Network for Clustered Infrared Small Target Detection With Sky-Annotated Dataset",
+      "paper_url": "http://arxiv.org/abs/2407.20078v1",
+      "paper_abstract": "Infrared small target detection poses unique challenges due to the scarcity of intrinsic target features and the abundance of similar background distractors. We argue that background semantics play a pivotal role in distinguishing visually similar objects for this task. To address this, we introduce a new task -- clustered infrared small target detection, and present DenseSIRST, a novel benchmark dataset that provides per-pixel semantic annotations for background regions, enabling the transition from sparse to dense target detection. Leveraging this dataset, we propose the Background-Aware Feature Exchange Network (BAFE-Net), which transforms the detection paradigm from a single task focused on the foreground to a multi-task architecture that jointly performs target detection and background semantic segmentation. BAFE-Net introduces a cross-task feature hard-exchange mechanism to embed target and background semantics between the two tasks. Furthermore, we propose the Background-Aware Gaussian Copy-Paste (BAG-CP) method, which selectively pastes small targets into sky regions during training, avoiding the creation of false alarm targets in complex non-sky backgrounds. Extensive experiments validate the effectiveness of BAG-CP and BAFE-Net in improving target detection accuracy while reducing false alarms. The DenseSIRST dataset, code, and trained models are available at https://github.com/GrokCV/BAFE-Net.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Mengxuan Xiao",
+        "Yiming Zhu",
+        "Huan Wang",
+        "Kehua Guo",
+        "Jian Yang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-07-29",
+      "update_time": "2024-07-29",
+      "comments": null,
+      "repo_url": "https://github.com/grokcv/bafe-net"
+    },
+    "2407.15369": {
+      "paper_id": "2407.15369v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.15369v1",
+      "paper_key": "2407.15369",
+      "paper_title": "Sparse Prior Is Not All You Need: When Differential Directionality Meets Saliency Coherence for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2407.15369v1",
+      "paper_abstract": "Infrared small target detection is crucial for the efficacy of infrared search and tracking systems. Current tensor decomposition methods emphasize representing small targets with sparsity but struggle to separate targets from complex backgrounds due to insufficient use of intrinsic directional information and reduced target visibility during decomposition. To address these challenges, this study introduces a Sparse Differential Directionality prior (SDD) framework. SDD leverages the distinct directional characteristics of targets to differentiate them from the background, applying mixed sparse constraints on the differential directional images and continuity difference matrix of the temporal component, both derived from Tucker decomposition. We further enhance target detectability with a saliency coherence strategy that intensifies target contrast against the background during hierarchical decomposition. A Proximal Alternating Minimization-based (PAM) algorithm efficiently solves our proposed model. Experimental results on several real-world datasets validate our method's effectiveness, outperforming ten state-of-the-art methods in target detection and clutter suppression. Our code is available at https://github.com/GrokCV/SDD.",
+      "paper_authors": [
+        "Fei Zhou",
+        "Maixia Fu",
+        "Yulei Qian",
+        "Jian Yang",
+        "Yimian Dai"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-07-22",
+      "update_time": "2024-07-22",
+      "comments": "Submitted to IEEE TIM, Minor Revision",
+      "repo_url": "https://github.com/grokcv/sdd"
+    },
+    "2407.07520": {
+      "paper_id": "2407.07520v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.07520v1",
+      "paper_key": "2407.07520",
+      "paper_title": "IRSAM: Advancing Segment Anything Model for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2407.07520v1",
+      "paper_abstract": "The recent Segment Anything Model (SAM) is a significant advancement in natural image segmentation, exhibiting potent zero-shot performance suitable for various downstream image segmentation tasks. However, directly utilizing the pretrained SAM for Infrared Small Target Detection (IRSTD) task falls short in achieving satisfying performance due to a notable domain gap between natural and infrared images. Unlike a visible light camera, a thermal imager reveals an object's temperature distribution by capturing infrared radiation. Small targets often show a subtle temperature transition at the object's boundaries. To address this issue, we propose the IRSAM model for IRSTD, which improves SAM's encoder-decoder architecture to learn better feature representation of infrared small objects. Specifically, we design a Perona-Malik diffusion (PMD)-based block and incorporate it into multiple levels of SAM's encoder to help it capture essential structural features while suppressing noise. Additionally, we devise a Granularity-Aware Decoder (GAD) to fuse the multi-granularity feature from the encoder to capture structural information that may be lost in long-distance modeling. Extensive experiments on the public datasets, including NUAA-SIRST, NUDT-SIRST, and IRSTD-1K, validate the design choice of IRSAM and its significant superiority over representative state-of-the-art methods. The source code are available at: github.com/IPIC-Lab/IRSAM.",
+      "paper_authors": [
+        "Mingjin Zhang",
+        "Yuchun Wang",
+        "Jie Guo",
+        "Yunsong Li",
+        "Xinbo Gao",
+        "Jing Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-07-10",
+      "update_time": "2024-07-10",
+      "comments": "18 pages, 8 figures, to be published in ECCV2024",
+      "repo_url": "https://github.com/ipic-lab/irsam"
+    },
+    "2406.13445": {
+      "paper_id": "2406.13445v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.13445v1",
+      "paper_key": "2406.13445",
+      "paper_title": "Lost in UNet: Improving Infrared Small Target Detection by Underappreciated Local Features",
+      "paper_url": "http://arxiv.org/abs/2406.13445v1",
+      "paper_abstract": "Many targets are often very small in infrared images due to the long-distance imaging meachnism. UNet and its variants, as popular detection backbone networks, downsample the local features early and cause the irreversible loss of these local features, leading to both the missed and false detection of small targets in infrared images. We propose HintU, a novel network to recover the local features lost by various UNet-based methods for effective infrared small target detection. HintU has two key contributions. First, it introduces the \"Hint\" mechanism for the first time, i.e., leveraging the prior knowledge of target locations to highlight critical local features. Second, it improves the mainstream UNet-based architecture to preserve target pixels even after downsampling. HintU can shift the focus of various networks (e.g., vanilla UNet, UNet++, UIUNet, MiM+, and HCFNet) from the irrelevant background pixels to a more restricted area from the beginning. Experimental results on three datasets NUDT-SIRST, SIRSTv2 and IRSTD1K demonstrate that HintU enhances the performance of existing methods with only an additional 1.88 ms cost (on RTX Titan). Additionally, the explicit constraints of HintU enhance the generalization ability of UNet-based methods. Code is available at https://github.com/Wuzhou-Quan/HintU.",
+      "paper_authors": [
+        "Wuzhou Quan",
+        "Wei Zhao",
+        "Weiming Wang",
+        "Haoran Xie",
+        "Fu Lee Wang",
+        "Mingqiang Wei"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-06-19",
+      "update_time": "2024-06-19",
+      "comments": null,
+      "repo_url": "https://github.com/wuzhou-quan/hintu"
+    },
+    "2406.06949": {
+      "paper_id": "2406.06949v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.06949v1",
+      "paper_key": "2406.06949",
+      "paper_title": "Triple-domain Feature Learning with Frequency-aware Memory Enhancement for Moving Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2406.06949v1",
+      "paper_abstract": "Moving infrared small target detection presents significant challenges due to tiny target sizes and low contrast against backgrounds. Currently-existing methods primarily focus on extracting target features only from the spatial-temporal domain. For further enhancing feature representation, more information domains such as frequency are believed to be potentially valuable. To extend target feature learning, we propose a new Triple-domain Strategy (Tridos) with the frequency-aware memory enhancement on the spatial-temporal domain. In our scheme, it effectively detaches and enhances frequency features by a local-global frequency-aware module with Fourier transform. Inspired by the human visual system, our memory enhancement aims to capture the target spatial relations between video frames. Furthermore, it encodes temporal dynamics motion features via differential learning and residual enhancing. Additionally, we further design a residual compensation unit to reconcile possible cross-domain feature mismatches. To our best knowledge, our Tridos is the first work to explore target feature learning comprehensively in spatial-temporal-frequency domains. The extensive experiments on three datasets (DAUB, ITSDT-15K, and IRDST) validate that our triple-domain learning scheme could be obviously superior to state-of-the-art ones. Source codes are available at https://github.com/UESTC-nnLab/Tridos.",
+      "paper_authors": [
+        "Weiwei Duan",
+        "Luping Ji",
+        "Shengjia Chen",
+        "Sicheng Zhu",
+        "Mao Ye"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-06-11",
+      "update_time": "2024-06-11",
+      "comments": "This paper has submitted to IEEE TGRS,under review",
+      "repo_url": "https://github.com/uestc-nnlab/tridos"
+    },
+    "2406.02037": {
+      "paper_id": "2406.02037v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.02037v1",
+      "paper_key": "2406.02037",
+      "paper_title": "Multi-Scale Direction-Aware Network for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2406.02037v1",
+      "paper_abstract": "Infrared small target detection faces the problem that it is difficult to effectively separate the background and the target. Existing deep learning-based methods focus on appearance features and ignore high-frequency directional features. Therefore, we propose a multi-scale direction-aware network (MSDA-Net), which is the first attempt to integrate the high-frequency directional features of infrared small targets as domain prior knowledge into neural networks. Specifically, an innovative multi-directional feature awareness (MDFA) module is constructed, which fully utilizes the prior knowledge of targets and emphasizes the focus on high-frequency directional features. On this basis, combined with the multi-scale local relation learning (MLRL) module, a multi-scale direction-aware (MSDA) module is further constructed. The MSDA module promotes the full extraction of local relations at different scales and the full perception of key features in different directions. Meanwhile, a high-frequency direction injection (HFDI) module without training parameters is constructed to inject the high-frequency directional information of the original image into the network. This helps guide the network to pay attention to detailed information such as target edges and shapes. In addition, we propose a feature aggregation (FA) structure that aggregates multi-level features to solve the problem of small targets disappearing in deep feature maps. Furthermore, a lightweight feature alignment fusion (FAF) module is constructed, which can effectively alleviate the pixel offset existing in multi-level feature map fusion. Extensive experimental results show that our MSDA-Net achieves state-of-the-art (SOTA) results on the public NUDT-SIRST, SIRST and IRSTD-1k datasets.",
+      "paper_authors": [
+        "Jinmiao Zhao",
+        "Zelin Shi",
+        "Chuang Yu",
+        "Yunpeng Liu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-06-04",
+      "update_time": "2024-06-04",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2406.00632": {
+      "paper_id": "2406.00632v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.00632v1",
+      "paper_key": "2406.00632",
+      "paper_title": "Diff-Mosaic: Augmenting Realistic Representations in Infrared Small Target Detection via Diffusion Prior",
+      "paper_url": "http://arxiv.org/abs/2406.00632v1",
+      "paper_abstract": "Recently, researchers have proposed various deep learning methods to accurately detect infrared targets with the characteristics of indistinct shape and texture. Due to the limited variety of infrared datasets, training deep learning models with good generalization poses a challenge. To augment the infrared dataset, researchers employ data augmentation techniques, which often involve generating new images by combining images from different datasets. However, these methods are lacking in two respects. In terms of realism, the images generated by mixup-based methods lack realism and are difficult to effectively simulate complex real-world scenarios. In terms of diversity, compared with real-world scenes, borrowing knowledge from another dataset inherently has a limited diversity. Currently, the diffusion model stands out as an innovative generative approach. Large-scale trained diffusion models have a strong generative prior that enables real-world modeling of images to generate diverse and realistic images. In this paper, we propose Diff-Mosaic, a data augmentation method based on the diffusion model. This model effectively alleviates the challenge of diversity and realism of data augmentation methods via diffusion prior. Specifically, our method consists of two stages. Firstly, we introduce an enhancement network called Pixel-Prior, which generates highly coordinated and realistic Mosaic images by harmonizing pixels. In the second stage, we propose an image enhancement strategy named Diff-Prior. This strategy utilizes diffusion priors to model images in the real-world scene, further enhancing the diversity and realism of the images. Extensive experiments have demonstrated that our approach significantly improves the performance of the detection network. The code is available at https://github.com/YupeiLin2388/Diff-Mosaic",
+      "paper_authors": [
+        "Yukai Shi",
+        "Yupei Lin",
+        "Pengxu Wei",
+        "Xiaoyu Xian",
+        "Tianshui Chen",
+        "Liang Lin"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-06-02",
+      "update_time": "2024-06-02",
+      "comments": null,
+      "repo_url": "https://github.com/yupeilin2388/diff-mosaic"
+    },
+    "2403.19366": {
+      "paper_id": "2403.19366v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.19366v1",
+      "paper_key": "2403.19366",
+      "paper_title": "Infrared Small Target Detection with Scale and Location Sensitivity",
+      "paper_url": "http://arxiv.org/abs/2403.19366v1",
+      "paper_abstract": "Recently, infrared small target detection (IRSTD) has been dominated by deep-learning-based methods. However, these methods mainly focus on the design of complex model structures to extract discriminative features, leaving the loss functions for IRSTD under-explored. For example, the widely used Intersection over Union (IoU) and Dice losses lack sensitivity to the scales and locations of targets, limiting the detection performance of detectors. In this paper, we focus on boosting detection performance with a more effective loss but a simpler model structure. Specifically, we first propose a novel Scale and Location Sensitive (SLS) loss to handle the limitations of existing losses: 1) for scale sensitivity, we compute a weight for the IoU loss based on target scales to help the detector distinguish targets with different scales: 2) for location sensitivity, we introduce a penalty term based on the center points of targets to help the detector localize targets more precisely. Then, we design a simple Multi-Scale Head to the plain U-Net (MSHNet). By applying SLS loss to each scale of the predictions, our MSHNet outperforms existing state-of-the-art methods by a large margin. In addition, the detection performance of existing detectors can be further improved when trained with our SLS loss, demonstrating the effectiveness and generalization of our SLS loss. The code is available at https://github.com/ying-fu/MSHNet.",
+      "paper_authors": [
+        "Qiankun Liu",
+        "Rui Liu",
+        "Bolun Zheng",
+        "Hongkui Wang",
+        "Ying Fu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-03-28",
+      "update_time": "2024-03-28",
+      "comments": "Accepted by CVPR 2024",
+      "repo_url": "https://github.com/ying-fu/mshnet"
+    },
+    "2403.08380": {
+      "paper_id": "2403.08380v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.08380v1",
+      "paper_key": "2403.08380",
+      "paper_title": "Mitigate Target-level Insensitivity of Infrared Small Target Detection via Posterior Distribution Modeling",
+      "paper_url": "http://arxiv.org/abs/2403.08380v1",
+      "paper_abstract": "Infrared Small Target Detection (IRSTD) aims to segment small targets from infrared clutter background. Existing methods mainly focus on discriminative approaches, i.e., a pixel-level front-background binary segmentation. Since infrared small targets are small and low signal-to-clutter ratio, empirical risk has few disturbances when a certain false alarm and missed detection exist, which seriously affect the further improvement of such methods. Motivated by the dense prediction generative methods, in this paper, we propose a diffusion model framework for Infrared Small Target Detection which compensates pixel-level discriminant with mask posterior distribution modeling. Furthermore, we design a Low-frequency Isolation in the wavelet domain to suppress the interference of intrinsic infrared noise on the diffusion noise estimation. This transition from the discriminative paradigm to generative one enables us to bypass the target-level insensitivity. Experiments show that the proposed method achieves competitive performance gains over state-of-the-art methods on NUAA-SIRST, IRSTD-1k, and NUDT-SIRST datasets. Code are available at https://github.com/Li-Haoqing/IRSTD-Diff.",
+      "paper_authors": [
+        "Haoqing Li",
+        "Jinfu Yang",
+        "Yifei Xu",
+        "Runshi Wang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-03-13",
+      "update_time": "2024-03-13",
+      "comments": null,
+      "repo_url": "https://github.com/li-haoqing/irstd-diff"
+    },
+    "2403.05416": {
+      "paper_id": "2403.05416v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.05416v1",
+      "paper_key": "2403.05416",
+      "paper_title": "SIRST-5K: Exploring Massive Negatives Synthesis with Self-supervised Learning for Robust Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2403.05416v1",
+      "paper_abstract": "Single-frame infrared small target (SIRST) detection aims to recognize small targets from clutter backgrounds. Recently, convolutional neural networks have achieved significant advantages in general object detection. With the development of Transformer, the scale of SIRST models is constantly increasing. Due to the limited training samples, performance has not been improved accordingly. The quality, quantity, and diversity of the infrared dataset are critical to the detection of small targets. To highlight this issue, we propose a negative sample augmentation method in this paper. Specifically, a negative augmentation approach is proposed to generate massive negatives for self-supervised learning. Firstly, we perform a sequential noise modeling technology to generate realistic infrared data. Secondly, we fuse the extracted noise with the original data to facilitate diversity and fidelity in the generated data. Lastly, we proposed a negative augmentation strategy to enrich diversity as well as maintain semantic invariance. The proposed algorithm produces a synthetic SIRST-5K dataset, which contains massive pseudo-data and corresponding labels. With a rich diversity of infrared small target data, our algorithm significantly improves the model performance and convergence speed. Compared with other state-of-the-art (SOTA) methods, our method achieves outstanding performance in terms of probability of detection (Pd), false-alarm rate (Fa), and intersection over union (IoU).",
+      "paper_authors": [
+        "Yahao Lu",
+        "Yupei Lin",
+        "Han Wu",
+        "Xiaoyu Xian",
+        "Yukai Shi",
+        "Liang Lin"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-03-08",
+      "update_time": "2024-03-08",
+      "comments": "We address the quality, quantity, and diversity of the infrared data\n  in SIRST, the dataset is available at: https://github.com/luy0222/SIRST-5K",
+      "repo_url": "https://github.com/luy0222/sirst-5k"
+    },
+    "2403.02148": {
+      "paper_id": "2403.02148v4",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.02148v4",
+      "paper_key": "2403.02148",
+      "paper_title": "MiM-ISTD: Mamba-in-Mamba for Efficient Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2403.02148v4",
+      "paper_abstract": "Recently, infrared small target detection (ISTD) has made significant progress, thanks to the development of basic models. Specifically, the models combining CNNs with transformers can successfully extract both local and global features. However, the disadvantage of the transformer is also inherited, i.e., the quadratic computational complexity to sequence length. Inspired by the recent basic model with linear complexity for long-distance modeling, Mamba, we explore the potential of this state space model for ISTD task in terms of effectiveness and efficiency in the paper. However, directly applying Mamba achieves suboptimal performances due to the insufficient harnessing of local features, which are imperative for detecting small targets. Instead, we tailor a nested structure, Mamba-in-Mamba (MiM-ISTD), for efficient ISTD. It consists of Outer and Inner Mamba blocks to adeptly capture both global and local features. Specifically, we treat the local patches as \"visual sentences\" and use the Outer Mamba to explore the global information. We then decompose each visual sentence into sub-patches as \"visual words\" and use the Inner Mamba to further explore the local information among words in the visual sentence with negligible computational costs. By aggregating the visual word and visual sentence features, our MiM-ISTD can effectively explore both global and local information. Experiments on NUAA-SIRST and IRSTD-1k show the superior accuracy and efficiency of our method. Specifically, MiM-ISTD is $8 \\times$ faster than the SOTA method and reduces GPU memory usage by 62.2$\\%$ when testing on $2048 \\times 2048$ images, overcoming the computation and memory constraints on high-resolution infrared images.",
+      "paper_authors": [
+        "Tianxiang Chen",
+        "Zi Ye",
+        "Zhentao Tan",
+        "Tao Gong",
+        "Yue Wu",
+        "Qi Chu",
+        "Bin Liu",
+        "Nenghai Yu",
+        "Jieping Ye"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-03-04",
+      "update_time": "2024-06-24",
+      "comments": "The first Mamba-based model for infrared small target detection",
+      "repo_url": "https://github.com/txchen-ustc/mim-istd"
+    },
+    "2402.18003": {
+      "paper_id": "2402.18003v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2402.18003v1",
+      "paper_key": "2402.18003",
+      "paper_title": "Infrared Small Target Detection via tensor $L_{2,1}$ norm minimization and ASSTV regularization: A Novel Tensor Recovery Approach",
+      "paper_url": "http://arxiv.org/abs/2402.18003v1",
+      "paper_abstract": "In recent years, there has been a noteworthy focus on infrared small target detection, given its vital importance in processing signals from infrared remote sensing. The considerable computational cost incurred by prior methods, relying excessively on nuclear norm for noise separation, necessitates the exploration of efficient alternatives. The aim of this research is to identify a swift and resilient tensor recovery method for the efficient extraction of infrared small targets from image sequences. Theoretical validation indicates that smaller singular values predominantly contribute to constructing noise information. In the exclusion process, tensor QR decomposition is employed to reasonably reduce the size of the target tensor. Subsequently, we address a tensor $L_{2,1}$ Norm Minimization via T-QR (TLNMTQR) based method to effectively isolate the noise, markedly improving computational speed without compromising accuracy. Concurrently, by integrating the asymmetric spatial-temporal total variation regularization method (ASSTV), our objective is to augment the flexibility and efficacy of our algorithm in handling time series data. Ultimately, our method underwent rigorous testing with real-world data, affirmatively showcasing the superiority of our algorithm in terms of speed, precision, and robustness.",
+      "paper_authors": [
+        "Jiqian Zhao",
+        "An-Bao Xu"
+      ],
+      "primary_category": "math.NA",
+      "publish_time": "2024-02-28",
+      "update_time": "2024-02-28",
+      "comments": "11 pages, 38 figures",
+      "repo_url": "#"
+    },
+    "2402.05410": {
+      "paper_id": "2402.05410v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2402.05410v1",
+      "paper_key": "2402.05410",
+      "paper_title": "SpirDet: Towards Efficient, Accurate and Lightweight Infrared Small Target Detector",
+      "paper_url": "http://arxiv.org/abs/2402.05410v1",
+      "paper_abstract": "In recent years, the detection of infrared small targets using deep learning methods has garnered substantial attention due to notable advancements. To improve the detection capability of small targets, these methods commonly maintain a pathway that preserves high-resolution features of sparse and tiny targets. However, it can result in redundant and expensive computations. To tackle this challenge, we propose SpirDet, a novel approach for efficient detection of infrared small targets. Specifically, to cope with the computational redundancy issue, we employ a new dual-branch sparse decoder to restore the feature map. Firstly, the fast branch directly predicts a sparse map indicating potential small target locations (occupying only 0.5\\% area of the map). Secondly, the slow branch conducts fine-grained adjustments at the positions indicated by the sparse map. Additionally, we design an lightweight DO-RepEncoder based on reparameterization with the Downsampling Orthogonality, which can effectively reduce memory consumption and inference latency. Extensive experiments show that the proposed SpirDet significantly outperforms state-of-the-art models while achieving faster inference speed and fewer parameters. For example, on the IRSTD-1K dataset, SpirDet improves $MIoU$ by 4.7 and has a $7\\times$ $FPS$ acceleration compared to the previous state-of-the-art model. The code will be open to the public.",
+      "paper_authors": [
+        "Qianchen Mao",
+        "Qiang Li",
+        "Bingshu Wang",
+        "Yongjun Zhang",
+        "Tao Dai",
+        "C. L. Philip Chen"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-02-08",
+      "update_time": "2024-02-08",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2402.02288": {
+      "paper_id": "2402.02288v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2402.02288v1",
+      "paper_key": "2402.02288",
+      "paper_title": "$\\textit{A Contrario}$ Paradigm for YOLO-based Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2402.02288v1",
+      "paper_abstract": "Detecting small to tiny targets in infrared images is a challenging task in computer vision, especially when it comes to differentiating these targets from noisy or textured backgrounds. Traditional object detection methods such as YOLO struggle to detect tiny objects compared to segmentation neural networks, resulting in weaker performance when detecting small targets. To reduce the number of false alarms while maintaining a high detection rate, we introduce an $\\textit{a contrario}$ decision criterion into the training of a YOLO detector. The latter takes advantage of the $\\textit{unexpectedness}$ of small targets to discriminate them from complex backgrounds. Adding this statistical criterion to a YOLOv7-tiny bridges the performance gap between state-of-the-art segmentation methods for infrared small target detection and object detection networks. It also significantly increases the robustness of YOLO towards few-shot settings.",
+      "paper_authors": [
+        "Alina Ciocarlan",
+        "Sylvie Le H\u00e9garat-Mascle",
+        "Sidonie Lefebvre",
+        "Arnaud Woiselle",
+        "Clara Barbanson"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-02-03",
+      "update_time": "2024-02-03",
+      "comments": "Accepted to ICASSP 2024",
+      "repo_url": "#"
+    },
+    "2402.02046": {
+      "paper_id": "2402.02046v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2402.02046v1",
+      "paper_key": "2402.02046",
+      "paper_title": "TCI-Former: Thermal Conduction-Inspired Transformer for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2402.02046v1",
+      "paper_abstract": "Infrared small target detection (ISTD) is critical to national security and has been extensively applied in military areas. ISTD aims to segment small target pixels from background. Most ISTD networks focus on designing feature extraction blocks or feature fusion modules, but rarely describe the ISTD process from the feature map evolution perspective. In the ISTD process, the network attention gradually shifts towards target areas. We abstract this process as the directional movement of feature map pixels to target areas through convolution, pooling and interactions with surrounding pixels, which can be analogous to the movement of thermal particles constrained by surrounding variables and particles. In light of this analogy, we propose Thermal Conduction-Inspired Transformer (TCI-Former) based on the theoretical principles of thermal conduction. According to thermal conduction differential equation in heat dynamics, we derive the pixel movement differential equation (PMDE) in the image domain and further develop two modules: Thermal Conduction-Inspired Attention (TCIA) and Thermal Conduction Boundary Module (TCBM). TCIA incorporates finite difference method with PMDE to reach a numerical approximation so that target body features can be extracted. To further remove errors in boundary areas, TCBM is designed and supervised by boundary masks to refine target body features with fine boundary details. Experiments on IRSTD-1k and NUAA-SIRST demonstrate the superiority of our method.",
+      "paper_authors": [
+        "Tianxiang Chen",
+        "Zhentao Tan",
+        "Qi Chu",
+        "Yue Wu",
+        "Bin Liu",
+        "Nenghai Yu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-02-03",
+      "update_time": "2024-02-03",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2401.15583": {
+      "paper_id": "2401.15583v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2401.15583v3",
+      "paper_key": "2401.15583",
+      "paper_title": "SCTransNet: Spatial-channel Cross Transformer Network for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2401.15583v3",
+      "paper_abstract": "Infrared small target detection (IRSTD) has recently benefitted greatly from U-shaped neural models. However, largely overlooking effective global information modeling, existing techniques struggle when the target has high similarities with the background. We present a Spatial-channel Cross Transformer Network (SCTransNet) that leverages spatial-channel cross transformer blocks (SCTBs) on top of long-range skip connections to address the aforementioned challenge. In the proposed SCTBs, the outputs of all encoders are interacted with cross transformer to generate mixed features, which are redistributed to all decoders to effectively reinforce semantic differences between the target and clutter at full scales. Specifically, SCTB contains the following two key elements: (a) spatial-embedded single-head channel-cross attention (SSCA) for exchanging local spatial features and full-level global channel information to eliminate ambiguity among the encoders and facilitate high-level semantic associations of the images, and (b) a complementary feed-forward network (CFN) for enhancing the feature discriminability via a multi-scale strategy and cross-spatial-channel information interaction to promote beneficial information transfer. Our SCTransNet effectively encodes the semantic differences between targets and backgrounds to boost its internal representation for detecting small infrared targets accurately. Extensive experiments on three public datasets, NUDT-SIRST, NUAA-SIRST, and IRSTD-1k, demonstrate that the proposed SCTransNet outperforms existing IRSTD methods. Our code will be made public at https://github.com/xdFai.",
+      "paper_authors": [
+        "Shuai Yuan",
+        "Hanlin Qin",
+        "Xiang Yan",
+        "Naveed AKhtar",
+        "Ajmal Mian"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-01-28",
+      "update_time": "2024-04-30",
+      "comments": null,
+      "repo_url": "https://github.com/xdfai/sctransnet"
+    },
+    "2401.15578": {
+      "paper_id": "2401.15578v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2401.15578v2",
+      "paper_key": "2401.15578",
+      "paper_title": "ASCNet: Asymmetric Sampling Correction Network for Infrared Image Destriping",
+      "paper_url": "http://arxiv.org/abs/2401.15578v2",
+      "paper_abstract": "In a real-world infrared imaging system, effectively learning a consistent stripe noise removal model is essential. Most existing destriping methods cannot precisely reconstruct images due to cross-level semantic gaps and insufficient characterization of the global column features. To tackle this problem, we propose a novel infrared image destriping method, called Asymmetric Sampling Correction Network (ASCNet), that can effectively capture global column relationships and embed them into a U-shaped framework, providing comprehensive discriminative representation and seamless semantic connectivity. Our ASCNet consists of three core elements: Residual Haar Discrete Wavelet Transform (RHDWT), Pixel Shuffle (PS), and Column Non-uniformity Correction Module (CNCM). Specifically, RHDWT is a novel downsampler that employs double-branch modeling to effectively integrate stripe-directional prior knowledge and data-driven semantic interaction to enrich the feature representation. Observing the semantic patterns crosstalk of stripe noise, PS is introduced as an upsampler to prevent excessive apriori decoding and performing semantic-bias-free image reconstruction. After each sampling, CNCM captures the column relationships in long-range dependencies. By incorporating column, spatial, and self-dependence information, CNCM well establishes a global context to distinguish stripes from the scene's vertical structures. Extensive experiments on synthetic data, real data, and infrared small target detection tasks demonstrate that the proposed method outperforms state-of-the-art single-image destriping methods both visually and quantitatively. Our code will be made publicly available at https://github.com/xdFai/ASCNet.",
+      "paper_authors": [
+        "Shuai Yuan",
+        "Hanlin Qin",
+        "Xiang Yan",
+        "Shiqi Yang",
+        "Shuowen Yang",
+        "Naveed Akhtar"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-01-28",
+      "update_time": "2024-06-04",
+      "comments": null,
+      "repo_url": "https://github.com/xdfai/ascnet"
+    },
+    "2311.08747": {
+      "paper_id": "2311.08747v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2311.08747v3",
+      "paper_key": "2311.08747",
+      "paper_title": "Improved Dense Nested Attention Network Based on Transformer for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2311.08747v3",
+      "paper_abstract": "Infrared small target detection based on deep learning offers unique advantages in separating small targets from complex and dynamic backgrounds. However, the features of infrared small targets gradually weaken as the depth of convolutional neural network (CNN) increases. To address this issue, we propose a novel method for detecting infrared small targets called improved dense nested attention network (IDNANet), which is based on the transformer architecture. We preserve the dense nested structure of dense nested attention network (DNANet) and introduce the Swin-transformer during feature extraction stage to enhance the continuity of features. Furthermore, we integrate the ACmix attention structure into the dense nested structure to enhance the features of intermediate layers. Additionally, we design a weighted dice binary cross-entropy (WD-BCE) loss function to mitigate the negative impact of foreground-background imbalance in the samples. Moreover, we develop a dataset specifically for infrared small targets, called BIT-SIRST. The dataset comprises a significant amount of real-world targets and manually annotated labels, as well as synthetic data and corresponding labels. We have evaluated the effectiveness of our method through experiments conducted on public datasets. In comparison to other state-of-the-art methods, our approach outperforms in terms of probability of detection ($P_d$), false-alarm rate ($F_a$), and mean intersection of union ($mIoU$). The $mIoU$ reaches 90.89\\% on the NUDT-SIRST dataset and 79.72\\% on the SIRST dataset. The BIT-SIRST dataset and codes are available openly at \\href{https://github.com/EdwardBao1006/bit\\_sirst}{\\color[HTML]{B22222}{https://github.com/EdwardBao1006/bit\\_sirst}}.",
+      "paper_authors": [
+        "Chun Bao",
+        "Jie Cao",
+        "Yaqian Ning",
+        "Tianhua Zhao",
+        "Zhijun Li",
+        "Zechen Wang",
+        "Li Zhang",
+        "Qun Hao"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-11-15",
+      "update_time": "2024-01-17",
+      "comments": null,
+      "repo_url": "https://github.com/edwardbao1006/bit_sirst"
+    },
+    "2311.00917": {
+      "paper_id": "2311.00917v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2311.00917v1",
+      "paper_key": "2311.00917",
+      "paper_title": "RPCANet: Deep Unfolding RPCA Based Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2311.00917v1",
+      "paper_abstract": "Deep learning (DL) networks have achieved remarkable performance in infrared small target detection (ISTD). However, these structures exhibit a deficiency in interpretability and are widely regarded as black boxes, as they disregard domain knowledge in ISTD. To alleviate this issue, this work proposes an interpretable deep network for detecting infrared dim targets, dubbed RPCANet. Specifically, our approach formulates the ISTD task as sparse target extraction, low-rank background estimation, and image reconstruction in a relaxed Robust Principle Component Analysis (RPCA) model. By unfolding the iterative optimization updating steps into a deep-learning framework, time-consuming and complex matrix calculations are replaced by theory-guided neural networks. RPCANet detects targets with clear interpretability and preserves the intrinsic image feature, instead of directly transforming the detection task into a matrix decomposition problem. Extensive experiments substantiate the effectiveness of our deep unfolding framework and demonstrate its trustworthy results, surpassing baseline methods in both qualitative and quantitative evaluations.",
+      "paper_authors": [
+        "Fengyi Wu",
+        "Tianfang Zhang",
+        "Lei Li",
+        "Yian Huang",
+        "Zhenming Peng"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-11-02",
+      "update_time": "2023-11-02",
+      "comments": "WACV2024",
+      "repo_url": "https://github.com/fengyiwu98/rpcanet"
+    },
+    "2310.12562": {
+      "paper_id": "2310.12562v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2310.12562v1",
+      "paper_key": "2310.12562",
+      "paper_title": "Click on Mask: A Labor-efficient Annotation Framework with Level Set for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2310.12562v1",
+      "paper_abstract": "Infrared Small Target Detection is a challenging task to separate small targets from infrared clutter background. Recently, deep learning paradigms have achieved promising results. However, these data-driven methods need plenty of manual annotation. Due to the small size of infrared targets, manual annotation consumes more resources and restricts the development of this field. This letter proposed a labor-efficient and cursory annotation framework with level set, which obtains a high-quality pseudo mask with only one cursory click. A variational level set formulation with an expectation difference energy functional is designed, in which the zero level contour is intrinsically maintained during the level set evolution. It solves the issue that zero level contour disappearing due to small target size and excessive regularization. Experiments on the NUAA-SIRST and IRSTD-1k datasets reveal that our approach achieves superior performance. Code is available at https://github.com/Li-Haoqing/COM.",
+      "paper_authors": [
+        "Haoqing Li",
+        "Jinfu Yang",
+        "Yifei Xu",
+        "Runshi Wang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-10-19",
+      "update_time": "2023-10-19",
+      "comments": "4 pages, 5 figures, references added",
+      "repo_url": "https://github.com/li-haoqing/com"
+    },
+    "2310.05347": {
+      "paper_id": "2310.05347v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2310.05347v1",
+      "paper_key": "2310.05347",
+      "paper_title": "Infrared Small Target Detection Using Double-Weighted Multi-Granularity Patch Tensor Model With Tensor-Train Decomposition",
+      "paper_url": "http://arxiv.org/abs/2310.05347v1",
+      "paper_abstract": "Infrared small target detection plays an important role in the remote sensing fields. Therefore, many detection algorithms have been proposed, in which the infrared patch-tensor (IPT) model has become a mainstream tool due to its excellent performance. However, most IPT-based methods face great challenges, such as inaccurate measure of the tensor low-rankness and poor robustness to complex scenes, which will leadto poor detection performance. In order to solve these problems, this paper proposes a novel double-weighted multi-granularity infrared patch tensor (DWMGIPT) model. First, to capture different granularity information of tensor from multiple modes, a multi-granularity infrared patch tensor (MGIPT) model is constructed by collecting nonoverlapping patches and tensor augmentation based on the tensor train (TT) decomposition. Second, to explore the latent structure of tensor more efficiently, we utilize the auto-weighted mechanism to balance the importance of information at different granularity. Then, the steering kernel (SK) is employed to extract local structure prior, which suppresses background interference such as strong edges and noise. Finally, an efficient optimization algorithm based on the alternating direction method of multipliers (ADMM) is presented to solve the model. Extensive experiments in various challenging scenes show that the proposed algorithm is robust to noise and different scenes. Compared with the other eight state-of-the-art methods, different evaluation metrics demonstrate that our method achieves better detection performance in various complex scenes.",
+      "paper_authors": [
+        "Guiyu Zhang",
+        "Qunbo Lv",
+        "Zui Tao",
+        "Baoyu Zhu",
+        "Zheng Tan",
+        "Yuan Ma"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-10-09",
+      "update_time": "2023-10-09",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2309.13646": {
+      "paper_id": "2309.13646v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2309.13646v1",
+      "paper_key": "2309.13646",
+      "paper_title": "ILNet: Low-level Matters for Salient Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2309.13646v1",
+      "paper_abstract": "Infrared small target detection is a technique for finding small targets from infrared clutter background. Due to the dearth of high-level semantic information, small infrared target features are weakened in the deep layers of the CNN, which underachieves the CNN's representation ability. To address the above problem, in this paper, we propose an infrared low-level network (ILNet) that considers infrared small targets as salient areas with little semantic information. Unlike other SOTA methods, ILNet pays greater attention to low-level information instead of treating them equally. A new lightweight feature fusion module, named Interactive Polarized Orthogonal Fusion module (IPOF), is proposed, which integrates more important low-level features from the shallow layers into the deep layers. A Dynamic One-Dimensional Aggregation layers (DODA) are inserted into the IPOF, to dynamically adjust the aggregation of low dimensional information according to the number of input channels. In addition, the idea of ensemble learning is used to design a Representative Block (RB) to dynamically allocate weights for shallow and deep layers. Experimental results on the challenging NUAA-SIRST (78.22% nIoU and 1.33e-6 Fa) and IRSTD-1K (68.91% nIoU and 3.23e-6 Fa) dataset demonstrate that the proposed ILNet can get better performances than other SOTA methods. Moreover, ILNet can obtain a greater improvement with the increasement of data volume. Training code are available at https://github.com/Li-Haoqing/ILNet.",
+      "paper_authors": [
+        "Haoqing Li",
+        "Jinfu Yang",
+        "Runshi Wang",
+        "Yifei Xu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-09-24",
+      "update_time": "2023-09-24",
+      "comments": null,
+      "repo_url": "https://github.com/li-haoqing/ilnet"
+    },
+    "2309.01099": {
+      "paper_id": "2309.01099v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2309.01099v1",
+      "paper_key": "2309.01099",
+      "paper_title": "Enhancing Infrared Small Target Detection Robustness with Bi-Level Adversarial Framework",
+      "paper_url": "http://arxiv.org/abs/2309.01099v1",
+      "paper_abstract": "The detection of small infrared targets against blurred and cluttered backgrounds has remained an enduring challenge. In recent years, learning-based schemes have become the mainstream methodology to establish the mapping directly. However, these methods are susceptible to the inherent complexities of changing backgrounds and real-world disturbances, leading to unreliable and compromised target estimations. In this work, we propose a bi-level adversarial framework to promote the robustness of detection in the presence of distinct corruptions. We first propose a bi-level optimization formulation to introduce dynamic adversarial learning. Specifically, it is composited by the learnable generation of corruptions to maximize the losses as the lower-level objective and the robustness promotion of detectors as the upper-level one. We also provide a hierarchical reinforced learning strategy to discover the most detrimental corruptions and balance the performance between robustness and accuracy. To better disentangle the corruptions from salient features, we also propose a spatial-frequency interaction network for target detection. Extensive experiments demonstrate our scheme remarkably improves 21.96% IOU across a wide array of corruptions and notably promotes 4.97% IOU on the general benchmark. The source codes are available at https://github.com/LiuZhu-CV/BALISTD.",
+      "paper_authors": [
+        "Zhu Liu",
+        "Zihang Chen",
+        "Jinyuan Liu",
+        "Long Ma",
+        "Xin Fan",
+        "Risheng Liu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-09-03",
+      "update_time": "2023-09-03",
+      "comments": "9 pages, 6 figures",
+      "repo_url": "#"
+    },
+    "2307.14723": {
+      "paper_id": "2307.14723v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2307.14723v2",
+      "paper_key": "2307.14723",
+      "paper_title": "EFLNet: Enhancing Feature Learning for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2307.14723v2",
+      "paper_abstract": "Single-frame infrared small target detection is considered to be a challenging task, due to the extreme imbalance between target and background, bounding box regression is extremely sensitive to infrared small target, and target information is easy to lose in the high-level semantic layer. In this article, we propose an enhancing feature learning network (EFLNet) to address these problems. First, we notice that there is an extremely imbalance between the target and the background in the infrared image, which makes the model pay more attention to the background features rather than target features. To address this problem, we propose a new adaptive threshold focal loss (ATFL) function that decouples the target and the background, and utilizes the adaptive mechanism to adjust the loss weight to force the model to allocate more attention to target features. Second, we introduce the normalized Gaussian Wasserstein distance (NWD) to alleviate the difficulty of convergence caused by the extreme sensitivity of the bounding box regression to infrared small target. Finally, we incorporate a dynamic head mechanism into the network to enable adaptive learning of the relative importance of each semantic layer. Experimental results demonstrate our method can achieve better performance in the detection performance of infrared small target compared to the state-of-the-art (SOTA) deep-learning-based methods. The source codes and bounding box annotated datasets are available at https://github.com/YangBo0411/infrared-small-target.",
+      "paper_authors": [
+        "Bo Yang",
+        "Xinyu Zhang",
+        "Jian Zhang",
+        "Jun Luo",
+        "Mingliang Zhou",
+        "Yangjun Pi"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-07-27",
+      "update_time": "2024-02-27",
+      "comments": null,
+      "repo_url": "https://github.com/yangbo0411/infrared-small-target"
+    },
+    "2304.04442": {
+      "paper_id": "2304.04442v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2304.04442v1",
+      "paper_key": "2304.04442",
+      "paper_title": "Monte Carlo Linear Clustering with Single-Point Supervision is Enough for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2304.04442v1",
+      "paper_abstract": "Single-frame infrared small target (SIRST) detection aims at separating small targets from clutter backgrounds on infrared images. Recently, deep learning based methods have achieved promising performance on SIRST detection, but at the cost of a large amount of training data with expensive pixel-level annotations. To reduce the annotation burden, we propose the first method to achieve SIRST detection with single-point supervision. The core idea of this work is to recover the per-pixel mask of each target from the given single point label by using clustering approaches, which looks simple but is indeed challenging since targets are always insalient and accompanied with background clutters. To handle this issue, we introduce randomness to the clustering process by adding noise to the input images, and then obtain much more reliable pseudo masks by averaging the clustered results. Thanks to this \"Monte Carlo\" clustering approach, our method can accurately recover pseudo masks and thus turn arbitrary fully supervised SIRST detection networks into weakly supervised ones with only single point annotation. Experiments on four datasets demonstrate that our method can be applied to existing SIRST detection networks to achieve comparable performance with their fully supervised counterparts, which reveals that single-point supervision is strong enough for SIRST detection. Our code will be available at: https://github.com/YeRen123455/SIRST-Single-Point-Supervision.",
+      "paper_authors": [
+        "Boyang Li",
+        "Yingqian Wang",
+        "Longguang Wang",
+        "Fei Zhang",
+        "Ting Liu",
+        "Zaiping Lin",
+        "Wei An",
+        "Yulan Guo"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-04-10",
+      "update_time": "2023-04-10",
+      "comments": null,
+      "repo_url": "https://github.com/yeren123455/sirst-single-point-supervision"
+    },
+    "2304.01484": {
+      "paper_id": "2304.01484v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2304.01484v2",
+      "paper_key": "2304.01484",
+      "paper_title": "Mapping Degeneration Meets Label Evolution: Learning Infrared Small Target Detection with Single Point Supervision",
+      "paper_url": "http://arxiv.org/abs/2304.01484v2",
+      "paper_abstract": "Training a convolutional neural network (CNN) to detect infrared small targets in a fully supervised manner has gained remarkable research interests in recent years, but is highly labor expensive since a large number of per-pixel annotations are required. To handle this problem, in this paper, we make the first attempt to achieve infrared small target detection with point-level supervision. Interestingly, during the training phase supervised by point labels, we discover that CNNs first learn to segment a cluster of pixels near the targets, and then gradually converge to predict groundtruth point labels. Motivated by this \"mapping degeneration\" phenomenon, we propose a label evolution framework named label evolution with single point supervision (LESPS) to progressively expand the point label by leveraging the intermediate predictions of CNNs. In this way, the network predictions can finally approximate the updated pseudo labels, and a pixel-level target mask can be obtained to train CNNs in an end-to-end manner. We conduct extensive experiments with insightful visualizations to validate the effectiveness of our method. Experimental results show that CNNs equipped with LESPS can well recover the target masks from corresponding point labels, {and can achieve over 70% and 95% of their fully supervised performance in terms of pixel-level intersection over union (IoU) and object-level probability of detection (Pd), respectively. Code is available at https://github.com/XinyiYing/LESPS.",
+      "paper_authors": [
+        "Xinyi Ying",
+        "Li Liu",
+        "Yingqian Wang",
+        "Ruojing Li",
+        "Nuo Chen",
+        "Zaiping Lin",
+        "Weidong Sheng",
+        "Shilin Zhou"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-04-04",
+      "update_time": "2024-08-23",
+      "comments": null,
+      "repo_url": "https://github.com/xinyiying/lesps"
+    },
+    "2303.10321": {
+      "paper_id": "2303.10321v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2303.10321v1",
+      "paper_key": "2303.10321",
+      "paper_title": "ABC: Attention with Bilinear Correlation for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2303.10321v1",
+      "paper_abstract": "Infrared small target detection (ISTD) has a wide range of applications in early warning, rescue, and guidance. However, CNN based deep learning methods are not effective at segmenting infrared small target (IRST) that it lack of clear contour and texture features, and transformer based methods also struggle to achieve significant results due to the absence of convolution induction bias. To address these issues, we propose a new model called attention with bilinear correlation (ABC), which is based on the transformer architecture and includes a convolution linear fusion transformer (CLFT) module with a novel attention mechanism for feature extraction and fusion, which effectively enhances target features and suppresses noise. Additionally, our model includes a u-shaped convolution-dilated convolution (UCDC) module located deeper layers of the network, which takes advantage of the smaller resolution of deeper features to obtain finer semantic information. Experimental results on public datasets demonstrate that our approach achieves state-of-the-art performance. Code is available at https://github.com/PANPEIWEN/ABC",
+      "paper_authors": [
+        "Peiwen Pan",
+        "Huan Wang",
+        "Chenyi Wang",
+        "Chang Nie"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-03-18",
+      "update_time": "2023-03-18",
+      "comments": null,
+      "repo_url": "https://github.com/panpeiwen/abc"
+    },
+    "2301.04497": {
+      "paper_id": "2301.04497v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2301.04497v2",
+      "paper_key": "2301.04497",
+      "paper_title": "Dynamic Background Reconstruction via MAE for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2301.04497v2",
+      "paper_abstract": "Infrared small target detection (ISTD) under complex backgrounds is a difficult problem, for the differences between targets and backgrounds are not easy to distinguish. Background reconstruction is one of the methods to deal with this problem. This paper proposes an ISTD method based on background reconstruction called Dynamic Background Reconstruction (DBR). DBR consists of three modules: a dynamic shift window module (DSW), a background reconstruction module (BR), and a detection head (DH). BR takes advantage of Vision Transformers in reconstructing missing patches and adopts a grid masking strategy with a masking ratio of 50\\% to reconstruct clean backgrounds without targets. To avoid dividing one target into two neighboring patches, resulting in reconstructing failure, DSW is performed before input embedding. DSW calculates offsets, according to which infrared images dynamically shift. To reduce False Positive (FP) cases caused by regarding reconstruction errors as targets, DH utilizes a structure of densely connected Transformer to further improve the detection performance. Experimental results show that DBR achieves the best F1-score on the two ISTD datasets, MFIRST (64.10\\%) and SIRST (75.01\\%).",
+      "paper_authors": [
+        "Jingchao Peng",
+        "Haitao Zhao",
+        "Kaijie Zhao",
+        "Zhongze Wang",
+        "Lujian Yao"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-01-11",
+      "update_time": "2023-04-09",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2301.03796": {
+      "paper_id": "2301.03796v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2301.03796v2",
+      "paper_key": "2301.03796",
+      "paper_title": "Enhancing Evaluation Methods for Infrared Small-Target Detection in Real-world Scenarios",
+      "paper_url": "http://arxiv.org/abs/2301.03796v2",
+      "paper_abstract": "Infrared small target detection (IRSTD) poses a significant challenge in the field of computer vision. While substantial efforts have been made over the past two decades to improve the detection capabilities of IRSTD algorithms, there has been a lack of extensive investigation into the evaluation metrics used for assessing their performance. In this paper, we employ a systematic approach to address this issue by first evaluating the effectiveness of existing metrics and then proposing new metrics to overcome the limitations of conventional ones. To achieve this, we carefully analyze the necessary conditions for successful detection and identify the shortcomings of current evaluation metrics, including both pre-thresholding and post-thresholding metrics. We then introduce new metrics that are designed to align with the requirements of real-world systems. Furthermore, we utilize these newly proposed metrics to compare and evaluate the performance of five widely recognized small infrared target detection algorithms. The results demonstrate that the new metrics provide consistent and meaningful quantitative assessments, aligning with qualitative observations.",
+      "paper_authors": [
+        "Saed Moradi",
+        "Alireza Memarmoghadam",
+        "Payman Moallem",
+        "Mohamad Farzan Sabahi"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2023-01-10",
+      "update_time": "2024-08-25",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2212.08472": {
+      "paper_id": "2212.08472v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2212.08472v2",
+      "paper_key": "2212.08472",
+      "paper_title": "One-Stage Cascade Refinement Networks for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2212.08472v2",
+      "paper_abstract": "Single-frame InfraRed Small Target (SIRST) detection has been a challenging task due to a lack of inherent characteristics, imprecise bounding box regression, a scarcity of real-world datasets, and sensitive localization evaluation. In this paper, we propose a comprehensive solution to these challenges. First, we find that the existing anchor-free label assignment method is prone to mislabeling small targets as background, leading to their omission by detectors. To overcome this issue, we propose an all-scale pseudo-box-based label assignment scheme that relaxes the constraints on scale and decouples the spatial assignment from the size of the ground-truth target. Second, motivated by the structured prior of feature pyramids, we introduce the one-stage cascade refinement network (OSCAR), which uses the high-level head as soft proposals for the low-level refinement head. This allows OSCAR to process the same target in a cascade coarse-to-fine manner. Finally, we present a new research benchmark for infrared small target detection, consisting of the SIRST-V2 dataset of real-world, high-resolution single-frame targets, the normalized contrast evaluation metric, and the DeepInfrared toolkit for detection. We conduct extensive ablation studies to evaluate the components of OSCAR and compare its performance to state-of-the-art model-driven and data-driven methods on the SIRST-V2 benchmark. Our results demonstrate that a top-down cascade refinement framework can improve the accuracy of infrared small target detection without sacrificing efficiency. The DeepInfrared toolkit, dataset, and trained models are available at https://github.com/YimianDai/open-deepinfrared to advance further research in this field.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Xiang Li",
+        "Fei Zhou",
+        "Yulei Qian",
+        "Yaohong Chen",
+        "Jian Yang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2022-12-16",
+      "update_time": "2022-12-31",
+      "comments": "Submitted to TGRS",
+      "repo_url": "https://github.com/yimiandai/open-deepinfrared"
+    },
+    "2210.16561": {
+      "paper_id": "2210.16561v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2210.16561v2",
+      "paper_key": "2210.16561",
+      "paper_title": "iSmallNet: Densely Nested Network with Label Decoupling for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2210.16561v2",
+      "paper_abstract": "Small targets are often submerged in cluttered backgrounds of infrared images. Conventional detectors tend to generate false alarms, while CNN-based detectors lose small targets in deep layers. To this end, we propose iSmallNet, a multi-stream densely nested network with label decoupling for infrared small object detection. On the one hand, to fully exploit the shape information of small targets, we decouple the original labeled ground-truth (GT) map into an interior map and a boundary one. The GT map, in collaboration with the two additional maps, tackles the unbalanced distribution of small object boundaries. On the other hand, two key modules are delicately designed and incorporated into the proposed network to boost the overall performance. First, to maintain small targets in deep layers, we develop a multi-scale nested interaction module to explore a wide range of context information. Second, we develop an interior-boundary fusion module to integrate multi-granularity information. Experiments on NUAA-SIRST and NUDT-SIRST clearly show the superiority of iSmallNet over 11 state-of-the-art detectors.",
+      "paper_authors": [
+        "Zhiheng Hu",
+        "Yongzhen Wang",
+        "Peng Li",
+        "Jie Qin",
+        "Haoran Xie",
+        "Mingqiang Wei"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2022-10-29",
+      "update_time": "2023-06-29",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2209.13780": {
+      "paper_id": "2209.13780v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2209.13780v2",
+      "paper_key": "2209.13780",
+      "paper_title": "CourtNet for Infrared Small-Target Detection",
+      "paper_url": "http://arxiv.org/abs/2209.13780v2",
+      "paper_abstract": "Infrared small-target detection (ISTD) is an important computer vision task. ISTD aims at separating small targets from complex background clutter. The infrared radiation decays over distances, making the targets highly dim and prone to confusion with the background clutter, which makes the detector challenging to balance the precision and recall rate. To deal with this difficulty, this paper proposes a neural-network-based ISTD method called CourtNet, which has three sub-networks: the prosecution network is designed for improving the recall rate; the defendant network is devoted to increasing the precision rate; the jury network weights their results to adaptively balance the precision and recall rate. Furthermore, the prosecution network utilizes a densely connected transformer structure, which can prevent small targets from disappearing in the network forward propagation. In addition, a fine-grained attention module is adopted to accurately locate the small targets. Experimental results show that CourtNet achieves the best F1-score on the two ISTD datasets, MFIRST (0.62) and SIRST (0.73).",
+      "paper_authors": [
+        "Jingchao Peng",
+        "Haitao Zhao",
+        "Kaijie Zhao",
+        "Zhongze Wang",
+        "Lujian Yao"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2022-09-28",
+      "update_time": "2023-04-15",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2206.06923": {
+      "paper_id": "2206.06923v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2206.06923v1",
+      "paper_key": "2206.06923",
+      "paper_title": "A Multi-task Framework for Infrared Small Target Detection and Segmentation",
+      "paper_url": "http://arxiv.org/abs/2206.06923v1",
+      "paper_abstract": "Due to the complicated background and noise of infrared images, infrared small target detection is one of the most difficult problems in the field of computer vision. In most existing studies, semantic segmentation methods are typically used to achieve better results. The centroid of each target is calculated from the segmentation map as the detection result. In contrast, we propose a novel end-to-end framework for infrared small target detection and segmentation in this paper. First, with the use of UNet as the backbone to maintain resolution and semantic information, our model can achieve a higher detection accuracy than other state-of-the-art methods by attaching a simple anchor-free head. Then, a pyramid pool module is used to further extract features and improve the precision of target segmentation. Next, we use semantic segmentation tasks that pay more attention to pixel-level features to assist in the training process of object detection, which increases the average precision and allows the model to detect some targets that were previously not detectable. Furthermore, we develop a multi-task framework for infrared small target detection and segmentation. Our multi-task learning model reduces complexity by nearly half and speeds up inference by nearly twice compared to the composite single-task model, while maintaining accuracy. The code and models are publicly available at https://github.com/Chenastron/MTUNet.",
+      "paper_authors": [
+        "Yuhang Chen",
+        "Liyuan Li",
+        "Xin Liu",
+        "Xiaofeng Su",
+        "Fansheng Chen"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2022-06-14",
+      "update_time": "2022-06-14",
+      "comments": null,
+      "repo_url": "https://github.com/chenastron/mtunet"
+    },
+    "2206.02120": {
+      "paper_id": "2206.02120v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2206.02120v1",
+      "paper_key": "2206.02120",
+      "paper_title": "MPANet: Multi-Patch Attention For Infrared Small Target object Detection",
+      "paper_url": "http://arxiv.org/abs/2206.02120v1",
+      "paper_abstract": "Infrared small target detection (ISTD) has attracted widespread attention and been applied in various fields. Due to the small size of infrared targets and the noise interference from complex backgrounds, the performance of ISTD using convolutional neural networks (CNNs) is restricted. Moreover, the constriant that long-distance dependent features can not be encoded by the vanilla CNNs also impairs the robustness of capturing targets' shapes and locations in complex scenarios. To this end, a multi-patch attention network (MPANet) based on the axial-attention encoder and the multi-scale patch branch (MSPB) structure is proposed. Specially, an axial-attention-improved encoder architecture is designed to highlight the effective features of small targets and suppress background noises. Furthermore, the developed MSPB structure fuses the coarse-grained and fine-grained features from different semantic scales. Extensive experiments on the SIRST dataset show the superiority performance and effectiveness of the proposed MPANet compared to the state-of-the-art methods.",
+      "paper_authors": [
+        "Ao Wang",
+        "Wei Li",
+        "Xin Wu",
+        "Zhanchao Huang",
+        "Ran Tao"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2022-06-05",
+      "update_time": "2022-06-05",
+      "comments": "4 pages 3 figures",
+      "repo_url": "#"
+    },
+    "2201.01014": {
+      "paper_id": "2201.01014v5",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2201.01014v5",
+      "paper_key": "2201.01014",
+      "paper_title": "Local Motion and Contrast Priors Driven Deep Network for Infrared Small Target Super-Resolution",
+      "paper_url": "http://arxiv.org/abs/2201.01014v5",
+      "paper_abstract": "Infrared small target super-resolution (SR) aims to recover reliable and detailed high-resolution image with high-contrast targets from its low-resolution counterparts. Since the infrared small target lacks color and fine structure information, it is significant to exploit the supplementary information among sequence images to enhance the target. In this paper, we propose the first infrared small target SR method named local motion and contrast prior driven deep network (MoCoPnet) to integrate the domain knowledge of infrared small target into deep network, which can mitigate the intrinsic feature scarcity of infrared small targets. Specifically, motivated by the local motion prior in the spatio-temporal dimension, we propose a local spatio-temporal attention module to perform implicit frame alignment and incorporate the local spatio-temporal information to enhance the local features (especially for small targets). Motivated by the local contrast prior in the spatial dimension, we propose a central difference residual group to incorporate the central difference convolution into the feature extraction backbone, which can achieve center-oriented gradient-aware feature extraction to further improve the target contrast. Extensive experiments have demonstrated that our method can recover accurate spatial dependency and improve the target contrast. Comparative results show that MoCoPnet can outperform the state-of-the-art video SR and single image SR methods in terms of both SR performance and target enhancement. Based on the SR results, we further investigate the influence of SR on infrared small target detection and the experimental results demonstrate that MoCoPnet promotes the detection performance. The code is available at https://github.com/XinyiYing/MoCoPnet.",
+      "paper_authors": [
+        "Xinyi Ying",
+        "Yingqian Wang",
+        "Longguang Wang",
+        "Weidong Sheng",
+        "Li Liu",
+        "Zaiping Lin",
+        "Shilin Zhou"
+      ],
+      "primary_category": "eess.IV",
+      "publish_time": "2022-01-04",
+      "update_time": "2023-04-04",
+      "comments": null,
+      "repo_url": "https://github.com/xinyiying/mocopnet"
+    },
+    "2111.03580": {
+      "paper_id": "2111.03580v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2111.03580v1",
+      "paper_key": "2111.03580",
+      "paper_title": "AGPCNet: Attention-Guided Pyramid Context Networks for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2111.03580v1",
+      "paper_abstract": "Infrared small target detection is an important problem in many fields such as earth observation, military reconnaissance, disaster relief, and has received widespread attention recently. This paper presents the Attention-Guided Pyramid Context Network (AGPCNet) algorithm. Its main components are an Attention-Guided Context Block (AGCB), a Context Pyramid Module (CPM), and an Asymmetric Fusion Module (AFM). AGCB divides the feature map into patches to compute local associations and uses Global Context Attention (GCA) to compute global associations between semantics, CPM integrates features from multi-scale AGCBs, and AFM integrates low-level and deep-level semantics from a feature-fusion perspective to enhance the utilization of features. The experimental results illustrate that AGPCNet has achieved new state-of-the-art performance on two available infrared small target datasets. The source codes are available at https://github.com/Tianfang-Zhang/AGPCNet.",
+      "paper_authors": [
+        "Tianfang Zhang",
+        "Siying Cao",
+        "Tian Pu",
+        "Zhenming Peng"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2021-11-05",
+      "update_time": "2021-11-05",
+      "comments": "12 pages, 13 figures, 8 tables",
+      "repo_url": "https://github.com/tianfang-zhang/agpcnet"
+    },
+    "2108.06054": {
+      "paper_id": "2108.06054v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2108.06054v3",
+      "paper_key": "2108.06054",
+      "paper_title": "Local Patch Network with Global Attention for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2108.06054v3",
+      "paper_abstract": "Infrared small target detection plays an important role in the infrared search and tracking applications. In recent years, deep learning techniques were introduced to this task and achieved noteworthy effects. Following general object segmentation methods, existing deep learning methods usually processed the image from the global view. However, the imaging locality of small targets and extreme class-imbalance between the target and background pixels were not well-considered by these deep learning methods, which causes the low-efficiency on training and high-dependence on numerous data. A local patch network (LPNet) with global attention is proposed in this paper to detect small targets by jointly considering the global and local properties of infrared small target images. From the global view, a supervised attention module trained by the small target spread map is proposed to suppress most background pixels irrelevant with small target features. From the local view, local patches are split from global features and share the same convolution weights with each other in a patch net. By leveraging both the global and local properties, the data-driven framework proposed in this paper has fused multi-scale features for small target detection. Extensive synthetic and real data experiments show that the proposed method achieves the state-of-the-art performance compared with existing both conventional and deep learning methods.",
+      "paper_authors": [
+        "Fang Chen",
+        "Chenqiang Gao",
+        "Fangcen Liu",
+        "Yue Zhao",
+        "Yuxi Zhou",
+        "Deyu Meng",
+        "Wangmeng Zuo"
+      ],
+      "primary_category": "eess.IV",
+      "publish_time": "2021-08-13",
+      "update_time": "2021-09-29",
+      "comments": "11 pages, 7 figures",
+      "repo_url": "https://github.com/cquptimg/Local-Patch-Network-with-Global-Attention"
+    },
+    "2106.00487": {
+      "paper_id": "2106.00487v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2106.00487v3",
+      "paper_key": "2106.00487",
+      "paper_title": "Dense Nested Attention Network for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2106.00487v3",
+      "paper_abstract": "Single-frame infrared small target (SIRST) detection aims at separating small targets from clutter backgrounds. With the advances of deep learning, CNN-based methods have yielded promising results in generic object detection due to their powerful modeling capability. However, existing CNN-based methods cannot be directly applied for infrared small targets since pooling layers in their networks could lead to the loss of targets in deep layers. To handle this problem, we propose a dense nested attention network (DNANet) in this paper. Specifically, we design a dense nested interactive module (DNIM) to achieve progressive interaction among high-level and low-level features. With the repeated interaction in DNIM, infrared small targets in deep layers can be maintained. Based on DNIM, we further propose a cascaded channel and spatial attention module (CSAM) to adaptively enhance multi-level features. With our DNANet, contextual information of small targets can be well incorporated and fully exploited by repeated fusion and enhancement. Moreover, we develop an infrared small target dataset (namely, NUDT-SIRST) and propose a set of evaluation metrics to conduct comprehensive performance evaluation. Experiments on both public and our self-developed datasets demonstrate the effectiveness of our method. Compared to other state-of-the-art methods, our method achieves better performance in terms of probability of detection (Pd), false-alarm rate (Fa), and intersection of union (IoU).",
+      "paper_authors": [
+        "Boyang Li",
+        "Chao Xiao",
+        "Longguang Wang",
+        "Yingqian Wang",
+        "Zaiping Lin",
+        "Miao Li",
+        "Wei An",
+        "Yulan Guo"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2021-06-01",
+      "update_time": "2022-08-16",
+      "comments": "Accepted by IEEE Transactions on Image Processing (TIP)",
+      "repo_url": "https://github.com/YeRen123455/Infrared-Small-Target-Detection"
+    },
+    "2105.14974": {
+      "paper_id": "2105.14974v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2105.14974v2",
+      "paper_key": "2105.14974",
+      "paper_title": "Non-Convex Tensor Low-Rank Approximation for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2105.14974v2",
+      "paper_abstract": "Infrared small target detection is an important fundamental task in the infrared system. Therefore, many infrared small target detection methods have been proposed, in which the low-rank model has been used as a powerful tool. However, most low-rank-based methods assign the same weights for different singular values, which will lead to inaccurate background estimation. Considering that different singular values have different importance and should be treated discriminatively, in this paper, we propose a non-convex tensor low-rank approximation (NTLA) method for infrared small target detection. In our method, NTLA regularization adaptively assigns different weights to different singular values for accurate background estimation. Based on the proposed NTLA, we propose asymmetric spatial-temporal total variation (ASTTV) regularization to achieve more accurate background estimation in complex scenes. Compared with the traditional total variation approach, ASTTV exploits different smoothness intensities for spatial and temporal regularization. We design an efficient algorithm to find the optimal solution of our method. Compared with some state-of-the-art methods, the proposed method achieves an improvement in terms of various evaluation metrics. Extensive experimental results in various complex scenes demonstrate that our method has strong robustness and low false-alarm rate. Code is available at https://github.com/LiuTing20a/ASTTV-NTLA.",
+      "paper_authors": [
+        "Ting Liu",
+        "Jungang Yang",
+        "Boyang Li",
+        "Chao Xiao",
+        "Yang Sun",
+        "Yingqian Wang",
+        "Wei An"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2021-05-31",
+      "update_time": "2021-11-21",
+      "comments": "This paper is accepted by IEEE Transactions on Geoscience and Remote\n  Sensing",
+      "repo_url": "https://github.com/LiuTing20a/ASTTV-NTLA"
+    },
+    "2012.08573": {
+      "paper_id": "2012.08573v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2012.08573v1",
+      "paper_key": "2012.08573",
+      "paper_title": "Attentional Local Contrast Networks for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2012.08573v1",
+      "paper_abstract": "To mitigate the issue of minimal intrinsic features for pure data-driven methods, in this paper, we propose a novel model-driven deep network for infrared small target detection, which combines discriminative networks and conventional model-driven methods to make use of both labeled data and the domain knowledge. By designing a feature map cyclic shift scheme, we modularize a conventional local contrast measure method as a depth-wise parameterless nonlinear feature refinement layer in an end-to-end network, which encodes relatively long-range contextual interactions with clear physical interpretability. To highlight and preserve the small target features, we also exploit a bottom-up attentional modulation integrating the smaller scale subtle details of low-level features into high-level features of deeper layers. We conduct detailed ablation studies with varying network depths to empirically verify the effectiveness and efficiency of the design of each component in our network architecture. We also compare the performance of our network against other model-driven methods and deep networks on the open SIRST dataset as well. The results suggest that our network yields a performance boost over its competitors. Our code, trained models, and results are available online.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Yiquan Wu",
+        "Fei Zhou",
+        "Kobus Barnard"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2020-12-15",
+      "update_time": "2020-12-15",
+      "comments": "Accepted by IEEE TGRS",
+      "repo_url": "https://github.com/YimianDai/open-alcnet"
+    },
+    "2011.12059": {
+      "paper_id": "2011.12059v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2011.12059v1",
+      "paper_key": "2011.12059",
+      "paper_title": "Infrared small target detection based on isotropic constraint under complex background",
+      "paper_url": "http://arxiv.org/abs/2011.12059v1",
+      "paper_abstract": "Infrared search and tracking (IRST) system has been widely concerned and applied in the area of national defence. Small target detection under complex background is a very challenging task in the development of system algorithm. Low signal-to-clutter ratio (SCR) of target and the interference caused by irregular background clutter make it difficult to get an accurate result. In this paper, small targets are considered to have two characteristics of high contrast and isotropy, and we propose a multilayer gray difference (MGD) method constrained by isotropy. Firstly, the suspected regions are obtained through MGD, and then the eigenvalues of the original image's Hessian matrix are calculated to obtain the isotropy parameter of each region. Finally, those regions do not meet the isotropic constraint condition are suppressed. Experiments show that the proposed method is effective and superior to several common methods in terms of signal-to-clutter ratio gain (SCRG) and receiver operating characteristic (ROC) curve.",
+      "paper_authors": [
+        "Fan Wang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2020-11-24",
+      "update_time": "2020-11-24",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2010.00923": {
+      "paper_id": "2010.00923v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2010.00923v1",
+      "paper_key": "2010.00923",
+      "paper_title": "Multiple Infrared Small Targets Detection based on Hierarchical Maximal Entropy Random Walk",
+      "paper_url": "http://arxiv.org/abs/2010.00923v1",
+      "paper_abstract": "The technique of detecting multiple dim and small targets with low signal-to-clutter ratios (SCR) is very important for infrared search and tracking systems. In this paper, we establish a detection method derived from maximal entropy random walk (MERW) to robustly detect multiple small targets. Initially, we introduce the primal MERW and analyze the feasibility of applying it to small target detection. However, the original weight matrix of the MERW is sensitive to interferences. Therefore, a specific weight matrix is designed for the MERW in principle of enhancing characteristics of small targets and suppressing strong clutters. Moreover, the primal MERW has a critical limitation of strong bias to the most salient small target. To achieve multiple small targets detection, we develop a hierarchical version of the MERW method. Based on the hierarchical MERW (HMERW), we propose a small target detection method as follows. First, filtering technique is used to smooth the infrared image. Second, an output map is obtained by importing the filtered image into the HMERW. Then, a coefficient map is constructed to fuse the stationary dirtribution map of the HMERW. Finally, an adaptive threshold is used to segment multiple small targets from the fusion map. Extensive experiments on practical data sets demonstrate that the proposed method is superior to the state-of-the-art methods in terms of target enhancement, background suppression and multiple small targets detection.",
+      "paper_authors": [
+        "Chaoqun Xia",
+        "Xiaorun Li",
+        "Liaoying Zhao",
+        "Shuhan Chen"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2020-10-02",
+      "update_time": "2020-10-02",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2009.14530": {
+      "paper_id": "2009.14530v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2009.14530v1",
+      "paper_key": "2009.14530",
+      "paper_title": "Asymmetric Contextual Modulation for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2009.14530v1",
+      "paper_abstract": "Single-frame infrared small target detection remains a challenge not only due to the scarcity of intrinsic target characteristics but also because of lacking a public dataset. In this paper, we first contribute an open dataset with high-quality annotations to advance the research in this field. We also propose an asymmetric contextual modulation module specially designed for detecting infrared small targets. To better highlight small targets, besides a top-down global contextual feedback, we supplement a bottom-up modulation pathway based on point-wise channel attention for exchanging high-level semantics and subtle low-level details. We report ablation studies and comparisons to state-of-the-art methods, where we find that our approach performs significantly better. Our dataset and code are available online.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Yiquan Wu",
+        "Fei Zhou",
+        "Kobus Barnard"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2020-09-30",
+      "update_time": "2020-09-30",
+      "comments": null,
+      "repo_url": "https://github.com/YimianDai/open-acm"
+    },
+    "2006.08162": {
+      "paper_id": "2006.08162v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2006.08162v1",
+      "paper_key": "2006.08162",
+      "paper_title": "Filter design for small target detection on infrared imagery using normalized-cross-correlation layer",
+      "paper_url": "http://arxiv.org/abs/2006.08162v1",
+      "paper_abstract": "In this paper, we introduce a machine learning approach to the problem of infrared small target detection filter design. For this purpose, similarly to a convolutional layer of a neural network, the normalized-cross-correlational (NCC) layer, which we utilize for designing a target detection/recognition filter bank, is proposed. By employing the NCC layer in a neural network structure, we introduce a framework, in which supervised training is used to calculate the optimal filter shape and the optimum number of filters required for a specific target detection/recognition task on infrared images. We also propose the mean-absolute-deviation NCC (MAD-NCC) layer, an efficient implementation of the proposed NCC layer, designed especially for FPGA systems, in which square root operations are avoided for real-time computation. As a case study we work on dim-target detection on mid-wave infrared imagery and obtain the filters that can discriminate a dim target from various types of background clutter, specific to our operational concept.",
+      "paper_authors": [
+        "H. Se\u00e7kin Demir",
+        "Erdem Akagunduz"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2020-06-15",
+      "update_time": "2020-06-15",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2001.05852": {
+      "paper_id": "2001.05852v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2001.05852v1",
+      "paper_key": "2001.05852",
+      "paper_title": "TBC-Net: A real-time detector for infrared small target detection using semantic constraint",
+      "paper_url": "http://arxiv.org/abs/2001.05852v1",
+      "paper_abstract": "Infrared small target detection is a key technique in infrared search and tracking (IRST) systems. Although deep learning has been widely used in the vision tasks of visible light images recently, it is rarely used in infrared small target detection due to the difficulty in learning small target features. In this paper, we propose a novel lightweight convolutional neural network TBC-Net for infrared small target detection. The TBCNet consists of a target extraction module (TEM) and a semantic constraint module (SCM), which are used to extract small targets from infrared images and to classify the extracted target images during the training, respectively. Meanwhile, we propose a joint loss function and a training method. The SCM imposes a semantic constraint on TEM by combining the high-level classification task and solve the problem of the difficulty to learn features caused by class imbalance problem. During the training, the targets are extracted from the input image and then be classified by SCM. During the inference, only the TEM is used to detect the small targets. We also propose a data synthesis method to generate training data. The experimental results show that compared with the traditional methods, TBC-Net can better reduce the false alarm caused by complicated background, the proposed network structure and joint loss have a significant improvement on small target feature learning. Besides, TBC-Net can achieve real-time detection on the NVIDIA Jetson AGX Xavier development board, which is suitable for applications such as field research with drones equipped with infrared sensors.",
+      "paper_authors": [
+        "Mingxin Zhao",
+        "Li Cheng",
+        "Xu Yang",
+        "Peng Feng",
+        "Liyuan Liu",
+        "Nanjian Wu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2019-12-27",
+      "update_time": "2019-12-27",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "1810.03173": {
+      "paper_id": "1810.03173v4",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/1810.03173v4",
+      "paper_key": "1810.03173",
+      "paper_title": "Fast and Robust Small Infrared Target Detection Using Absolute Directional Mean Difference Algorithm",
+      "paper_url": "http://arxiv.org/abs/1810.03173v4",
+      "paper_abstract": "Infrared small target detection in an infrared search and track (IRST) system is a challenging task. This situation becomes more complicated when high gray-intensity structural backgrounds appear in the field of view (FoV) of the infrared seeker. While the majority of the infrared small target detection algorithms neglect directional information, in this paper, a directional approach is presented to suppress structural backgrounds and develop a more effective detection algorithm. To this end, a similar concept to the average absolute gray difference (AAGD) is utilized to construct a novel directional small target detection algorithm called absolute directional mean difference (ADMD). Also, an efficient implementation procedure is presented for the proposed algorithm. The proposed algorithm effectively enhances the target area and eliminates background clutter. Simulation results on real infrared images prove the significant effectiveness of the proposed algorithm.",
+      "paper_authors": [
+        "Saed Moradi",
+        "Payman Moallem",
+        "Mohamad Farzan Sabahi"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2018-10-07",
+      "update_time": "2020-07-29",
+      "comments": "The Final version (Accepted in Signal Processing journal)",
+      "repo_url": "https://github.com/moradisaed/ADMD"
+    },
+    "1703.09157": {
+      "paper_id": "1703.09157v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/1703.09157v1",
+      "paper_key": "1703.09157",
+      "paper_title": "Reweighted Infrared Patch-Tensor Model With Both Non-Local and Local Priors for Single-Frame Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/1703.09157v1",
+      "paper_abstract": "Many state-of-the-art methods have been proposed for infrared small target detection. They work well on the images with homogeneous backgrounds and high-contrast targets. However, when facing highly heterogeneous backgrounds, they would not perform very well, mainly due to: 1) the existence of strong edges and other interfering components, 2) not utilizing the priors fully. Inspired by this, we propose a novel method to exploit both local and non-local priors simultaneously. Firstly, we employ a new infrared patch-tensor (IPT) model to represent the image and preserve its spatial correlations. Exploiting the target sparse prior and background non-local self-correlation prior, the target-background separation is modeled as a robust low-rank tensor recovery problem. Moreover, with the help of the structure tensor and reweighted idea, we design an entry-wise local-structure-adaptive and sparsity enhancing weight to replace the globally constant weighting parameter. The decomposition could be achieved via the element-wise reweighted higher-order robust principal component analysis with an additional convergence condition according to the practical situation of target detection. Extensive experiments demonstrate that our model outperforms the other state-of-the-arts, in particular for the images with very dim targets and heavy clutters.",
+      "paper_authors": [
+        "Yimian Dai",
+        "Yiquan Wu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2017-03-27",
+      "update_time": "2017-03-27",
+      "comments": "Submitted to IEEE Journal of Selected Topics in Applied Earth\n  Observations and Remote Sensing, 16 pages, 16 figures",
+      "repo_url": "https://github.com/YimianDai/DENTIST"
     }
   }
 }
