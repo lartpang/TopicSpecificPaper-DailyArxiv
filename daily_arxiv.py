@@ -162,11 +162,12 @@ def main():
     json_file = "arxiv-daily.json"
     md_file = "README.md"
     keywords = {
-        "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"',
+        "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"OR"SNN"',
+        "Infrared Small Target Detection": '"Infrared small target detection"OR"ISTD"OR"IRSTD"',
     }
 
-    # papers = get_papers(keywords, max_results_per_keyword=200)
-    # update_json_file(json_file, papers)
+    papers = get_papers(keywords, max_results_per_keyword=200)
+    update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
 
