@@ -59,7 +59,7 @@ class ArXivPaper:
         }
 
 
-def update_json_file(json_path, papers: Dict[str, List[ArXivPaper]]) -> None:
+def update_json_file(json_path: str, papers: Dict[str, List[ArXivPaper]]) -> None:
     if os.path.exists(json_path):
         with open(json_path, "r", encoding="utf-8") as f:
             json_data: Dict[str, Dict[str, Dict[str, str]]] = json.load(f)
@@ -68,6 +68,9 @@ def update_json_file(json_path, papers: Dict[str, List[ArXivPaper]]) -> None:
 
     # update papers in each keywords
     for keyword, paper_items in papers.items():
+        if keyword not in json_data:
+            json_data[keyword] = {}
+
         for paper_item in paper_items:
             # NOTE: updated by the latest code information
             json_data[keyword][paper_item.paper_key] = paper_item.to_dict()
@@ -76,7 +79,13 @@ def update_json_file(json_path, papers: Dict[str, List[ArXivPaper]]) -> None:
         json.dump(json_data, f, indent=2)
 
 
-def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, show_toc=True):
+def json_to_md(
+    json_path: str,
+    markdown_path: str,
+    title: str = "Daily ArXiv",
+    show_badge: bool = True,
+    show_toc: bool = True,
+):
     current_date = str(datetime.date.today())
     current_date = current_date.replace("-", ".")
 
@@ -125,7 +134,7 @@ def json_to_md(json_path, markdown_path, title="Daily ArXiv", show_badge=True, s
 
         # Add: back to top
         top_info = title_line.replace("# ", "#").replace(" ", "-").replace(".", "").lower()
-        section_lines.append(f'<p align=right>(<a href="{top_info}">back to top</a>)</p>')
+        section_lines.append(f'\n<p align=right>(<a href="{top_info}">back to top</a>)</p>')
         lines.append("\n".join(section_lines))
 
     with open(markdown_path, "w", encoding="utf-8") as f:
@@ -163,10 +172,10 @@ def main():
     md_file = "README.md"
     keywords = {
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"OR"SNN"',
-        "Infrared Small Target Detection": '"Infrared small target detection"OR"ISTD"OR"IRSTD"',
+        "Infrared Small Target Detection": '"Infrared Small Target Detection"OR"IRSTD"',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=200)
+    papers = get_papers(keywords, max_results_per_keyword=5)
     update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
