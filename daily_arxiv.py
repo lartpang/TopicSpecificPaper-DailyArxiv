@@ -175,7 +175,7 @@ def main():
         "Infrared Small Target Detection": '"Infrared Small Target Detection"OR"IRSTD"',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=5)
+    papers = get_papers(keywords, max_results_per_keyword=200)
     update_json_file(json_file, papers)
     json_to_md(json_file, md_file)
 
