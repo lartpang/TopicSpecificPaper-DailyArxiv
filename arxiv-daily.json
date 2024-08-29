@@ -9921,11 +9921,11 @@
       "repo_url": "#"
     },
     "2408.13996": {
-      "paper_id": "2408.13996v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.13996v1",
+      "paper_id": "2408.13996v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.13996v2",
       "paper_key": "2408.13996",
       "paper_title": "Research Advances and New Paradigms for Biology-inspired Spiking Neural Networks",
-      "paper_url": "http://arxiv.org/abs/2408.13996v1",
+      "paper_url": "http://arxiv.org/abs/2408.13996v2",
       "paper_abstract": "Spiking neural networks (SNNs) are gaining popularity in the computational simulation and artificial intelligence fields owing to their biological plausibility and computational efficiency. This paper explores the historical development of SNN and concludes that these two fields are intersecting and merging rapidly. Following the successful application of Dynamic Vision Sensors (DVS) and Dynamic Audio Sensors (DAS), SNNs have found some proper paradigms, such as continuous visual signal tracking, automatic speech recognition, and reinforcement learning for continuous control, that have extensively supported their key features, including spike encoding, neuronal heterogeneity, specific functional circuits, and multiscale plasticity. Compared to these real-world paradigms, the brain contains a spiking version of the biology-world paradigm, which exhibits a similar level of complexity and is usually considered a mirror of the real world. Considering the projected rapid development of invasive and parallel Brain-Computer Interface (BCI), as well as the new BCI-based paradigms that include online pattern recognition and stimulus control of biological spike trains, SNNs naturally leverage their advantages in energy efficiency, robustness, and flexibility. The biological brain has inspired the present study of SNNs and effective SNN machine-learning algorithms, which can help enhance neuroscience discoveries in the brain by applying them to the new BCI paradigm. Such two-way interactions with positive feedback can accelerate brain science research and brain-inspired intelligence technology.",
       "paper_authors": [
         "Tianyu Zheng",
@@ -9934,7 +9934,7 @@
       ],
       "primary_category": "cs.NE",
       "publish_time": "2024-08-26",
-      "update_time": "2024-08-26",
+      "update_time": "2024-08-28",
       "comments": null,
       "repo_url": "#"
     },
@@ -10166,6 +10166,49 @@
       "publish_time": "2024-05-05",
       "update_time": "2024-05-05",
       "comments": "Proceedings for the contribution presented at the 1st International\n  Workshop on the physics of Ultra Peripheral Collisions (UPC 2023)",
+      "repo_url": "#"
+    },
+    "2408.15663": {
+      "paper_id": "2408.15663v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15663v1",
+      "paper_key": "2408.15663",
+      "paper_title": "NeuroVE: Brain-inspired Linear-Angular Velocity Estimation with Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2408.15663v1",
+      "paper_abstract": "Vision-based ego-velocity estimation is a fundamental problem in robot state estimation. However, the constraints of frame-based cameras, including motion blur and insufficient frame rates in dynamic settings, readily lead to the failure of conventional velocity estimation techniques. Mammals exhibit a remarkable ability to accurately estimate their ego-velocity during aggressive movement. Hence, integrating this capability into robots shows great promise for addressing these challenges. In this paper, we propose a brain-inspired framework for linear-angular velocity estimation, dubbed NeuroVE. The NeuroVE framework employs an event camera to capture the motion information and implements spiking neural networks (SNNs) to simulate the brain's spatial cells' function for velocity estimation. We formulate the velocity estimation as a time-series forecasting problem. To this end, we design an Astrocyte Leaky Integrate-and-Fire (ALIF) neuron model to encode continuous values. Additionally, we have developed an Astrocyte Spiking Long Short-term Memory (ASLSTM) structure, which significantly improves the time-series forecasting capabilities, enabling an accurate estimate of ego-velocity. Results from both simulation and real-world experiments indicate that NeuroVE has achieved an approximate 60% increase in accuracy compared to other SNN-based approaches.",
+      "paper_authors": [
+        "Xiao Li",
+        "Xieyuanli Chen",
+        "Ruibin Guo",
+        "Yujie Wu",
+        "Zongtan Zhou",
+        "Fangwen Yu",
+        "Huimin Lu"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-08-28",
+      "update_time": "2024-08-28",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2408.15578": {
+      "paper_id": "2408.15578v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15578v1",
+      "paper_key": "2408.15578",
+      "paper_title": "FireFly-S: Exploiting Dual-Side Sparsity for Spiking Neural Networks Acceleration with Reconfigurable Spatial Architecture",
+      "paper_url": "http://arxiv.org/abs/2408.15578v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs), with their brain-inspired structure using discrete spikes instead of continuous activations, are gaining attention for their potential of efficient processing on neuromorphic chips. While current SNN hardware accelerators often prioritize temporal spike sparsity, exploiting sparse synaptic weights offers significant untapped potential for even greater efficiency. To address this, we propose FireFly-S, a Sparse extension of the FireFly series. This co-optimized software-hardware design focusing on leveraging dual-side sparsity for acceleration. On the software side, we propose a novel algorithmic optimization framework that combines gradient rewiring for pruning and modified Learned Step Size Quantization (LSQ) tailored for SNNs, which achieves remarkable weight sparsity exceeding 85\\% and enables efficient 4-bit quantization with negligible accuracy loss. On the hardware side, we present an efficient dual-side sparsity detector employing a Bitmap-based sparse decoding logic to pinpoint the positions of non-zero weights and input spikes. The logic allows for the direct bypassing of redundant computations, thereby enhancing computational efficiency. Different from the overlay architecture adopted by previous FireFly series, we adopt a spatial architecture with inter-layer pipelining that can fully exploit the nature of Field-Programmable Gate Arrays (FPGAs). A spatial-temporal dataflow is also proposed to support such inter-layer pipelining and avoid long-term temporal dependencies. In experiments conducted on the MNIST, DVS-Gesture and CIFAR-10 datasets, the FireFly-S model achieves 85-95\\% sparsity with 4-bit quantization and the hardware accelerator effectively leverages the dual-side sparsity, delivering outstanding performance metrics of 10,047 FPS/W on MNIST, 3,683 FPS/W on DVS-Gesture, and 2,327 FPS/W on CIFAR-10.",
+      "paper_authors": [
+        "Tenglong Li",
+        "Jindong Li",
+        "Guobin Shen",
+        "Dongcheng Zhao",
+        "Qian Zhang",
+        "Yi Zeng"
+      ],
+      "primary_category": "cs.AR",
+      "publish_time": "2024-08-28",
+      "update_time": "2024-08-28",
+      "comments": null,
       "repo_url": "#"
     }
   },

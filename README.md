@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.08.28
+> Updated on 2024.08.29
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -12,10 +12,12 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-08-28 | NeuroVE: Brain-inspired Linear-Angular Velocity Estimation with Spiking Neural Networks | *Xiao Li, Xieyuanli Chen, Ruibin Guo, Yujie Wu, Zongtan Zhou, Fangwen Yu, Huimin Lu* | [2408.15663v1](http://arxiv.org/abs/2408.15663v1), [Code](#)
+2024-08-28 | FireFly-S: Exploiting Dual-Side Sparsity for Spiking Neural Networks Acceleration with Reconfigurable Spatial Architecture | *Tenglong Li, Jindong Li, Guobin Shen, Dongcheng Zhao, Qian Zhang, Yi Zeng* | [2408.15578v1](http://arxiv.org/abs/2408.15578v1), [Code](#)
 2024-08-27 | PMSN: A Parallel Multi-compartment Spiking Neuron for Multi-scale Temporal Processing | *Xinyi Chen, Jibin Wu, Chenxiang Ma, Yinsong Yan, Yujie Wu, Kay Chen Tan* | [2408.14917v1](http://arxiv.org/abs/2408.14917v1), [Code](#)
 2024-08-27 | SpikingSSMs: Learning Long Sequences with Sparse and Parallel Spiking State Space Models | *Shuaijie Shen, Chao Wang, Renzhuo Huang, Yan Zhong, Qinghai Guo, Zhichao Lu, Jianguo Zhang, Luziwei Leng* | [2408.14909v1](http://arxiv.org/abs/2408.14909v1), [Code](#)
 2024-08-26 | Sparsity-Aware Hardware-Software Co-Design of Spiking Neural Networks: An Overview | *Ilkin Aliyev, Kama Svoboda, Tosiron Adegbija, Jean-Marc Fellous* | [2408.14437v1](http://arxiv.org/abs/2408.14437v1), [Code](#)
-2024-08-26 | Research Advances and New Paradigms for Biology-inspired Spiking Neural Networks | *Tianyu Zheng, Liyuan Han, Tielin Zhang* | [2408.13996v1](http://arxiv.org/abs/2408.13996v1), [Code](#)
+2024-08-26 | Research Advances and New Paradigms for Biology-inspired Spiking Neural Networks | *Tianyu Zheng, Liyuan Han, Tielin Zhang* | [2408.13996v2](http://arxiv.org/abs/2408.13996v2), [Code](#)
 2024-08-23 | Robust Iterative Value Conversion: Deep Reinforcement Learning for Neurochip-driven Edge Robots | *Yuki Kadokawa, Tomohito Kodera, Yoshihisa Tsurumine, Shinya Nishimura, Takamitsu Matsubara* | [2408.13018v1](http://arxiv.org/abs/2408.13018v1), [Code](#)
 2024-08-23 | N-DriverMotion: Driver motion learning and prediction using an event-based camera and directly trained spiking neural networks | *Hyo Jong Chung, Byungkon Kang, Yoonseok Yang* | [2408.13379v1](http://arxiv.org/abs/2408.13379v1), [Code](#)
 2024-08-23 | SHEDAD: SNN-Enhanced District Heating Anomaly Detection for Urban Substations | *Jonne van Dreven, Abbas Cheddad, Sadi Alawadi, Ahmad Nauman Ghazi, Jad Al Koussa, Dirk Vanhoudt* | [2408.14499v1](http://arxiv.org/abs/2408.14499v1), [Code](#)
