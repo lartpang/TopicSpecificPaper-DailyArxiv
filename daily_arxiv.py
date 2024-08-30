@@ -173,6 +173,9 @@ def main():
     keywords = {
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"OR"SNN"',
         "Infrared Small Target Detection": '"Infrared Small Target Detection"OR"IRSTD"',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
+        "Salient Object Detection": '"Salient Object Detection"OR"Video Salient Object Detection"',
+        "Camouflaged Object Detection": '"Camouflaged Object Detection"OR"Video Camouflaged Object Detection"',
+        "Change Detection": '"Change Detection"',
     }
 
     papers = get_papers(keywords, max_results_per_keyword=200)
