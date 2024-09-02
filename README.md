@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.01
+> Updated on 2024.09.02
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -15,6 +15,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-08-30 | Stepwise Weighted Spike Coding for Deep Spiking Neural Networks | *Yiwen Gu, Junchuan Gu, Haibin Shen, Kejie Huang* | [2408.17245v1](http://arxiv.org/abs/2408.17245v1), [Code](#)
 2024-08-29 | A compact neuromorphic system for ultra energy-efficient, on-device robot localization | *Adam D. Hines, Michael Milford, Tobias Fischer* | [2408.16754v1](http://arxiv.org/abs/2408.16754v1), [Code](https://github.com/AdamDHines/LENS)
 2024-08-29 | Human-Inspired Audio-Visual Speech Recognition: Spike Activity, Cueing Interaction and Causal Processing | *Qianhui Liu, Jiadong Wang, Yang Wang, Xin Yang, Gang Pan, Haizhou Li* | [2408.16564v1](http://arxiv.org/abs/2408.16564v1), [Code](#)
 2024-08-29 | Spiking Diffusion Models | *Jiahang Cao, Hanzhong Guo, Ziqing Wang, Deming Zhou, Hao Cheng, Qiang Zhang, Renjing Xu* | [2408.16467v1](http://arxiv.org/abs/2408.16467v1), [Code](https://github.com/andycao1125/sdm)
@@ -645,7 +646,7 @@
 2023-12-06 | Texture-Semantic Collaboration Network for ORSI Salient Object Detection | *Gongyang Li, Zhen Bai, Zhi Liu* | [2312.03548v1](http://arxiv.org/abs/2312.03548v1), [Code](https://github.com/mathlee/tscnet)
 2023-12-06 | Rethinking Object Saliency Ranking: A Novel Whole-flow Processing Paradigm | *Mengke Song, Linfeng Li, Dunquan Wu, Wenfeng Song, Chenglizhao Chen* | [2312.03226v1](http://arxiv.org/abs/2312.03226v1), [Code](https://github.com/mengkesong/saliency-ranking-paradigm)
 2023-12-02 | Spectrum-driven Mixed-frequency Network for Hyperspectral Salient Object Detection | *Peifu Liu, Tingfa Xu, Huan Chen, Shiyun Zhou, Haolin Qin, Jianan Li* | [2312.01060v1](http://arxiv.org/abs/2312.01060v1), [Code](https://github.com/laprf/smn)
-2023-12-01 | Efficient Multimodal Semantic Segmentation via Dual-Prompt Learning | *Shaohua Dong, Yunhe Feng, Qing Yang, Yan Huang, Dongfang Liu, Heng Fan* | [2312.00360v2](http://arxiv.org/abs/2312.00360v2), [Code](https://github.com/shaohuadong2021/dplnet)
+2023-12-01 | Efficient Multimodal Semantic Segmentation via Dual-Prompt Learning | *Shaohua Dong, Yunhe Feng, Qing Yang, Yan Huang, Dongfang Liu, Heng Fan* | [2312.00360v2](http://arxiv.org/abs/2312.00360v2), [Code](#)
 2023-11-30 | Cascaded Interaction with Eroded Deep Supervision for Salient Object Detection | *Hewen Xiao, Jie Mei, Guangfu Ma, Weiren Wu* | [2311.18675v1](http://arxiv.org/abs/2311.18675v1), [Code](#)
 2023-11-30 | SimulFlow: Simultaneously Extracting Feature and Identifying Target for Unsupervised Video Object Segmentation | *Lingyi Hong, Wei Zhang, Shuyong Gao, Hong Lu, WenQiang Zhang* | [2311.18286v1](http://arxiv.org/abs/2311.18286v1), [Code](#)
 2023-11-28 | Unified-modal Salient Object Detection via Adaptive Prompt Learning | *Kunpeng Wang, Chenglong Li, Zhengzheng Tu, Zhengyi Liu, Bin Luo* | [2311.16835v5](http://arxiv.org/abs/2311.16835v5), [Code](https://github.com/angknpng/unisod)
@@ -813,7 +814,7 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2024-08-27 | Hierarchical Graph Interaction Transformer with Dynamic Token Clustering for Camouflaged Object Detection | *Siyuan Yao, Hao Sun, Tian-Zhu Xiang, Xiao Wang, Xiaochun Cao* | [2408.15020v1](http://arxiv.org/abs/2408.15020v1), [Code](https://github.com/garyson1204/hginet)
-2024-08-26 | A Survey of Camouflaged Object Detection and Beyond | *Fengyang Xiao, Sujie Hu, Yuqi Shen, Chengyu Fang, Jinfa Huang, Chunming He, Longxiang Tang, Ziyun Yang, Xiu Li* | [2408.14562v1](http://arxiv.org/abs/2408.14562v1), [Code](#)
+2024-08-26 | A Survey of Camouflaged Object Detection and Beyond | *Fengyang Xiao, Sujie Hu, Yuqi Shen, Chengyu Fang, Jinfa Huang, Chunming He, Longxiang Tang, Ziyun Yang, Xiu Li* | [2408.14562v1](http://arxiv.org/abs/2408.14562v1), [Code](https://github.com/chunminghe/awesome-concealed-object-segmentation)
 2024-08-20 | Just a Hint: Point-Supervised Camouflaged Object Detection | *Huafeng Chen, Dian Shao, Guangqian Guo, Shan Gao* | [2408.10777v1](http://arxiv.org/abs/2408.10777v1), [Code](#)
 2024-08-20 | SAM-COD: SAM-guided Unified Framework for Weakly-Supervised Camouflaged Object Detection | *Huafeng Chen, Pengxu Wei, Guangqian Guo, Shan Gao* | [2408.10760v1](http://arxiv.org/abs/2408.10760v1), [Code](#)
 2024-08-17 | Depth-guided Texture Diffusion for Image Semantic Segmentation | *Wei Sun, Yuan Li, Qixiang Ye, Jianbin Jiao, Yanzhao Zhou* | [2408.09097v1](http://arxiv.org/abs/2408.09097v1), [Code](#)
@@ -917,7 +918,7 @@
 2024-08-15 | Treat Stillness with Movement: Remote Sensing Change Detection via Coarse-grained Temporal Foregrounds Mining | *Xixi Wang, Zitian Wang, Jingtao Jiang, Lan Chen, Xiao Wang, Bo Jiang* | [2408.08078v1](http://arxiv.org/abs/2408.08078v1), [Code](https://github.com/event-ahu/ctm_remote_sensing_change_detection)
 2024-08-13 | Granger causal inference for climate change attribution | *Mark D. Risser, Mohammed Ombadi, Michael F. Wehner* | [2408.16004v1](http://arxiv.org/abs/2408.16004v1), [Code](#)
 2024-08-13 | Specialized Change Detection using Segment Anything | *Tahir Ahmad, Sudipan Saha* | [2408.06644v1](http://arxiv.org/abs/2408.06644v1), [Code](#)
-2024-08-12 | Anomaly Detection in Time Series of EDFA Pump Currents to Monitor Degeneration Processes using Fuzzy Clustering | *Dominic Schneider, Lutz Rapp, Christoph Ament* | [2408.15268v1](http://arxiv.org/abs/2408.15268v1), [Code](#)
+2024-08-12 | Anomaly Detection in Time Series of EDFA Pump Currents to Monitor Degeneration Processes using Fuzzy Clustering | *Dominic Schneider, Lutz Rapp, Christoph Ament* | [2408.15268v2](http://arxiv.org/abs/2408.15268v2), [Code](#)
 2024-08-11 | High Probability Low Latency Sequential Change Detection over an Unknown Finite Horizon | *Yu-Han Huang, Venugopal V. Veeravalli* | [2408.05817v1](http://arxiv.org/abs/2408.05817v1), [Code](#)
 2024-08-08 | Integrated Dynamic Phenological Feature for Remote Sensing Image Land Cover Change Detection | *Yi Liu, Chenhao Sun, Hao Ye, Xiangying Liu, Weilong Ju* | [2408.04144v1](http://arxiv.org/abs/2408.04144v1), [Code](#)
 2024-08-07 | Testing for a general changepoint in psychometric studies: changes detection and sample size planning | *Nicoletta D'Angelo* | [2408.04056v1](http://arxiv.org/abs/2408.04056v1), [Code](#)

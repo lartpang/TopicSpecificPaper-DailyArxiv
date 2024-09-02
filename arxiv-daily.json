@@ -10290,6 +10290,25 @@
       "update_time": "2024-08-28",
       "comments": "Accepted at 2024 IEEE High Performance Extreme Computing",
       "repo_url": "#"
+    },
+    "2408.17245": {
+      "paper_id": "2408.17245v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.17245v1",
+      "paper_key": "2408.17245",
+      "paper_title": "Stepwise Weighted Spike Coding for Deep Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2408.17245v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) seek to mimic the spiking behavior of biological neurons and are expected to play a key role in the advancement of neural computing and artificial intelligence. The efficiency of SNNs is often determined by the neural coding schemes. Existing coding schemes either cause huge delays and energy consumption or necessitate intricate neuron models and training techniques. To address these issues, we propose a novel Stepwise Weighted Spike (SWS) coding scheme to enhance the encoding of information in spikes. This approach compresses the spikes by weighting the significance of the spike in each step of neural computation, achieving high performance and low energy consumption. A Ternary Self-Amplifying (TSA) neuron model with a silent period is proposed for supporting SWS-based computing, aimed at minimizing the residual error resulting from stepwise weighting in neural computation. Our experimental results show that the SWS coding scheme outperforms the existing neural coding schemes in very deep SNNs, and significantly reduces operations and latency.",
+      "paper_authors": [
+        "Yiwen Gu",
+        "Junchuan Gu",
+        "Haibin Shen",
+        "Kejie Huang"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-30",
+      "update_time": "2024-08-30",
+      "comments": null,
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -12201,7 +12220,7 @@
       "publish_time": "2023-12-01",
       "update_time": "2023-12-04",
       "comments": "11 pages, 4 figures, 9 tables",
-      "repo_url": "https://github.com/shaohuadong2021/dplnet"
+      "repo_url": "#"
     },
     "2311.18675": {
       "paper_id": "2311.18675v1",
@@ -15386,7 +15405,7 @@
       "publish_time": "2024-08-26",
       "update_time": "2024-08-26",
       "comments": "26 pages, 10 figures, 8 tables",
-      "repo_url": "#"
+      "repo_url": "https://github.com/chunminghe/awesome-concealed-object-segmentation"
     },
     "2408.10777": {
       "paper_id": "2408.10777v1",
@@ -17328,11 +17347,11 @@
       "repo_url": "#"
     },
     "2408.15268": {
-      "paper_id": "2408.15268v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15268v1",
+      "paper_id": "2408.15268v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15268v2",
       "paper_key": "2408.15268",
       "paper_title": "Anomaly Detection in Time Series of EDFA Pump Currents to Monitor Degeneration Processes using Fuzzy Clustering",
-      "paper_url": "http://arxiv.org/abs/2408.15268v1",
+      "paper_url": "http://arxiv.org/abs/2408.15268v2",
       "paper_abstract": "This article proposes a novel fuzzy clustering based anomaly detection method for pump current time series of EDFA systems. The proposed change detection framework (CDF) strategically combines the advantages of entropy analysis (EA) and principle component analysis (PCA) with fuzzy clustering procedures. In the framework, EA is applied for dynamic selection of features for reduction of the feature space and increase of computational performance. Furthermore, PCA is utilized to extract features from the raw feature space to enable generalization capability of the subsequent fuzzy clustering procedures. Three different fuzzy clustering methods, more precisely the fuzzy clustering algorithm, a probabilistic clustering algorithm and a possibilistic clustering algorithm are evaluated for performance and generalization. Hence, the proposed framework has the innovative feature to detect changes in pump current time series at an early stage for arbitrary points of operation, compared to state-of-the-art predefined alarms in commercially used EDFAs. Moreover, the approach is implemented and tested using experimental data. In addition, the proposed framework enables further approaches of applying decentralized predictive maintenance for optical fiber networks.",
       "paper_authors": [
         "Dominic Schneider",
@@ -17341,8 +17360,8 @@
       ],
       "primary_category": "eess.SP",
       "publish_time": "2024-08-12",
-      "update_time": "2024-08-12",
-      "comments": "This paper has been accepted to the IEEE International Conference on\n  Machine Learning for Communication and Networking (ICMLCN) 2024",
+      "update_time": "2024-08-30",
+      "comments": "6 pages, 6 figures",
       "repo_url": "#"
     },
     "2408.05817": {
