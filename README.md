@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.03
+> Updated on 2024.09.04
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -76,7 +76,7 @@
 2024-07-21 | SNNGX: Securing Spiking Neural Networks with Genetic XOR Encryption on RRAM-based Neuromorphic Accelerator | *Kwunhang Wong, Songqi Wang, Wei Huang, Xinyuan Zhang, Yangu He, Karl M. H. Lai, Yuzhong Jiao, Ning Lin, Xiaojuan Qi, Xiaoming Chen, Zhongrui Wang* | [2407.15152v2](http://arxiv.org/abs/2407.15152v2), [Code](https://github.com/u3556440/SNNGX_qSNN_encryption)
 2024-07-20 | Inferring Ingrained Remote Information in AC Power Flows Using Neuromorphic Modality Regime | *Xiaoguang Diao, Yubo Song, Subham Sahoo* | [2407.14883v2](http://arxiv.org/abs/2407.14883v2), [Code](#)
 2024-07-19 | On the Robustness of Fully-Spiking Neural Networks in Open-World Scenarios using Forward-Only Learning Algorithms | *Erik B. Terres-Escudero, Javier Del Ser, Aitor Martínez-Seras, Pablo Garcia-Bringas* | [2407.14097v1](http://arxiv.org/abs/2407.14097v1), [Code](https://github.com/AnonymousSquirrel316/FFA_OOD)
-2024-07-19 | LoAS: Fully Temporal-Parallel Datatflow for Dual-Sparse Spiking Neural Networks | *Ruokai Yin, Youngeun Kim, Di Wu, Priyadarshini Panda* | [2407.14073v2](http://arxiv.org/abs/2407.14073v2), [Code](https://github.com/ruokaiyin/loas)
+2024-07-19 | LoAS: Fully Temporal-Parallel Dataflow for Dual-Sparse Spiking Neural Networks | *Ruokai Yin, Youngeun Kim, Di Wu, Priyadarshini Panda* | [2407.14073v3](http://arxiv.org/abs/2407.14073v3), [Code](https://github.com/ruokaiyin/loas)
 2024-07-18 | Accurate Mapping of RNNs on Neuromorphic Hardware with Adaptive Spiking Neurons | *Gauthier Boeshertz, Giacomo Indiveri, Manu Nair, Alpha Renner* | [2407.13534v1](http://arxiv.org/abs/2407.13534v1), [Code](#)
 2024-07-18 | CCSRP: Robust Pruning of Spiking Neural Networks through Cooperative Coevolution | *Zichen Song, Jiakang Li, Songning Lai, Sitan Huang* | [2408.00794v1](http://arxiv.org/abs/2408.00794v1), [Code](#)
 2024-07-17 | SpikeVoice: High-Quality Text-to-Speech Via Efficient Spiking Neural Network | *Kexin Wang, Jiahong Zhang, Yong Ren, Man Yao, Di Shang, Bo Xu, Guoqi Li* | [2408.00788v1](http://arxiv.org/abs/2408.00788v1), [Code](#)
@@ -103,6 +103,7 @@
 2024-07-04 | Natively neuromorphic LMU architecture for encoding-free SNN-based HAR on commercial edge devices | *Vittorio Fra, Benedetto Leto, Andrea Pignata, Enrico Macii, Gianvito Urgese* | [2407.04076v2](http://arxiv.org/abs/2407.04076v2), [Code](#)
 2024-07-01 | Real-Time Neuromorphic Navigation: Integrating Event-Based Vision and Physics-Driven Planning on a Parrot Bebop2 Quadrotor | *Amogh Joshi, Sourav Sanyal, Kaushik Roy* | [2407.00931v1](http://arxiv.org/abs/2407.00931v1), [Code](https://github.com/amoghj98/neuronav)
 2024-07-01 | Sign Gradient Descent-based Neuronal Dynamics: ANN-to-SNN Conversion Beyond ReLU Network | *Hyunseok Oh, Youngki Lee* | [2407.01645v1](http://arxiv.org/abs/2407.01645v1), [Code](https://github.com/snuhcs/snn_signgd)
+2024-07-01 | Physics-informed Neural Networks for Heterogeneous Poroelastic Media | *Sumanta Roy, Chandrasekhar Annavarapu, Pratanu Roy, Dakshina Murthy Valiveti* | [2407.03372v3](http://arxiv.org/abs/2407.03372v3), [Code](#)
 2024-06-30 | HASNAS: A Hardware-Aware Spiking Neural Architecture Search Framework for Neuromorphic Compute-in-Memory Systems | *Rachmad Vidya Wicaksana Putra, Muhammad Shafique* | [2407.00641v1](http://arxiv.org/abs/2407.00641v1), [Code](#)
 2024-06-28 | A Differentiable Approach to Multi-scale Brain Modeling | *Chaoming Wang, Muyang Lyu, Tianqiu Zhang, Sichao He, Si Wu* | [2406.19708v2](http://arxiv.org/abs/2406.19708v2), [Code](https://github.com/chaoming0625/differentiable-brain-modeling-workflow)
 2024-06-28 | Directly Training Temporal Spiking Neural Network with Sparse Surrogate Gradient | *Yang Li, Feifei Zhao, Dongcheng Zhao, Yi Zeng* | [2406.19645v1](http://arxiv.org/abs/2406.19645v1), [Code](#)
@@ -607,7 +608,7 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2024-08-29 | SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection | *Rohit Venkata Sai Dulam, Chandra Kambhamettu* | [2408.16645v1](http://arxiv.org/abs/2408.16645v1), [Code](#)
-2024-08-27 | Adapting Segment Anything Model to Multi-modal Salient Object Detection with Semantic Feature Fusion Guidance | *Kunpeng Wang, Danying Lin, Chenglong Li, Zhengzheng Tu, Bin Luo* | [2408.15063v2](http://arxiv.org/abs/2408.15063v2), [Code](#)
+2024-08-27 | Adapting Segment Anything Model to Multi-modal Salient Object Detection with Semantic Feature Fusion Guidance | *Kunpeng Wang, Danying Lin, Chenglong Li, Zhengzheng Tu, Bin Luo* | [2408.15063v3](http://arxiv.org/abs/2408.15063v3), [Code](https://github.com/angknpng/sammese)
 2024-08-17 | Depth-guided Texture Diffusion for Image Semantic Segmentation | *Wei Sun, Yuan Li, Qixiang Ye, Jianbin Jiao, Yanzhao Zhou* | [2408.09097v1](http://arxiv.org/abs/2408.09097v1), [Code](#)
 2024-08-16 | SAM2-UNet: Segment Anything 2 Makes Strong Encoder for Natural and Medical Image Segmentation | *Xinyu Xiong, Zihuang Wu, Shuangyi Tan, Wenxue Li, Feilong Tang, Ying Chen, Siying Li, Jie Ma, Guanbin Li* | [2408.08870v1](http://arxiv.org/abs/2408.08870v1), [Code](https://github.com/wzh0120/sam2-unet)
 2024-08-08 | Multi-Scale and Detail-Enhanced Segment Anything Model for Salient Object Detection | *Shixuan Gao, Pingping Zhang, Tianyu Yan, Huchuan Lu* | [2408.04326v1](http://arxiv.org/abs/2408.04326v1), [Code](https://github.com/bellybeauty/mdsam)
@@ -1062,7 +1063,7 @@
 2023-12-05 | Active Learning for Abrupt Shifts Change-point Detection via Derivative-Aware Gaussian Processes | *Hao Zhao, Rong Pan* | [2312.03176v1](http://arxiv.org/abs/2312.03176v1), [Code](#)
 2023-12-05 | Online Change Detection in SAR Time-Series with Kronecker Product Structured Scaled Gaussian Models | *Ammar Mian, Guillaume Ginolhac, Florent Bouchard, Arnaud Breloy* | [2312.02807v1](http://arxiv.org/abs/2312.02807v1), [Code](#)
 2023-12-05 | C-NERF: Representing Scene Changes as Directional Consistency Difference-based NeRF | *Rui Huang, Binbin Jiang, Qingyi Zhao, William Wang, Yuxiang Zhang, Qing Guo* | [2312.02751v2](http://arxiv.org/abs/2312.02751v2), [Code](https://github.com/c-nerf/c-nerf)
-2023-12-05 | Graph Information Bottleneck for Remote Sensing Segmentation | *Yuntao Shou, Wei Ai, Tao Meng* | [2312.02545v1](http://arxiv.org/abs/2312.02545v1), [Code](#)
+2023-12-05 | Graph Information Bottleneck for Remote Sensing Segmentation | *Yuntao Shou, Wei Ai, Tao Meng, Nan Yin* | [2312.02545v2](http://arxiv.org/abs/2312.02545v2), [Code](#)
 2023-12-04 | Unsupervised Change Detection for Space Habitats Using 3D Point Clouds | *Jamie Santos, Holly Dinkel, Julia Di, Paulo V. K. Borges, Marina Moreira, Oleg Alexandrov, Brian Coltin, Trey Smith* | [2312.02396v3](http://arxiv.org/abs/2312.02396v3), [Code](https://github.com/nasa/isaac)
 2023-12-02 | A New Learning Paradigm for Foundation Model-based Remote Sensing Change Detection | *Kaiyu Li, Xiangyong Cao, Deyu Meng* | [2312.01163v2](http://arxiv.org/abs/2312.01163v2), [Code](https://github.com/likyoo/ban)
 2023-12-02 | Has Anything Changed? 3D Change Detection by 2D Segmentation Masks | *Aikaterini Adam, Konstantinos Karantzalos, Lazaros Grammatikopoulos, Torsten Sattler* | [2312.01148v1](http://arxiv.org/abs/2312.01148v1), [Code](#)

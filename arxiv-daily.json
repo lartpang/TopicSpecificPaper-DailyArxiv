@@ -836,11 +836,11 @@
       "repo_url": "https://github.com/AnonymousSquirrel316/FFA_OOD"
     },
     "2407.14073": {
-      "paper_id": "2407.14073v2",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.14073v2",
+      "paper_id": "2407.14073v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.14073v3",
       "paper_key": "2407.14073",
-      "paper_title": "LoAS: Fully Temporal-Parallel Datatflow for Dual-Sparse Spiking Neural Networks",
-      "paper_url": "http://arxiv.org/abs/2407.14073v2",
+      "paper_title": "LoAS: Fully Temporal-Parallel Dataflow for Dual-Sparse Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2407.14073v3",
       "paper_abstract": "Spiking Neural Networks (SNNs) have gained significant research attention in the last decade due to their potential to drive resource-constrained edge devices. Though existing SNN accelerators offer high efficiency in processing sparse spikes with dense weights, opportunities are less explored in SNNs with sparse weights, i.e., dual-sparsity. In this work, we study the acceleration of dual-sparse SNNs, focusing on their core operation, sparse-matrix-sparse-matrix multiplication (spMspM). We observe that naively running a dual-sparse SNN on existing spMspM accelerators designed for dual-sparse Artificial Neural Networks (ANNs) exhibits sub-optimal efficiency. The main challenge is that processing timesteps, a natural property of SNNs, introduces an extra loop to ANN spMspM, leading to longer latency and more memory traffic. To address the problem, we propose a fully temporal-parallel (FTP) dataflow, which minimizes both data movement across timesteps and the end-to-end latency of dual-sparse SNNs. To maximize the efficiency of FTP dataflow, we propose an FTP-friendly spike compression mechanism that efficiently compresses single-bit spikes and ensures contiguous memory access. We further propose an FTP-friendly inner-join circuit that can lower the cost of the expensive prefix-sum circuits with almost no throughput penalty. All the above techniques for FTP dataflow are encapsulated in LoAS, a Low-latency inference Accelerator for dual-sparse SNNs. With FTP dataflow, compression, and inner-join, running dual-sparse SNN workloads on LoAS demonstrates significant speedup (up to $8.51\\times$) and energy reduction (up to $3.68\\times$) compared to running it on prior dual-sparse accelerators.",
       "paper_authors": [
         "Ruokai Yin",
@@ -850,7 +850,7 @@
       ],
       "primary_category": "cs.AR",
       "publish_time": "2024-07-19",
-      "update_time": "2024-08-14",
+      "update_time": "2024-09-01",
       "comments": "Accepted to MICRO 2024. Will update with the camera-ready version\n  once ready. (Github: https://github.com/RuokaiYin/LoAS)",
       "repo_url": "https://github.com/ruokaiyin/loas"
     },
@@ -10309,6 +10309,25 @@
       "update_time": "2024-08-30",
       "comments": null,
       "repo_url": "#"
+    },
+    "2407.03372": {
+      "paper_id": "2407.03372v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.03372v3",
+      "paper_key": "2407.03372",
+      "paper_title": "Physics-informed Neural Networks for Heterogeneous Poroelastic Media",
+      "paper_url": "http://arxiv.org/abs/2407.03372v3",
+      "paper_abstract": "This study presents a novel physics-informed neural network (PINN) framework for modeling poroelasticity in heterogeneous media with material interfaces. The approach introduces a composite neural network (CoNN) where separate neural networks predict displacement and pressure variables for each material. While sharing identical activation functions, these networks are independently trained for all other parameters. To address challenges posed by heterogeneous material interfaces, the CoNN is integrated with the Interface-PINNs or I-PINNs framework (Sarma et al. 2024, https://dx.doi.org/10.1016/j.cma.2024.117135), allowing different activation functions across material interfaces. This ensures accurate approximation of discontinuous solution fields and gradients. Performance and accuracy of this combined architecture were evaluated against the conventional PINNs approach, a single neural network (SNN) architecture, and the eXtended PINNs (XPINNs) framework through two one-dimensional benchmark examples with discontinuous material properties. The results show that the proposed CoNN with I-PINNs architecture achieves an RMSE that is two orders of magnitude better than the conventional PINNs approach and is at least 40 times faster than the SNN framework. Compared to XPINNs, the proposed method achieves an RMSE at least one order of magnitude better and is 40% faster.",
+      "paper_authors": [
+        "Sumanta Roy",
+        "Chandrasekhar Annavarapu",
+        "Pratanu Roy",
+        "Dakshina Murthy Valiveti"
+      ],
+      "primary_category": "eess.SY",
+      "publish_time": "2024-07-01",
+      "update_time": "2024-09-02",
+      "comments": "34 pages, 12 figures, 3 tables",
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -11428,12 +11447,12 @@
       "repo_url": "#"
     },
     "2408.15063": {
-      "paper_id": "2408.15063v2",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15063v2",
+      "paper_id": "2408.15063v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15063v3",
       "paper_key": "2408.15063",
       "paper_title": "Adapting Segment Anything Model to Multi-modal Salient Object Detection with Semantic Feature Fusion Guidance",
-      "paper_url": "http://arxiv.org/abs/2408.15063v2",
-      "paper_abstract": "Although most existing multi-modal salient object detection (SOD) methods demonstrate effectiveness through training models from scratch, the limited multi-modal data hinders these methods from reaching optimality. In this paper, we propose a novel framework to explore and exploit the powerful feature representation and zero-shot generalization ability of the pre-trained Segment Anything Model (SAM) for multi-modal SOD. Despite serving as a recent vision fundamental model, driving the class-agnostic SAM to comprehend and detect salient objects accurately is non-trivial, especially in challenging scenes. To this end, we develop \\underline{SAM} with se\\underline{m}antic f\\underline{e}ature fu\\underline{s}ion guidanc\\underline{e} (Sammese), which incorporates multi-modal saliency-specific knowledge into SAM to adapt SAM to multi-modal SOD tasks. However, it is difficult for SAM trained on single-modal data to directly mine the complementary benefits of multi-modal inputs and comprehensively utilize them to achieve accurate saliency prediction.To address these issues, we first design a multi-modal complementary fusion module to extract robust multi-modal semantic features by integrating information from visible and thermal or depth image pairs. Then, we feed the extracted multi-modal semantic features into both the SAM image encoder and mask decoder for fine-tuning and prompting, respectively. Specifically, in the image encoder, a multi-modal adapter is proposed to adapt the single-modal SAM to multi-modal information. In the mask decoder, a semantic-geometric prompt generation strategy is proposed to produce corresponding embeddings with various saliency cues. Extensive experiments on both RGB-D and RGB-T SOD benchmarks show the effectiveness of the proposed framework.",
+      "paper_url": "http://arxiv.org/abs/2408.15063v3",
+      "paper_abstract": "Although most existing multi-modal salient object detection (SOD) methods demonstrate effectiveness through training models from scratch, the limited multi-modal data hinders these methods from reaching optimality. In this paper, we propose a novel framework to explore and exploit the powerful feature representation and zero-shot generalization ability of the pre-trained Segment Anything Model (SAM) for multi-modal SOD. Despite serving as a recent vision fundamental model, driving the class-agnostic SAM to comprehend and detect salient objects accurately is non-trivial, especially in challenging scenes. To this end, we develop \\underline{SAM} with se\\underline{m}antic f\\underline{e}ature fu\\underline{s}ion guidanc\\underline{e} (Sammese), which incorporates multi-modal saliency-specific knowledge into SAM to adapt SAM to multi-modal SOD tasks. However, it is difficult for SAM trained on single-modal data to directly mine the complementary benefits of multi-modal inputs and comprehensively utilize them to achieve accurate saliency prediction. To address these issues, we first design a multi-modal complementary fusion module to extract robust multi-modal semantic features by integrating information from visible and thermal or depth image pairs. Then, we feed the extracted multi-modal semantic features into both the SAM image encoder and mask decoder for fine-tuning and prompting, respectively. Specifically, in the image encoder, a multi-modal adapter is proposed to adapt the single-modal SAM to multi-modal information. In the mask decoder, a semantic-geometric prompt generation strategy is proposed to produce corresponding embeddings with various saliency cues. Extensive experiments on both RGB-D and RGB-T SOD benchmarks show the effectiveness of the proposed framework. The code will be available at \\url{https://github.com/Angknpng/Sammese}.",
       "paper_authors": [
         "Kunpeng Wang",
         "Danying Lin",
@@ -11443,9 +11462,9 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-08-27",
-      "update_time": "2024-08-28",
+      "update_time": "2024-09-02",
       "comments": "10 pages, 9 figures",
-      "repo_url": "#"
+      "repo_url": "https://github.com/angknpng/sammese"
     },
     "2408.09097": {
       "paper_id": "2408.09097v1",
@@ -20194,20 +20213,21 @@
       "repo_url": "https://github.com/c-nerf/c-nerf"
     },
     "2312.02545": {
-      "paper_id": "2312.02545v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2312.02545v1",
+      "paper_id": "2312.02545v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2312.02545v2",
       "paper_key": "2312.02545",
       "paper_title": "Graph Information Bottleneck for Remote Sensing Segmentation",
-      "paper_url": "http://arxiv.org/abs/2312.02545v1",
+      "paper_url": "http://arxiv.org/abs/2312.02545v2",
       "paper_abstract": "Remote sensing segmentation has a wide range of applications in environmental protection, and urban change detection, etc. Despite the success of deep learning-based remote sensing segmentation methods (e.g., CNN and Transformer), they are not flexible enough to model irregular objects. In addition, existing graph contrastive learning methods usually adopt the way of maximizing mutual information to keep the node representations consistent between different graph views, which may cause the model to learn task-independent redundant information. To tackle the above problems, this paper treats images as graph structures and introduces a simple contrastive vision GNN (SC-ViG) architecture for remote sensing segmentation. Specifically, we construct a node-masked and edge-masked graph view to obtain an optimal graph structure representation, which can adaptively learn whether to mask nodes and edges. Furthermore, this paper innovatively introduces information bottleneck theory into graph contrastive learning to maximize task-related information while minimizing task-independent redundant information. Finally, we replace the convolutional module in UNet with the SC-ViG module to complete the segmentation and classification tasks of remote sensing images. Extensive experiments on publicly available real datasets demonstrate that our method outperforms state-of-the-art remote sensing image segmentation methods.",
       "paper_authors": [
         "Yuntao Shou",
         "Wei Ai",
-        "Tao Meng"
+        "Tao Meng",
+        "Nan Yin"
       ],
       "primary_category": "cs.CV",
       "publish_time": "2023-12-05",
-      "update_time": "2023-12-05",
+      "update_time": "2024-08-31",
       "comments": "13 pages, 6 figures",
       "repo_url": "#"
     },
