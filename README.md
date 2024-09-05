@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.04
+> Updated on 2024.09.05
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -15,6 +15,14 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-04 | SNNAX -- Spiking Neural Networks in JAX | *Jamie Lohoff, Jan Finkbeiner, Emre Neftci* | [2409.02842v1](http://arxiv.org/abs/2409.02842v1), [Code](#)
+2024-09-04 | A Low-Cost Real-Time Spiking System for Obstacle Detection based on Ultrasonic Sensors and Rate Coding | *Alvaro Ayuso-Martinez, Daniel Casanueva-Morato, Juan Pedro Dominguez-Morales, Angel Jimenez-Fernandez, Gabriel Jimenez-Moreno* | [2409.02680v1](http://arxiv.org/abs/2409.02680v1), [Code](#)
+2024-09-03 | Internal Representations in Spiking Neural Networks, criticality and the Renormalization Group | *João Henrique de Sant'Ana, Nestor Caticha* | [2409.02238v1](http://arxiv.org/abs/2409.02238v1), [Code](#)
+2024-09-03 | Decoding finger velocity from cortical spike trains with recurrent spiking neural networks | *Tengjun Liu, Julia Gygax, Julian Rossbroich, Yansong Chua, Shaomin Zhang, Friedemann Zenke* | [2409.01762v1](http://arxiv.org/abs/2409.01762v1), [Code](#)
+2024-09-03 | Brain-Inspired Online Adaptation for Remote Sensing with Spiking Neural Network | *Dexin Duan, Peilin liu, Fei Wen* | [2409.02146v1](http://arxiv.org/abs/2409.02146v1), [Code](#)
+2024-09-03 | ReSpike: Residual Frames-based Hybrid Spiking Neural Networks for Efficient Action Recognition | *Shiting Xiao, Yuhang Li, Youngeun Kim, Donghyun Lee, Priyadarshini Panda* | [2409.01564v1](http://arxiv.org/abs/2409.01564v1), [Code](#)
+2024-09-02 | CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification | *Mikhail Kiselev* | [2409.01230v2](http://arxiv.org/abs/2409.01230v2), [Code](#)
+2024-08-31 | Digit Recognition using Multimodal Spiking Neural Networks | *William Bjorndahl, Jack Easton, Austin Modoff, Eric C. Larson, Joseph Camp, Prasanna Rangarajan* | [2409.00552v1](http://arxiv.org/abs/2409.00552v1), [Code](#)
 2024-08-30 | Stepwise Weighted Spike Coding for Deep Spiking Neural Networks | *Yiwen Gu, Junchuan Gu, Haibin Shen, Kejie Huang* | [2408.17245v1](http://arxiv.org/abs/2408.17245v1), [Code](#)
 2024-08-29 | A compact neuromorphic system for ultra energy-efficient, on-device robot localization | *Adam D. Hines, Michael Milford, Tobias Fischer* | [2408.16754v1](http://arxiv.org/abs/2408.16754v1), [Code](https://github.com/AdamDHines/LENS)
 2024-08-29 | Human-Inspired Audio-Visual Speech Recognition: Spike Activity, Cueing Interaction and Causal Processing | *Qianhui Liu, Jiadong Wang, Yang Wang, Xin Yang, Gang Pan, Haizhou Li* | [2408.16564v1](http://arxiv.org/abs/2408.16564v1), [Code](#)
@@ -33,10 +41,13 @@
 2024-08-22 | AT-SNN: Adaptive Tokens for Vision Transformer on Spiking Neural Network | *Donghwa Kang, Youngmoon Lee, Eun-Kyu Lee, Brent Kang, Jinkyu Lee, Hyeongboo Baek* | [2408.12293v1](http://arxiv.org/abs/2408.12293v1), [Code](#)
 2024-08-22 | When In-memory Computing Meets Spiking Neural Networks -- A Perspective on Device-Circuit-System-and-Algorithm Co-design | *Abhishek Moitra, Abhiroop Bhattacharjee, Yuhang Li, Youngeun Kim, Priyadarshini Panda* | [2408.12767v1](http://arxiv.org/abs/2408.12767v1), [Code](#)
 2024-08-20 | Towards Efficient Formal Verification of Spiking Neural Network | *Baekryun Seong, Jieung Kim, Sang-Ki Ko* | [2408.10900v1](http://arxiv.org/abs/2408.10900v1), [Code](#)
+2024-08-19 | Toward Large-scale Spiking Neural Networks: A Comprehensive Survey and Future Directions | *Yangfan Hu, Qian Zheng, Guoqi Li, Huajin Tang, Gang Pan* | [2409.02111v1](http://arxiv.org/abs/2409.02111v1), [Code](#)
+2024-08-19 | A More Accurate Approximation of Activation Function with Few Spikes Neurons | *Dayena Jeong, Jaewoo Park, Jeonghee Jo, Jongkil Park, Jaewook Kim, Hyun Jae Jang, Suyoun Lee, Seongsik Park* | [2409.00044v1](http://arxiv.org/abs/2409.00044v1), [Code](#)
 2024-08-18 | Obtaining Optimal Spiking Neural Network in Sequence Learning via CRNN-SNN Conversion | *Jiahao Su, Kang You, Zekai Xu, Weizhi Xu, Zhezhi He* | [2408.09403v2](http://arxiv.org/abs/2408.09403v2), [Code](#)
 2024-08-17 | Toward End-to-End Bearing Fault Diagnosis for Industrial Scenarios with Spiking Neural Networks | *Yongqi Ding, Lin Zuo, Mengmeng Jing, Kunshan Yang, Biao Chen, Yunqian Yu* | [2408.11067v1](http://arxiv.org/abs/2408.11067v1), [Code](#)
 2024-08-17 | Temporal Reversed Training for Spiking Neural Networks with Generalized Spatio-Temporal Representation | *Lin Zuo, Yongqi Ding, Wenwei Luo, Mengmeng Jing, Xianlong Tian, Kunshan Yang* | [2408.09108v1](http://arxiv.org/abs/2408.09108v1), [Code](#)
 2024-08-16 | Xpikeformer: Hybrid Analog-Digital Hardware Acceleration for Spiking Transformers | *Zihang Song, Prabodh Katti, Osvaldo Simeone, Bipin Rajendran* | [2408.08794v1](http://arxiv.org/abs/2408.08794v1), [Code](#)
+2024-08-16 | TACOS: Task Agnostic Continual Learning in Spiking Neural Networks | *Nicholas Soures, Peter Helfer, Anurag Daram, Tej Pandit, Dhireesha Kudithipudi* | [2409.00021v1](http://arxiv.org/abs/2409.00021v1), [Code](#)
 2024-08-14 | Analog Spiking Neuron in CMOS 28 nm Towards Large-Scale Neuromorphic Processors | *Marwan Besrour, Jacob Lavoie, Takwa Omrani, Gabriel Martin-Hardy, Esmaeil Ranjbar Koleibi, Jeremy Menard, Konin Koua, Philippe Marcoux, Mounir Boukadoum, Rejean Fontaine* | [2408.07734v1](http://arxiv.org/abs/2408.07734v1), [Code](#)
 2024-08-14 | Advancing Spatio-Temporal Processing in Spiking Neural Networks through Adaptation | *Maximilian Baronig, Romain Ferrand, Silvester Sabathiel, Robert Legenstein* | [2408.07517v1](http://arxiv.org/abs/2408.07517v1), [Code](https://github.com/IGITUGraz/SE-adlif)
 2024-08-14 | DPSNN: Spiking Neural Network for Low-Latency Streaming Speech Enhancement | *Tao Sun, Sander Bohté* | [2408.07388v1](http://arxiv.org/abs/2408.07388v1), [Code](#)
@@ -607,6 +618,8 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-04 | Pluralistic Salient Object Detection | *Xuelu Feng, Yunsheng Li, Dongdong Chen, Chunming Qiao, Junsong Yuan, Lu Yuan, Gang Hua* | [2409.02368v1](http://arxiv.org/abs/2409.02368v1), [Code](#)
+2024-09-02 | CONDA: Condensed Deep Association Learning for Co-Salient Object Detection | *Long Li, Nian Liu, Dingwen Zhang, Zhongyu Li, Salman Khan, Rao Anwer, Hisham Cholakkal, Junwei Han, Fahad Shahbaz Khan* | [2409.01021v2](http://arxiv.org/abs/2409.01021v2), [Code](#)
 2024-08-29 | SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection | *Rohit Venkata Sai Dulam, Chandra Kambhamettu* | [2408.16645v1](http://arxiv.org/abs/2408.16645v1), [Code](#)
 2024-08-27 | Adapting Segment Anything Model to Multi-modal Salient Object Detection with Semantic Feature Fusion Guidance | *Kunpeng Wang, Danying Lin, Chenglong Li, Zhengzheng Tu, Bin Luo* | [2408.15063v3](http://arxiv.org/abs/2408.15063v3), [Code](https://github.com/angknpng/sammese)
 2024-08-17 | Depth-guided Texture Diffusion for Image Semantic Segmentation | *Wei Sun, Yuan Li, Qixiang Ye, Jianbin Jiao, Yanzhao Zhou* | [2408.09097v1](http://arxiv.org/abs/2408.09097v1), [Code](#)
@@ -814,6 +827,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-03 | Frequency-Spatial Entanglement Learning for Camouflaged Object Detection | *Yanguang Sun, Chunyan Xu, Jian Yang, Hanyu Xuan, Lei Luo* | [2409.01686v1](http://arxiv.org/abs/2409.01686v1), [Code](https://github.com/csysi/fsel)
 2024-08-27 | Hierarchical Graph Interaction Transformer with Dynamic Token Clustering for Camouflaged Object Detection | *Siyuan Yao, Hao Sun, Tian-Zhu Xiang, Xiao Wang, Xiaochun Cao* | [2408.15020v1](http://arxiv.org/abs/2408.15020v1), [Code](https://github.com/garyson1204/hginet)
 2024-08-26 | A Survey of Camouflaged Object Detection and Beyond | *Fengyang Xiao, Sujie Hu, Yuqi Shen, Chengyu Fang, Jinfa Huang, Chunming He, Longxiang Tang, Ziyun Yang, Xiu Li* | [2408.14562v1](http://arxiv.org/abs/2408.14562v1), [Code](https://github.com/chunminghe/awesome-concealed-object-segmentation)
 2024-08-20 | Just a Hint: Point-Supervised Camouflaged Object Detection | *Huafeng Chen, Dian Shao, Guangqian Guo, Shan Gao* | [2408.10777v1](http://arxiv.org/abs/2408.10777v1), [Code](#)
@@ -908,6 +922,8 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-04 | Neuromorphic Heart Rate Monitors: Neural State Machines for Monotonic Change Detection | *Alessio Carpegna, Chiara De Luca, Federico Emanuele Pozzi, Alessandro Savino, Stefano Di Carlo, Giacomo Indiveri, Elisa Donati* | [2409.02618v1](http://arxiv.org/abs/2409.02618v1), [Code](#)
+2024-09-01 | Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background | *Biyuan Liu, Huaixin Chen, Huiyao Zhan, Sijie Luo, Zhou Huang* | [2409.00589v1](http://arxiv.org/abs/2409.00589v1), [Code](#)
 2024-08-28 | ClimDetect: A Benchmark Dataset for Climate Change Detection and Attribution | *Sungduk Yu, Brian L. White, Anahita Bhiwandiwalla, Musashi Hinck, Matthew Lyle Olson, Tung Nguyen, Vasudev Lal* | [2408.15993v1](http://arxiv.org/abs/2408.15993v1), [Code](#)
 2024-08-28 | TempoFormer: A Transformer for Temporally-aware Representations in Change Detection | *Talia Tseriotou, Adam Tsakalidis, Maria Liakata* | [2408.15689v1](http://arxiv.org/abs/2408.15689v1), [Code](#)
 2024-08-28 | Deep Learning Based Speckle Filtering for Polarimetric SAR Images. Application to Sentinel-1 | *Alejandro Mestre-Quereda, Juan M. Lopez-Sanchez* | [2408.15678v2](http://arxiv.org/abs/2408.15678v2), [Code](#)

@@ -10328,6 +10328,220 @@
       "update_time": "2024-09-02",
       "comments": "34 pages, 12 figures, 3 tables",
       "repo_url": "#"
+    },
+    "2409.02842": {
+      "paper_id": "2409.02842v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02842v1",
+      "paper_key": "2409.02842",
+      "paper_title": "SNNAX -- Spiking Neural Networks in JAX",
+      "paper_url": "http://arxiv.org/abs/2409.02842v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) simulators are essential tools to prototype biologically inspired models and neuromorphic hardware architectures and predict their performance. For such a tool, ease of use and flexibility are critical, but so is simulation speed especially given the complexity inherent to simulating SNN. Here, we present SNNAX, a JAX-based framework for simulating and training such models with PyTorch-like intuitiveness and JAX-like execution speed. SNNAX models are easily extended and customized to fit the desired model specifications and target neuromorphic hardware. Additionally, SNNAX offers key features for optimizing the training and deployment of SNNs such as flexible automatic differentiation and just-in-time compilation. We evaluate and compare SNNAX to other commonly used machine learning (ML) frameworks used for programming SNNs. We provide key performance metrics, best practices, documented examples for simulating SNNs in SNNAX, and implement several benchmarks used in the literature.",
+      "paper_authors": [
+        "Jamie Lohoff",
+        "Jan Finkbeiner",
+        "Emre Neftci"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-09-04",
+      "update_time": "2024-09-04",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.02680": {
+      "paper_id": "2409.02680v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02680v1",
+      "paper_key": "2409.02680",
+      "paper_title": "A Low-Cost Real-Time Spiking System for Obstacle Detection based on Ultrasonic Sensors and Rate Coding",
+      "paper_url": "http://arxiv.org/abs/2409.02680v1",
+      "paper_abstract": "Since the advent of mobile robots, obstacle detection has been a topic of great interest. It has also been a subject of study in neuroscience, where flying insects and bats could be considered two of the most interesting cases in terms of vision-based and sound-based mechanisms for obstacle detection, respectively. Currently, many studies focus on vision-based obstacle detection, but not many can be found regarding sound-based obstacle detection. This work focuses on the latter approach, which also makes use of a Spiking Neural Network to exploit the advantages of these architectures and achieve an approach closer to biology. The complete system was tested through a series of experiments that confirm the validity of the spiking architecture for obstacle detection. It is empirically demonstrated that, when the distance between the robot and the obstacle decreases, the output firing rate of the system increases in response as expected, and vice versa. Therefore, there is a direct relation between the two. Furthermore, there is a distance threshold between detectable and undetectable objects which is also empirically measured in this work. An in-depth study on how this system works at low level based on the Inter-Spike Interval concept was performed, which may be useful in the future development of applications based on spiking filters.",
+      "paper_authors": [
+        "Alvaro Ayuso-Martinez",
+        "Daniel Casanueva-Morato",
+        "Juan Pedro Dominguez-Morales",
+        "Angel Jimenez-Fernandez",
+        "Gabriel Jimenez-Moreno"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-04",
+      "update_time": "2024-09-04",
+      "comments": "22 pages, 8 figures",
+      "repo_url": "#"
+    },
+    "2409.02238": {
+      "paper_id": "2409.02238v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02238v1",
+      "paper_key": "2409.02238",
+      "paper_title": "Internal Representations in Spiking Neural Networks, criticality and the Renormalization Group",
+      "paper_url": "http://arxiv.org/abs/2409.02238v1",
+      "paper_abstract": "Optimal information processing in peripheral sensory systems has been associated in several examples to the signature of a critical or near critical state. Furthermore, cortical systems have also been described to be in a critical state in both wake and anesthetized experimental models, both {\\it in vitro} and {\\it in vivo}. We investigate whether a similar signature characterizes the internal representations (IR) of a multilayer (deep) spiking artificial neural network performing computationally simple but meaningful cognitive tasks, using a methodology inspired in the biological setup, with cortical implanted electrodes in rats, either freely behaving or under different levels of anesthesia. The increase of the characteristic time of the decay of the correlation of fluctuations of the IR, found when the network input changes, are indications of a broad-tailed distribution of IR fluctuations. The broad tails are present even when the network is not yet capable of performing the classification tasks, either due to partial training or to the effect of a low dose of anesthesia in a simple model. However, we don't find enough evidence of power law distributions of avalanche size and duration. We interpret the results from a renormalization group perspective to point out that despite having broad tails, this is not related to a critical transition but rather similar to fluctuations driven by the reversal of the magnetic field in a ferromagnetic system. Another example of persistent correlation of fluctuations of a non critical system is constructed, where a particle undergoes Brownian motion on a slowly varying potential.",
+      "paper_authors": [
+        "Jo\u00e3o Henrique de Sant'Ana",
+        "Nestor Caticha"
+      ],
+      "primary_category": "physics.bio-ph",
+      "publish_time": "2024-09-03",
+      "update_time": "2024-09-03",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.01762": {
+      "paper_id": "2409.01762v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01762v1",
+      "paper_key": "2409.01762",
+      "paper_title": "Decoding finger velocity from cortical spike trains with recurrent spiking neural networks",
+      "paper_url": "http://arxiv.org/abs/2409.01762v1",
+      "paper_abstract": "Invasive cortical brain-machine interfaces (BMIs) can significantly improve the life quality of motor-impaired patients. Nonetheless, externally mounted pedestals pose an infection risk, which calls for fully implanted systems. Such systems, however, must meet strict latency and energy constraints while providing reliable decoding performance. While recurrent spiking neural networks (RSNNs) are ideally suited for ultra-low-power, low-latency processing on neuromorphic hardware, it is unclear whether they meet the above requirements. To address this question, we trained RSNNs to decode finger velocity from cortical spike trains (CSTs) of two macaque monkeys. First, we found that a large RSNN model outperformed existing feedforward spiking neural networks (SNNs) and artificial neural networks (ANNs) in terms of their decoding accuracy. We next developed a tiny RSNN with a smaller memory footprint, low firing rates, and sparse connectivity. Despite its reduced computational requirements, the resulting model performed substantially better than existing SNN and ANN decoders. Our results thus demonstrate that RSNNs offer competitive CST decoding performance under tight resource constraints and are promising candidates for fully implanted ultra-low-power BMIs with the potential to revolutionize patient care.",
+      "paper_authors": [
+        "Tengjun Liu",
+        "Julia Gygax",
+        "Julian Rossbroich",
+        "Yansong Chua",
+        "Shaomin Zhang",
+        "Friedemann Zenke"
+      ],
+      "primary_category": "q-bio.NC",
+      "publish_time": "2024-09-03",
+      "update_time": "2024-09-03",
+      "comments": "5 pages, 2 figures. This work has been submitted to the IEEE BioCAS\n  2024 conference",
+      "repo_url": "#"
+    },
+    "2409.02146": {
+      "paper_id": "2409.02146v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02146v1",
+      "paper_key": "2409.02146",
+      "paper_title": "Brain-Inspired Online Adaptation for Remote Sensing with Spiking Neural Network",
+      "paper_url": "http://arxiv.org/abs/2409.02146v1",
+      "paper_abstract": "On-device computing, or edge computing, is becoming increasingly important for remote sensing, particularly in applications like deep network-based perception on on-orbit satellites and unmanned aerial vehicles (UAVs). In these scenarios, two brain-like capabilities are crucial for remote sensing models: (1) high energy efficiency, allowing the model to operate on edge devices with limited computing resources, and (2) online adaptation, enabling the model to quickly adapt to environmental variations, weather changes, and sensor drift. This work addresses these needs by proposing an online adaptation framework based on spiking neural networks (SNNs) for remote sensing. Starting with a pretrained SNN model, we design an efficient, unsupervised online adaptation algorithm, which adopts an approximation of the BPTT algorithm and only involves forward-in-time computation that significantly reduces the computational complexity of SNN adaptation learning. Besides, we propose an adaptive activation scaling scheme to boost online SNN adaptation performance, particularly in low time-steps. Furthermore, for the more challenging remote sensing detection task, we propose a confidence-based instance weighting scheme, which substantially improves adaptation performance in the detection task. To our knowledge, this work is the first to address the online adaptation of SNNs. Extensive experiments on seven benchmark datasets across classification, segmentation, and detection tasks demonstrate that our proposed method significantly outperforms existing domain adaptation and domain generalization approaches under varying weather conditions. The proposed method enables energy-efficient and fast online adaptation on edge devices, and has much potential in applications such as remote perception on on-orbit satellites and UAV.",
+      "paper_authors": [
+        "Dexin Duan",
+        "Peilin liu",
+        "Fei Wen"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-03",
+      "update_time": "2024-09-03",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.01564": {
+      "paper_id": "2409.01564v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01564v1",
+      "paper_key": "2409.01564",
+      "paper_title": "ReSpike: Residual Frames-based Hybrid Spiking Neural Networks for Efficient Action Recognition",
+      "paper_url": "http://arxiv.org/abs/2409.01564v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) have emerged as a compelling, energy-efficient alternative to traditional Artificial Neural Networks (ANNs) for static image tasks such as image classification and segmentation. However, in the more complex video classification domain, SNN-based methods fall considerably short of ANN-based benchmarks due to the challenges in processing dense frame sequences. To bridge this gap, we propose ReSpike, a hybrid framework that synergizes the strengths of ANNs and SNNs to tackle action recognition tasks with high accuracy and low energy cost. By decomposing film clips into spatial and temporal components, i.e., RGB image Key Frames and event-like Residual Frames, ReSpike leverages ANN for learning spatial information and SNN for learning temporal information. In addition, we propose a multi-scale cross-attention mechanism for effective feature fusion. Compared to state-of-the-art SNN baselines, our ReSpike hybrid architecture demonstrates significant performance improvements (e.g., >30% absolute accuracy improvement on HMDB-51, UCF-101, and Kinetics-400). Furthermore, ReSpike achieves comparable performance with prior ANN approaches while bringing better accuracy-energy tradeoff.",
+      "paper_authors": [
+        "Shiting Xiao",
+        "Yuhang Li",
+        "Youngeun Kim",
+        "Donghyun Lee",
+        "Priyadarshini Panda"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-03",
+      "update_time": "2024-09-03",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.01230": {
+      "paper_id": "2409.01230v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01230v2",
+      "paper_key": "2409.01230",
+      "paper_title": "CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification",
+      "paper_url": "http://arxiv.org/abs/2409.01230v2",
+      "paper_abstract": "In the present paper, I describe a spiking neural network (SNN) architecture which, can be used in wide range of supervised learning classification tasks. It is assumed, that all participating signals (the classified object description, correct class label and SNN decision) have spiking nature. The distinctive feature of this architecture is a combination of prototypical network structures corresponding to different classes and significantly distinctive instances of one class (=columns) and functionally differing populations of neurons inside columns (=layers). The other distinctive feature is a novel combination of anti-Hebbian and dopamine-modulated plasticity. The plasticity rules are local and do not use the backpropagation principle. Besides that, as in my previous studies, I was guided by the requirement that the all neuron/plasticity models should be easily implemented on modern neurochips. I illustrate the high performance of my network on the MNIST benchmark.",
+      "paper_authors": [
+        "Mikhail Kiselev"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-09-02",
+      "update_time": "2024-09-04",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.00552": {
+      "paper_id": "2409.00552v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.00552v1",
+      "paper_key": "2409.00552",
+      "paper_title": "Digit Recognition using Multimodal Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.00552v1",
+      "paper_abstract": "Spiking neural networks (SNNs) are the third generation of neural networks that are biologically inspired to process data in a fashion that emulates the exchange of signals in the brain. Within the Computer Vision community SNNs have garnered significant attention due in large part to the availability of event-based sensors that produce a spatially resolved spike train in response to changes in scene radiance. SNNs are used to process event-based data due to their neuromorphic nature. The proposed work examines the neuromorphic advantage of fusing multiple sensory inputs in classification tasks. Specifically we study the performance of a SNN in digit classification by passing in a visual modality branch (Neuromorphic-MNIST [N-MNIST]) and an auditory modality branch (Spiking Heidelberg Digits [SHD]) from datasets that were created using event-based sensors to generate a series of time-dependent events. It is observed that multi-modal SNNs outperform unimodal visual and unimodal auditory SNNs. Furthermore, it is observed that the process of sensory fusion is insensitive to the depth at which the visual and auditory branches are combined. This work achieves a 98.43% accuracy on the combined N-MNIST and SHD dataset using a multimodal SNN that concatenates the visual and auditory branches at a late depth.",
+      "paper_authors": [
+        "William Bjorndahl",
+        "Jack Easton",
+        "Austin Modoff",
+        "Eric C. Larson",
+        "Joseph Camp",
+        "Prasanna Rangarajan"
+      ],
+      "primary_category": "eess.AS",
+      "publish_time": "2024-08-31",
+      "update_time": "2024-08-31",
+      "comments": "4 pages, 2 figures, submitted to 2025 IEEE International Conference\n  on Acoustics, Speech, and Signal Processing",
+      "repo_url": "#"
+    },
+    "2409.02111": {
+      "paper_id": "2409.02111v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02111v1",
+      "paper_key": "2409.02111",
+      "paper_title": "Toward Large-scale Spiking Neural Networks: A Comprehensive Survey and Future Directions",
+      "paper_url": "http://arxiv.org/abs/2409.02111v1",
+      "paper_abstract": "Deep learning has revolutionized artificial intelligence (AI), achieving remarkable progress in fields such as computer vision, speech recognition, and natural language processing. Moreover, the recent success of large language models (LLMs) has fueled a surge in research on large-scale neural networks. However, the escalating demand for computing resources and energy consumption has prompted the search for energy-efficient alternatives. Inspired by the human brain, spiking neural networks (SNNs) promise energy-efficient computation with event-driven spikes. To provide future directions toward building energy-efficient large SNN models, we present a survey of existing methods for developing deep spiking neural networks, with a focus on emerging Spiking Transformers. Our main contributions are as follows: (1) an overview of learning methods for deep spiking neural networks, categorized by ANN-to-SNN conversion and direct training with surrogate gradients; (2) an overview of network architectures for deep spiking neural networks, categorized by deep convolutional neural networks (DCNNs) and Transformer architecture; and (3) a comprehensive comparison of state-of-the-art deep SNNs with a focus on emerging Spiking Transformers. We then further discuss and outline future directions toward large-scale SNNs.",
+      "paper_authors": [
+        "Yangfan Hu",
+        "Qian Zheng",
+        "Guoqi Li",
+        "Huajin Tang",
+        "Gang Pan"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-08-19",
+      "update_time": "2024-08-19",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.00044": {
+      "paper_id": "2409.00044v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.00044v1",
+      "paper_key": "2409.00044",
+      "paper_title": "A More Accurate Approximation of Activation Function with Few Spikes Neurons",
+      "paper_url": "http://arxiv.org/abs/2409.00044v1",
+      "paper_abstract": "Recent deep neural networks (DNNs), such as diffusion models [1], have faced high computational demands. Thus, spiking neural networks (SNNs) have attracted lots of attention as energy-efficient neural networks. However, conventional spiking neurons, such as leaky integrate-and-fire neurons, cannot accurately represent complex non-linear activation functions, such as Swish [2]. To approximate activation functions with spiking neurons, few spikes (FS) neurons were proposed [3], but the approximation performance was limited due to the lack of training methods considering the neurons. Thus, we propose tendency-based parameter initialization (TBPI) to enhance the approximation of activation function with FS neurons, exploiting temporal dependencies initializing the training parameters.",
+      "paper_authors": [
+        "Dayena Jeong",
+        "Jaewoo Park",
+        "Jeonghee Jo",
+        "Jongkil Park",
+        "Jaewook Kim",
+        "Hyun Jae Jang",
+        "Suyoun Lee",
+        "Seongsik Park"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-19",
+      "update_time": "2024-08-19",
+      "comments": "IJCAI Workshop on Human Brain and Artificial Intelligence (HBAI) 2024",
+      "repo_url": "#"
+    },
+    "2409.00021": {
+      "paper_id": "2409.00021v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.00021v1",
+      "paper_key": "2409.00021",
+      "paper_title": "TACOS: Task Agnostic Continual Learning in Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.00021v1",
+      "paper_abstract": "Catastrophic interference, the loss of previously learned information when learning new information, remains a major challenge in machine learning. Since living organisms do not seem to suffer from this problem, researchers have taken inspiration from biology to improve memory retention in artificial intelligence systems. However, previous attempts to use bio-inspired mechanisms have typically resulted in systems that rely on task boundary information during training and/or explicit task identification during inference, information that is not available in real-world scenarios. Here, we show that neuro-inspired mechanisms such as synaptic consolidation and metaplasticity can mitigate catastrophic interference in a spiking neural network, using only synapse-local information, with no need for task awareness, and with a fixed memory size that does not need to be increased when training on new tasks. Our model, TACOS, combines neuromodulation with complex synaptic dynamics to enable new learning while protecting previous information. We evaluate TACOS on sequential image recognition tasks and demonstrate its effectiveness in reducing catastrophic interference. Our results show that TACOS outperforms existing regularization techniques in domain-incremental learning scenarios. We also report the results of an ablation study to elucidate the contribution of each neuro-inspired mechanism separately.",
+      "paper_authors": [
+        "Nicholas Soures",
+        "Peter Helfer",
+        "Anurag Daram",
+        "Tej Pandit",
+        "Dhireesha Kudithipudi"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-16",
+      "update_time": "2024-08-16",
+      "comments": null,
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -15379,6 +15593,52 @@
       "update_time": "2021-09-03",
       "comments": "Accepted at ICCV-2021 (Journal Submission). Project Page:\n  http://dpfan.net/FSNet/",
       "repo_url": "https://github.com/GewelsJI/FSNet"
+    },
+    "2409.02368": {
+      "paper_id": "2409.02368v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02368v1",
+      "paper_key": "2409.02368",
+      "paper_title": "Pluralistic Salient Object Detection",
+      "paper_url": "http://arxiv.org/abs/2409.02368v1",
+      "paper_abstract": "We introduce pluralistic salient object detection (PSOD), a novel task aimed at generating multiple plausible salient segmentation results for a given input image. Unlike conventional SOD methods that produce a single segmentation mask for salient objects, this new setting recognizes the inherent complexity of real-world images, comprising multiple objects, and the ambiguity in defining salient objects due to different user intentions. To study this task, we present two new SOD datasets \"DUTS-MM\" and \"DUS-MQ\", along with newly designed evaluation metrics. DUTS-MM builds upon the DUTS dataset but enriches the ground-truth mask annotations from three aspects which 1) improves the mask quality especially for boundary and fine-grained structures; 2) alleviates the annotation inconsistency issue; and 3) provides multiple ground-truth masks for images with saliency ambiguity. DUTS-MQ consists of approximately 100K image-mask pairs with human-annotated preference scores, enabling the learning of real human preferences in measuring mask quality. Building upon these two datasets, we propose a simple yet effective pluralistic SOD baseline based on a Mixture-of-Experts (MOE) design. Equipped with two prediction heads, it simultaneously predicts multiple masks using different query prompts and predicts human preference scores for each mask candidate. Extensive experiments and analyses underscore the significance of our proposed datasets and affirm the effectiveness of our PSOD framework.",
+      "paper_authors": [
+        "Xuelu Feng",
+        "Yunsheng Li",
+        "Dongdong Chen",
+        "Chunming Qiao",
+        "Junsong Yuan",
+        "Lu Yuan",
+        "Gang Hua"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-04",
+      "update_time": "2024-09-04",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.01021": {
+      "paper_id": "2409.01021v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01021v2",
+      "paper_key": "2409.01021",
+      "paper_title": "CONDA: Condensed Deep Association Learning for Co-Salient Object Detection",
+      "paper_url": "http://arxiv.org/abs/2409.01021v2",
+      "paper_abstract": "Inter-image association modeling is crucial for co-salient object detection. Despite satisfactory performance, previous methods still have limitations on sufficient inter-image association modeling. Because most of them focus on image feature optimization under the guidance of heuristically calculated raw inter-image associations. They directly rely on raw associations which are not reliable in complex scenarios, and their image feature optimization approach is not explicit for inter-image association modeling. To alleviate these limitations, this paper proposes a deep association learning strategy that deploys deep networks on raw associations to explicitly transform them into deep association features. Specifically, we first create hyperassociations to collect dense pixel-pair-wise raw associations and then deploys deep aggregation networks on them. We design a progressive association generation module for this purpose with additional enhancement of the hyperassociation calculation. More importantly, we propose a correspondence-induced association condensation module that introduces a pretext task, i.e. semantic correspondence estimation, to condense the hyperassociations for computational burden reduction and noise elimination. We also design an object-aware cycle consistency loss for high-quality correspondence estimations. Experimental results in three benchmark datasets demonstrate the remarkable effectiveness of our proposed method with various training settings.",
+      "paper_authors": [
+        "Long Li",
+        "Nian Liu",
+        "Dingwen Zhang",
+        "Zhongyu Li",
+        "Salman Khan",
+        "Rao Anwer",
+        "Hisham Cholakkal",
+        "Junwei Han",
+        "Fahad Shahbaz Khan"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-02",
+      "update_time": "2024-09-04",
+      "comments": "There is an error. In Sec 4.1, the number of images in some dataset\n  is incorrect and needs to be revised",
+      "repo_url": "#"
     }
   },
   "Camouflaged Object Detection": {
@@ -17154,6 +17414,26 @@
       "update_time": "2020-12-25",
       "comments": null,
       "repo_url": "#"
+    },
+    "2409.01686": {
+      "paper_id": "2409.01686v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01686v1",
+      "paper_key": "2409.01686",
+      "paper_title": "Frequency-Spatial Entanglement Learning for Camouflaged Object Detection",
+      "paper_url": "http://arxiv.org/abs/2409.01686v1",
+      "paper_abstract": "Camouflaged object detection has attracted a lot of attention in computer vision. The main challenge lies in the high degree of similarity between camouflaged objects and their surroundings in the spatial domain, making identification difficult. Existing methods attempt to reduce the impact of pixel similarity by maximizing the distinguishing ability of spatial features with complicated design, but often ignore the sensitivity and locality of features in the spatial domain, leading to sub-optimal results. In this paper, we propose a new approach to address this issue by jointly exploring the representation in the frequency and spatial domains, introducing the Frequency-Spatial Entanglement Learning (FSEL) method. This method consists of a series of well-designed Entanglement Transformer Blocks (ETB) for representation learning, a Joint Domain Perception Module for semantic enhancement, and a Dual-domain Reverse Parser for feature integration in the frequency and spatial domains. Specifically, the ETB utilizes frequency self-attention to effectively characterize the relationship between different frequency bands, while the entanglement feed-forward network facilitates information interaction between features of different domains through entanglement learning. Our extensive experiments demonstrate the superiority of our FSEL over 21 state-of-the-art methods, through comprehensive quantitative and qualitative comparisons in three widely-used datasets. The source code is available at: https://github.com/CSYSI/FSEL.",
+      "paper_authors": [
+        "Yanguang Sun",
+        "Chunyan Xu",
+        "Jian Yang",
+        "Hanyu Xuan",
+        "Lei Luo"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-03",
+      "update_time": "2024-09-03",
+      "comments": "Accepted at ECCV 2024",
+      "repo_url": "https://github.com/csysi/fsel"
     }
   },
   "Change Detection": {
@@ -21091,6 +21371,48 @@
       "update_time": "2023-09-21",
       "comments": "Accepted by IEEE GRSL",
       "repo_url": "https://github.com/summitgao/camixer"
+    },
+    "2409.02618": {
+      "paper_id": "2409.02618v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.02618v1",
+      "paper_key": "2409.02618",
+      "paper_title": "Neuromorphic Heart Rate Monitors: Neural State Machines for Monotonic Change Detection",
+      "paper_url": "http://arxiv.org/abs/2409.02618v1",
+      "paper_abstract": "Detecting monotonic changes in heart rate (HR) is crucial for early identification of cardiac conditions and health management. This is particularly important for dementia patients, where HR trends can signal stress or agitation. Developing wearable technologies that can perform always-on monitoring of HRs is essential to effectively detect slow changes over extended periods of time. However, designing compact electronic circuits that can monitor and process bio-signals continuously, and that can operate in a low-power regime to ensure long-lasting performance, is still an open challenge. Neuromorphic technology offers an energy-efficient solution for real-time health monitoring. We propose a neuromorphic implementation of a Neural State Machine (NSM) network to encode different health states and switch between them based on the input stimuli. Our focus is on detecting monotonic state switches in electrocardiogram data to identify progressive HR increases. This innovative approach promises significant advancements in continuous health monitoring and management.",
+      "paper_authors": [
+        "Alessio Carpegna",
+        "Chiara De Luca",
+        "Federico Emanuele Pozzi",
+        "Alessandro Savino",
+        "Stefano Di Carlo",
+        "Giacomo Indiveri",
+        "Elisa Donati"
+      ],
+      "primary_category": "cs.ET",
+      "publish_time": "2024-09-04",
+      "update_time": "2024-09-04",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.00589": {
+      "paper_id": "2409.00589v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.00589v1",
+      "paper_key": "2409.00589",
+      "paper_title": "Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background",
+      "paper_url": "http://arxiv.org/abs/2409.00589v1",
+      "paper_abstract": "Despite the eye-catching breakthroughs achieved by deep visual networks in detecting region-level surface defects, the challenge of high-quality pixel-wise defect detection remains due to diverse defect appearances and data scarcity. To avoid over-reliance on defect appearance and achieve accurate defect segmentation, we proposed a change-aware Siamese network that solves the defect segmentation in a change detection framework. A novel multi-class balanced contrastive loss is introduced to guide the Transformer-based encoder, which enables encoding diverse categories of defects as the unified class-agnostic difference between defect and defect-free images. The difference presented by a distance map is then skip-connected to the change-aware decoder to assist in the location of both inter-class and out-of-class pixel-wise defects. In addition, we proposed a synthetic dataset with multi-class liquid crystal display (LCD) defects under a complex and disjointed background context, to demonstrate the advantages of change-based modeling over appearance-based modeling for defect segmentation. In our proposed dataset and two public datasets, our model achieves superior performances than the leading semantic segmentation methods, while maintaining a relatively small model size. Moreover, our model achieves a new state-of-the-art performance compared to the semi-supervised approaches in various supervision settings.",
+      "paper_authors": [
+        "Biyuan Liu",
+        "Huaixin Chen",
+        "Huiyao Zhan",
+        "Sijie Luo",
+        "Zhou Huang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-01",
+      "update_time": "2024-09-01",
+      "comments": null,
+      "repo_url": "#"
     }
   }
 }
