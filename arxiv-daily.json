@@ -10403,7 +10403,7 @@
       "publish_time": "2024-09-03",
       "update_time": "2024-09-03",
       "comments": "5 pages, 2 figures. This work has been submitted to the IEEE BioCAS\n  2024 conference",
-      "repo_url": "#"
+      "repo_url": "https://github.com/fmi-basel/neural-decoding-RSNN"
     },
     "2409.02146": {
       "paper_id": "2409.02146v1",
@@ -10540,6 +10540,45 @@
       "primary_category": "cs.NE",
       "publish_time": "2024-08-16",
       "update_time": "2024-08-16",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.03508": {
+      "paper_id": "2409.03508v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.03508v1",
+      "paper_key": "2409.03508",
+      "paper_title": "Revealing Untapped DSP Optimization Potentials for FPGA-Based Systolic Matrix Engines",
+      "paper_url": "http://arxiv.org/abs/2409.03508v1",
+      "paper_abstract": "Systolic architectures are widely embraced by neural network accelerators for their superior performance in highly parallelized computation. The DSP48E2s serve as dedicated arithmetic blocks in Xilinx Ultrascale series FPGAs and constitute a fundamental component in FPGA-based systolic matrix engines. Harnessing the full potential of DSP48E2s in architectural design can result in significant performance enhancements for systolic architectures on Ultrascale series FPGAs. This paper unveils several previously untapped DSP optimization techniques capable of further enhancing FPGA-based systolic matrix engines. We apply these techniques to two well-known systolic architectures: Google TPUv1 and Xilinx Vitis AI DPU. With the proposed techniques, our design achieves substantial resource and power reduction compared to the open-source TPUv1 FPGA implementation and the Vitis AI DPU implementation in the same parallelism setting. We also demonstrate the applicability of our techniques to neuromorphic hardware for supporting spiking neural network acceleration.",
+      "paper_authors": [
+        "Jindong Li",
+        "Tenglong Li",
+        "Guobin Shen",
+        "Dongcheng Zhao",
+        "Qian Zhang",
+        "Yi Zeng"
+      ],
+      "primary_category": "cs.AR",
+      "publish_time": "2024-09-05",
+      "update_time": "2024-09-05",
+      "comments": "Accepted by FPL2024",
+      "repo_url": "#"
+    },
+    "2409.03368": {
+      "paper_id": "2409.03368v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.03368v1",
+      "paper_key": "2409.03368",
+      "paper_title": "Training-free Conversion of Pretrained ANNs to SNNs for Low-Power and High-Performance Applications",
+      "paper_url": "http://arxiv.org/abs/2409.03368v1",
+      "paper_abstract": "Spiking Neural Networks (SNNs) have emerged as a promising substitute for Artificial Neural Networks (ANNs) due to their advantages of fast inference and low power consumption. However, the lack of efficient training algorithms has hindered their widespread adoption. Existing supervised learning algorithms for SNNs require significantly more memory and time than their ANN counterparts. Even commonly used ANN-SNN conversion methods necessitate re-training of ANNs to enhance conversion efficiency, incurring additional computational costs. To address these challenges, we propose a novel training-free ANN-SNN conversion pipeline. Our approach directly converts pre-trained ANN models into high-performance SNNs without additional training. The conversion pipeline includes a local-learning-based threshold balancing algorithm, which enables efficient calculation of the optimal thresholds and fine-grained adjustment of threshold value by channel-wise scaling. We demonstrate the scalability of our framework across three typical computer vision tasks: image classification, semantic segmentation, and object detection. This showcases its applicability to both classification and regression tasks. Moreover, we have evaluated the energy consumption of the converted SNNs, demonstrating their superior low-power advantage compared to conventional ANNs. Our training-free algorithm outperforms existing methods, highlighting its practical applicability and efficiency. This approach simplifies the deployment of SNNs by leveraging open-source pre-trained ANN models and neuromorphic hardware, enabling fast, low-power inference with negligible performance reduction.",
+      "paper_authors": [
+        "Tong Bu",
+        "Maohua Li",
+        "Zhaofei Yu"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-09-05",
+      "update_time": "2024-09-05",
       "comments": null,
       "repo_url": "#"
     }
@@ -10774,12 +10813,12 @@
       "repo_url": "https://github.com/wuzhou-quan/hintu"
     },
     "2406.06949": {
-      "paper_id": "2406.06949v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.06949v1",
+      "paper_id": "2406.06949v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.06949v2",
       "paper_key": "2406.06949",
       "paper_title": "Triple-domain Feature Learning with Frequency-aware Memory Enhancement for Moving Infrared Small Target Detection",
-      "paper_url": "http://arxiv.org/abs/2406.06949v1",
-      "paper_abstract": "Moving infrared small target detection presents significant challenges due to tiny target sizes and low contrast against backgrounds. Currently-existing methods primarily focus on extracting target features only from the spatial-temporal domain. For further enhancing feature representation, more information domains such as frequency are believed to be potentially valuable. To extend target feature learning, we propose a new Triple-domain Strategy (Tridos) with the frequency-aware memory enhancement on the spatial-temporal domain. In our scheme, it effectively detaches and enhances frequency features by a local-global frequency-aware module with Fourier transform. Inspired by the human visual system, our memory enhancement aims to capture the target spatial relations between video frames. Furthermore, it encodes temporal dynamics motion features via differential learning and residual enhancing. Additionally, we further design a residual compensation unit to reconcile possible cross-domain feature mismatches. To our best knowledge, our Tridos is the first work to explore target feature learning comprehensively in spatial-temporal-frequency domains. The extensive experiments on three datasets (DAUB, ITSDT-15K, and IRDST) validate that our triple-domain learning scheme could be obviously superior to state-of-the-art ones. Source codes are available at https://github.com/UESTC-nnLab/Tridos.",
+      "paper_url": "http://arxiv.org/abs/2406.06949v2",
+      "paper_abstract": "As a sub-field of object detection, moving infrared small target detection presents significant challenges due to tiny target sizes and low contrast against backgrounds. Currently-existing methods primarily rely on the features extracted only from spatio-temporal domain. Frequency domain has hardly been concerned yet, although it has been widely applied in image processing. To extend feature source domains and enhance feature representation, we propose a new Triple-domain Strategy (Tridos) with the frequency-aware memory enhancement on spatio-temporal domain for infrared small target detection. In this scheme, it effectively detaches and enhances frequency features by a local-global frequency-aware module with Fourier transform. Inspired by human visual system, our memory enhancement is designed to capture the spatial relations of infrared targets among video frames. Furthermore, it encodes temporal dynamics motion features via differential learning and residual enhancing. Additionally, we further design a residual compensation to reconcile possible cross-domain feature mismatches. To our best knowledge, proposed Tridos is the first work to explore infrared target feature learning comprehensively in spatio-temporal-frequency domains. The extensive experiments on three datasets (i.e., DAUB, ITSDT-15K and IRDST) validate that our triple-domain infrared feature learning scheme could often be obviously superior to state-of-the-art ones. Source codes are available at https://github.com/UESTC-nnLab/Tridos.",
       "paper_authors": [
         "Weiwei Duan",
         "Luping Ji",
@@ -10789,8 +10828,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-06-11",
-      "update_time": "2024-06-11",
-      "comments": "This paper has submitted to IEEE TGRS,under review",
+      "update_time": "2024-09-05",
+      "comments": "This paper has accepted IEEE TGRS",
       "repo_url": "https://github.com/uestc-nnlab/tridos"
     },
     "2406.02037": {
@@ -17492,7 +17531,7 @@
       "publish_time": "2024-08-28",
       "update_time": "2024-08-29",
       "comments": "23 pages, 32 figures",
-      "repo_url": "#"
+      "repo_url": "https://github.com/alejandromestrequereda/CNN_PolSAR_Despeckling"
     },
     "2408.14431": {
       "paper_id": "2408.14431v1",
@@ -18128,7 +18167,7 @@
       "publish_time": "2024-06-30",
       "update_time": "2024-06-30",
       "comments": null,
-      "repo_url": "#"
+      "repo_url": "https://github.com/muzmax/safe"
     },
     "2406.17998": {
       "paper_id": "2406.17998v1",
@@ -21412,7 +21451,7 @@
       "publish_time": "2024-09-01",
       "update_time": "2024-09-01",
       "comments": null,
-      "repo_url": "#"
+      "repo_url": "https://github.com/qaz670756/CADNet"
     }
   }
 }

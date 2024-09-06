@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.05
+> Updated on 2024.09.06
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -15,10 +15,12 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-05 | Revealing Untapped DSP Optimization Potentials for FPGA-Based Systolic Matrix Engines | *Jindong Li, Tenglong Li, Guobin Shen, Dongcheng Zhao, Qian Zhang, Yi Zeng* | [2409.03508v1](http://arxiv.org/abs/2409.03508v1), [Code](#)
+2024-09-05 | Training-free Conversion of Pretrained ANNs to SNNs for Low-Power and High-Performance Applications | *Tong Bu, Maohua Li, Zhaofei Yu* | [2409.03368v1](http://arxiv.org/abs/2409.03368v1), [Code](#)
 2024-09-04 | SNNAX -- Spiking Neural Networks in JAX | *Jamie Lohoff, Jan Finkbeiner, Emre Neftci* | [2409.02842v1](http://arxiv.org/abs/2409.02842v1), [Code](#)
 2024-09-04 | A Low-Cost Real-Time Spiking System for Obstacle Detection based on Ultrasonic Sensors and Rate Coding | *Alvaro Ayuso-Martinez, Daniel Casanueva-Morato, Juan Pedro Dominguez-Morales, Angel Jimenez-Fernandez, Gabriel Jimenez-Moreno* | [2409.02680v1](http://arxiv.org/abs/2409.02680v1), [Code](#)
 2024-09-03 | Internal Representations in Spiking Neural Networks, criticality and the Renormalization Group | *João Henrique de Sant'Ana, Nestor Caticha* | [2409.02238v1](http://arxiv.org/abs/2409.02238v1), [Code](#)
-2024-09-03 | Decoding finger velocity from cortical spike trains with recurrent spiking neural networks | *Tengjun Liu, Julia Gygax, Julian Rossbroich, Yansong Chua, Shaomin Zhang, Friedemann Zenke* | [2409.01762v1](http://arxiv.org/abs/2409.01762v1), [Code](#)
+2024-09-03 | Decoding finger velocity from cortical spike trains with recurrent spiking neural networks | *Tengjun Liu, Julia Gygax, Julian Rossbroich, Yansong Chua, Shaomin Zhang, Friedemann Zenke* | [2409.01762v1](http://arxiv.org/abs/2409.01762v1), [Code](https://github.com/fmi-basel/neural-decoding-RSNN)
 2024-09-03 | Brain-Inspired Online Adaptation for Remote Sensing with Spiking Neural Network | *Dexin Duan, Peilin liu, Fei Wen* | [2409.02146v1](http://arxiv.org/abs/2409.02146v1), [Code](#)
 2024-09-03 | ReSpike: Residual Frames-based Hybrid Spiking Neural Networks for Efficient Action Recognition | *Shiting Xiao, Yuhang Li, Youngeun Kim, Donghyun Lee, Priyadarshini Panda* | [2409.01564v1](http://arxiv.org/abs/2409.01564v1), [Code](#)
 2024-09-02 | CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification | *Mikhail Kiselev* | [2409.01230v2](http://arxiv.org/abs/2409.01230v2), [Code](#)
@@ -568,7 +570,7 @@
 2024-07-22 | Sparse Prior Is Not All You Need: When Differential Directionality Meets Saliency Coherence for Infrared Small Target Detection | *Fei Zhou, Maixia Fu, Yulei Qian, Jian Yang, Yimian Dai* | [2407.15369v1](http://arxiv.org/abs/2407.15369v1), [Code](https://github.com/grokcv/sdd)
 2024-07-10 | IRSAM: Advancing Segment Anything Model for Infrared Small Target Detection | *Mingjin Zhang, Yuchun Wang, Jie Guo, Yunsong Li, Xinbo Gao, Jing Zhang* | [2407.07520v1](http://arxiv.org/abs/2407.07520v1), [Code](https://github.com/ipic-lab/irsam)
 2024-06-19 | Lost in UNet: Improving Infrared Small Target Detection by Underappreciated Local Features | *Wuzhou Quan, Wei Zhao, Weiming Wang, Haoran Xie, Fu Lee Wang, Mingqiang Wei* | [2406.13445v1](http://arxiv.org/abs/2406.13445v1), [Code](https://github.com/wuzhou-quan/hintu)
-2024-06-11 | Triple-domain Feature Learning with Frequency-aware Memory Enhancement for Moving Infrared Small Target Detection | *Weiwei Duan, Luping Ji, Shengjia Chen, Sicheng Zhu, Mao Ye* | [2406.06949v1](http://arxiv.org/abs/2406.06949v1), [Code](https://github.com/uestc-nnlab/tridos)
+2024-06-11 | Triple-domain Feature Learning with Frequency-aware Memory Enhancement for Moving Infrared Small Target Detection | *Weiwei Duan, Luping Ji, Shengjia Chen, Sicheng Zhu, Mao Ye* | [2406.06949v2](http://arxiv.org/abs/2406.06949v2), [Code](https://github.com/uestc-nnlab/tridos)
 2024-06-04 | Multi-Scale Direction-Aware Network for Infrared Small Target Detection | *Jinmiao Zhao, Zelin Shi, Chuang Yu, Yunpeng Liu* | [2406.02037v1](http://arxiv.org/abs/2406.02037v1), [Code](#)
 2024-06-02 | Diff-Mosaic: Augmenting Realistic Representations in Infrared Small Target Detection via Diffusion Prior | *Yukai Shi, Yupei Lin, Pengxu Wei, Xiaoyu Xian, Tianshui Chen, Liang Lin* | [2406.00632v1](http://arxiv.org/abs/2406.00632v1), [Code](https://github.com/yupeilin2388/diff-mosaic)
 2024-03-28 | Infrared Small Target Detection with Scale and Location Sensitivity | *Qiankun Liu, Rui Liu, Bolun Zheng, Hongkui Wang, Ying Fu* | [2403.19366v1](http://arxiv.org/abs/2403.19366v1), [Code](https://github.com/ying-fu/mshnet)
@@ -923,10 +925,10 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2024-09-04 | Neuromorphic Heart Rate Monitors: Neural State Machines for Monotonic Change Detection | *Alessio Carpegna, Chiara De Luca, Federico Emanuele Pozzi, Alessandro Savino, Stefano Di Carlo, Giacomo Indiveri, Elisa Donati* | [2409.02618v1](http://arxiv.org/abs/2409.02618v1), [Code](#)
-2024-09-01 | Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background | *Biyuan Liu, Huaixin Chen, Huiyao Zhan, Sijie Luo, Zhou Huang* | [2409.00589v1](http://arxiv.org/abs/2409.00589v1), [Code](#)
+2024-09-01 | Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background | *Biyuan Liu, Huaixin Chen, Huiyao Zhan, Sijie Luo, Zhou Huang* | [2409.00589v1](http://arxiv.org/abs/2409.00589v1), [Code](https://github.com/qaz670756/CADNet)
 2024-08-28 | ClimDetect: A Benchmark Dataset for Climate Change Detection and Attribution | *Sungduk Yu, Brian L. White, Anahita Bhiwandiwalla, Musashi Hinck, Matthew Lyle Olson, Tung Nguyen, Vasudev Lal* | [2408.15993v1](http://arxiv.org/abs/2408.15993v1), [Code](#)
 2024-08-28 | TempoFormer: A Transformer for Temporally-aware Representations in Change Detection | *Talia Tseriotou, Adam Tsakalidis, Maria Liakata* | [2408.15689v1](http://arxiv.org/abs/2408.15689v1), [Code](#)
-2024-08-28 | Deep Learning Based Speckle Filtering for Polarimetric SAR Images. Application to Sentinel-1 | *Alejandro Mestre-Quereda, Juan M. Lopez-Sanchez* | [2408.15678v2](http://arxiv.org/abs/2408.15678v2), [Code](#)
+2024-08-28 | Deep Learning Based Speckle Filtering for Polarimetric SAR Images. Application to Sentinel-1 | *Alejandro Mestre-Quereda, Juan M. Lopez-Sanchez* | [2408.15678v2](http://arxiv.org/abs/2408.15678v2), [Code](https://github.com/alejandromestrequereda/CNN_PolSAR_Despeckling)
 2024-08-26 | Towards Better Comprehension of Breaking Changes in the NPM Ecosystem | *Dezhen Kong, Jiakun Liu, Lingfeng Bao, David Lo* | [2408.14431v1](http://arxiv.org/abs/2408.14431v1), [Code](#)
 2024-08-23 | Find the Assembly Mistakes: Error Segmentation for Industrial Applications | *Dan Lehman, Tim J. Schoonbeek, Shao-Hsuan Hung, Jacek Kustra, Peter H. N. de With, Fons van der Sommen* | [2408.12945v1](http://arxiv.org/abs/2408.12945v1), [Code](#)
 2024-08-22 | UMAD: University of Macau Anomaly Detection Benchmark Dataset | *Dong Li, Lineng Chen, Cheng-Zhong Xu, Hui Kong* | [2408.12527v1](http://arxiv.org/abs/2408.12527v1), [Code](https://github.com/imrl/umad)
@@ -958,7 +960,7 @@
 2024-07-03 | Relating CNN-Transformer Fusion Network for Change Detection | *Yuhao Gao, Gensheng Pei, Mengmeng Sheng, Zeren Sun, Tao Chen, Yazhou Yao* | [2407.03178v1](http://arxiv.org/abs/2407.03178v1), [Code](https://github.com/nust-machine-intelligence-laboratory/rctnet)
 2024-07-03 | Investigating the Contextualised Word Embedding Dimensions Responsible for Contextual and Temporal Semantic Changes | *Taichi Aida, Danushka Bollegala* | [2407.02820v1](http://arxiv.org/abs/2407.02820v1), [Code](https://github.com/livnlp/svp-dims)
 2024-07-01 | SpectralKAN: Kolmogorov-Arnold Network for Hyperspectral Images Change Detection | *Yanheng Wang, Xiaohan Yu, Yongsheng Gao, Jianjun Sha, Jian Wang, Lianru Gao, Yonggang Zhang, Xianhui Rong* | [2407.00949v1](http://arxiv.org/abs/2407.00949v1), [Code](#)
-2024-06-30 | SAFE: a SAR Feature Extractor based on self-supervised learning and masked Siamese ViTs | *Max Muzeau, Joana Frontera-Pons, Chengfang Ren, Jean-Philippe Ovarlez* | [2407.00851v1](http://arxiv.org/abs/2407.00851v1), [Code](#)
+2024-06-30 | SAFE: a SAR Feature Extractor based on self-supervised learning and masked Siamese ViTs | *Max Muzeau, Joana Frontera-Pons, Chengfang Ren, Jean-Philippe Ovarlez* | [2407.00851v1](http://arxiv.org/abs/2407.00851v1), [Code](https://github.com/muzmax/safe)
 2024-06-26 | Changen2: Multi-Temporal Remote Sensing Generative Change Foundation Model | *Zhuo Zheng, Stefano Ermon, Dongjun Kim, Liangpei Zhang, Yanfei Zhong* | [2406.17998v1](http://arxiv.org/abs/2406.17998v1), [Code](https://github.com/Z-Zheng/pytorch-change-models)
 2024-06-25 | Continuous Urban Change Detection from Satellite Image Time Series with Temporal Feature Refinement and Multi-Task Integration | *Sebastian Hafner, Heng Fang, Hossein Azizpour, Yifang Ban* | [2406.17458v1](http://arxiv.org/abs/2406.17458v1), [Code](https://github.com/sebastianhafner/conturbancd)
 2024-06-23 | Distribution-Free Online Change Detection for Low-Rank Images | *Tingnan Gong, Seong-Hee Kim, Yao Xie* | [2406.16136v1](http://arxiv.org/abs/2406.16136v1), [Code](#)
