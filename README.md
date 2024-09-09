@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.08
+> Updated on 2024.09.09
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -15,6 +15,8 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-06 | Hybrid Spiking Neural Networks for Low-Power Intra-Cortical Brain-Machine Interfaces | *Alexandru Vasilache, Jann Krausse, Klaus Knobloch, Juergen Becker* | [2409.04428v1](http://arxiv.org/abs/2409.04428v1), [Code](#)
+2024-09-06 | SDformerFlow: Spatiotemporal swin spikeformer for event-based optical flow estimation | *Yi Tian, Juan Andrade-Cetto* | [2409.04082v1](http://arxiv.org/abs/2409.04082v1), [Code](https://github.com/yitian97/SDformerFlow)
 2024-09-05 | Revealing Untapped DSP Optimization Potentials for FPGA-Based Systolic Matrix Engines | *Jindong Li, Tenglong Li, Guobin Shen, Dongcheng Zhao, Qian Zhang, Yi Zeng* | [2409.03508v1](http://arxiv.org/abs/2409.03508v1), [Code](#)
 2024-09-05 | Training-free Conversion of Pretrained ANNs to SNNs for Low-Power and High-Performance Applications | *Tong Bu, Maohua Li, Zhaofei Yu* | [2409.03368v1](http://arxiv.org/abs/2409.03368v1), [Code](#)
 2024-09-04 | SNNAX -- Spiking Neural Networks in JAX | *Jamie Lohoff, Jan Finkbeiner, Emre Neftci* | [2409.02842v1](http://arxiv.org/abs/2409.02842v1), [Code](#)
@@ -559,6 +561,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-06 | Hybrid Mask Generation for Infrared Small Target Detection with Single-Point Supervision | *Weijie He, Mushui Liu, Yunlong Yu, Zheming Lu, Xi Li* | [2409.04011v1](http://arxiv.org/abs/2409.04011v1), [Code](#)
 2024-08-18 | The First Competition on Resource-Limited Infrared Small Target Detection Challenge: Methods and Results | *Boyang Li, Xinyi Ying, Ruojing Li, Yongxian Liu, Yangsi Shi, Miao Li* | [2408.09615v1](http://arxiv.org/abs/2408.09615v1), [Code](https://github.com/xinyiying/basicirstd)
 2024-08-15 | Beyond Full Label: Single-Point Prompt for Infrared Small Target Label Generation | *Shuai Yuan, Hanlin Qin, Renke Kou, Xiang Yan, Zechuan Li, Chenxu Peng, Abd-Krim Seghouane* | [2408.08191v4](http://arxiv.org/abs/2408.08191v4), [Code](https://github.com/xdfai/edgsp)
 2024-08-07 | Pick of the Bunch: Detecting Infrared Small Targets Beyond Hit-Miss Trade-Offs via Selective Rank-Aware Attention | *Yimian Dai, Peiwen Pan, Yulei Qian, Yuxuan Li, Xiang Li, Jian Yang, Huan Wan* | [2408.03717v1](http://arxiv.org/abs/2408.03717v1), [Code](https://github.com/grokcv/serankdet)
@@ -1072,7 +1075,7 @@
 2023-12-29 | ChangeNet: Multi-Temporal Asymmetric Change Detection Dataset | *Deyi Ji, Siqi Gao, Mingyuan Tao, Hongtao Lu, Feng Zhao* | [2312.17428v2](http://arxiv.org/abs/2312.17428v2), [Code](#)
 2023-12-28 | Reinforcement-based Display-size Selection for Frugal Satellite Image Change Detection | *Hichem Sahbi* | [2312.16965v1](http://arxiv.org/abs/2312.16965v1), [Code](#)
 2023-12-28 | Cellular forgetting, desensitisation, stress and aging in signalling networks. When do cells refuse to learn more? | *Tamas Veres, Mark Kerestely, Borbala M. Kovacs, David Keresztes, Klara Schulc, Erik Seitz, Zsolt Vassy, Daniel V. Veres, Peter Csermely* | [2312.16875v2](http://arxiv.org/abs/2312.16875v2), [Code](#)
-2023-12-27 | Segment Change Model (SCM) for Unsupervised Change detection in VHR Remote Sensing Images: a Case Study of Buildings | *Xiaoliang Tan, Guanzhou Chen, Tong Wang, Jiaqi Wang, Xiaodong Zhang* | [2312.16410v1](http://arxiv.org/abs/2312.16410v1), [Code](https://github.com/stephenapx/ucd-scm)
+2023-12-27 | Segment Change Model (SCM) for Unsupervised Change detection in VHR Remote Sensing Images: a Case Study of Buildings | *Xiaoliang Tan, Guanzhou Chen, Tong Wang, Jiaqi Wang, Xiaodong Zhang* | [2312.16410v2](http://arxiv.org/abs/2312.16410v2), [Code](https://github.com/stephenapx/ucd-scm)
 2023-12-23 | Pixel-Level Change Detection Pseudo-Label Learning for Remote Sensing Change Captioning | *Chenyang Liu, Keyan Chen, Zipeng Qi, Haotian Zhang, Zhengxia Zou, Zhenwei Shi* | [2312.15311v2](http://arxiv.org/abs/2312.15311v2), [Code](#)
 2023-12-23 | Time Travelling Pixels: Bitemporal Features Integration with Foundation Model for Remote Sensing Image Change Detection | *Keyan Chen, Chengyang Liu, Wenyuan Li, Zili Liu, Hao Chen, Haotian Zhang, Zhengxia Zou, Zhenwei Shi* | [2312.16202v1](http://arxiv.org/abs/2312.16202v1), [Code](https://github.com/KyanChen/TTP)
 2023-12-22 | Change Point Detection of Events in Molecular Simulations using dupin | *Brandon L. Butler, Domagoj Fijan, Sharon C. Glotzer* | [2312.15090v5](http://arxiv.org/abs/2312.15090v5), [Code](https://github.com/glotzerlab/dupin)

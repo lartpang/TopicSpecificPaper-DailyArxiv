@@ -10581,6 +10581,42 @@
       "update_time": "2024-09-05",
       "comments": null,
       "repo_url": "#"
+    },
+    "2409.04428": {
+      "paper_id": "2409.04428v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04428v1",
+      "paper_key": "2409.04428",
+      "paper_title": "Hybrid Spiking Neural Networks for Low-Power Intra-Cortical Brain-Machine Interfaces",
+      "paper_url": "http://arxiv.org/abs/2409.04428v1",
+      "paper_abstract": "Intra-cortical brain-machine interfaces (iBMIs) have the potential to dramatically improve the lives of people with paraplegia by restoring their ability to perform daily activities. However, current iBMIs suffer from scalability and mobility limitations due to bulky hardware and wiring. Wireless iBMIs offer a solution but are constrained by a limited data rate. To overcome this challenge, we are investigating hybrid spiking neural networks for embedded neural decoding in wireless iBMIs. The networks consist of a temporal convolution-based compression followed by recurrent processing and a final interpolation back to the original sequence length. As recurrent units, we explore gated recurrent units (GRUs), leaky integrate-and-fire (LIF) neurons, and a combination of both - spiking GRUs (sGRUs) and analyze their differences in terms of accuracy, footprint, and activation sparsity. To that end, we train decoders on the \"Nonhuman Primate Reaching with Multichannel Sensorimotor Cortex Electrophysiology\" dataset and evaluate it using the NeuroBench framework, targeting both tracks of the IEEE BioCAS Grand Challenge on Neural Decoding. Our approach achieves high accuracy in predicting velocities of primate reaching movements from multichannel primary motor cortex recordings while maintaining a low number of synaptic operations, surpassing the current baseline models in the NeuroBench framework. This work highlights the potential of hybrid neural networks to facilitate wireless iBMIs with high decoding precision and a substantial increase in the number of monitored neurons, paving the way toward more advanced neuroprosthetic technologies.",
+      "paper_authors": [
+        "Alexandru Vasilache",
+        "Jann Krausse",
+        "Klaus Knobloch",
+        "Juergen Becker"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-06",
+      "update_time": "2024-09-06",
+      "comments": "This work has been accepted at the 2024 IEEE Biomedical Circuits and\n  Systems Conference",
+      "repo_url": "#"
+    },
+    "2409.04082": {
+      "paper_id": "2409.04082v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04082v1",
+      "paper_key": "2409.04082",
+      "paper_title": "SDformerFlow: Spatiotemporal swin spikeformer for event-based optical flow estimation",
+      "paper_url": "http://arxiv.org/abs/2409.04082v1",
+      "paper_abstract": "Event cameras generate asynchronous and sparse event streams capturing changes in light intensity. They offer significant advantages over conventional frame-based cameras, such as a higher dynamic range and an extremely faster data rate, making them particularly useful in scenarios involving fast motion or challenging lighting conditions. Spiking neural networks (SNNs) share similar asynchronous and sparse characteristics and are well-suited for processing data from event cameras. Inspired by the potential of transformers and spike-driven transformers (spikeformers) in other computer vision tasks, we propose two solutions for fast and robust optical flow estimation for event cameras: STTFlowNet and SDformerFlow. STTFlowNet adopts a U-shaped artificial neural network (ANN) architecture with spatiotemporal shifted window self-attention (swin) transformer encoders, while SDformerFlow presents its fully spiking counterpart, incorporating swin spikeformer encoders. Furthermore, we present two variants of the spiking version with different neuron models. Our work is the first to make use of spikeformers for dense optical flow estimation. We conduct end-to-end training for all models using supervised learning. Our results yield state-of-the-art performance among SNN-based event optical flow methods on both the DSEC and MVSEC datasets, and show significant reduction in power consumption compared to the equivalent ANNs.",
+      "paper_authors": [
+        "Yi Tian",
+        "Juan Andrade-Cetto"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-06",
+      "update_time": "2024-09-06",
+      "comments": "Under Review",
+      "repo_url": "https://github.com/yitian97/SDformerFlow"
     }
   },
   "Infrared Small Target Detection": {
@@ -11679,6 +11715,26 @@
       "update_time": "2017-03-27",
       "comments": "Submitted to IEEE Journal of Selected Topics in Applied Earth\n  Observations and Remote Sensing, 16 pages, 16 figures",
       "repo_url": "https://github.com/YimianDai/DENTIST"
+    },
+    "2409.04011": {
+      "paper_id": "2409.04011v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04011v1",
+      "paper_key": "2409.04011",
+      "paper_title": "Hybrid Mask Generation for Infrared Small Target Detection with Single-Point Supervision",
+      "paper_url": "http://arxiv.org/abs/2409.04011v1",
+      "paper_abstract": "Single-frame infrared small target (SIRST) detection poses a significant challenge due to the requirement to discern minute targets amidst complex infrared background clutter. Recently, deep learning approaches have shown promising results in this domain. However, these methods heavily rely on extensive manual annotations, which are particularly cumbersome and resource-intensive for infrared small targets owing to their minute sizes. To address this limitation, we introduce a Hybrid Mask Generation (HMG) approach that recovers high-quality masks for each target from only a single-point label for network training. Specifically, our HMG approach consists of a handcrafted Points-to-Mask Generation strategy coupled with a pseudo mask updating strategy to recover and refine pseudo masks from point labels. The Points-to-Mask Generation strategy divides two distinct stages: Points-to-Box conversion, where individual point labels are transformed into bounding boxes, and subsequently, Box-to-Mask prediction, where these bounding boxes are elaborated into precise masks. The mask updating strategy integrates the complementary strengths of handcrafted and deep-learning algorithms to iteratively refine the initial pseudo masks. Experimental results across three datasets demonstrate that our method outperforms the existing methods for infrared small target detection with single-point supervision.",
+      "paper_authors": [
+        "Weijie He",
+        "Mushui Liu",
+        "Yunlong Yu",
+        "Zheming Lu",
+        "Xi Li"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-06",
+      "update_time": "2024-09-06",
+      "comments": "9 pages, 5 figures",
+      "repo_url": "#"
     }
   },
   "Salient Object Detection": {
@@ -20357,11 +20413,11 @@
       "repo_url": "#"
     },
     "2312.16410": {
-      "paper_id": "2312.16410v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2312.16410v1",
+      "paper_id": "2312.16410v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2312.16410v2",
       "paper_key": "2312.16410",
       "paper_title": "Segment Change Model (SCM) for Unsupervised Change detection in VHR Remote Sensing Images: a Case Study of Buildings",
-      "paper_url": "http://arxiv.org/abs/2312.16410v1",
+      "paper_url": "http://arxiv.org/abs/2312.16410v2",
       "paper_abstract": "The field of Remote Sensing (RS) widely employs Change Detection (CD) on very-high-resolution (VHR) images. A majority of extant deep-learning-based methods hinge on annotated samples to complete the CD process. Recently, the emergence of Vision Foundation Model (VFM) enables zero-shot predictions in particular vision tasks. In this work, we propose an unsupervised CD method named Segment Change Model (SCM), built upon the Segment Anything Model (SAM) and Contrastive Language-Image Pre-training (CLIP). Our method recalibrates features extracted at different scales and integrates them in a top-down manner to enhance discriminative change edges. We further design an innovative Piecewise Semantic Attention (PSA) scheme, which can offer semantic representation without training, thereby minimize pseudo change phenomenon. Through conducting experiments on two public datasets, the proposed SCM increases the mIoU from 46.09% to 53.67% on the LEVIR-CD dataset, and from 47.56% to 52.14% on the WHU-CD dataset. Our codes are available at https://github.com/StephenApX/UCD-SCM.",
       "paper_authors": [
         "Xiaoliang Tan",
@@ -20372,8 +20428,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2023-12-27",
-      "update_time": "2023-12-27",
-      "comments": "Submitted to International Geoscience and Remote Sensing Symposium\n  (IGARSS), 2024. 4 pages, 2 figures",
+      "update_time": "2024-09-06",
+      "comments": "Published in: IGARSS 2024 - 2024 IEEE International Geoscience and\n  Remote Sensing Symposium",
       "repo_url": "https://github.com/stephenapx/ucd-scm"
     },
     "2312.15311": {
