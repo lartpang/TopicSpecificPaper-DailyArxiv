@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.09
+> Updated on 2024.09.10
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -15,6 +15,11 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-09 | Optical Spiking Neurons Enable High-Speed and Energy-Efficient Optical Neural Networks | *Bo Xu, Zefeng Huang, Yuetong Fang, Xin Wang, Bojun Cheng, Shaoliang Yu, Zhongrui Wang, Renjing Xu* | [2409.05726v1](http://arxiv.org/abs/2409.05726v1), [Code](#)
+2024-09-09 | SpikingRx: From Neural to Spiking Receiver | *Ankit Gupta, Onur Dizdar, Yun Chen, Stephen Wang* | [2409.05610v1](http://arxiv.org/abs/2409.05610v1), [Code](#)
+2024-09-09 | Predictive Coding with Spiking Neural Networks: a Survey | *Antony W. N'dri, William Gebhardt, Céline Teulière, Fleur Zeldenrust, Rajesh P. N. Rao, Jochen Triesch, Alexander Ororbia* | [2409.05386v1](http://arxiv.org/abs/2409.05386v1), [Code](#)
+2024-09-09 | On the Convergence Analysis of Over-Parameterized Variational Autoencoders: A Neural Tangent Kernel Perspective | *Li Wang, Wei Huang* | [2409.05349v1](http://arxiv.org/abs/2409.05349v1), [Code](#)
+2024-09-08 | Time-independent Spiking Neuron via Membrane Potential Estimation for Efficient Spiking Neural Networks | *Hanqi Chen, Lixing Yu, Shaojie Zhan, Penghui Yao, Jiankun Shao* | [2409.04978v1](http://arxiv.org/abs/2409.04978v1), [Code](https://github.com/chrazqee/mpe-psn)
 2024-09-06 | Hybrid Spiking Neural Networks for Low-Power Intra-Cortical Brain-Machine Interfaces | *Alexandru Vasilache, Jann Krausse, Klaus Knobloch, Juergen Becker* | [2409.04428v1](http://arxiv.org/abs/2409.04428v1), [Code](#)
 2024-09-06 | SDformerFlow: Spatiotemporal swin spikeformer for event-based optical flow estimation | *Yi Tian, Juan Andrade-Cetto* | [2409.04082v1](http://arxiv.org/abs/2409.04082v1), [Code](https://github.com/yitian97/SDformerFlow)
 2024-09-05 | Revealing Untapped DSP Optimization Potentials for FPGA-Based Systolic Matrix Engines | *Jindong Li, Tenglong Li, Guobin Shen, Dongcheng Zhao, Qian Zhang, Yi Zeng* | [2409.03508v1](http://arxiv.org/abs/2409.03508v1), [Code](#)
@@ -25,7 +30,7 @@
 2024-09-03 | Decoding finger velocity from cortical spike trains with recurrent spiking neural networks | *Tengjun Liu, Julia Gygax, Julian Rossbroich, Yansong Chua, Shaomin Zhang, Friedemann Zenke* | [2409.01762v1](http://arxiv.org/abs/2409.01762v1), [Code](https://github.com/fmi-basel/neural-decoding-RSNN)
 2024-09-03 | Brain-Inspired Online Adaptation for Remote Sensing with Spiking Neural Network | *Dexin Duan, Peilin liu, Fei Wen* | [2409.02146v1](http://arxiv.org/abs/2409.02146v1), [Code](#)
 2024-09-03 | ReSpike: Residual Frames-based Hybrid Spiking Neural Networks for Efficient Action Recognition | *Shiting Xiao, Yuhang Li, Youngeun Kim, Donghyun Lee, Priyadarshini Panda* | [2409.01564v1](http://arxiv.org/abs/2409.01564v1), [Code](#)
-2024-09-02 | CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification | *Mikhail Kiselev* | [2409.01230v2](http://arxiv.org/abs/2409.01230v2), [Code](#)
+2024-09-02 | CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification | *Mikhail Kiselev* | [2409.01230v3](http://arxiv.org/abs/2409.01230v3), [Code](#)
 2024-08-31 | Digit Recognition using Multimodal Spiking Neural Networks | *William Bjorndahl, Jack Easton, Austin Modoff, Eric C. Larson, Joseph Camp, Prasanna Rangarajan* | [2409.00552v1](http://arxiv.org/abs/2409.00552v1), [Code](#)
 2024-08-30 | Stepwise Weighted Spike Coding for Deep Spiking Neural Networks | *Yiwen Gu, Junchuan Gu, Haibin Shen, Kejie Huang* | [2408.17245v1](http://arxiv.org/abs/2408.17245v1), [Code](#)
 2024-08-29 | A compact neuromorphic system for ultra energy-efficient, on-device robot localization | *Adam D. Hines, Michael Milford, Tobias Fischer* | [2408.16754v1](http://arxiv.org/abs/2408.16754v1), [Code](https://github.com/AdamDHines/LENS)
@@ -561,6 +566,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-07 | Unleashing the Power of Generic Segmentation Models: A Simple Baseline for Infrared Small Target Detection | *Mingjin Zhang, Chi Zhang, Qiming Zhang, Yunsong Li, Xinbo Gao, Jing Zhang* | [2409.04714v1](http://arxiv.org/abs/2409.04714v1), [Code](#)
 2024-09-06 | Hybrid Mask Generation for Infrared Small Target Detection with Single-Point Supervision | *Weijie He, Mushui Liu, Yunlong Yu, Zheming Lu, Xi Li* | [2409.04011v1](http://arxiv.org/abs/2409.04011v1), [Code](#)
 2024-08-18 | The First Competition on Resource-Limited Infrared Small Target Detection Challenge: Methods and Results | *Boyang Li, Xinyi Ying, Ruojing Li, Yongxian Liu, Yangsi Shi, Miao Li* | [2408.09615v1](http://arxiv.org/abs/2408.09615v1), [Code](https://github.com/xinyiying/basicirstd)
 2024-08-15 | Beyond Full Label: Single-Point Prompt for Infrared Small Target Label Generation | *Shuai Yuan, Hanlin Qin, Renke Kou, Xiang Yan, Zechuan Li, Chenxu Peng, Abd-Krim Seghouane* | [2408.08191v4](http://arxiv.org/abs/2408.08191v4), [Code](https://github.com/xdfai/edgsp)
@@ -623,6 +629,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-07 | SSFam: Scribble Supervised Salient Object Detection Family | *Zhengyi Liu, Sheng Deng, Xinrui Wang, Linbo Wang, Xianyong Fang, Bin Tang* | [2409.04817v1](http://arxiv.org/abs/2409.04817v1), [Code](https://github.com/liuzywen/ssfam)
 2024-09-04 | Pluralistic Salient Object Detection | *Xuelu Feng, Yunsheng Li, Dongdong Chen, Chunming Qiao, Junsong Yuan, Lu Yuan, Gang Hua* | [2409.02368v1](http://arxiv.org/abs/2409.02368v1), [Code](#)
 2024-09-02 | CONDA: Condensed Deep Association Learning for Co-Salient Object Detection | *Long Li, Nian Liu, Dingwen Zhang, Zhongyu Li, Salman Khan, Rao Anwer, Hisham Cholakkal, Junwei Han, Fahad Shahbaz Khan* | [2409.01021v2](http://arxiv.org/abs/2409.01021v2), [Code](#)
 2024-08-29 | SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection | *Rohit Venkata Sai Dulam, Chandra Kambhamettu* | [2408.16645v1](http://arxiv.org/abs/2408.16645v1), [Code](#)
@@ -927,6 +934,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-09 | AnomalyCD: A benchmark for Earth anomaly change detection with high-resolution and time-series observations | *Jingtao Li, Qian Zhu, Xinyu Wang, Hengwei Zhao, Yanfei Zhong* | [2409.05679v1](http://arxiv.org/abs/2409.05679v1), [Code](#)
 2024-09-04 | Neuromorphic Heart Rate Monitors: Neural State Machines for Monotonic Change Detection | *Alessio Carpegna, Chiara De Luca, Federico Emanuele Pozzi, Alessandro Savino, Stefano Di Carlo, Giacomo Indiveri, Elisa Donati* | [2409.02618v1](http://arxiv.org/abs/2409.02618v1), [Code](#)
 2024-09-01 | Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background | *Biyuan Liu, Huaixin Chen, Huiyao Zhan, Sijie Luo, Zhou Huang* | [2409.00589v1](http://arxiv.org/abs/2409.00589v1), [Code](https://github.com/qaz670756/CADNet)
 2024-08-28 | ClimDetect: A Benchmark Dataset for Climate Change Detection and Attribution | *Sungduk Yu, Brian L. White, Anahita Bhiwandiwalla, Musashi Hinck, Matthew Lyle Olson, Tung Nguyen, Vasudev Lal* | [2408.15993v1](http://arxiv.org/abs/2408.15993v1), [Code](#)

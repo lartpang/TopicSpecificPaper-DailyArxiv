@@ -10444,18 +10444,18 @@
       "repo_url": "#"
     },
     "2409.01230": {
-      "paper_id": "2409.01230v2",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01230v2",
+      "paper_id": "2409.01230v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.01230v3",
       "paper_key": "2409.01230",
       "paper_title": "CoLaNET -- A Spiking Neural Network with Columnar Layered Architecture for Classification",
-      "paper_url": "http://arxiv.org/abs/2409.01230v2",
-      "paper_abstract": "In the present paper, I describe a spiking neural network (SNN) architecture which, can be used in wide range of supervised learning classification tasks. It is assumed, that all participating signals (the classified object description, correct class label and SNN decision) have spiking nature. The distinctive feature of this architecture is a combination of prototypical network structures corresponding to different classes and significantly distinctive instances of one class (=columns) and functionally differing populations of neurons inside columns (=layers). The other distinctive feature is a novel combination of anti-Hebbian and dopamine-modulated plasticity. The plasticity rules are local and do not use the backpropagation principle. Besides that, as in my previous studies, I was guided by the requirement that the all neuron/plasticity models should be easily implemented on modern neurochips. I illustrate the high performance of my network on the MNIST benchmark.",
+      "paper_url": "http://arxiv.org/abs/2409.01230v3",
+      "paper_abstract": "In the present paper, I describe a spiking neural network (SNN) architecture which, can be used in wide range of supervised learning classification tasks. It is assumed, that all participating signals (the classified object description, correct class label and SNN decision) have spiking nature. The distinctive feature of this architecture is a combination of prototypical network structures corresponding to different classes and significantly distinctive instances of one class (=columns) and functionally differing populations of neurons inside columns (=layers). The other distinctive feature is a novel combination of anti-Hebbian and dopamine-modulated plasticity. The plasticity rules are local and do not use the backpropagation principle. Besides that, as in my previous studies, I was guided by the requirement that the all neuron/plasticity models should be easily implemented on modern neurochips. I illustrate the high performance of my network on a task related to model-based reinforcement learning, namely, evaluation of proximity of an external world state to the target state.",
       "paper_authors": [
         "Mikhail Kiselev"
       ],
       "primary_category": "cs.NE",
       "publish_time": "2024-09-02",
-      "update_time": "2024-09-04",
+      "update_time": "2024-09-08",
       "comments": null,
       "repo_url": "#"
     },
@@ -10617,6 +10617,107 @@
       "update_time": "2024-09-06",
       "comments": "Under Review",
       "repo_url": "https://github.com/yitian97/SDformerFlow"
+    },
+    "2409.05726": {
+      "paper_id": "2409.05726v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.05726v1",
+      "paper_key": "2409.05726",
+      "paper_title": "Optical Spiking Neurons Enable High-Speed and Energy-Efficient Optical Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.05726v1",
+      "paper_abstract": "Optical neural networks (ONNs) perform extensive computations using photons instead of electrons, resulting in passively energy-efficient and low-latency computing. Among various ONNs, the diffractive optical neural networks (DONNs) particularly excel in energy efficiency, bandwidth, and parallelism, therefore attract considerable attention. However, their performance is limited by the inherent constraints of traditional frame-based sensors, which process and produce dense and redundant information at low operating frequency. Inspired by the spiking neurons in human neural system, which utilize a thresholding mechanism to transmit information sparsely and efficiently, we propose integrating a threshold-locking method into neuromorphic vision sensors to generate sparse and binary information, achieving microsecond-level accurate perception similar to human spiking neurons. By introducing novel Binary Dual Adaptive Training (BAT) and Optically Parallel Mixture of Experts (OPMoE) inference methods, the high-speed, spike-based diffractive optical neural network (S2NN) demonstrates an ultra-fast operating speed of 3649 FPS, which is 30 fold faster than that of reported DONNs, delivering a remarkable computational speed of 417.96 TOPS and a system energy efficiency of 12.6 TOPS/W. Our work demonstrates the potential of incorporating neuromorphic architecture to facilitate optical neural network applications in real-world scenarios for both low-level and high-level machine vision tasks.",
+      "paper_authors": [
+        "Bo Xu",
+        "Zefeng Huang",
+        "Yuetong Fang",
+        "Xin Wang",
+        "Bojun Cheng",
+        "Shaoliang Yu",
+        "Zhongrui Wang",
+        "Renjing Xu"
+      ],
+      "primary_category": "physics.optics",
+      "publish_time": "2024-09-09",
+      "update_time": "2024-09-09",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.05610": {
+      "paper_id": "2409.05610v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.05610v1",
+      "paper_key": "2409.05610",
+      "paper_title": "SpikingRx: From Neural to Spiking Receiver",
+      "paper_url": "http://arxiv.org/abs/2409.05610v1",
+      "paper_abstract": "In this work, we propose an energy efficient neuromorphic receiver to replace multiple signal-processing blocks at the receiver by a Spiking Neural Network (SNN) based module, called SpikingRx. We propose a deep convolutional SNN with spike-element-wise ResNet layers which takes a whole OFDM grid compliant with 5G specifications and provides soft outputs for decoded bits that can be used as log-likelihood ratios. We propose to employ the surrogate gradient descent method for training the SpikingRx and focus on its generalizability and robustness to quantization. Moreover, the interpretability of the proposed SpikingRx is studied by a comprehensive ablation study. Our extensive numerical simulations show that SpikingRx is capable of achieving significant block error rate performance gain compared to conventional 5G receivers and similar performance compared to its traditional NN-based counterparts with approximately 9x less energy consumption.",
+      "paper_authors": [
+        "Ankit Gupta",
+        "Onur Dizdar",
+        "Yun Chen",
+        "Stephen Wang"
+      ],
+      "primary_category": "cs.IT",
+      "publish_time": "2024-09-09",
+      "update_time": "2024-09-09",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.05386": {
+      "paper_id": "2409.05386v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.05386v1",
+      "paper_key": "2409.05386",
+      "paper_title": "Predictive Coding with Spiking Neural Networks: a Survey",
+      "paper_url": "http://arxiv.org/abs/2409.05386v1",
+      "paper_abstract": "In this article, we review a class of neuro-mimetic computational models that we place under the label of spiking predictive coding. Specifically, we review the general framework of predictive processing in the context of neurons that emit discrete action potentials, i.e., spikes. Theoretically, we structure our survey around how prediction errors are represented, which results in an organization of historical neuromorphic generalizations that is centered around three broad classes of approaches: prediction errors in explicit groups of error neurons, in membrane potentials, and implicit prediction error encoding. Furthermore, we examine some applications of spiking predictive coding that utilize more energy-efficient, edge-computing hardware platforms. Finally, we highlight important future directions and challenges in this emerging line of inquiry in brain-inspired computing. Building on the prior results of work in computational cognitive neuroscience, machine intelligence, and neuromorphic engineering, we hope that this review of neuromorphic formulations and implementations of predictive coding will encourage and guide future research and development in this emerging research area.",
+      "paper_authors": [
+        "Antony W. N'dri",
+        "William Gebhardt",
+        "C\u00e9line Teuli\u00e8re",
+        "Fleur Zeldenrust",
+        "Rajesh P. N. Rao",
+        "Jochen Triesch",
+        "Alexander Ororbia"
+      ],
+      "primary_category": "q-bio.NC",
+      "publish_time": "2024-09-09",
+      "update_time": "2024-09-09",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.05349": {
+      "paper_id": "2409.05349v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.05349v1",
+      "paper_key": "2409.05349",
+      "paper_title": "On the Convergence Analysis of Over-Parameterized Variational Autoencoders: A Neural Tangent Kernel Perspective",
+      "paper_url": "http://arxiv.org/abs/2409.05349v1",
+      "paper_abstract": "Variational Auto-Encoders (VAEs) have emerged as powerful probabilistic models for generative tasks. However, their convergence properties have not been rigorously proven. The challenge of proving convergence is inherently difficult due to the highly non-convex nature of the training objective and the implementation of a Stochastic Neural Network (SNN) within VAE architectures. This paper addresses these challenges by characterizing the optimization trajectory of SNNs utilized in VAEs through the lens of Neural Tangent Kernel (NTK) techniques. These techniques govern the optimization and generalization behaviors of ultra-wide neural networks. We provide a mathematical proof of VAE convergence under mild assumptions, thus advancing the theoretical understanding of VAE optimization dynamics. Furthermore, we establish a novel connection between the optimization problem faced by over-parameterized SNNs and the Kernel Ridge Regression (KRR) problem. Our findings not only contribute to the theoretical foundation of VAEs but also open new avenues for investigating the optimization of generative models using advanced kernel methods. Our theoretical claims are verified by experimental simulations.",
+      "paper_authors": [
+        "Li Wang",
+        "Wei Huang"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-09",
+      "update_time": "2024-09-09",
+      "comments": "Accepted by Machine Learning journal",
+      "repo_url": "#"
+    },
+    "2409.04978": {
+      "paper_id": "2409.04978v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04978v1",
+      "paper_key": "2409.04978",
+      "paper_title": "Time-independent Spiking Neuron via Membrane Potential Estimation for Efficient Spiking Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.04978v1",
+      "paper_abstract": "The computational inefficiency of spiking neural networks (SNNs) is primarily due to the sequential updates of membrane potential, which becomes more pronounced during extended encoding periods compared to artificial neural networks (ANNs). This highlights the need to parallelize SNN computations effectively to leverage available hardware parallelism. To address this, we propose Membrane Potential Estimation Parallel Spiking Neurons (MPE-PSN), a parallel computation method for spiking neurons that enhances computational efficiency by enabling parallel processing while preserving the intrinsic dynamic characteristics of SNNs. Our approach exhibits promise for enhancing computational efficiency, particularly under conditions of elevated neuron density. Empirical experiments demonstrate that our method achieves state-of-the-art (SOTA) accuracy and efficiency on neuromorphic datasets without requiring additional training parameters. Codes are available at~\\url{https://github.com/chrazqee/MPE-PSN}.",
+      "paper_authors": [
+        "Hanqi Chen",
+        "Lixing Yu",
+        "Shaojie Zhan",
+        "Penghui Yao",
+        "Jiankun Shao"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-08",
+      "update_time": "2024-09-08",
+      "comments": null,
+      "repo_url": "https://github.com/chrazqee/mpe-psn"
     }
   },
   "Infrared Small Target Detection": {
@@ -11734,6 +11835,27 @@
       "publish_time": "2024-09-06",
       "update_time": "2024-09-06",
       "comments": "9 pages, 5 figures",
+      "repo_url": "#"
+    },
+    "2409.04714": {
+      "paper_id": "2409.04714v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04714v1",
+      "paper_key": "2409.04714",
+      "paper_title": "Unleashing the Power of Generic Segmentation Models: A Simple Baseline for Infrared Small Target Detection",
+      "paper_url": "http://arxiv.org/abs/2409.04714v1",
+      "paper_abstract": "Recent advancements in deep learning have greatly advanced the field of infrared small object detection (IRSTD). Despite their remarkable success, a notable gap persists between these IRSTD methods and generic segmentation approaches in natural image domains. This gap primarily arises from the significant modality differences and the limited availability of infrared data. In this study, we aim to bridge this divergence by investigating the adaptation of generic segmentation models, such as the Segment Anything Model (SAM), to IRSTD tasks. Our investigation reveals that many generic segmentation models can achieve comparable performance to state-of-the-art IRSTD methods. However, their full potential in IRSTD remains untapped. To address this, we propose a simple, lightweight, yet effective baseline model for segmenting small infrared objects. Through appropriate distillation strategies, we empower smaller student models to outperform state-of-the-art methods, even surpassing fine-tuned teacher results. Furthermore, we enhance the model's performance by introducing a novel query design comprising dense and sparse queries to effectively encode multi-scale features. Through extensive experimentation across four popular IRSTD datasets, our model demonstrates significantly improved performance in both accuracy and throughput compared to existing approaches, surpassing SAM and Semantic-SAM by over 14 IoU on NUDT and 4 IoU on IRSTD1k. The source code and models will be released at https://github.com/O937-blip/SimIR.",
+      "paper_authors": [
+        "Mingjin Zhang",
+        "Chi Zhang",
+        "Qiming Zhang",
+        "Yunsong Li",
+        "Xinbo Gao",
+        "Jing Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-07",
+      "update_time": "2024-09-07",
+      "comments": "ACM MM'24",
       "repo_url": "#"
     }
   },
@@ -15734,6 +15856,27 @@
       "update_time": "2024-09-04",
       "comments": "There is an error. In Sec 4.1, the number of images in some dataset\n  is incorrect and needs to be revised",
       "repo_url": "#"
+    },
+    "2409.04817": {
+      "paper_id": "2409.04817v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.04817v1",
+      "paper_key": "2409.04817",
+      "paper_title": "SSFam: Scribble Supervised Salient Object Detection Family",
+      "paper_url": "http://arxiv.org/abs/2409.04817v1",
+      "paper_abstract": "Scribble supervised salient object detection (SSSOD) constructs segmentation ability of attractive objects from surroundings under the supervision of sparse scribble labels. For the better segmentation, depth and thermal infrared modalities serve as the supplement to RGB images in the complex scenes. Existing methods specifically design various feature extraction and multi-modal fusion strategies for RGB, RGB-Depth, RGB-Thermal, and Visual-Depth-Thermal image input respectively, leading to similar model flood. As the recently proposed Segment Anything Model (SAM) possesses extraordinary segmentation and prompt interactive capability, we propose an SSSOD family based on SAM, named SSFam, for the combination input with different modalities. Firstly, different modal-aware modulators are designed to attain modal-specific knowledge which cooperates with modal-agnostic information extracted from the frozen SAM encoder for the better feature ensemble. Secondly, a siamese decoder is tailored to bridge the gap between the training with scribble prompt and the testing with no prompt for the stronger decoding ability. Our model demonstrates the remarkable performance among combinations of different modalities and refreshes the highest level of scribble supervised methods and comes close to the ones of fully supervised methods. https://github.com/liuzywen/SSFam",
+      "paper_authors": [
+        "Zhengyi Liu",
+        "Sheng Deng",
+        "Xinrui Wang",
+        "Linbo Wang",
+        "Xianyong Fang",
+        "Bin Tang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-07",
+      "update_time": "2024-09-07",
+      "comments": "Accepted by TMM 2024",
+      "repo_url": "https://github.com/liuzywen/ssfam"
     }
   },
   "Camouflaged Object Detection": {
@@ -21508,6 +21651,26 @@
       "update_time": "2024-09-01",
       "comments": null,
       "repo_url": "https://github.com/qaz670756/CADNet"
+    },
+    "2409.05679": {
+      "paper_id": "2409.05679v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.05679v1",
+      "paper_key": "2409.05679",
+      "paper_title": "AnomalyCD: A benchmark for Earth anomaly change detection with high-resolution and time-series observations",
+      "paper_url": "http://arxiv.org/abs/2409.05679v1",
+      "paper_abstract": "Various Earth anomalies have destroyed the stable, balanced state, resulting in fatalities and serious destruction of property. With the advantages of large-scale and precise observation, high-resolution remote sensing images have been widely used for anomaly monitoring and localization. Powered by the deep representation, the existing methods have achieved remarkable advances, primarily in classification and change detection techniques. However, labeled samples are difficult to acquire due to the low probability of anomaly occurrence, and the trained models are limited to fixed anomaly categories, which hinders the application for anomalies with few samples or unknown anomalies. In this paper, to tackle this problem, we propose the anomaly change detection (AnomalyCD) technique, which accepts time-series observations and learns to identify anomalous changes by learning from the historical normal change pattern. Compared to the existing techniques, AnomalyCD processes an unfixed number of time steps and can localize the various anomalies in a unified manner, without human supervision. To benchmark AnomalyCD, we constructed a high-resolution dataset with time-series images dedicated to various Earth anomalies (the AnomalyCDD dataset). AnomalyCDD contains high-resolution (from 0.15 to 2.39 m/pixel), time-series (from 3 to 7 time steps), and large-scale images (1927.93 km2 in total) collected globally Furthermore, we developed a zero-shot baseline model (AnomalyCDM), which implements the AnomalyCD technique by extracting a general representation from the segment anything model (SAM) and conducting temporal comparison to distinguish the anomalous changes from normal changes. AnomalyCDM is designed as a two-stage workflow to enhance the efficiency, and has the ability to process the unseen images directly, without retraining for each scene.",
+      "paper_authors": [
+        "Jingtao Li",
+        "Qian Zhu",
+        "Xinyu Wang",
+        "Hengwei Zhao",
+        "Yanfei Zhong"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-09",
+      "update_time": "2024-09-09",
+      "comments": "remote sensing benchmark",
+      "repo_url": "#"
     }
   }
 }
