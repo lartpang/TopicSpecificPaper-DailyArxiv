@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.10
+> Updated on 2024.09.11
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -934,6 +934,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-09-10 | Towards Generalizable Scene Change Detection | *Jaewoo Kim, Uehwan Kim* | [2409.06214v1](http://arxiv.org/abs/2409.06214v1), [Code](#)
 2024-09-09 | AnomalyCD: A benchmark for Earth anomaly change detection with high-resolution and time-series observations | *Jingtao Li, Qian Zhu, Xinyu Wang, Hengwei Zhao, Yanfei Zhong* | [2409.05679v1](http://arxiv.org/abs/2409.05679v1), [Code](#)
 2024-09-04 | Neuromorphic Heart Rate Monitors: Neural State Machines for Monotonic Change Detection | *Alessio Carpegna, Chiara De Luca, Federico Emanuele Pozzi, Alessandro Savino, Stefano Di Carlo, Giacomo Indiveri, Elisa Donati* | [2409.02618v1](http://arxiv.org/abs/2409.02618v1), [Code](#)
 2024-09-01 | Change-Aware Siamese Network for Surface Defects Segmentation under Complex Background | *Biyuan Liu, Huaixin Chen, Huiyao Zhan, Sijie Luo, Zhou Huang* | [2409.00589v1](http://arxiv.org/abs/2409.00589v1), [Code](https://github.com/qaz670756/CADNet)

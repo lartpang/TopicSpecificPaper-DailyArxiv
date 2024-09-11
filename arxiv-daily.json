@@ -21671,6 +21671,23 @@
       "update_time": "2024-09-09",
       "comments": "remote sensing benchmark",
       "repo_url": "#"
+    },
+    "2409.06214": {
+      "paper_id": "2409.06214v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.06214v1",
+      "paper_key": "2409.06214",
+      "paper_title": "Towards Generalizable Scene Change Detection",
+      "paper_url": "http://arxiv.org/abs/2409.06214v1",
+      "paper_abstract": "Scene Change Detection (SCD) is vital for applications such as visual surveillance and mobile robotics. However, current SCD methods exhibit a bias to the temporal order of training datasets and limited performance on unseen domains; coventional SCD benchmarks are not able to evaluate generalization or temporal consistency. To tackle these limitations, we introduce a Generalizable Scene Change Detection Framework (GeSCF) in this work. The proposed GeSCF leverages localized semantics of a foundation model without any re-training or fine-tuning -- for generalization over unseen domains. Specifically, we design an adaptive thresholding of the similarity distribution derived from facets of the pre-trained foundation model to generate initial pseudo-change mask. We further utilize Segment Anything Model's (SAM) class-agnostic masks to refine pseudo-masks. Moreover, our proposed framework maintains commutative operations in all settings to ensure complete temporal consistency. Finally, we define new metrics, evaluation dataset, and evaluation protocol for Generalizable Scene Change Detection (GeSCD). Extensive experiments demonstrate that GeSCF excels across diverse and challenging environments -- establishing a new benchmark for SCD performance.",
+      "paper_authors": [
+        "Jaewoo Kim",
+        "Uehwan Kim"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-10",
+      "update_time": "2024-09-10",
+      "comments": "7 pages, 5 figures",
+      "repo_url": "#"
     }
   }
 }
