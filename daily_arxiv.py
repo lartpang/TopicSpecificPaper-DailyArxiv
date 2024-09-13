@@ -171,6 +171,8 @@ def main():
     json_file = "arxiv-daily.json"
     md_file = "README.md"
     keywords = {
+        "Rethinking": '"Rethinking"',
+        "Survey": '"Survey"OR"Review"',
         "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"OR"SNN"',
         "Infrared Small Target Detection": '"Infrared Small Target Detection"OR"IRSTD"',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
         "Salient Object Detection": '"Salient Object Detection"OR"Video Salient Object Detection"',
