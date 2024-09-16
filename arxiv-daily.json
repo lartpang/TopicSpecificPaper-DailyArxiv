@@ -1222,11 +1222,11 @@
       "repo_url": "#"
     },
     "2407.05262": {
-      "paper_id": "2407.05262v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.05262v1",
+      "paper_id": "2407.05262v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2407.05262v2",
       "paper_key": "2407.05262",
       "paper_title": "FastSpiker: Enabling Fast Training for Spiking Neural Networks on Event-based Data through Learning Rate Enhancements for Autonomous Embedded Systems",
-      "paper_url": "http://arxiv.org/abs/2407.05262v1",
+      "paper_url": "http://arxiv.org/abs/2407.05262v2",
       "paper_abstract": "Autonomous embedded systems (e.g., robots) typically necessitate intelligent computation with low power/energy processing for completing their tasks. Such requirements can be fulfilled by embodied neuromorphic intelligence with spiking neural networks (SNNs) because of their high learning quality (e.g., accuracy) and sparse computation. Here, the employment of event-based data is preferred to ensure seamless connectivity between input and processing parts. However, state-of-the-art SNNs still face a long training time to achieve high accuracy, thereby incurring high energy consumption and producing a high rate of carbon emission. Toward this, we propose FastSpiker, a novel methodology that enables fast SNN training on event-based data through learning rate enhancements targeting autonomous embedded systems. In FastSpiker, we first investigate the impact of different learning rate policies and their values, then select the ones that quickly offer high accuracy. Afterward, we explore different settings for the selected learning rate policies to find the appropriate policies through a statistical-based decision. Experimental results show that our FastSpiker offers up to 10.5x faster training time and up to 88.39% lower carbon emission to achieve higher or comparable accuracy to the state-of-the-art on the event-based automotive dataset (i.e., NCARS). In this manner, our FastSpiker methodology paves the way for green and sustainable computing in realizing embodied neuromorphic intelligence for autonomous embedded systems.",
       "paper_authors": [
         "Iqra Bano",
@@ -1236,8 +1236,8 @@
       ],
       "primary_category": "cs.NE",
       "publish_time": "2024-07-07",
-      "update_time": "2024-07-07",
-      "comments": "11 figures, 2 tables",
+      "update_time": "2024-09-12",
+      "comments": "To appear at the 18th International Conference on Control,\n  Automation, Robotics and Vision (ICARCV), December 2024, Dubai, UAE",
       "repo_url": "#"
     },
     "2407.04525": {
@@ -10755,6 +10755,63 @@
       "update_time": "2024-09-12",
       "comments": "20 pages, 8 figures, 2 tables",
       "repo_url": "#"
+    },
+    "2409.08698": {
+      "paper_id": "2409.08698v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08698v1",
+      "paper_key": "2409.08698",
+      "paper_title": "Efficient FPGA Implementation of an Optimized SNN-based DFE for Optical Communications",
+      "paper_url": "http://arxiv.org/abs/2409.08698v1",
+      "paper_abstract": "The ever-increasing demand for higher data rates in communication systems intensifies the need for advanced non-linear equalizers capable of higher performance. Recently artificial neural networks (ANNs) were introduced as a viable candidate for advanced non-linear equalizers, as they outperform traditional methods. However, they are computationally complex and therefore power hungry. Spiking neural networks (SNNs) started to gain attention as an energy-efficient alternative to ANNs. Recent works proved that they can outperform ANNs at this task. In this work, we explore the design space of an SNN-based decision-feedback equalizer (DFE) to reduce its computational complexity for an efficient implementation on field programmable gate array (FPGA). Our Results prove that it achieves higher communication performance than ANN-based DFE at roughly the same throughput and at 25X higher energy efficiency.",
+      "paper_authors": [
+        "Mohamed Moursi",
+        "Jonas Ney",
+        "Bilal Hammoud",
+        "Norbert Wehn"
+      ],
+      "primary_category": "eess.SP",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "accepted for publication in IEEE Middle East Conference on\n  Communications and Networking (MECOM 2024). November, 2024",
+      "repo_url": "#"
+    },
+    "2409.08389": {
+      "paper_id": "2409.08389v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08389v1",
+      "paper_key": "2409.08389",
+      "paper_title": "Higher-Order Topological Directionality and Directed Simplicial Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.08389v1",
+      "paper_abstract": "Topological Deep Learning (TDL) has emerged as a paradigm to process and learn from signals defined on higher-order combinatorial topological spaces, such as simplicial or cell complexes. Although many complex systems have an asymmetric relational structure, most TDL models forcibly symmetrize these relationships. In this paper, we first introduce a novel notion of higher-order directionality and we then design Directed Simplicial Neural Networks (Dir-SNNs) based on it. Dir-SNNs are message-passing networks operating on directed simplicial complexes able to leverage directed and possibly asymmetric interactions among the simplices. To our knowledge, this is the first TDL model using a notion of higher-order directionality. We theoretically and empirically prove that Dir-SNNs are more expressive than their directed graph counterpart in distinguishing isomorphic directed graphs. Experiments on a synthetic source localization task demonstrate that Dir-SNNs outperform undirected SNNs when the underlying complex is directed, and perform comparably when the underlying complex is undirected.",
+      "paper_authors": [
+        "Manuel Lecha",
+        "Andrea Cavallo",
+        "Francesca Dominici",
+        "Elvin Isufi",
+        "Claudio Battiloro"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "7 pages, 8 figures, 1 table",
+      "repo_url": "https://github.com/andrea-cavallo-98/DirSNN"
+    },
+    "2409.08290": {
+      "paper_id": "2409.08290v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08290v1",
+      "paper_key": "2409.08290",
+      "paper_title": "Reconsidering the energy efficiency of spiking neural networks",
+      "paper_url": "http://arxiv.org/abs/2409.08290v1",
+      "paper_abstract": "Spiking neural networks (SNNs) are generally regarded as more energy-efficient because they do not use multiplications. However, most SNN works only consider the counting of additions to evaluate energy consumption, neglecting other overheads such as memory accesses and data movement operations. This oversight can lead to a misleading perception of efficiency, especially when state-of-the-art SNN accelerators operate with very small time window sizes. In this paper, we present a detailed comparison of the energy consumption of artificial neural networks (ANNs) and SNNs from a hardware perspective. We provide accurate formulas for energy consumption based on classical multi-level memory hierarchy architectures, commonly used neuromorphic dataflow architectures, and our proposed improved spatial-dataflow architecture. Our research demonstrates that to achieve comparable accuracy and greater energy efficiency than ANNs, SNNs require strict limitations on both time window size T and sparsity s. For instance, with the VGG16 model and a fixed T of 6, the neuron sparsity rate must exceed 93% to ensure energy efficiency across most architectures. Inspired by our findings, we explore strategies to enhance energy efficiency by increasing sparsity. We introduce two regularization terms during training that constrain weights and activations, effectively boosting the sparsity rate. Our experiments on the CIFAR-10 dataset, using T of 6, show that our SNNs consume 69% of the energy used by optimized ANNs on spatial-dataflow architectures, while maintaining an SNN accuracy of 94.18%. This framework, developed using PyTorch, is publicly available for use and further research.",
+      "paper_authors": [
+        "Zhanglu Yan",
+        "Zhenyu Bai",
+        "Weng-Fai Wong"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-08-29",
+      "update_time": "2024-08-29",
+      "comments": null,
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -19717,11 +19774,11 @@
       "repo_url": "#"
     },
     "2403.14109": {
-      "paper_id": "2403.14109v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.14109v1",
+      "paper_id": "2403.14109v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2403.14109v2",
       "paper_key": "2403.14109",
       "paper_title": "Reinforcement Learning Design for Quickest Change Detection",
-      "paper_url": "http://arxiv.org/abs/2403.14109v1",
+      "paper_url": "http://arxiv.org/abs/2403.14109v2",
       "paper_abstract": "The field of quickest change detection (QCD) concerns design and analysis of algorithms to estimate in real time the time at which an important event takes place, and identify properties of the post-change behavior. It is shown in this paper that approaches based on reinforcement learning (RL) can be adapted based on any \"surrogate information state\" that is adapted to the observations. Hence we are left to choose both the surrogate information state process and the algorithm. For the former, it is argued that there are many choices available, based on a rich theory of asymptotic statistics for QCD. Two approaches to RL design are considered: (i) Stochastic gradient descent based on an actor-critic formulation. Theory is largely complete for this approach: the algorithm is unbiased, and will converge to a local minimum. However, it is shown that variance of stochastic gradients can be very large, necessitating the need for commensurately long run times; (ii) Q-learning algorithms based on a version of the projected Bellman equation. It is shown that the algorithm is stable, in the sense of bounded sample paths, and that a solution to the projected Bellman equation exists under mild conditions. Numerical experiments illustrate these findings, and provide a roadmap for algorithm design in more general settings.",
       "paper_authors": [
         "Austin Cooper",
@@ -19729,8 +19786,8 @@
       ],
       "primary_category": "math.OC",
       "publish_time": "2024-03-21",
-      "update_time": "2024-03-21",
-      "comments": null,
+      "update_time": "2024-09-13",
+      "comments": "Preprint version of \"Reinforcement Learning Design for Quickest\n  Change Detection\", IEEE Conference on Decision and Control, 2024 (to appear)",
       "repo_url": "#"
     },
     "2403.13430": {
@@ -21741,6 +21798,24 @@
       "publish_time": "2024-09-12",
       "update_time": "2024-09-12",
       "comments": "Extended version of extended abstract for the Allerton Conference on\n  Communication, Control, and Computing, September 2024",
+      "repo_url": "#"
+    },
+    "2409.08582": {
+      "paper_id": "2409.08582v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08582v1",
+      "paper_key": "2409.08582",
+      "paper_title": "ChangeChat: An Interactive Model for Remote Sensing Change Analysis via Multimodal Instruction Tuning",
+      "paper_url": "http://arxiv.org/abs/2409.08582v1",
+      "paper_abstract": "Remote sensing (RS) change analysis is vital for monitoring Earth's dynamic processes by detecting alterations in images over time. Traditional change detection excels at identifying pixel-level changes but lacks the ability to contextualize these alterations. While recent advancements in change captioning offer natural language descriptions of changes, they do not support interactive, user-specific queries. To address these limitations, we introduce ChangeChat, the first bitemporal vision-language model (VLM) designed specifically for RS change analysis. ChangeChat utilizes multimodal instruction tuning, allowing it to handle complex queries such as change captioning, category-specific quantification, and change localization. To enhance the model's performance, we developed the ChangeChat-87k dataset, which was generated using a combination of rule-based methods and GPT-assisted techniques. Experiments show that ChangeChat offers a comprehensive, interactive solution for RS change analysis, achieving performance comparable to or even better than state-of-the-art (SOTA) methods on specific tasks, and significantly surpassing the latest general-domain model, GPT-4. Code and pre-trained weights are available at https://github.com/hanlinwu/ChangeChat.",
+      "paper_authors": [
+        "Pei Deng",
+        "Wenqian Zhou",
+        "Hanlin Wu"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "5 pages, 2 figures",
       "repo_url": "#"
     }
   },
@@ -25840,6 +25915,66 @@
       "update_time": "2024-04-30",
       "comments": "15 pages, 2 figures",
       "repo_url": "#"
+    },
+    "2409.08572": {
+      "paper_id": "2409.08572v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08572v1",
+      "paper_key": "2409.08572",
+      "paper_title": "DiffFAS: Face Anti-Spoofing via Generative Diffusion Models",
+      "paper_url": "http://arxiv.org/abs/2409.08572v1",
+      "paper_abstract": "Face anti-spoofing (FAS) plays a vital role in preventing face recognition (FR) systems from presentation attacks. Nowadays, FAS systems face the challenge of domain shift, impacting the generalization performance of existing FAS methods. In this paper, we rethink about the inherence of domain shift and deconstruct it into two factors: image style and image quality. Quality influences the purity of the presentation of spoof information, while style affects the manner in which spoof information is presented. Based on our analysis, we propose DiffFAS framework, which quantifies quality as prior information input into the network to counter image quality shift, and performs diffusion-based high-fidelity cross-domain and cross-attack types generation to counter image style shift. DiffFAS transforms easily collectible live faces into high-fidelity attack faces with precise labels while maintaining consistency between live and spoof face identities, which can also alleviate the scarcity of labeled data with novel type attacks faced by nowadays FAS system. We demonstrate the effectiveness of our framework on challenging cross-domain and cross-attack FAS datasets, achieving the state-of-the-art performance. Available at https://github.com/murphytju/DiffFAS.",
+      "paper_authors": [
+        "Xinxu Ge",
+        "Xin Liu",
+        "Zitong Yu",
+        "Jingang Shi",
+        "Chun Qi",
+        "Jie Li",
+        "Heikki K\u00e4lvi\u00e4inen"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "ECCV 24",
+      "repo_url": "https://github.com/murphytju/difffas"
+    },
+    "2409.08474": {
+      "paper_id": "2409.08474v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08474v1",
+      "paper_key": "2409.08474",
+      "paper_title": "Rethinking Meta-Learning from a Learning Lens",
+      "paper_url": "http://arxiv.org/abs/2409.08474v1",
+      "paper_abstract": "Meta-learning has emerged as a powerful approach for leveraging knowledge from previous tasks to solve new tasks. The mainstream methods focus on training a well-generalized model initialization, which is then adapted to different tasks with limited data and updates. However, it pushes the model overfitting on the training tasks. Previous methods mainly attributed this to the lack of data and used augmentations to address this issue, but they were limited by sufficient training and effective augmentation strategies. In this work, we focus on the more fundamental ``learning to learn'' strategy of meta-learning to explore what causes errors and how to eliminate these errors without changing the environment. Specifically, we first rethink the algorithmic procedure of meta-learning from a ``learning'' lens. Through theoretical and empirical analyses, we find that (i) this paradigm faces the risk of both overfitting and underfitting and (ii) the model adapted to different tasks promote each other where the effect is stronger if the tasks are more similar. Based on this insight, we propose using task relations to calibrate the optimization process of meta-learning and propose a plug-and-play method called Task Relation Learner (TRLearner) to achieve this goal. Specifically, it first obtains task relation matrices from the extracted task-specific meta-data. Then, it uses the obtained matrices with relation-aware consistency regularization to guide optimization. Extensive theoretical and empirical analyses demonstrate the effectiveness of TRLearner.",
+      "paper_authors": [
+        "Jingyao Wang",
+        "Wenwen Qiang",
+        "Jiangmeng Li",
+        "Lingyu Si",
+        "Changwen Zheng"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08381": {
+      "paper_id": "2409.08381v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08381v1",
+      "paper_key": "2409.08381",
+      "paper_title": "Rethinking Prompting Strategies for Multi-Label Recognition with Partial Annotations",
+      "paper_url": "http://arxiv.org/abs/2409.08381v1",
+      "paper_abstract": "Vision-language models (VLMs) like CLIP have been adapted for Multi-Label Recognition (MLR) with partial annotations by leveraging prompt-learning, where positive and negative prompts are learned for each class to associate their embeddings with class presence or absence in the shared vision-text feature space. While this approach improves MLR performance by relying on VLM priors, we hypothesize that learning negative prompts may be suboptimal, as the datasets used to train VLMs lack image-caption pairs explicitly focusing on class absence. To analyze the impact of positive and negative prompt learning on MLR, we introduce PositiveCoOp and NegativeCoOp, where only one prompt is learned with VLM guidance while the other is replaced by an embedding vector learned directly in the shared feature space without relying on the text encoder. Through empirical analysis, we observe that negative prompts degrade MLR performance, and learning only positive prompts, combined with learned negative embeddings (PositiveCoOp), outperforms dual prompt learning approaches. Moreover, we quantify the performance benefits that prompt-learning offers over a simple vision-features-only baseline, observing that the baseline displays strong performance comparable to dual prompt learning approach (DualCoOp), when the proportion of missing labels is low, while requiring half the training compute and 16 times fewer parameters",
+      "paper_authors": [
+        "Samyak Rawlekar",
+        "Shubhang Bhatnagar",
+        "Narendra Ahuja"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": null,
+      "repo_url": "#"
     }
   },
   "Survey": {
@@ -26028,7 +26163,7 @@
       "publish_time": "2024-09-12",
       "update_time": "2024-09-12",
       "comments": "for Github, see\n  https://github.com/StavC/UnleashingWorms-ExtractingData",
-      "repo_url": "#"
+      "repo_url": "https://github.com/stavc/unleashingworms-extractingdata"
     },
     "2409.08035": {
       "paper_id": "2409.08035v1",
@@ -26266,11 +26401,11 @@
       "repo_url": "#"
     },
     "2409.07825": {
-      "paper_id": "2409.07825v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.07825v1",
+      "paper_id": "2409.07825v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.07825v2",
       "paper_key": "2409.07825",
       "paper_title": "A Comprehensive Survey on Deep Multimodal Learning with Missing Modality",
-      "paper_url": "http://arxiv.org/abs/2409.07825v1",
+      "paper_url": "http://arxiv.org/abs/2409.07825v2",
       "paper_abstract": "During multimodal model training and reasoning, data samples may miss certain modalities and lead to compromised model performance due to sensor limitations, cost constraints, privacy concerns, data loss, and temporal and spatial factors. This survey provides an overview of recent progress in Multimodal Learning with Missing Modality (MLMM), focusing on deep learning techniques. It is the first comprehensive survey that covers the historical background and the distinction between MLMM and standard multimodal learning setups, followed by a detailed analysis of current MLMM methods, applications, and datasets, concluding with a discussion about challenges and potential future directions in the field.",
       "paper_authors": [
         "Renjie Wu",
@@ -26279,8 +26414,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-09-12",
-      "update_time": "2024-09-12",
-      "comments": "Work in progress and welcome to discussion",
+      "update_time": "2024-09-13",
+      "comments": "Work in progress; open to discussion; planning to submit to ACM CSUR\n  in September",
       "repo_url": "#"
     },
     "2409.07757": {
@@ -27115,11 +27250,11 @@
       "repo_url": "#"
     },
     "2409.07347": {
-      "paper_id": "2409.07347v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.07347v1",
+      "paper_id": "2409.07347v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.07347v2",
       "paper_key": "2409.07347",
       "paper_title": "The Role of Explainable AI in Revolutionizing Human Health Monitoring",
-      "paper_url": "http://arxiv.org/abs/2409.07347v1",
+      "paper_url": "http://arxiv.org/abs/2409.07347v2",
       "paper_abstract": "The complex nature of disease mechanisms and the variability of patient symptoms present significant obstacles in developing effective diagnostic tools. Although machine learning has made considerable advances in medical diagnosis, its decision-making processes frequently lack transparency, which can jeopardize patient outcomes. This underscores the critical need for Explainable AI (XAI), which not only offers greater clarity but also has the potential to significantly improve patient care. In this literature review, we conduct a detailed analysis of analyzing XAI methods identified through searches across various databases, focusing on chronic conditions such as Parkinson's, stroke, depression, cancer, heart disease, and Alzheimer's disease. The literature search revealed the application of 9 trending XAI algorithms in the field of healthcare and highlighted the pros and cons of each of them. Thus, the article is concluded with a critical appraisal of the challenges and future research opportunities for XAI in human health monitoring.",
       "paper_authors": [
         "Abdullah Alharthi",
@@ -27134,7 +27269,7 @@
       ],
       "primary_category": "eess.SP",
       "publish_time": "2024-09-11",
-      "update_time": "2024-09-11",
+      "update_time": "2024-09-13",
       "comments": null,
       "repo_url": "#"
     },
@@ -27211,7 +27346,7 @@
       "publish_time": "2024-09-11",
       "update_time": "2024-09-12",
       "comments": "35 pages, 5 figures, 3 tables",
-      "repo_url": "#"
+      "repo_url": "https://github.com/xie-lab-ml/awesome-alignment-of-diffusion-models"
     },
     "2409.07237": {
       "paper_id": "2409.07237v1",
@@ -27565,7 +27700,7 @@
       "publish_time": "2024-09-11",
       "update_time": "2024-09-11",
       "comments": "15 pages, 9 figures, 2 tables",
-      "repo_url": "#"
+      "repo_url": "https://github.com/LSSTDESC/BlendingToolKit"
     },
     "2409.06953": {
       "paper_id": "2409.06953v1",
@@ -28227,11 +28362,11 @@
       "repo_url": "#"
     },
     "2409.06378": {
-      "paper_id": "2409.06378v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.06378v1",
+      "paper_id": "2409.06378v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.06378v2",
       "paper_key": "2409.06378",
       "paper_title": "Note on the existence of classical solutions of derivative semilinear models for one dimensional wave equation",
-      "paper_url": "http://arxiv.org/abs/2409.06378v1",
+      "paper_url": "http://arxiv.org/abs/2409.06378v2",
       "paper_abstract": "This note is a supplement with a new result to the review paper by Takamura [13] on nonlinear wave equations in one space dimension. We are focusing here to the long-time existence of classical solutions of semilinear wave equations in one space dimension, especially with derivative nonlinear terms of product-type. Our result is an extension of the single component case, but it is meaningful to provide models as possible as many to cover the optimality of the general theory. The proof is based on the classical iteration argument of the point-wise estimate of the solution.",
       "paper_authors": [
         "Takiko Sasaki",
@@ -28239,8 +28374,8 @@
       ],
       "primary_category": "math.AP",
       "publish_time": "2024-09-10",
-      "update_time": "2024-09-10",
-      "comments": "8 pages",
+      "update_time": "2024-09-13",
+      "comments": "8 pages. The first version has a typo in the definition of the norm.\n  There should be no weight of course",
       "repo_url": "#"
     },
     "2409.06332": {
@@ -30325,6 +30460,822 @@
       "publish_time": "2024-09-07",
       "update_time": "2024-09-07",
       "comments": null,
+      "repo_url": "#"
+    },
+    "2409.09030": {
+      "paper_id": "2409.09030v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09030v1",
+      "paper_key": "2409.09030",
+      "paper_title": "Agents in Software Engineering: Survey, Landscape, and Vision",
+      "paper_url": "http://arxiv.org/abs/2409.09030v1",
+      "paper_abstract": "In recent years, Large Language Models (LLMs) have achieved remarkable success and have been widely used in various downstream tasks, especially in the tasks of the software engineering (SE) field. We find that many studies combining LLMs with SE have employed the concept of agents either explicitly or implicitly. However, there is a lack of an in-depth survey to sort out the development context of existing works, analyze how existing works combine the LLM-based agent technologies to optimize various tasks, and clarify the framework of LLM-based agents in SE. In this paper, we conduct the first survey of the studies on combining LLM-based agents with SE and present a framework of LLM-based agents in SE which includes three key modules: perception, memory, and action. We also summarize the current challenges in combining the two fields and propose future opportunities in response to existing challenges. We maintain a GitHub repository of the related papers at: https://github.com/DeepSoftwareAnalytics/Awesome-Agent4SE.",
+      "paper_authors": [
+        "Yanxian Huang",
+        "Wanjun Zhong",
+        "Ensheng Shi",
+        "Min Yang",
+        "Jiachi Chen",
+        "Hui Li",
+        "Yuchi Ma",
+        "Qianxiang Wang",
+        "Zibin Zheng",
+        "Yanlin Wang"
+      ],
+      "primary_category": "cs.SE",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "12 pages, 4 figures",
+      "repo_url": "https://github.com/deepsoftwareanalytics/awesome-agent4se"
+    },
+    "2409.09028": {
+      "paper_id": "2409.09028v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09028v1",
+      "paper_key": "2409.09028",
+      "paper_title": "The effect of cosmic web filaments on galaxy evolution",
+      "paper_url": "http://arxiv.org/abs/2409.09028v1",
+      "paper_abstract": "Galaxy properties are known to be affected by their environment. This is well established for the extremes of the density scales, between the high-density cluster environment and the low-density field. It is however not fully understood how the intermediate-density regime of cosmic web filaments affects galaxy evolution. We investigate this environmental effect using a mass complete sample of 23,441 galaxies in the Sloan Digital Sky Survey DR8 Main Galaxy Sample (${M}_{\\text{Stellar}} > 10^{9.91} \\text{M}_{\\odot}$). We define 6 environments, probing different density regimes and representing unique stages in the structure formation process, comparing the differences in star formation activity and morphology between them. We find that galaxies in filaments tend to be less star forming and favour more early-type morphologies than those in the field. These differences persist when considering stellar mass-matched samples, suggesting that this is a consequence of the environment. We further investigate whether these trends are a result of the large scale or local environment through constructing samples matched both in stellar mass and local galaxy density. We find that when also matching in local galaxy density, the differences observed between the filament and field population vanishes, concluding that the environmental effect of filaments can be entirely parameterised by a local galaxy density index. We find that differences can still be seen in comparisons with the interiors of clusters, suggesting these are unique environments which can impart additional physical processes not characterised by local galaxy density.",
+      "paper_authors": [
+        "Callum J. O'Kane",
+        "Ulrike Kuchner",
+        "Meghan E. Gray",
+        "Alfonso Arag\u00f3n-Salamanca"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "19 pages, 10 figures, Accepted for publication in MNRAS",
+      "repo_url": "#"
+    },
+    "2409.09005": {
+      "paper_id": "2409.09005v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09005v1",
+      "paper_key": "2409.09005",
+      "paper_title": "Dunkl and Cherednik operators",
+      "paper_url": "http://arxiv.org/abs/2409.09005v1",
+      "paper_abstract": "This survey article, written for the Encyclopedia of Mathematical Physics, 2nd edition, is devoted to the remarkable family of operators introduced by Charles Dunkl and to their $q$-analogues discovered by Ivan Cherednik. The main focus is on the r\\^ole of these operators in studying integrable many-body systems such as the Calogero-Moser and the Ruijsenaars systems. To put these constructions into a wider context, we indicate their relationship with the theory of the rational Cherednik algebras and double affine Hecke algebras. While we do not include proofs, references to the original research articles are provided, accompanied by brief historical comments.",
+      "paper_authors": [
+        "Oleg Chalykh"
+      ],
+      "primary_category": "math-ph",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "25 pages",
+      "repo_url": "#"
+    },
+    "2409.08999": {
+      "paper_id": "2409.08999v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08999v1",
+      "paper_key": "2409.08999",
+      "paper_title": "Predicting High Magnification Events in Microlensed Quasars in the Era of LSST using Recurrent Neural Networks",
+      "paper_url": "http://arxiv.org/abs/2409.08999v1",
+      "paper_abstract": "Upcoming wide field surveys such as the Rubin Observatory's Legacy Survey of Space and Time (LSST) will monitor thousands of strongly lensed quasars over a 10-year period. Many of these monitored quasars will undergo high magnification events (HMEs) through microlensing as the accretion disk crosses a caustic, places of infinite magnification. Microlensing allows us to map the inner regions of the accretion disk as it crosses a caustic, even at large cosmological distances. The observational cadences of LSST are not ideal for probing the inner regions of the accretion disk, so there is a need to predict HMEs as early as possible to trigger high-cadence multi-band or spectroscopic follow-up observations. Here we simulate a diverse and realistic sample of 10-year quasar microlensing light curves to train a recurrent neural network (RNN) to predict HMEs before they occur by classifying the location of the peaks at each time step. This is the first deep learning approach to predict HMEs. We give estimates at how well we expect to predict HME peaks during LSST and benchmark how our metrics change with different cadence strategies. With LSST-like observations, we can predict approximately 55% of HME peaks corresponding to tens to hundreds per year and a false positive rate of around 20% compared to the number of HMEs. Our network can be continuously applied throughout the LSST survey, providing crucial alerts to optimize follow-up resources.",
+      "paper_authors": [
+        "Joshua Fagin",
+        "Eric Paic",
+        "Favio Neira",
+        "Henry Best",
+        "Timo Anguita",
+        "Martin Millon",
+        "Matthew O'Dowd",
+        "Dominique Sluse",
+        "Georgios Vernardos"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "16 pages, 9 figures, submitted to ApJ",
+      "repo_url": "#"
+    },
+    "2409.08988": {
+      "paper_id": "2409.08988v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08988v1",
+      "paper_key": "2409.08988",
+      "paper_title": "Assembly of Complex Colloidal Systems Using DNA",
+      "paper_url": "http://arxiv.org/abs/2409.08988v1",
+      "paper_abstract": "Nearly thirty years after its inception, the field of DNA-programmed colloidal self-assembly has begun to realize its initial promise. In this review, we summarize recent developments in designing effective interactions and understanding the dynamic self-assembly pathways of DNA-coated nanoparticles and microparticles, as well as how these advances have propelled tremendous progress in crystal engineering. We also highlight exciting new directions showing that new classes of subunits combining nanoparticles with DNA origami can be used to engineer novel multicomponent assemblies, including structures with self-limiting, finite sizes. We conclude by providing an outlook on how recent theoretical advances focusing on the kinetics of self-assembly could usher in new materials-design opportunities, like the possibility of retrieving multiple distinct target structures from a single suspension or accessing new classes of materials that are stabilized by energy dissipation, mimicking self-assembly in living systems.",
+      "paper_authors": [
+        "William M. Jacobs",
+        "W. Benjamin Rogers"
+      ],
+      "primary_category": "cond-mat.soft",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08986": {
+      "paper_id": "2409.08986v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08986v1",
+      "paper_key": "2409.08986",
+      "paper_title": "The connection of polaritonic chemistry with the physics of a spin glass",
+      "paper_url": "http://arxiv.org/abs/2409.08986v1",
+      "paper_abstract": "Polaritonic chemistry has garnered increasing attention in recent years due to pioneering experimental results, which show that site- and bond-selective chemistry at room temperature is achievable through strong collective coupling to field fluctuations in optical cavities. Despite these notable experimental strides, the underlying theoretical mechanisms remain unclear. In this focus review, we highlight a fundamental theoretical link between the seemingly unrelated fields of polaritonic chemistry and spin glasses, exploring its profound implications for the theoretical framework of polaritonic chemistry. Specifically, we present a mapping of the dressed electronic structure problem under collective vibrational strong coupling to the iconic Sherrington-Kirkpatrick model of spin glasses. This mapping uncovers a collectively induced instability in the dressed electronic structure (spontaneous replica symmetry breaking), which could provide the long-sought seed for significant local chemical modifications in polaritonic chemistry. This mapping paves the way to incorporate, adjust and probe numerous spin glass concepts in polaritonic chemistry, such as frustration, aging dynamics, excess of thermal fluctuations, time-reversal symmetry breaking or stochastic resonances. Ultimately, the mapping also offers fresh insights into the applicability of spin glass theory beyond condensed matter systems and it suggests novel theoretical directions such as polarization glasses with explicitly time-dependent order parameter functions.",
+      "paper_authors": [
+        "Dominik Sidler",
+        "Michael Ruggenthaler",
+        "Angel Rubio"
+      ],
+      "primary_category": "physics.chem-ph",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08980": {
+      "paper_id": "2409.08980v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08980v1",
+      "paper_key": "2409.08980",
+      "paper_title": "Predicting Trust In Autonomous Vehicles: Modeling Young Adult Psychosocial Traits, Risk-Benefit Attitudes, And Driving Factors With Machine Learning",
+      "paper_url": "http://arxiv.org/abs/2409.08980v1",
+      "paper_abstract": "Low trust remains a significant barrier to Autonomous Vehicle (AV) adoption. To design trustworthy AVs, we need to better understand the individual traits, attitudes, and experiences that impact people's trust judgements. We use machine learning to understand the most important factors that contribute to young adult trust based on a comprehensive set of personal factors gathered via survey (n = 1457). Factors ranged from psychosocial and cognitive attributes to driving style, experiences, and perceived AV risks and benefits. Using the explainable AI technique SHAP, we found that perceptions of AV risks and benefits, attitudes toward feasibility and usability, institutional trust, prior experience, and a person's mental model are the most important predictors. Surprisingly, psychosocial and many technology- and driving-specific factors were not strong predictors. Results highlight the importance of individual differences for designing trustworthy AVs for diverse groups and lead to key implications for future design and research.",
+      "paper_authors": [
+        "Robert Kaufman",
+        "Emi Lee",
+        "Manas Satish Bedmutha",
+        "David Kirsh",
+        "Nadir Weibel"
+      ],
+      "primary_category": "cs.HC",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "31 pages (including references and appendix), 7 figures, 7 tables",
+      "repo_url": "#"
+    },
+    "2409.08966": {
+      "paper_id": "2409.08966v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08966v1",
+      "paper_key": "2409.08966",
+      "paper_title": "User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications",
+      "paper_url": "http://arxiv.org/abs/2409.08966v1",
+      "paper_abstract": "In an Online Social Network (OSN), users can create a unique public persona by crafting a user identity that may encompass profile details, content, and network-related information. As a result, a relevant task of interest is related to the ability to link identities across different OSNs. Linking users across social networks can have multiple implications in several contexts both at the individual level and at the group level. At the individual level, the main interest in linking the same identity across social networks is to enable a better knowledge of each user. At the group level, linking user identities through different OSNs helps in predicting user behaviors, network dynamics, information diffusion, and migration phenomena across social media. The process of tying together user accounts on different OSNs is challenging and has attracted more and more research attention in the last fifteen years. The purpose of this work is to provide a comprehensive review of recent studies (from 2016 to the present) on User Identity Linkage (UIL) methods across online social networks. This review aims to offer guidance for other researchers in the field by outlining the main problem formulations, the different feature extraction strategies, algorithms, machine learning models, datasets, and evaluation metrics proposed by researchers working in this area. The proposed overview takes a pragmatic perspective to highlight the concrete possibilities for accomplishing this task depending on the type of available data.",
+      "paper_authors": [
+        "Caterina Senette",
+        "Marco Siino",
+        "Maurizio Tesconi"
+      ],
+      "primary_category": "cs.SI",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "25 pages, 4 figures",
+      "repo_url": "#"
+    },
+    "2409.08964": {
+      "paper_id": "2409.08964v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08964v1",
+      "paper_key": "2409.08964",
+      "paper_title": "IMMERTWIN: A Mixed Reality Framework for Enhanced Robotic Arm Teleoperation",
+      "paper_url": "http://arxiv.org/abs/2409.08964v1",
+      "paper_abstract": "We present IMMERTWIN, a mixed reality framework for enhance robotic arm teleoperation using a closed-loop digital twin as a bridge for interaction between the user and the robotic system. We evaluated IMMERTWIN by performing a medium-scale user survey with 26 participants on two robots. Users were asked to teleoperate with both robots inside the virtual environment to pick and place 3 cubes in a tower and to repeat this task as many times as possible in 10 minutes, with only 5 minutes of training beforehand. Our experimental results show that most users were able to succeed by building at least a tower of 3 cubes regardless of the robot used and a maximum of 10 towers (1 tower per minute). In addition, users preferred to use IMMERTWIN over our previous work, TELESIM, as it caused them less mental workload. The project website and source code can be found at: https://cvas-ug.github.io/immertwin",
+      "paper_authors": [
+        "Florent P. Audonnet",
+        "Ixchel G. Ramirez-Alpizar",
+        "Gerardo Aragon-Camarasa"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08922": {
+      "paper_id": "2409.08922v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08922v1",
+      "paper_key": "2409.08922",
+      "paper_title": "Some recent developments on isometric immersions via compensated compactness and gauge transforms",
+      "paper_url": "http://arxiv.org/abs/2409.08922v1",
+      "paper_abstract": "We survey recent developments on the analysis of Gauss--Codazzi--Ricci equations, the first-order PDE system arising from the classical problem of isometric immersions in differential geometry, especially in the regime of low Sobolev regularity. Such equations are not purely elliptic, parabolic, or hyperbolic in general, hence calling for analytical tools for PDEs of mixed types. We discuss various recent contributions -- in line with the pioneering works by G.-Q. Chen, M. Slemrod, and D. Wang [Proc. Amer. Math. Soc. (2010); Comm. Math. Phys. (2010)] -- on the weak continuity of Gauss--Codazzi--Ricci equations, the weak stability of isometric immersions, and the fundamental theorem of submanifold theory with low regularity. Two mixed-type PDE techniques are emphasised throughout these developments: the method of compensated compactness and the theory of Coulomb--Uhlenbeck gauges.",
+      "paper_authors": [
+        "Siran Li"
+      ],
+      "primary_category": "math.AP",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "18 pages. Survey article dedicated to Prof. Gui-Qiang Chen's 60th\n  birthday",
+      "repo_url": "#"
+    },
+    "2409.08893": {
+      "paper_id": "2409.08893v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08893v1",
+      "paper_key": "2409.08893",
+      "paper_title": "The $M_\\bullet$-$\u03c3_e$ relation for local type 1 AGNs and quasars",
+      "paper_url": "http://arxiv.org/abs/2409.08893v1",
+      "paper_abstract": "We analyzed MUSE observations of 42 local $z<0.1$ type 1 active galactic nucleus (AGN) host galaxies taken from the Palomar-Green quasar sample and the close AGN reference survey. Our goal was to study the relation between the black hole mass ($M_\\bullet$) and bulge stellar velocity dispersion ($\\sigma_e$) for type 1 active galaxies. The sample spans black hole masses of $10^{6.0}-10^{9.2}\\,M_\\odot$, bolometric luminosities of $10^{42.9}-10^{46.0}\\,$erg$\\,$s$^{-1}$, and Eddington ratios of 0.006-1.2. We avoided AGN emission by extracting the spectra over annular apertures. We modeled the calcium triplet stellar features and measured stellar velocity dispersions of $\\sigma_* = 60-230\\,$km$\\,$s$^{-1}$ for the host galaxies. We find $\\sigma_*$ values in agreement with previous measurements for local AGN host galaxies, but slightly lower compared with those reported for nearby X-ray-selected type 2 quasars. Using a novel annular aperture correction recipe to estimate $\\sigma_e$ from $\\sigma_*$ that considers the bulge morphology and observation beam-smearing, we estimate flux-weighted $\\sigma_e = 60-250\\,$km$\\,$s$^{-1}$. If we consider the bulge type when estimating $M_\\bullet$, we find no statistical difference between the distributions of AGN hosts and the inactive galaxies on the $M_\\bullet - \\sigma_e$ plane for $M_\\bullet \\lesssim 10^8\\,M_\\odot$. Conversely, if we do not consider the bulge type when computing $M_\\bullet$, we find that both distributions disagree. We find no correlation between the degree of offset from the $M_\\bullet - \\sigma_e$ relation and Eddington ratio for $M_\\bullet \\lesssim 10^8\\,M_\\odot$. The current statistics preclude firm conclusions from being drawn for the high-mass range. We argue these observations support notions that a significant fraction of the local type 1 AGNs and quasars have undermassive black holes compared with their host galaxy bulge properties.",
+      "paper_authors": [
+        "J. Molina",
+        "L. C. Ho",
+        "K. K. Knudsen"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "18 pages, plus Appendix. 15 Figures, 4 Tables. Accepted for\n  publication on A&A",
+      "repo_url": "#"
+    },
+    "2409.08888": {
+      "paper_id": "2409.08888v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08888v1",
+      "paper_key": "2409.08888",
+      "paper_title": "Characterization of M51 supernova remnants with the imaging spectrometer SITELLE",
+      "paper_url": "http://arxiv.org/abs/2409.08888v1",
+      "paper_abstract": "We present preliminary results of a detailed 3D study of supernova remnants in the nearby spiral M51 using data from the SIGNALS survey obtained with the imaging Fourier transform spectrometer SITELLE at the Canada-France-Hawaii telescope (CFHT). Data cubes covering the entire galaxy were gathered in three spectral ranges: SN3 (647-685 nm, R = 5000), SN2 (482-513 nm, R = 600) and SN1 (363-386 nm, R = 1000). The spectral resolution of the SN3 cube allows a precise, spatially resolved measurement of the velocity dispersion of each object. While most of the SNRs were known from previous surveys based on imagery and long-slit spectroscopy, we now provide 2D line flux and kinematic maps for all of them and found 20 new candidates. Most of the SNRs show velocity dispersions ($\\sigma$) in the range 30-80 km/s, which is typical for middle-aged SNRs. Finally, we compare the properties of SNRs with those of thousands of HII regions included in the same dataset.",
+      "paper_authors": [
+        "Billy Gamache",
+        "Laurent Drissen",
+        "Carmelle Robert",
+        "Mykola Posternak"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Poster presentation at Supernova Remnants III : An Odyssey in Space\n  after Stellar death conference in Crete 2024",
+      "repo_url": "#"
+    },
+    "2409.08887": {
+      "paper_id": "2409.08887v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08887v1",
+      "paper_key": "2409.08887",
+      "paper_title": "Visual Language Tracking with Multi-modal Interaction: A Robust Benchmark",
+      "paper_url": "http://arxiv.org/abs/2409.08887v1",
+      "paper_abstract": "Visual Language Tracking (VLT) enhances tracking by mitigating the limitations of relying solely on the visual modality, utilizing high-level semantic information through language. This integration of the language enables more advanced human-machine interaction. The essence of interaction is cognitive alignment, which typically requires multiple information exchanges, especially in the sequential decision-making process of VLT. However, current VLT benchmarks do not account for multi-round interactions during tracking. They provide only an initial text and bounding box (bbox) in the first frame, with no further interaction as tracking progresses, deviating from the original motivation of the VLT task. To address these limitations, we propose a novel and robust benchmark, VLT-MI (Visual Language Tracking with Multi-modal Interaction), which introduces multi-round interaction into the VLT task for the first time. (1) We generate diverse, multi-granularity texts for multi-round, multi-modal interaction based on existing mainstream VLT benchmarks using DTLLM-VLT, leveraging the world knowledge of LLMs. (2) We propose a new VLT interaction paradigm that achieves multi-round interaction through text updates and object recovery. When multiple tracking failures occur, we provide the tracker with more aligned texts and corrected bboxes through interaction, thereby expanding the scope of VLT downstream tasks. (3) We conduct comparative experiments on both traditional VLT benchmarks and VLT-MI, evaluating and analyzing the accuracy and robustness of trackers under the interactive paradigm. This work offers new insights and paradigms for the VLT task, enabling a fine-grained evaluation of multi-modal trackers. We believe this approach can be extended to additional datasets in the future, supporting broader evaluations and comparisons of video-language model capabilities.",
+      "paper_authors": [
+        "Xuchen Li",
+        "Shiyu Hu",
+        "Xiaokun Feng",
+        "Dailing Zhang",
+        "Meiqi Wu",
+        "Jing Zhang",
+        "Kaiqi Huang"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Under Review",
+      "repo_url": "#"
+    },
+    "2409.08881": {
+      "paper_id": "2409.08881v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08881v1",
+      "paper_key": "2409.08881",
+      "paper_title": "Data Efficient Child-Adult Speaker Diarization with Simulated Conversations",
+      "paper_url": "http://arxiv.org/abs/2409.08881v1",
+      "paper_abstract": "Automating child speech analysis is crucial for applications such as neurocognitive assessments. Speaker diarization, which identifies ``who spoke when'', is an essential component of the automated analysis. However, publicly available child-adult speaker diarization solutions are scarce due to privacy concerns and a lack of annotated datasets, while manually annotating data for each scenario is both time-consuming and costly. To overcome these challenges, we propose a data-efficient solution by creating simulated child-adult conversations using AudioSet. We then train a Whisper Encoder-based model, achieving strong zero-shot performance on child-adult speaker diarization using real datasets. The model performance improves substantially when fine-tuned with only 30 minutes of real train data, with LoRA further improving the transfer learning performance. The source code and the child-adult speaker diarization model trained on simulated conversations are publicly available.",
+      "paper_authors": [
+        "Anfeng Xu",
+        "Tiantian Feng",
+        "Helen Tager-Flusberg",
+        "Catherine Lord",
+        "Shrikanth Narayanan"
+      ],
+      "primary_category": "eess.AS",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Under review",
+      "repo_url": "https://github.com/usc-sail/child-adult-diarization"
+    },
+    "2409.08866": {
+      "paper_id": "2409.08866v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08866v1",
+      "paper_key": "2409.08866",
+      "paper_title": "Topological gauge theory of vortices in type-III superconductors",
+      "paper_url": "http://arxiv.org/abs/2409.08866v1",
+      "paper_abstract": "Traditional superconductors fall into two categories, type-I, expelling magnetic fields, and type-II, into which magnetic fields exceeding a lower critical field $H_{\\rm c1}$ penetrate in form of Abrikosov vortices. Abrikosov vortices are characterized by two spatial scales, the size of the normal core, $\\xi$, where the superconducting order parameter is suppressed and the London penetration depth $\\lambda$, describing the scale at which circulating superconducting currents forming vortices start to noticeably drop. Here we demonstrate that a novel type-III superconductivity, realized in granular media in any dimension hosts a novel vortex physics. Type-III vortices have no cores, are logarithmically confined and carry only a gauge scale $\\lambda$. Accordingly, in type-III superconductors $H_{\\rm c1}=0$ at zero temperature and the Ginzburg-Landau theory must be replaced by a topological gauge theory. Type-III superconductivity is destroyed not by Cooper pair breaking but by vortex proliferation generalizing the Berezinskii-Kosterlitz-Thouless mechanism to any dimension.",
+      "paper_authors": [
+        "M. C. Diamantini",
+        "C. A. Trugenberger",
+        "V. M. Vinokur"
+      ],
+      "primary_category": "cond-mat.supr-con",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08823": {
+      "paper_id": "2409.08823v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08823v1",
+      "paper_key": "2409.08823",
+      "paper_title": "AutoIRT: Calibrating Item Response Theory Models with Automated Machine Learning",
+      "paper_url": "http://arxiv.org/abs/2409.08823v1",
+      "paper_abstract": "Item response theory (IRT) is a class of interpretable factor models that are widely used in computerized adaptive tests (CATs), such as language proficiency tests. Traditionally, these are fit using parametric mixed effects models on the probability of a test taker getting the correct answer to a test item (i.e., question). Neural net extensions of these models, such as BertIRT, require specialized architectures and parameter tuning. We propose a multistage fitting procedure that is compatible with out-of-the-box Automated Machine Learning (AutoML) tools. It is based on a Monte Carlo EM (MCEM) outer loop with a two stage inner loop, which trains a non-parametric AutoML grade model using item features followed by an item specific parametric model. This greatly accelerates the modeling workflow for scoring tests. We demonstrate its effectiveness by applying it to the Duolingo English Test, a high stakes, online English proficiency test. We show that the resulting model is typically more well calibrated, gets better predictive performance, and more accurate scores than existing methods (non-explanatory IRT models and explanatory IRT models like BERT-IRT). Along the way, we provide a brief survey of machine learning methods for calibration of item parameters for CATs.",
+      "paper_authors": [
+        "James Sharpnack",
+        "Phoebe Mulcaire",
+        "Klinton Bicknell",
+        "Geoff LaFlair",
+        "Kevin Yancey"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08811": {
+      "paper_id": "2409.08811v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08811v1",
+      "paper_key": "2409.08811",
+      "paper_title": "Mutual Theory of Mind in Human-AI Collaboration: An Empirical Study with LLM-driven AI Agents in a Real-time Shared Workspace Task",
+      "paper_url": "http://arxiv.org/abs/2409.08811v1",
+      "paper_abstract": "Theory of Mind (ToM) significantly impacts human collaboration and communication as a crucial capability to understand others. When AI agents with ToM capability collaborate with humans, Mutual Theory of Mind (MToM) arises in such human-AI teams (HATs). The MToM process, which involves interactive communication and ToM-based strategy adjustment, affects the team's performance and collaboration process. To explore the MToM process, we conducted a mixed-design experiment using a large language model-driven AI agent with ToM and communication modules in a real-time shared-workspace task. We find that the agent's ToM capability does not significantly impact team performance but enhances human understanding of the agent and the feeling of being understood. Most participants in our study believe verbal communication increases human burden, and the results show that bidirectional communication leads to lower HAT performance. We discuss the results' implications for designing AI agents that collaborate with humans in real-time shared workspace tasks.",
+      "paper_authors": [
+        "Shao Zhang",
+        "Xihuai Wang",
+        "Wenhao Zhang",
+        "Yongshan Chen",
+        "Landi Gao",
+        "Dakuo Wang",
+        "Weinan Zhang",
+        "Xinbing Wang",
+        "Ying Wen"
+      ],
+      "primary_category": "cs.HC",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "34 pages, Preprint Under Review",
+      "repo_url": "#"
+    },
+    "2409.08809": {
+      "paper_id": "2409.08809v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08809v1",
+      "paper_key": "2409.08809",
+      "paper_title": "Statistical Analysis of Quantitative Cancer Imaging Data",
+      "paper_url": "http://arxiv.org/abs/2409.08809v1",
+      "paper_abstract": "Recent advances in types and extent of medical imaging technologies has led to proliferation of multimodal quantitative imaging data in cancer. Quantitative medical imaging data refer to numerical representations derived from medical imaging technologies, such as radiology and pathology imaging, that can be used to assess and quantify characteristics of diseases, especially cancer. The use of such data in both clinical and research setting enables precise quantifications and analyses of tumor characteristics that can facilitate objective evaluation of disease progression, response to therapy, and prognosis. The scale and size of these imaging biomarkers is vast and presents several analytical and computational challenges that range from high-dimensionality to complex structural correlation patterns. In this review article, we summarize some state-of-the-art statistical methods developed for quantitative medical imaging data ranging from topological, functional and shape data analyses to spatial process models. We delve into common imaging biomarkers with a focus on radiology and pathology imaging in cancer, address the analytical questions and challenges they present, and highlight the innovative statistical and machine learning models that have been developed to answer relevant scientific and clinical questions. We also outline some emerging and open problems in this area for future explorations.",
+      "paper_authors": [
+        "Shariq Mohammed",
+        "Maria Masotti",
+        "Nathaniel Osher",
+        "Satwik Acharyya",
+        "Veerabhadran Baladandayuthapani"
+      ],
+      "primary_category": "stat.AP",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08803": {
+      "paper_id": "2409.08803v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08803v1",
+      "paper_key": "2409.08803",
+      "paper_title": "A Review on Flood Risk Conceptual Frameworks and Development of Hierarchical Structures for Assessment Criteria",
+      "paper_url": "http://arxiv.org/abs/2409.08803v1",
+      "paper_abstract": "Climate change and rapid urbanization have led to more frequent and severe flooding, causing significant damage. The existing literature on flood risk encompasses a variety of dimensions, such as physical, economic, social, political, environmental, infrastructural, and managerial aspects. This paper aims to provide an extensive review of proposed conceptual frameworks and their components used in flood risk assessment. For this purpose, Initially, conceptual frameworks were extracted to configure the components of flood risk including hazard, vulnerability, exposure, resilience, and susceptibility. Subsequently, a comprehensive set of criteria from the literature were identified, addressing risk components. In this paper, the risk conceptual framework is defined by the intersection of vulnerability and hazard. Vulnerability, shaped by exposure and susceptibility, can be reduced by enhancing resiliency, which includes coping and adaptive capacities. In total, 102 criteria/subcriteria were identified and classified into three hierarchical structures of hazard, susceptibility, and resilience. Finally, flood risk assessment methods were reviewed, with an emphasis on their applicability and characteristics. The review highlighted the strengths and limitations of various methods, providing a comprehensive overview of their suitability for different scenarios. The outcomes of this review could serve as a valuable reference for professionals involved in flood risk assessment, aiding in the identification of the most appropriate risk concepts, assessment criteria, and suitable methods for quantification based on the specific study area and data availability.",
+      "paper_authors": [
+        "Nazgol Tabasi",
+        "Mohammad Fereshtehpour",
+        "Bardia Roghani"
+      ],
+      "primary_category": "physics.soc-ph",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08759": {
+      "paper_id": "2409.08759v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08759v1",
+      "paper_key": "2409.08759",
+      "paper_title": "Dark Energy Survey: 2.1% measurement of the Baryon Acoustic Oscillation scale from the final dataset",
+      "paper_url": "http://arxiv.org/abs/2409.08759v1",
+      "paper_abstract": "Here, we present the angular diameter distance measurement obtained from the measurement of the Baryonic Acoustic Oscillation (BAO) feature using the completed Dark Energy Survey (DES) data, summarizing the main results of [Phys. Rev. D 110, 063514] and [Phys. Rev. D 110, 063515]. We use a galaxy sample optimized for BAO science in the redshift range 0.6 < z < 1.2, with an effective redshift of $z_{\\rm eff}$ = 0.85. Our consensus measurement constrains the ratio of the angular distance to the sound horizon scale to $D_M(z_{\\rm eff})/r_d$ = 19.51 $\\pm$ 0.41. This measurement is found to be 2.13$\\sigma$ below the angular BAO scale predicted by Planck. To date, it represents the most precise measurement from purely photometric data, and the most precise from any Stage-III experiment at such high redshift. The analysis was performed blinded to the BAO position and is shown to be robust against analysis choices, data removal, redshift calibrations and observational systematics.",
+      "paper_authors": [
+        "Juan Mena-Fern\u00e1ndez",
+        "Dark Energy Survey Collaboration"
+      ],
+      "primary_category": "astro-ph.CO",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "4 pages, 3 figures. Contribution to the 2024 Cosmology session of the\n  58th Rencontres de Moriond",
+      "repo_url": "#"
+    },
+    "2409.08751": {
+      "paper_id": "2409.08751v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08751v1",
+      "paper_key": "2409.08751",
+      "paper_title": "A Grading Rubric for AI Safety Frameworks",
+      "paper_url": "http://arxiv.org/abs/2409.08751v1",
+      "paper_abstract": "Over the past year, artificial intelligence (AI) companies have been increasingly adopting AI safety frameworks. These frameworks outline how companies intend to keep the potential risks associated with developing and deploying frontier AI systems to an acceptable level. Major players like Anthropic, OpenAI, and Google DeepMind have already published their frameworks, while another 13 companies have signaled their intent to release similar frameworks by February 2025. Given their central role in AI companies' efforts to identify and address unacceptable risks from their systems, AI safety frameworks warrant significant scrutiny. To enable governments, academia, and civil society to pass judgment on these frameworks, this paper proposes a grading rubric. The rubric consists of seven evaluation criteria and 21 indicators that concretize the criteria. Each criterion can be graded on a scale from A (gold standard) to F (substandard). The paper also suggests three methods for applying the rubric: surveys, Delphi studies, and audits. The purpose of the grading rubric is to enable nuanced comparisons between frameworks, identify potential areas of improvement, and promote a race to the top in responsible AI development.",
+      "paper_authors": [
+        "Jide Alaga",
+        "Jonas Schuett",
+        "Markus Anderljung"
+      ],
+      "primary_category": "cs.CY",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "16 pages, 4 tables",
+      "repo_url": "#"
+    },
+    "2409.08740": {
+      "paper_id": "2409.08740v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08740v1",
+      "paper_key": "2409.08740",
+      "paper_title": "Another look at qualitative properties of eigenvalues using effective Hamiltonians",
+      "paper_url": "http://arxiv.org/abs/2409.08740v1",
+      "paper_abstract": "The goal of this paper is to review several qualitative properties of well-known eigenvalue problems using a different perspective based on the theory of effective Hamiltonians, working exclusively on the Hopf-Cole transform of the equation. We revisit some monotonicity results as well as the derivation of several scaling limits by means of the Donsker-Varadhan formula, and we point out several differences between the case of quadratic Hamiltonians and non-quadratic ones.",
+      "paper_authors": [
+        "Idriss Mazari-Fouquer"
+      ],
+      "primary_category": "math.AP",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Comments welcome!",
+      "repo_url": "#"
+    },
+    "2409.08673": {
+      "paper_id": "2409.08673v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08673v1",
+      "paper_key": "2409.08673",
+      "paper_title": "Acoustic identification of individual animals with hierarchical contrastive learning",
+      "paper_url": "http://arxiv.org/abs/2409.08673v1",
+      "paper_abstract": "Acoustic identification of individual animals (AIID) is closely related to audio-based species classification but requires a finer level of detail to distinguish between individual animals within the same species. In this work, we frame AIID as a hierarchical multi-label classification task and propose the use of hierarchy-aware loss functions to learn robust representations of individual identities that maintain the hierarchical relationships among species and taxa. Our results demonstrate that hierarchical embeddings not only enhance identification accuracy at the individual level but also at higher taxonomic levels, effectively preserving the hierarchical structure in the learned representations. By comparing our approach with non-hierarchical models, we highlight the advantage of enforcing this structure in the embedding space. Additionally, we extend the evaluation to the classification of novel individual classes, demonstrating the potential of our method in open-set classification scenarios.",
+      "paper_authors": [
+        "Ines Nolasco",
+        "Ilyass Moummad",
+        "Dan Stowell",
+        "Emmanouil Benetos"
+      ],
+      "primary_category": "cs.SD",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Under review; Submitted to ICASSP 2025",
+      "repo_url": "#"
+    },
+    "2409.08672": {
+      "paper_id": "2409.08672v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08672v1",
+      "paper_key": "2409.08672",
+      "paper_title": "The infrared luminosity of retired and post-starburst galaxies: A cautionary tale for star formation rate measurements",
+      "paper_url": "http://arxiv.org/abs/2409.08672v1",
+      "paper_abstract": "In galaxies with significant ongoing star formation there is an impressively tight correlation between total infrared luminosity (L$_{TIR}$) and H$\\alpha$ luminosity (L$_{H\\alpha}$), when H$\\alpha$ is properly corrected for stellar absorption and dust attenuation. This long-standing result gives confidence that both measurements provide accurate estimates of a galaxy's star formation rate (SFR), despite their differing origins. To test the extent to which this holds in galaxies with lower specific SFR (sSFR=SFR/Mgal, where Mgal is the stellar mass), we combine optical spectroscopy from the Sloan Digital Sky Survey (SDSS) with multi-wavelength (FUV to FIR) photometric observations from the Galaxy And Mass Assembly survey (GAMA). We find that L$_{TIR}$/L$_{H\\alpha}$increases steadily with decreasing H$\\alpha$ equivalent width (W$_{H\\alpha}$, a proxy for sSFR), indicating that both luminosities cannot provide a valid measurement of SFR in galaxies below the canonical star-forming sequence. For both `retired galaxies' and `post-starburst galaxies', L$_{TIR}$/L$_{H\\alpha}$ can be up to a factor of 30 larger than for star-forming galaxies. The smooth change in L$_{TIR}$/L$_{H\\alpha}$, irrespective of star formation history, ionisation or heating source, dust temperature or other properties, suggests that the value of L$_{TIR}$/L$_{H\\alpha}$ is given by the balance between star-forming regions and ambient interstellar medium contributing to both L$_{TIR}$ and L$_{H\\alpha}$. While L$_{H\\alpha}$ can only be used to estimate the SFR for galaxies with W$_{H\\alpha}$ > 3A (sSFR $\\gtrsim 10^{-11.5}$/yr), we argue that the mid- and far-infrared can only be used to estimate the SFR of galaxies on the star-forming sequence, and in particular only for galaxies with W$_{H\\alpha}$ >10 A (sSFR $\\gtrsim 10^{-10.5}$/yr). We find no evidence for dust obscured star-formation in post-starburst galaxies.",
+      "paper_authors": [
+        "Vivienne Wild",
+        "Natalia Vale Asari",
+        "Kate Rowlands",
+        "Sara L. Ellison",
+        "Ho-Hin Leung",
+        "Christy Tremonti"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Submitted to the Open Journal of Astrophysics. Comments welcome. 14\n  pages, 4 figures",
+      "repo_url": "#"
+    },
+    "2409.08662": {
+      "paper_id": "2409.08662v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08662v1",
+      "paper_key": "2409.08662",
+      "paper_title": "Is there a genetic relationship between chondrules and matrix?",
+      "paper_url": "http://arxiv.org/abs/2409.08662v1",
+      "paper_abstract": "Chondritic components such as chondrules and matrix are the key time capsules that can help us understand the evolution and dynamics of the protoplanetary disk from which the Solar System originated. Knowledge of where and how these components formed and to what extent they were transported in the gaseous disk provides major constraints to astrophysical models that investigate planet formation. Here, we explore whether chondrules and matrix are genetically related to each other and formed from single reservoirs per chondrite group or if every chondrite represents a unique proportion of components transported from a small number of formation reservoirs in the disk. These static versus dynamic disk interpretations of cosmochemical data have profound implications for the accretion history of the planets in the Solar System. To fully understand the relationship between chondrules and matrix and their potential complementarity, we dive into the petrological nature and origin of matrix, the chemical and isotopic compositions of chondrules and matrix and evaluate these data considering the effect of secondary alteration observed in chondrites and the potential complexity of chondrule formation. Even though we, the authors, have used different datasets and arrived at differing interpretations of chondrule-matrix relationships in the past, this review provides clarity on the existing data and has given us new directions towards future research that can resolve the complementarity debate.",
+      "paper_authors": [
+        "Elishevah van Kooten",
+        "Adrian Brearley",
+        "Denton Ebel",
+        "Conel Alexander",
+        "Marina Gemma",
+        "Dominik Hezel"
+      ],
+      "primary_category": "astro-ph.EP",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "accepted in Space Science Reviews",
+      "repo_url": "#"
+    },
+    "2409.08605": {
+      "paper_id": "2409.08605v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08605v1",
+      "paper_key": "2409.08605",
+      "paper_title": "Effective Integration of KAN for Keyword Spotting",
+      "paper_url": "http://arxiv.org/abs/2409.08605v1",
+      "paper_abstract": "Keyword spotting (KWS) is an important speech processing component for smart devices with voice assistance capability. In this paper, we investigate if Kolmogorov-Arnold Networks (KAN) can be used to enhance the performance of KWS. We explore various approaches to integrate KAN for a model architecture based on 1D Convolutional Neural Networks (CNN). We find that KAN is effective at modeling high-level features in lower-dimensional spaces, resulting in improved KWS performance when integrated appropriately. The findings shed light on understanding KAN for speech processing tasks and on other modalities for future researchers.",
+      "paper_authors": [
+        "Anfeng Xu",
+        "Biqiao Zhang",
+        "Shuyu Kong",
+        "Yiteng Huang",
+        "Zhaojun Yang",
+        "Sangeeta Srivastava",
+        "Ming Sun"
+      ],
+      "primary_category": "eess.AS",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Under review",
+      "repo_url": "#"
+    },
+    "2409.08602": {
+      "paper_id": "2409.08602v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08602v1",
+      "paper_key": "2409.08602",
+      "paper_title": "Deep learning-based shot-domain seismic deblending",
+      "paper_url": "http://arxiv.org/abs/2409.08602v1",
+      "paper_abstract": "To streamline fast-track processing of large data volumes, we have developed a deep learning approach to deblend seismic data in the shot domain based on a practical strategy for generating high-quality training data along with a list of data conditioning techniques to improve performance of the data-driven model. We make use of unblended shot gathers acquired at the end of each sail line, to which the access requires no additional time or labor costs beyond the blended acquisition. By manually blending these data we obtain training data with good control of the ground truth and fully adapted to the given survey. Furthermore, we train a deep neural network using multi-channel inputs that include adjacent blended shot gathers as additional channels. The prediction of the blending noise is added in as a related and auxiliary task with the main task of the network being the prediction of the primary-source events. Blending noise in the ground truth is scaled down during the training and validation process due to its excessively strong amplitudes. As part of the process, the to-be-deblended shot gathers are aligned by the blending noise. Implementation on field blended-by-acquisition data demonstrates that introducing the suggested data conditioning steps can considerably reduce the leakage of primary-source events in the deep part of the blended section. The complete proposed approach performs almost as well as a conventional algorithm in the shallow section and shows great advantage in efficiency. It performs slightly worse for larger traveltimes, but still removes the blending noise efficiently.",
+      "paper_authors": [
+        "Jing Sun",
+        "Song Hou",
+        "Vetle Vinje",
+        "Gordon Poole",
+        "Leiv-J Gelius"
+      ],
+      "primary_category": "physics.geo-ph",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08579": {
+      "paper_id": "2409.08579v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08579v1",
+      "paper_key": "2409.08579",
+      "paper_title": "Secure Offloading in NOMA-Aided Aerial MEC Systems Based on Deep Reinforcement Learning",
+      "paper_url": "http://arxiv.org/abs/2409.08579v1",
+      "paper_abstract": "Mobile edge computing (MEC) technology can reduce user latency and energy consumption by offloading computationally intensive tasks to the edge servers. Unmanned aerial vehicles (UAVs) and non-orthogonal multiple access (NOMA) technology enable the MEC networks to provide offloaded computing services for massively accessed terrestrial users conveniently. However, the broadcast nature of signal propagation in NOMA-based UAV-MEC networks makes it vulnerable to eavesdropping by malicious eavesdroppers. In this work, a secure offload scheme is proposed for NOMA-based UAV-MEC systems with the existence of an aerial eavesdropper. The long-term average network computational cost is minimized by jointly designing the UAV's trajectory, the terrestrial users' transmit power, and computational frequency while ensuring the security of users' offloaded data. Due to the eavesdropper's location uncertainty, the worst-case security scenario is considered through the estimated eavesdropping range. Due to the high-dimensional continuous action space, the deep deterministic policy gradient algorithm is utilized to solve the non-convex optimization problem. Simulation results validate the effectiveness of the proposed scheme.",
+      "paper_authors": [
+        "Hongjiang Lei",
+        "Mingxu Yang",
+        "Ki-Hong Park",
+        "Gaofeng Pan"
+      ],
+      "primary_category": "cs.IT",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "12 pages, 7 figures, submitted to IEEE Journal for review",
+      "repo_url": "#"
+    },
+    "2409.08528": {
+      "paper_id": "2409.08528v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08528v1",
+      "paper_key": "2409.08528",
+      "paper_title": "Hydrodynamics of an oscillating cylinder inline with steady current",
+      "paper_url": "http://arxiv.org/abs/2409.08528v1",
+      "paper_abstract": "Wake and force characteristics of an oscillating cylinder in inline steady currents are investigated numerically over a wide parameter space of dimensionless oscillation amplitude ($A^* = 0.01 - 0.50$) and wavelength ($\\lambda^* = 0.4 - 25$) at a fixed Reynolds number $Re = 500$. Fundamental issues addressed in this study are the interactions of wakes induced by steady approaching flow and cylinder oscillations and the influences of the governing parameters of $A^$ and $\\lambda^$ on such interactions. Whilst the collinear flow is dominated by wakes induced by cylinder oscillation at $\\lambda^* \\leq 1.5$ and steady current at $\\lambda^* \\geq 10$, it exhibits characteristics of nonlinear interactions of wakes induced by the cylinder oscillation and steady current at $\\lambda^* = 1.5 - 10$, such as the formation of multiple synchronized modes interleaved with desynchronized modes. The synchronized mode varies with both $\\lambda^$ and $A^$, forming an inclined Arnold's tongue across $\\lambda^-A^$ space. There is a wide variability of the vortex shedding pattern in each synchronized mode. Variations of different hydrodynamic force coefficients with $\\lambda^$ and $A^$ are investigated with physical interpretations based on the wake characteristics. The applicability of the Morison equation in predicting inline force fluctuations is examined. We found that the Morison equation shows reasonable accuracy only for a small range of $\\lambda^* \\leq 1.5$. Beyond this range, its performance deteriorates due to the influence of steady current on wake characteristics.",
+      "paper_authors": [
+        "Chengjiao Ren",
+        "Feifei Tong",
+        "Fei He",
+        "Liang Cheng"
+      ],
+      "primary_category": "physics.flu-dyn",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Under review in JFM",
+      "repo_url": "#"
+    },
+    "2409.08498": {
+      "paper_id": "2409.08498v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08498v1",
+      "paper_key": "2409.08498",
+      "paper_title": "Incorporating Procedural Fairness in Flag Submissions on Social Media Platforms",
+      "paper_url": "http://arxiv.org/abs/2409.08498v1",
+      "paper_abstract": "Flagging mechanisms on social media platforms allow users to report inappropriate posts/accounts for review by content moderators. These reports are pivotal to platforms' efforts toward regulating norm violations. This paper examines how platforms' design choices in implementing flagging mechanisms influence flaggers' perceptions of content moderation. We conducted a survey experiment asking US respondents (N=2,936) to flag inappropriate posts using one of 54 randomly assigned flagging implementations. After flagging, participants rated their fairness perceptions of the flag submission process along the dimensions of consistency, transparency, and voice (agency). We found that participants perceived greater transparency when flagging interfaces included community guidelines and greater voice when they incorporated a text box for open-ended feedback. Our qualitative analysis highlights user needs for improved accessibility, educational support for reporting, and protections against false flags. We offer design recommendations for building fairer flagging systems without exacerbating the cognitive burden of submitting flags.",
+      "paper_authors": [
+        "Yunhee Shim",
+        "Shagun Jhaver"
+      ],
+      "primary_category": "cs.HC",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "41 pages, 4 figures, 14 tables, and appendix A and B",
+      "repo_url": "#"
+    },
+    "2409.08459": {
+      "paper_id": "2409.08459v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08459v1",
+      "paper_key": "2409.08459",
+      "paper_title": "Toward satisfactory public accessibility: A crowdsourcing approach through online reviews to inclusive urban design",
+      "paper_url": "http://arxiv.org/abs/2409.08459v1",
+      "paper_abstract": "As urban populations grow, the need for accessible urban design has become urgent. Traditional survey methods for assessing public perceptions of accessibility are often limited in scope. Crowdsourcing via online reviews offers a valuable alternative to understanding public perceptions, and advancements in large language models can facilitate their use. This study uses Google Maps reviews across the United States and fine-tunes Llama 3 model with the Low-Rank Adaptation technique to analyze public sentiment on accessibility. At the POI level, most categories -- restaurants, retail, hotels, and healthcare -- show negative sentiments. Socio-spatial analysis reveals that areas with higher proportions of white residents and greater socioeconomic status report more positive sentiment, while areas with more elderly, highly-educated residents exhibit more negative sentiment. Interestingly, no clear link is found between the presence of disabilities and public sentiments. Overall, this study highlights the potential of crowdsourcing for identifying accessibility challenges and providing insights for urban planners.",
+      "paper_authors": [
+        "Lingyao Li",
+        "Songhua Hu",
+        "Yinpei Dai",
+        "Min Deng",
+        "Parisa Momeni",
+        "Gabriel Laverghetta",
+        "Lizhou Fan",
+        "Zihui Ma",
+        "Xi Wang",
+        "Siyuan Ma",
+        "Jay Ligatti",
+        "Libby Hemphill"
+      ],
+      "primary_category": "cs.SI",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.08439": {
+      "paper_id": "2409.08439v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08439v1",
+      "paper_key": "2409.08439",
+      "paper_title": "Input-to-State Stable Coupled Oscillator Networks for Closed-form Model-based Control in Latent Space",
+      "paper_url": "http://arxiv.org/abs/2409.08439v1",
+      "paper_abstract": "Even though a variety of methods (e.g., RL, MPC, LQR) have been proposed in the literature, efficient and effective latent-space control of physical systems remains an open challenge. A promising avenue would be to leverage powerful and well-understood closed-form strategies from control theory literature in combination with learned dynamics, such as potential-energy shaping. We identify three fundamental shortcomings in existing latent-space models that have so far prevented this powerful combination: (i) they lack the mathematical structure of a physical system, (ii) they do not inherently conserve the stability properties of the real systems. Furthermore, (iii) these methods do not have an invertible mapping between input and latent-space forcing. This work proposes a novel Coupled Oscillator Network (CON) model that simultaneously tackles all these issues. More specifically, (i) we show analytically that CON is a Lagrangian system - i.e., it presses well-defined potential and kinetic energy terms. Then, (ii) we provide formal proof of global Input-to-State stability using Lyapunov arguments. Moving to the experimental side, (iii) we demonstrate that CON reaches SoA performance when learning complex nonlinear dynamics of mechanical systems directly from images. An additional methodological innovation contributing to achieving this third goal is an approximated closed-form solution for efficient integration of network dynamics, which eases efficient training. We tackle (iv) by approximating the forcing-to-input mapping with a decoder that is trained to reconstruct the input based on the encoded latent space force. Finally, we leverage these four properties and show that they enable latent-space control. We use an integral-saturated PID with potential force compensation and demonstrate high-quality performance on a soft robot using raw pixels as the only feedback information.",
+      "paper_authors": [
+        "Maximilian St\u00f6lzle",
+        "Cosimo Della Santina"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "41 pages, currently under review",
+      "repo_url": "#"
+    },
+    "2409.08437": {
+      "paper_id": "2409.08437v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08437v1",
+      "paper_key": "2409.08437",
+      "paper_title": "The overestimation of equipartition magnetic field strengths from synchrotron emission using synthetically observed galaxies",
+      "paper_url": "http://arxiv.org/abs/2409.08437v1",
+      "paper_abstract": "Understanding the role that magnetic fields play on the stage of galaxy formation requires accurate methods for inferring the properties of extragalactic magnetic fields. Radio synchrotron emission has been the most promising avenue to infer magnetic field strengths across galaxies, with the application of a central assumption: that galactic cosmic rays are in energy equipartition with the magnetic field. In this work, we leverage flexible synthetic observations of a high-resolution magnetohydrodynamic simulation of a Milky Way-like galaxy to review whether true equipartition is capable of reproducing radio observations of galaxies, and investigate its impact on the inference of magnetic field strengths when varying the properties and density distribution of the cosmic rays. We find that imposing equipartition (regardless of scale length) results in cosmic ray electron densities that are unable to generate either the amplitude or the shape of the radio intensity profiles typically observed in spiral galaxies. Instead, observationally motivated smooth distributions of cosmic ray electrons across the galaxy provide a remarkable match to observations. We further demonstrate that assuming equipartition with those mock observations can lead to significant overestimation of the magnetic field strength ($\\sim10-50\\times$). This overestimation varies with cosmic ray electron densities, cosmic ray spectrum power-law index, and galactic environment, aggravated in inter-arm regions and attenuated in star-forming regions. Our results promote caution when assuming equipartition in observations, and suggest that additional theoretical and numerical work is required to leverage the upcoming generation of radio observations poised to revolutionize our understanding of astrophysical magnetic fields.",
+      "paper_authors": [
+        "Tara Dacunha",
+        "Sergio Martin-Alvarez",
+        "Susan E. Clark",
+        "Enrique Lopez-Rodriguez"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Submitted to ApJ, 26 pages, 12 figures",
+      "repo_url": "#"
+    },
+    "2409.08421": {
+      "paper_id": "2409.08421v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08421v1",
+      "paper_key": "2409.08421",
+      "paper_title": "A tour of noncommutative spectral theories",
+      "paper_url": "http://arxiv.org/abs/2409.08421v1",
+      "paper_abstract": "This is a survey of noncommutative generalizations of the spectrum of a ring, written for the Notices of the American Mathematical Society.",
+      "paper_authors": [
+        "Manuel Reyes"
+      ],
+      "primary_category": "math.RA",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "12 pages",
+      "repo_url": "#"
+    },
+    "2409.08373": {
+      "paper_id": "2409.08373v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08373v1",
+      "paper_key": "2409.08373",
+      "paper_title": "3D Radiation-Hydrodynamical Simulations of Shadows on Transition Disks",
+      "paper_url": "http://arxiv.org/abs/2409.08373v1",
+      "paper_abstract": "Shadows are often observed in transition disks, which can result from obscuring by materials closer to the star, such as a misaligned inner disk. While shadows leave apparent darkened emission as observational signatures, they have significant dynamical impact on the disk. We carry out 3D radiation hydrodynamical simulations to study shadows in transition disks and find that the temperature drop due to the shadow acts as an asymmetric driving force, leading to spirals in the cavity. These spirals have zero pattern speed following the fixed shadow. The pitch angle is given by tan$^{-1}$($c_s$/$v_\\phi$) (6$^{\\circ}$ if $h/r$=0.1). These spirals transport mass through the cavity efficiently, with $\\alpha \\sim 10^{-2}$ in our simulation. Besides spirals, the cavity edge can also form vortices and flocculent streamers. When present, these features could disturb the shadow-induced spirals. By carrying out Monte Carlo Radiative Transfer simulations, we show that these features resemble those observed in near-infrared scattered light images. In the vertical direction, the vertical gravity is no longer balanced by the pressure gradient alone. Instead, an azimuthal convective acceleration term balances the gravity-pressure difference, leading to azimuthally periodic upward and downward gas motion reaching 10% of the sound speed, which can be probed by ALMA line observations.",
+      "paper_authors": [
+        "Shangjia Zhang",
+        "Zhaohuan Zhu"
+      ],
+      "primary_category": "astro-ph.EP",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "11 pages, 6 figures, revised in response to the first-round\n  reviewer's report, resubmitted to ApJ Letters",
+      "repo_url": "#"
+    },
+    "2409.08342": {
+      "paper_id": "2409.08342v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08342v1",
+      "paper_key": "2409.08342",
+      "paper_title": "Undecidability and incompleteness in quantum information theory and operator algebras",
+      "paper_url": "http://arxiv.org/abs/2409.08342v1",
+      "paper_abstract": "We survey a number of incompleteness results in operator algebras stemming from the recent undecidability result in quantum complexity theory known as $\\operatorname{MIP}^*=\\operatorname{RE}$, the most prominent of which is the G\\\"odelian refutation of the Connes Embedding Problem. We also discuss the very recent use of $\\operatorname{MIP}^*=\\operatorname{RE}$ in refuting the Aldous-Lyons conjecture in probability theory.",
+      "paper_authors": [
+        "Isaac Goldbring"
+      ],
+      "primary_category": "math.LO",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "38 pages. To appear in a special issue of Monatshefte f\\\"ur\n  Mathematik celebrating the 100th anniversary of G\\\"odel's matriculation at\n  the University of Vienna",
+      "repo_url": "#"
+    },
+    "2409.08339": {
+      "paper_id": "2409.08339v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08339v1",
+      "paper_key": "2409.08339",
+      "paper_title": "A Virgo Environmental Survey Tracing Ionised Gas Emission (VESTIGE): XVI. The ubiquity of truncated star-forming disks across the Virgo cluster environment",
+      "paper_url": "http://arxiv.org/abs/2409.08339v1",
+      "paper_abstract": "We examine the prevalence of truncated star-forming disks in the Virgo cluster down to $M_* \\simeq 10^7 ~\\text{M}_{\\odot}$. This work makes use of deep, high-resolution imaging in the H$\\alpha$+[NII] narrow-band from the Virgo Environmental Survey Tracing Ionised Gas Emission (VESTIGE) and optical imaging from the Next Generation Virgo Survey (NGVS). To aid in understanding the effects of the cluster environment on star formation in Virgo galaxies, we take a physically-motivated approach to define the edge of the star-forming disk via a drop-off in the radial specific star formation rate profile. Comparing with the expected sizes of normal galactic disks provides a measure of how truncated star-forming disks are in the cluster. We find that truncated star-forming disks are nearly ubiquitous across all regions of the Virgo cluster, including beyond the virial radius (0.974 Mpc). The majority of truncated disks at large clustercentric radii are of galaxies likely on first infall. As the intra-cluster medium density is low in this region, it is difficult to explain this population with solely ram-pressure stripping. A plausible explanation is that these galaxies are undergoing starvation of their gas supply before ram-pressure stripping becomes the dominant quenching mechanism. A simple model of starvation shows that this mechanism can produce moderate disk truncations within 1-2 Gyr. This model is consistent with `slow-then-rapid' or `delayed-then-rapid' quenching, where the early starvation mode drives disk truncations without significant change to the integrated star formation rate, and the later ram-pressure stripping mode rapidly quenches the galaxy. The origin of starvation may be in the group structures that exist around the main Virgo cluster, which indicates the importance of understanding pre-processing of galaxies beyond the cluster virial radius.",
+      "paper_authors": [
+        "C. R. Morgan",
+        "M. L. Balogh",
+        "A. Boselli",
+        "M. Fossati",
+        "C. Lawlor-Forsyth",
+        "E. Sazonova",
+        "P. Amram",
+        "M. Boquien",
+        "J. Braine",
+        "L. Cortese",
+        "P. C\u00f4t\u00e9",
+        "J. C. Cuillandre",
+        "L. Ferrarese",
+        "S. Gwyn",
+        "G. Hensler",
+        "Junais",
+        "J. Roediger"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "22 pages, 12 figures, accepted in Astronomy&Astrophysics",
+      "repo_url": "#"
+    },
+    "2409.08328": {
+      "paper_id": "2409.08328v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08328v1",
+      "paper_key": "2409.08328",
+      "paper_title": "JWST Reveals Bulge-Dominated Star-forming Galaxies at Cosmic Noon",
+      "paper_url": "http://arxiv.org/abs/2409.08328v1",
+      "paper_abstract": "Hubble Space Telescope imaging shows that most star-forming galaxies at cosmic noon -- the peak of cosmic star formation history -- appear disk-dominated, leaving the origin of the dense cores in their quiescent descendants unclear. With the James Webb Space Telescope's (JWST) high-resolution imaging to 5 {\\mu}m, we can now map the rest-frame near-infrared emission, a much closer proxy for stellar mass distribution, in these massive galaxies. We selected 70 star-forming galaxies with 10$<$log(M)$<$12 and 1.5$<$z$<$3 in the CEERS survey and compare their morphologies in the rest-frame optical to those in the rest-frame near-IR. While the bulk of these galaxies are disk-dominated in 1.5 {\\mu}m (rest-frame optical) imaging, they appear more bulge-dominated at 4.4 {\\mu}m (rest-frame near-infrared). Our analysis reveals that in massive star-forming galaxies at z$\\sim$2, the radial surface brightness profiles steepen significantly, from a slope of $\\sim$0.3/dex at 1.5 {\\mu}m to $\\sim$1.4/dex at 4.4 {\\mu}m within radii $<$ 1 kpc. Additionally, we find their total flux contained within the central 1 kpc is approximately 7 times higher in F444W than in F150W. In rest-optical emission, a galaxy's central surface density appears to be the strongest indicator of whether it is quenched or star-forming. Our most significant finding is that at redder wavelengths, the central surface density ratio between quiescent and star-forming galaxies dramatically decreases from $\\sim$10 to $\\sim$1. This suggests the high central densities associated with galaxy quenching are already in place during the star-forming phase, imposing new constraints on the transition from star formation to quiescence.",
+      "paper_authors": [
+        "Chlo\u00eb E. Benton",
+        "Erica J. Nelson",
+        "Tim B. Miller",
+        "Rachel Bezanson",
+        "Justus Gibson",
+        "Abigail I Hartley",
+        "Marco Martorano",
+        "Sedona H. Price",
+        "Katherine A. Suess",
+        "Arjen van der Wel",
+        "Pieter van Dokkum",
+        "John R. Weaver",
+        "Katherine E. Whitaker"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "9 pages, 5 figures, resubmitted to ApJ for publication",
+      "repo_url": "#"
+    },
+    "2409.08322": {
+      "paper_id": "2409.08322v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08322v1",
+      "paper_key": "2409.08322",
+      "paper_title": "Illuminating dark objects with dark matter lampshades",
+      "paper_url": "http://arxiv.org/abs/2409.08322v1",
+      "paper_abstract": "We demonstrate a new technique to search for dark compact objects. When dark matter comprising a dark compact object interacts with photons, the compact object can disperse light traveling though it. As these objects pass between the Earth and a distant star, they act as \"lampshades\" that dim the star. We examine how dimming effects from clumps of dark matter in the galaxy could be searched for in microlensing surveys, which measure the brightness of stars as a function of time. Using the EROS-2 and OGLE surveys, we show that a dimming analysis of existing data can be used to constrain dark sectors, and could be used to discover dark matter in compact objects.",
+      "paper_authors": [
+        "Joseph Bramante",
+        "Melissa D. Diamond",
+        "J. Leo Kim"
+      ],
+      "primary_category": "hep-ph",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "12 pages, 6 figures",
+      "repo_url": "#"
+    },
+    "2409.08314": {
+      "paper_id": "2409.08314v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08314v1",
+      "paper_key": "2409.08314",
+      "paper_title": "Cross-correlation of Luminous Red Galaxies with ML-selected AGN in HSC-SSP: Unobscured AGN residing in more massive halos",
+      "paper_url": "http://arxiv.org/abs/2409.08314v1",
+      "paper_abstract": "Active galactic nuclei (AGN) are the signposts of black hole growth, and likely play an important role in galaxy evolution. An outstanding question is whether AGN of different spectral types indicate different evolutionary stages in the coevolution of black holes and galaxies. We present the angular correlation function between an AGN sample selected from the Hyper Suprime Camera Subaru Strategic Program (HSC-SSP) optical + Wide-field Infrared Survey Explorer (WISE) mid-IR photometry, and a luminous red galaxy (LRG) sample from HSC-SSP. We investigate AGN clustering strength as a function of their luminosity and spectral features across three independent HSC fields totaling $\\sim600\\,{\\rm deg^{2}}$, for $z\\in0.6-1.2$ and AGN with $L_{6\\mu m}>3\\times10^{44}{\\rm\\,erg\\,s^{-1}}$. There are $\\sim28,500$ AGN and $\\sim1.5$ million LRGs in our primary analysis. We determine the inferred average halo mass for the full AGN sample ($M_h \\approx 10^{12.9}h^{-1}M_\\odot$), and note that it does not evolve significantly as a function of redshift (over this narrow range) or luminosity. We find that, on average, unobscured AGN ($M_h \\approx10^{13.3}h^{-1}M_\\odot$) occupy $\\sim4.5\\times$ more massive halos than obscured AGN ($M_h \\approx10^{12.6}h^{-1}M_\\odot$), at $5\\sigma$ statistical significance using 1-D uncertainties, and at $3\\sigma$ using the full covariance matrix, suggesting a physical difference between unobscured and obscured AGN, beyond the line-of-sight viewing angle. Furthermore, we find evidence for a halo mass dependence on reddening level within the Type I AGN population, which could support the existence of a previously claimed dust-obscured phase in AGN-host galaxy coevolution. However, we also find that even quite small systematic shifts in the redshift distributions of the AGN sample could plausibly explain current and previously observed differences in $M_{h}$.",
+      "paper_authors": [
+        "Rodrigo C\u00f3rdova Rosado",
+        "Andy D. Goulding",
+        "Jenny E. Greene",
+        "Grayson C. Petter",
+        "Ryan C. Hickox",
+        "Nickolas Kokron",
+        "Michael A. Strauss",
+        "Jahmour J. Givans",
+        "Yoshiki Toba",
+        "Cassandra Starr Henderson"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-12",
+      "update_time": "2024-09-12",
+      "comments": "31 pages, 14 figures, submitted to ApJ",
+      "repo_url": "#"
+    },
+    "2409.08306": {
+      "paper_id": "2409.08306v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.08306v1",
+      "paper_key": "2409.08306",
+      "paper_title": "Dataset of Tensile Properties for Sub-sized Specimens of Nuclear Structural Materials",
+      "paper_url": "http://arxiv.org/abs/2409.08306v1",
+      "paper_abstract": "Mechanical testing with sub-sized specimens plays an important role in the nuclear industry, facilitating tests in confined experimental spaces with lower irradiation levels and accelerating the qualification of new materials. The reduced size of specimens results in different material behavior at the microscale, mesoscale, and macroscale, in comparison to standard-sized specimens, which is referred to as the specimen size effect. Although analytical models have been proposed to correlate the properties of sub-sized specimens to standard-sized specimens, these models lack broad applicability across different materials and testing conditions. The objective of this study is to create the first large public dataset of tensile properties for sub-sized specimens used in nuclear structural materials. We performed an extensive literature review of relevant publications and extracted over 1,000 tensile testing records comprising 54 parameters including material type and composition, manufacturing information, irradiation conditions, specimen dimensions, and tensile properties. The dataset can serve as a valuable resource to investigate the specimen size effect and develop computational methods to correlate the tensile properties of sub-sized specimens.",
+      "paper_authors": [
+        "Longze Li",
+        "John W. Merickel",
+        "Yalei Tang",
+        "Rongjie Song",
+        "Joshua E. Rittenhouse",
+        "Aleksandar Vakanski",
+        "Fei Xu"
+      ],
+      "primary_category": "physics.ins-det",
+      "publish_time": "2024-09-11",
+      "update_time": "2024-09-11",
+      "comments": "18 pages",
       "repo_url": "#"
     }
   }
