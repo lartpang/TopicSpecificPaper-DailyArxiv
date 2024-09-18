@@ -10834,6 +10834,79 @@
       "update_time": "2024-09-13",
       "comments": "Accepted at British Machine Vision Conference (BMVC 2024)",
       "repo_url": "#"
+    },
+    "2409.11263": {
+      "paper_id": "2409.11263v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11263v1",
+      "paper_key": "2409.11263",
+      "paper_title": "Bio-Inspired Mamba: Temporal Locality and Bioplausible Learning in Selective State Space Models",
+      "paper_url": "http://arxiv.org/abs/2409.11263v1",
+      "paper_abstract": "This paper introduces Bio-Inspired Mamba (BIM), a novel online learning framework for selective state space models that integrates biological learning principles with the Mamba architecture. BIM combines Real-Time Recurrent Learning (RTRL) with Spike-Timing-Dependent Plasticity (STDP)-like local learning rules, addressing the challenges of temporal locality and biological plausibility in training spiking neural networks. Our approach leverages the inherent connection between backpropagation through time and STDP, offering a computationally efficient alternative that maintains the ability to capture long-range dependencies. We evaluate BIM on language modeling, speech recognition, and biomedical signal analysis tasks, demonstrating competitive performance against traditional methods while adhering to biological learning principles. Results show improved energy efficiency and potential for neuromorphic hardware implementation. BIM not only advances the field of biologically plausible machine learning but also provides insights into the mechanisms of temporal information processing in biological neural networks.",
+      "paper_authors": [
+        "Jiahao Qin"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "17 pages, 1 figure, 2 tables",
+      "repo_url": "#"
+    },
+    "2409.11195": {
+      "paper_id": "2409.11195v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11195v1",
+      "paper_key": "2409.11195",
+      "paper_title": "SDP: Spiking Diffusion Policy for Robotic Manipulation with Learnable Channel-Wise Membrane Thresholds",
+      "paper_url": "http://arxiv.org/abs/2409.11195v1",
+      "paper_abstract": "This paper introduces a Spiking Diffusion Policy (SDP) learning method for robotic manipulation by integrating Spiking Neurons and Learnable Channel-wise Membrane Thresholds (LCMT) into the diffusion policy model, thereby enhancing computational efficiency and achieving high performance in evaluated tasks. Specifically, the proposed SDP model employs the U-Net architecture as the backbone for diffusion learning within the Spiking Neural Network (SNN). It strategically places residual connections between the spike convolution operations and the Leaky Integrate-and-Fire (LIF) nodes, thereby preventing disruptions to the spiking states. Additionally, we introduce a temporal encoding block and a temporal decoding block to transform static and dynamic data with timestep $T_S$ into each other, enabling the transmission of data within the SNN in spike format. Furthermore, we propose LCMT to enable the adaptive acquisition of membrane potential thresholds, thereby matching the conditions of varying membrane potentials and firing rates across channels and avoiding the cumbersome process of manually setting and tuning hyperparameters. Evaluating the SDP model on seven distinct tasks with SNN timestep $T_S=4$, we achieve results comparable to those of the ANN counterparts, along with faster convergence speeds than the baseline SNN method. This improvement is accompanied by a reduction of 94.3\\% in dynamic energy consumption estimated on 45nm hardware.",
+      "paper_authors": [
+        "Zhixing Hou",
+        "Maoxu Gao",
+        "Hang Yu",
+        "Mengyu Yang",
+        "Chio-In Ieong"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10887": {
+      "paper_id": "2409.10887v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10887v1",
+      "paper_key": "2409.10887",
+      "paper_title": "Contrastive Learning in Memristor-based Neuromorphic Systems",
+      "paper_url": "http://arxiv.org/abs/2409.10887v1",
+      "paper_abstract": "Spiking neural networks, the third generation of artificial neural networks, have become an important family of neuron-based models that sidestep many of the key limitations facing modern-day backpropagation-trained deep networks, including their high energy inefficiency and long-criticized biological implausibility. In this work, we design and investigate a proof-of-concept instantiation of contrastive-signal-dependent plasticity (CSDP), a neuromorphic form of forward-forward-based, backpropagation-free learning. Our experimental simulations demonstrate that a hardware implementation of CSDP is capable of learning simple logic functions without the need to resort to complex gradient calculations.",
+      "paper_authors": [
+        "Cory Merkel",
+        "Alexander Ororbia"
+      ],
+      "primary_category": "cs.NE",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Accepted in SiPS 2024",
+      "repo_url": "#"
+    },
+    "2409.10532": {
+      "paper_id": "2409.10532v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10532v1",
+      "paper_key": "2409.10532",
+      "paper_title": "Slug Mobile: Test-Bench for RL Testing",
+      "paper_url": "http://arxiv.org/abs/2409.10532v1",
+      "paper_abstract": "Sim-to real gap in Reinforcement Learning is when a model trained in a simulator does not translate to the real world. This is a problem for Autonomous Vehicles (AVs) as vehicle dynamics can vary from simulation to reality, and also from vehicle to vehicle. Slug Mobile is a one tenth scale autonomous vehicle created to help address the sim-to-real gap for AVs by acting as a test-bench to develop models that can easily scale from one vehicle to another. In addition to traditional sensors found in other one tenth scale AVs, we have also included a Dynamic Vision Sensor so we can train Spiking Neural Networks running on neuromorphic hardware.",
+      "paper_authors": [
+        "Jonathan Wellington Morris",
+        "Vishrut Shah",
+        "Alex Besanceney",
+        "Daksh Shah",
+        "Leilani H. Gilpin"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-08-31",
+      "update_time": "2024-08-31",
+      "comments": "Submitted to BayLearn 2024",
+      "repo_url": "#"
     }
   },
   "Infrared Small Target Detection": {
@@ -32935,11 +33008,11 @@
       "repo_url": "#"
     },
     "2409.09441": {
-      "paper_id": "2409.09441v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09441v1",
+      "paper_id": "2409.09441v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09441v2",
       "paper_key": "2409.09441",
       "paper_title": "PIP-Loco: A Proprioceptive Infinite Horizon Planning Framework for Quadrupedal Robot Locomotion",
-      "paper_url": "http://arxiv.org/abs/2409.09441v1",
+      "paper_url": "http://arxiv.org/abs/2409.09441v2",
       "paper_abstract": "A core strength of Model Predictive Control (MPC) for quadrupedal locomotion has been its ability to enforce constraints and provide interpretability of the sequence of commands over the horizon. However, despite being able to plan, MPC struggles to scale with task complexity, often failing to achieve robust behavior on rapidly changing surfaces. On the other hand, model-free Reinforcement Learning (RL) methods have outperformed MPC on multiple terrains, showing emergent motions but inherently lack any ability to handle constraints or perform planning. To address these limitations, we propose a framework that integrates proprioceptive planning with RL, allowing for agile and safe locomotion behaviors through the horizon. Inspired by MPC, we incorporate an internal model that includes a velocity estimator and a Dreamer module. During training, the framework learns an expert policy and an internal model that are co-dependent, facilitating exploration for improved locomotion behaviors. During deployment, the Dreamer module solves an infinite-horizon MPC problem, adapting actions and velocity commands to respect the constraints. We validate the robustness of our training framework through ablation studies on internal model components and demonstrate improved robustness to training noise. Finally, we evaluate our approach across multi-terrain scenarios in both simulation and hardware.",
       "paper_authors": [
         "Aditya Shirwatkar",
@@ -32949,7 +33022,7 @@
       ],
       "primary_category": "cs.RO",
       "publish_time": "2024-09-14",
-      "update_time": "2024-09-14",
+      "update_time": "2024-09-17",
       "comments": "Preprint under review",
       "repo_url": "#"
     },
@@ -33386,6 +33459,1048 @@
       "publish_time": "2024-09-13",
       "update_time": "2024-09-13",
       "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11347": {
+      "paper_id": "2409.11347v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11347v1",
+      "paper_key": "2409.11347",
+      "paper_title": "Hertzsprung gap stars in nearby galaxies and the Quest for Luminous Red Novae Progenitors",
+      "paper_url": "http://arxiv.org/abs/2409.11347v1",
+      "paper_abstract": "After the main sequence phase, stars more massive than 2.5 M$_\\odot$ rapidly evolve through the Hertzsprung gap as yellow giants and supergiants (YSG), before settling into the red giant branch. Identifying YSG in nearby galaxies is crucial for pinpointing progenitors of luminous red novae (LRNe) - astrophysical transients attributed to stellar mergers. In the era of extensive transient surveys like the Vera Rubin Observatory's LSST, this approach offers a new way to predict and select common envelope transients. This study investigates potential progenitors and precursors of LRNe by analysing Hubble Space Telescope (HST) photometry of stellar populations in galaxies within 20 Mpc to identify YSG candidates. Additionally, we use ZTF and MeerLICHT/BlackGEM to identify possible precursors, preparing for future observations by the LSST. We compiled a sample of 369 galaxies with HST exposures in the F475W, F555W, F606W, and F814W filters. We identified YSG candidates using MESA stellar evolution tracks and statistical analysis of color-magnitude diagrams (CMDs). Our sample includes 246,573 YSG candidates with masses between 3 and 20 $M_\\odot$ and is affected by various contaminants, such as foreground stars and extinguished main-sequence stars. After excluding foreground stars using Gaia proper motions, contamination is estimated at 1.7\\% from foreground stars and 20\\% from extinction affecting main-sequence stars. Combining our YSG candidates with time-domain catalogs yielded several interesting candidates. Notably, we identified 12 LRN precursor candidates for which followup is encouraged. We highlight the importance of monitoring future transients that match YSG candidates to avoid missing potential LRNe and other rare transients. LSST will be a game changer in the search for LRN progenitors and precursors, discovering over 300,000 new YSG and 100 precursors within 20 Mpc.",
+      "paper_authors": [
+        "Hugo Tranin",
+        "Nadejda Blagorodnova",
+        "Viraj Karambelkar",
+        "Paul J. Groot",
+        "Steven Bloemen",
+        "Paul M. Vreeswijk",
+        "Dani\u00eblle Pieterse",
+        "Jan van Roestel"
+      ],
+      "primary_category": "astro-ph.SR",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Submitted to A\\&A. 17 pages, 21 figures",
+      "repo_url": "#"
+    },
+    "2409.11313": {
+      "paper_id": "2409.11313v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11313v1",
+      "paper_key": "2409.11313",
+      "paper_title": "An Empirical Study of Sensitive Information in Logs",
+      "paper_url": "http://arxiv.org/abs/2409.11313v1",
+      "paper_abstract": "Software logs, generated during the runtime of software systems, are essential for various development and analysis activities, such as anomaly detection and failure diagnosis. However, the presence of sensitive information in these logs poses significant privacy concerns, particularly regarding Personally Identifiable Information (PII) and quasi-identifiers that could lead to re-identification risks. While general data privacy has been extensively studied, the specific domain of privacy in software logs remains underexplored, with inconsistent definitions of sensitivity and a lack of standardized guidelines for anonymization. To mitigate this gap, this study offers a comprehensive analysis of privacy in software logs from multiple perspectives. We start by performing an analysis of 25 publicly available log datasets to identify potentially sensitive attributes. Based on the result of this step, we focus on three perspectives: privacy regulations, research literature, and industry practices. We first analyze key data privacy regulations, such as the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA), to understand the legal requirements concerning sensitive information in logs. Second, we conduct a systematic literature review to identify common privacy attributes and practices in log anonymization, revealing gaps in existing approaches. Finally, we survey 45 industry professionals to capture practical insights on log anonymization practices. Our findings shed light on various perspectives of log privacy and reveal industry challenges, such as technical and efficiency issues while highlighting the need for standardized guidelines. By combining insights from regulatory, academic, and industry perspectives, our study aims to provide a clearer framework for identifying and protecting sensitive information in software logs.",
+      "paper_authors": [
+        "Roozbeh Aghili",
+        "Heng Li",
+        "Foutse Khomh"
+      ],
+      "primary_category": "cs.SE",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11302": {
+      "paper_id": "2409.11302v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11302v1",
+      "paper_key": "2409.11302",
+      "paper_title": "Beyond LoRA: Exploring Efficient Fine-Tuning Techniques for Time Series Foundational Models",
+      "paper_url": "http://arxiv.org/abs/2409.11302v1",
+      "paper_abstract": "Time Series Foundation Models (TSFMs) have recently garnered attention for their ability to model complex, large-scale time series data across domains such as retail, finance, and transportation. However, their application to sensitive, domain-specific fields like healthcare remains challenging, primarily due to the difficulty of fine-tuning these models for specialized, out-of-domain tasks with scarce publicly available datasets. In this work, we explore the use of Parameter-Efficient Fine-Tuning (PEFT) techniques to address these limitations, focusing on healthcare applications, particularly ICU vitals forecasting for sepsis patients. We introduce and evaluate two selective (BitFit and LayerNorm Tuning) and two additive (VeRA and FourierFT) PEFT techniques on multiple configurations of the Chronos TSFM for forecasting vital signs of sepsis patients. Our comparative analysis demonstrates that some of these PEFT methods outperform LoRA in terms of parameter efficiency and domain adaptation, establishing state-of-the-art (SOTA) results in ICU vital forecasting tasks. Interestingly, FourierFT applied to the Chronos (Tiny) variant surpasses the SOTA model while fine-tuning only 2,400 parameters compared to the 700K parameters of the benchmark.",
+      "paper_authors": [
+        "Divij Gupta",
+        "Anubhav Bhatti",
+        "Surajsinh Parmar"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "7 pages. Under review",
+      "repo_url": "#"
+    },
+    "2409.11291": {
+      "paper_id": "2409.11291v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11291v1",
+      "paper_key": "2409.11291",
+      "paper_title": "Features and prospects for Kilonova remnant detection with current and future surveys",
+      "paper_url": "http://arxiv.org/abs/2409.11291v1",
+      "paper_abstract": "We study the observable spectral and temporal properties of kilonova remnants analytically, and showcase quantitative differences with respect to supernova remnants. We provide detection prospects of kilonova remnants in the context of ongoing radio surveys. We find that there is a good chance to expect 10s of such objects in future surveys with a flux threshold of $\\sim 0.1$ mJy. Kilonova remnants from a postulated population of long lived supramassive neutron star remnants of neutron star mergers are even more likely to be detected as they are extremely bright and peak earlier. For ongoing survey with threshold of $\\sim$ mJy, we expect to find 10-100s of such objects if they are a significant fraction of total kilonova population. Considering that there are no promising such kilonovae candidates in current surveys, we constrain the fraction of such extreme kilonova to be no more than 30 percent of the overall kilonovae rate, depending on the details of ejecta mass and external density distribution.",
+      "paper_authors": [
+        "Sandeep Kumar Acharya",
+        "Paz Beniamini",
+        "Kenta Hotokezaka"
+      ],
+      "primary_category": "astro-ph.HE",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Comments welcome",
+      "repo_url": "#"
+    },
+    "2409.11266": {
+      "paper_id": "2409.11266v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11266v1",
+      "paper_key": "2409.11266",
+      "paper_title": "Colour-Based Disentangling of Mira Variables and Ultra-Cool Dwarfs",
+      "paper_url": "http://arxiv.org/abs/2409.11266v1",
+      "paper_abstract": "Despite having different astronomical characteristics, the studies of mira variables and ultra-cool dwarfs frequently show similar red colors, which could cause leading to photometric misclassification. This study uses photometric data from the WISE, 2MASS, and Pan-STARRS surveys to construct color-based selection criteria for red dwarfs, brown dwarfs, and Mira variables. On analyzing the color indices, we developed empirical rules that separate these objects with an overall classification accuracy of approximately 91%-92%. While the differentiation between red dwarfs and both Mira variables and brown dwarfs is effective, challenges remain in distinguishing Mira variables from brown dwarfs due to overlapping color indices. The robustness of our classification technique was validated by a bootstrap analysis, highlighting the significance of color indices in large photometric surveys for stellar classification.",
+      "paper_authors": [
+        "Aleksandra Avdeeva",
+        "Kefeng Tan",
+        "Santosh Joshi",
+        "Dana Kovaleva",
+        "Harinder P. Singh",
+        "Ali Luo",
+        "Oleg Malkov"
+      ],
+      "primary_category": "astro-ph.SR",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Accepted to Peremennye Zvezdy (Variable Stars), comments are welcomed",
+      "repo_url": "#"
+    },
+    "2409.11259": {
+      "paper_id": "2409.11259v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11259v1",
+      "paper_key": "2409.11259",
+      "paper_title": "Modeling a frustrated Ising square lattice with the D-Wave Quantum Annealer",
+      "paper_url": "http://arxiv.org/abs/2409.11259v1",
+      "paper_abstract": "The Ising model with nearest-neighbor interactions on a two-dimensional (2D) square lattice is one of the simplest models for studying ferro-magnetic to para-magnetic transitions. Extensive results are available in the literature for this model, which has become a paradigm for the study of magnetic phase transitions in materials, both theoretically and numerically. After a brief review of the main results obtained with a classical computer, we show how to implement on the D- Wave quantum annealer a more complex Ising model with the addition of competing antiferromagnetic interactions between the diagonal next-to-nearest neighbors with two coupling constants J1 and J2. The dynamics of this system, owing to frustration, are richer than those of the simple Ising model and exhibit a third striped (or antiferromagnetic) phase in addition to the ferro- and para-magnetic phases. In this work, we observed all three phases on the D-Wave hardware, studied the behavior of the solution with different annealing parameters, such as the chain strength and annealing time, and showed how to identify the phase transition by varying the ratio between the ferromagnetic and antiferromagnetic couplings. The same system is studied on a classical computer, with the possibility of taking into account the temperature (fixed on D-Wave) as a free parameter and to explore the full phase diagram: some comparative conclusions with D-Wave are drawn.",
+      "paper_authors": [
+        "C. Marin",
+        "A. Fontana",
+        "V. Bellani",
+        "F. Pederiva",
+        "A. Quaranta",
+        "F. Rossella",
+        "A. Salamon",
+        "G. Salina"
+      ],
+      "primary_category": "physics.comp-ph",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11224": {
+      "paper_id": "2409.11224v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11224v1",
+      "paper_key": "2409.11224",
+      "paper_title": "A Human-Centered Risk Evaluation of Biometric Systems Using Conjoint Analysis",
+      "paper_url": "http://arxiv.org/abs/2409.11224v1",
+      "paper_abstract": "Biometric recognition systems, known for their convenience, are widely adopted across various fields. However, their security faces risks depending on the authentication algorithm and deployment environment. Current risk assessment methods faces significant challenges in incorporating the crucial factor of attacker's motivation, leading to incomplete evaluations. This paper presents a novel human-centered risk evaluation framework using conjoint analysis to quantify the impact of risk factors, such as surveillance cameras, on attacker's motivation. Our framework calculates risk values incorporating the False Acceptance Rate (FAR) and attack probability, allowing comprehensive comparisons across use cases. A survey of 600 Japanese participants demonstrates our method's effectiveness, showing how security measures influence attacker's motivation. This approach helps decision-makers customize biometric systems to enhance security while maintaining usability.",
+      "paper_authors": [
+        "Tetsushi Ohki",
+        "Narishige Abe",
+        "Hidetsugu Uchida",
+        "Shigefumi Yamada"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11209": {
+      "paper_id": "2409.11209v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11209v1",
+      "paper_key": "2409.11209",
+      "paper_title": "Evidence for gravitational self-lensing of the central supermassive black hole binary in the Seyfert galaxy NGC 1566",
+      "paper_url": "http://arxiv.org/abs/2409.11209v1",
+      "paper_abstract": "It is generally accepted that all massive galaxies host supermassive black holes (BHs) in their center and that mergers of two galaxies lead to the formation of BH binaries. The most interesting among them comprise the mergers in their final state, that is to say with parsec (3.2 light years) or sub-parsec orbital separations. It is possible to detect these systems with binary self-lensing. Here we report the potential detection of a central supermassive BH binary in the active galaxy (AGN) NGC1566 based on a microlensing outburst. The light curve of the outburst - based on observations with the All Sky Automated Survey for SuperNovae - lasted from the beginning of 2017 until the beginning of 2020. The steep symmetric light curve as well as its shape look very different with respect to normal random variations in AGN. However, the observations could be easily reproduced with a best-fit standard microlensing light curve. Based on the light curve, we derived a characteristic timescale of 155 days. During the outburst, the continuum as well as the broad line intensities varied; however, the narrow emission lines did not. This is an indication that the lensing object orbits the AGN nucleus between the broad line region (BLR) and the narrow line region (NLR), that is, at a distance on the order of 250 light days. The light curve can be reproduced by a lens with a BH mass of 5*10^{5} M_solar. This implies a mass ratio to the central AGN on the order of 1 to 10.",
+      "paper_authors": [
+        "Wolfram Kollatschny",
+        "Doron Chelouche"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "7 pages, 4 figures, Astronomy & Astrophysics Letters in press",
+      "repo_url": "#"
+    },
+    "2409.11200": {
+      "paper_id": "2409.11200v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11200v1",
+      "paper_key": "2409.11200",
+      "paper_title": "LoRa Communication for Agriculture 4.0: Opportunities, Challenges, and Future Directions",
+      "paper_url": "http://arxiv.org/abs/2409.11200v1",
+      "paper_abstract": "The emerging field of smart agriculture leverages the Internet of Things (IoT) to revolutionize farming practices. This paper investigates the transformative potential of Long Range (LoRa) technology as a key enabler of long-range wireless communication for agricultural IoT systems. By reviewing existing literature, we identify a gap in research specifically focused on LoRa's prospects and challenges from a communication perspective in smart agriculture. We delve into the details of LoRa-based agricultural networks, covering network architecture design, Physical Layer (PHY) considerations tailored to the agricultural environment, and channel modeling techniques that account for soil characteristics. The paper further explores relaying and routing mechanisms that address the challenges of extending network coverage and optimizing data transmission in vast agricultural landscapes. Transitioning to practical aspects, we discuss sensor deployment strategies and energy management techniques, offering insights for real-world deployments. A comparative analysis of LoRa with other wireless communication technologies employed in agricultural IoT applications highlights its strengths and weaknesses in this context. Furthermore, the paper outlines several future research directions to leverage the potential of LoRa-based agriculture 4.0. These include advancements in channel modeling for diverse farming environments, novel relay routing algorithms, integrating emerging sensor technologies like hyper-spectral imaging and drone-based sensing, on-device Artificial Intelligence (AI) models, and sustainable solutions. This survey can guide researchers, technologists, and practitioners to understand, implement, and propel smart agriculture initiatives using LoRa technology.",
+      "paper_authors": [
+        "Lameya Aldhaheri",
+        "Noor Alshehhi",
+        "Irfana Ilyas Jameela Manzil",
+        "Ruhul Amin Khalil",
+        "Shumaila Javaid",
+        "Nasir Saeed",
+        "Mohamed-Slim Alouini"
+      ],
+      "primary_category": "cs.NI",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11192": {
+      "paper_id": "2409.11192v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11192v1",
+      "paper_key": "2409.11192",
+      "paper_title": "Towards Ethical Personal AI Applications: Practical Considerations for AI Assistants with Long-Term Memory",
+      "paper_url": "http://arxiv.org/abs/2409.11192v1",
+      "paper_abstract": "One application area of long-term memory (LTM) capabilities with increasing traction is personal AI companions and assistants. With the ability to retain and contextualize past interactions and adapt to user preferences, personal AI companions and assistants promise a profound shift in how we interact with AI and are on track to become indispensable in personal and professional settings. However, this advancement introduces new challenges and vulnerabilities that require careful consideration regarding the deployment and widespread use of these systems. The goal of this paper is to explore the broader implications of building and deploying personal AI applications with LTM capabilities using a holistic evaluation approach. This will be done in three ways: 1) reviewing the technological underpinnings of LTM in Large Language Models, 2) surveying current personal AI companions and assistants, and 3) analyzing critical considerations and implications of deploying and using these applications.",
+      "paper_authors": [
+        "Eunhae Lee"
+      ],
+      "primary_category": "cs.CY",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.11163": {
+      "paper_id": "2409.11163v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11163v1",
+      "paper_key": "2409.11163",
+      "paper_title": "Fast radio bursts as a probe of gravity on cosmological scales",
+      "paper_url": "http://arxiv.org/abs/2409.11163v1",
+      "paper_abstract": "We explore the potential for improving constraints on gravity by leveraging correlations in the dispersion measure derived from Fast Radio Bursts (FRBs) in combination with cosmic shear. Specifically, we focus on Horndeski gravity, inferring the kinetic braiding and Planck mass run rate from a stage-4 cosmic shear mock survey alongside a survey comprising $10^4$ FRBs. For the inference pipeline, we utilise hi_class to predict the linear matter power spectrum in modified gravity scenarios, while non-linear corrections are modelled with HMcode, including feedback mechanisms. Our findings indicate that FRBs can disentangle degeneracies between baryonic feedback and cosmological parameters, as well as the mass of massive neutrinos. Since these parameters are also degenerate with modified gravity parameters, the inclusion of FRBs can enhance constraints on Horndeski parameters by up to $40$ percent, despite being a less significant measurement. Additionally, we apply our model to current FRB data and use the uncertainty in the $\\mathrm{DM}-z$ relation to impose limits on gravity. However, due to the limited sample size of current data, constraints are predominantly influenced by theoretical priors. Despite this, our study demonstrates that FRBs will significantly augment the limited set of cosmological probes available, playing a critical role in providing alternative tests of feedback, cosmology, and gravity. All codes used in this work are made publically available.",
+      "paper_authors": [
+        "Dennis Neumann",
+        "Robert Reischke",
+        "Steffen Hagstotz",
+        "Hendrik Hildebrandt"
+      ],
+      "primary_category": "astro-ph.CO",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "14 pages, 10 figures",
+      "repo_url": "#"
+    },
+    "2409.11112": {
+      "paper_id": "2409.11112v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11112v1",
+      "paper_key": "2409.11112",
+      "paper_title": "Strategic Insights in Human and Large Language Model Tactics at Word Guessing Games",
+      "paper_url": "http://arxiv.org/abs/2409.11112v1",
+      "paper_abstract": "At the beginning of 2022, a simplistic word-guessing game took the world by storm and was further adapted to many languages beyond the original English version. In this paper, we examine the strategies of daily word-guessing game players that have evolved during a period of over two years. A survey gathered from 25% of frequent players reveals their strategies and motivations for continuing the daily journey. We also explore the capability of several popular open-access large language model systems and open-source models at comprehending and playing the game in two different languages. Results highlight the struggles of certain models to maintain correct guess length and generate repetitions, as well as hallucinations of non-existent words and inflections.",
+      "paper_authors": [
+        "Mat\u012bss Rikters",
+        "Sanita Reinsone"
+      ],
+      "primary_category": "cs.CL",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Published in the 4th Wordplay: When Language Meets Games Workshop @\n  ACL 2024",
+      "repo_url": "#"
+    },
+    "2409.11067": {
+      "paper_id": "2409.11067v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11067v1",
+      "paper_key": "2409.11067",
+      "paper_title": "Measurements of polarization and spin correlation and observation of entanglement in top quark pairs using lepton+jets events from proton-proton collisions at $\\sqrt{s}$ = 13 TeV",
+      "paper_url": "http://arxiv.org/abs/2409.11067v1",
+      "paper_abstract": "Measurements of the polarization and spin correlation in top quark pairs ($\\mathrm{t\\bar{t}}$) are presented using events with a single electron or muon and jets in the final state. The measurements are based on proton-proton collision data from the LHC at $\\sqrt{s}$ = 13 TeV collected by the CMS experiment, corresponding to an integrated luminosity of 138 fb$^{-1}$. All coefficients of the polarization vectors and the spin correlation matrix are extracted simultaneously by performing a binned likelihood fit to the data. The measurement is performed inclusively and in bins of additional observables, such as the mass of the $\\mathrm{t\\bar{t}}$ system and the top quark scattering angle in the $\\mathrm{t\\bar{t}}$ rest frame. The measured polarization and spin correlation are in agreement with the standard model. From the measured spin correlation, conclusions on the $\\mathrm{t\\bar{t}}$ spin entanglement are drawn by applying the Peres-Horodecki criterion. The standard model predicts entangled spins for $\\mathrm{t\\bar{t}}$ states at the production threshold and at high masses of the $\\mathrm{t\\bar{t}}$ system. Entanglement is observed for the first time in events at high $\\mathrm{t\\bar{t}}$ mass, where a large fraction of the $\\mathrm{t\\bar{t}}$ decays are space-like separated, with an expected and observed significance of above 5 standard deviations.",
+      "paper_authors": [
+        "CMS Collaboration"
+      ],
+      "primary_category": "hep-ex",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Submitted to Physical Review D. All figures and tables can be found\n  at\n  http://cms-results.web.cern.ch/cms-results/public-results/publications/TOP-23-007\n  (CMS Public Pages)",
+      "repo_url": "#"
+    },
+    "2409.11052": {
+      "paper_id": "2409.11052v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11052v1",
+      "paper_key": "2409.11052",
+      "paper_title": "A logical alarm for misaligned binary classifiers",
+      "paper_url": "http://arxiv.org/abs/2409.11052v1",
+      "paper_abstract": "If two agents disagree in their decisions, we may suspect they are not both correct. This intuition is formalized for evaluating agents that have carried out a binary classification task. Their agreements and disagreements on a joint test allow us to establish the only group evaluations logically consistent with their responses. This is done by establishing a set of axioms (algebraic relations) that must be universally obeyed by all evaluations of binary responders. A complete set of such axioms are possible for each ensemble of size N. The axioms for $N = 1, 2$ are used to construct a fully logical alarm - one that can prove that at least one ensemble member is malfunctioning using only unlabeled data. The similarities of this approach to formal software verification and its utility for recent agendas of safe guaranteed AI are discussed.",
+      "paper_authors": [
+        "Andr\u00e9s Corrada-Emmanuel",
+        "Ilya Parker",
+        "Ramesh Bharadwaj"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "17 pages, 7 figures, under review",
+      "repo_url": "#"
+    },
+    "2409.11017": {
+      "paper_id": "2409.11017v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11017v1",
+      "paper_key": "2409.11017",
+      "paper_title": "Stretchable Electrohydraulic Artificial Muscle for Full Motion Ranges in Musculoskeletal Antagonistic Joints",
+      "paper_url": "http://arxiv.org/abs/2409.11017v1",
+      "paper_abstract": "Artificial muscles play a crucial role in musculoskeletal robotics and prosthetics to approximate the force-generating functionality of biological muscle. However, current artificial muscle systems are typically limited to either contraction or extension, not both. This limitation hinders the development of fully functional artificial musculoskeletal systems. We address this challenge by introducing an artificial antagonistic muscle system capable of both contraction and extension. Our design integrates non-stretchable electrohydraulic soft actuators (HASELs) with electrostatic clutches within an antagonistic musculoskeletal framework. This configuration enables an antagonistic joint to achieve a full range of motion without displacement loss due to tendon slack. We implement a synchronization method to coordinate muscle and clutch units, ensuring smooth motion profiles and speeds. This approach facilitates seamless transitions between antagonistic muscles at operational frequencies of up to 3.2 Hz. While our prototype utilizes electrohydraulic actuators, this muscle-clutch concept is adaptable to other non-stretchable artificial muscles, such as McKibben actuators, expanding their capability for extension and full range of motion in antagonistic setups. Our design represents a significant advancement in the development of fundamental components for more functional and efficient artificial musculoskeletal systems, bringing their capabilities closer to those of their biological counterparts.",
+      "paper_authors": [
+        "Amirhossein Kazemipour",
+        "Ronan Hinchet",
+        "Robert K. Katzschmann"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "This paper has been submitted to the IEEE International Conference on\n  Robotics and Automation (ICRA) 2025 and is under review",
+      "repo_url": "#"
+    },
+    "2409.11013": {
+      "paper_id": "2409.11013v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11013v1",
+      "paper_key": "2409.11013",
+      "paper_title": "CO spectra of the ISM in the Host Galaxies of the Most Luminous WISE-Selected AGNs",
+      "paper_url": "http://arxiv.org/abs/2409.11013v1",
+      "paper_abstract": "We present observations of mid-J J=4-3 or J=5-4 carbon monoxide (CO) emission lines and continuum emission from a sample of ten of the most luminous log(L/L_solar)~14 Hot Dust-Obscured Galaxies (Hot DOGs) discovered by the Wide-field Infrared Survey Explorer (WISE) with redshifts up to 4.6. We uncover broad spectral lines (FWHM~400 km/s) in these objects, suggesting a turbulent molecular interstellar medium (ISM) may be ubiquitous in Hot DOGs. A halo of molecular gas, extending out to a radius of 5 kpc is observed in W2305-0039, likely supplied by 940 km/s molecular outflows. W0831+0140 is plausibly the host of a merger between at least two galaxies, consistent with observations made using ionized gas. These CO(4-3) observations contrast with previous CO(1-0) studies of the same sources: the CO(4-3) to CO(1-0) luminosity ratios exceed 300 in each source, suggesting that the lowest excited states of CO are underluminous. These findings show that the molecular gas in Hot DOGs is consistently turbulent, plausibly a consequence of AGN feedback, triggered by galactic mergers.",
+      "paper_authors": [
+        "Lee R. Martin",
+        "Andrew W. Blain",
+        "Tanio D\u00edaz-Santos",
+        "Roberto J. Assef",
+        "Chao-Wei Tsai",
+        "Hyunsung D. Jun",
+        "Peter R. M. Eisenhardt",
+        "Jingwen Wu",
+        "Andrey Vayner",
+        "Rom\u00e1n Fern\u00e1ndez Aranda"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "19 pages (16 main text & 3 in Appendix), 9 figures, plus 3 in\n  Appendix. MNRAS in press",
+      "repo_url": "#"
+    },
+    "2409.11008": {
+      "paper_id": "2409.11008v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11008v1",
+      "paper_key": "2409.11008",
+      "paper_title": "Latent mixed-effect models for high-dimensional longitudinal data",
+      "paper_url": "http://arxiv.org/abs/2409.11008v1",
+      "paper_abstract": "Modelling longitudinal data is an important yet challenging task. These datasets can be high-dimensional, contain non-linear effects and time-varying covariates. Gaussian process (GP) prior-based variational autoencoders (VAEs) have emerged as a promising approach due to their ability to model time-series data. However, they are costly to train and struggle to fully exploit the rich covariates characteristic of longitudinal data, making them difficult for practitioners to use effectively. In this work, we leverage linear mixed models (LMMs) and amortized variational inference to provide conditional priors for VAEs, and propose LMM-VAE, a scalable, interpretable and identifiable model. We highlight theoretical connections between it and GP-based techniques, providing a unified framework for this class of methods. Our proposal performs competitively compared to existing approaches across simulated and real-world datasets.",
+      "paper_authors": [
+        "Priscilla Ong",
+        "Manuel Hau\u00dfmann",
+        "Otto L\u00f6nnroth",
+        "Harri L\u00e4hdesm\u00e4ki"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Under review",
+      "repo_url": "#"
+    },
+    "2409.11001": {
+      "paper_id": "2409.11001v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11001v1",
+      "paper_key": "2409.11001",
+      "paper_title": "Foundations on k-contact geometry",
+      "paper_url": "http://arxiv.org/abs/2409.11001v1",
+      "paper_abstract": "k-Contact geometry appeared as a generalisation of contact geometry to analyse field theories. This work provides a new insightful approach to k-contact geometry by devising a theory of k-contact forms and proving that the kernel of a k-contact form is locally equivalent to a distribution of corank k that is distributionally maximally non-integrable and admits k commuting Lie symmetries: a so-called k-contact distribution. Compact manifolds admitting a global k-contact form are analysed, we give necessary topological conditions for their existence, k-contact Lie groups are defined and studied, we extend the Weinstein conjecture for the existence of closed orbits of Reeb vector fields in compact manifolds to the k-contact setting after studying compact low-dimensional manifolds endowed with a global k-contact form, and we provide some physical applications of some of our results. Polarisations for k-contact distributions are introduced and it is shown that a polarised k-contact distribution is locally diffeomorphic to the Cartan distribution of the first-order jet bundle over a fibre bundle of order k, which is a globally defined polarised k-contact distribution. Then, we relate k-contact manifolds to presymplectic and k-symplectic manifolds on fibre bundles of larger dimension and define for the first time types of submanifolds in k-contact geometry. We also review the theory of Hamiltonian k-vector fields, studying Hamilton-De Donder-Weyl equations in general and in Lie groups, which are here studied in an unprecedented manner. A theory of k-contact Hamiltonian vector fields is developed, which describes the theory of characteristics for Lie symmetries for first-order partial differential equations in a k-contact Hamiltonian manner. Our new Hamiltonian k-contact techniques are illustrated by analysing Hamilton-Jacobi and Dirac equations.",
+      "paper_authors": [
+        "Javier de Lucas",
+        "Xavier Rivas",
+        "Tomasz Sobczak"
+      ],
+      "primary_category": "math.DG",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "59 pp",
+      "repo_url": "#"
+    },
+    "2409.10999": {
+      "paper_id": "2409.10999v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10999v1",
+      "paper_key": "2409.10999",
+      "paper_title": "Enhancing Low-Resource Language and Instruction Following Capabilities of Audio Language Models",
+      "paper_url": "http://arxiv.org/abs/2409.10999v1",
+      "paper_abstract": "Audio language models can understand audio inputs and perform a range of audio-related tasks based on instructions, such as speech recognition and audio captioning, where the instructions are usually textual prompts. Audio language models are mostly initialized from pre-trained audio encoders and large language models (LLMs). Although these pre-trained components were developed to support multiple languages, audio-language models are trained predominantly on English data, which may limit their usability to only English instructions or English speech inputs. First, this paper examines the performance of existing audio language models in an underserved language using Thai as an example. This paper demonstrates that, despite being built on multilingual backbones, audio language models do not exhibit cross-lingual emergent abilities to low-resource languages. Second, this paper studies data mixture for developing audio language models that are optimized for a target language as well as English. In addition. this paper integrates audio comprehension and speech instruction-following capabilities into a single unified model. Our experiments provide insights into data mixture for enhancing instruction-following capabilities in both a low-resource language and English. Our model, Typhoon-Audio, outperforms existing open-source audio language models by a considerable margin, and it is comparable to state-of-the-art Gemini-1.5-Pro in both English and Thai languages.",
+      "paper_authors": [
+        "Potsawee Manakul",
+        "Guangzhi Sun",
+        "Warit Sirichotedumrong",
+        "Kasima Tharnpipitchai",
+        "Kunat Pipatanakul"
+      ],
+      "primary_category": "cs.CL",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "5 pages. Preprint under review",
+      "repo_url": "#"
+    },
+    "2409.10993": {
+      "paper_id": "2409.10993v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10993v1",
+      "paper_key": "2409.10993",
+      "paper_title": "Multi-modal Generative Models in Recommendation System",
+      "paper_url": "http://arxiv.org/abs/2409.10993v1",
+      "paper_abstract": "Many recommendation systems limit user inputs to text strings or behavior signals such as clicks and purchases, and system outputs to a list of products sorted by relevance. With the advent of generative AI, users have come to expect richer levels of interactions. In visual search, for example, a user may provide a picture of their desired product along with a natural language modification of the content of the picture (e.g., a dress like the one shown in the picture but in red color). Moreover, users may want to better understand the recommendations they receive by visualizing how the product fits their use case, e.g., with a representation of how a garment might look on them, or how a furniture item might look in their room. Such advanced levels of interaction require recommendation systems that are able to discover both shared and complementary information about the product across modalities, and visualize the product in a realistic and informative way. However, existing systems often treat multiple modalities independently: text search is usually done by comparing the user query to product titles and descriptions, while visual search is typically done by comparing an image provided by the customer to product images. We argue that future recommendation systems will benefit from a multi-modal understanding of the products that leverages the rich information retailers have about both customers and products to come up with the best recommendations. In this chapter we review recommendation systems that use multiple data modalities simultaneously.",
+      "paper_authors": [
+        "Arnau Ramisa",
+        "Rene Vidal",
+        "Yashar Deldjoo",
+        "Zhankui He",
+        "Julian McAuley",
+        "Anton Korikov",
+        "Scott Sanner",
+        "Mahesh Sathiamoorthy",
+        "Atoosa Kasrizadeh",
+        "Silvia Milano",
+        "Francesco Ricci"
+      ],
+      "primary_category": "cs.IR",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "32 pages 5 figures",
+      "repo_url": "#"
+    },
+    "2409.10963": {
+      "paper_id": "2409.10963v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10963v1",
+      "paper_key": "2409.10963",
+      "paper_title": "JWST PRIMER: A lack of outshining in four normal z =4-6 galaxies from the ALMA-CRISTAL Survey",
+      "paper_url": "http://arxiv.org/abs/2409.10963v1",
+      "paper_abstract": "We present a spatially resolved analysis of four star-forming galaxies at $z = 4.44-5.64$ using data from the JWST PRIMER and ALMA-CRISTAL surveys to probe the stellar and inter-stellar medium properties on the sub-kpc scale. In the $1-5\\,\\mu{\\rm m}$ JWST NIRCam imaging we find that the galaxies are composed of multiple clumps (between $2$ and $\\sim 8$) separated by $\\simeq 5\\,{\\rm kpc}$, with comparable morphologies and sizes in the rest-frame UV and optical. Using BAGPIPES to perform pixel-by-pixel SED fitting to the JWST data we show that the SFR ($\\simeq 25\\,{\\rm M}_{\\odot}/{\\rm yr}$) and stellar mass (${\\rm log}_{10}(M_{\\star}/{\\rm M}_{\\odot}) \\simeq 9.5$) derived from the resolved analysis are in close ($ \\lesssim 0.3\\,{\\rm dex}$) agreement with those obtained by fitting the integrated photometry. In contrast to studies of lower-mass sources, we thus find a reduced impact of outshining of the older (more massive) stellar populations in these normal $z \\simeq 5$ galaxies. Our JWST analysis recovers bluer rest-frame UV slopes ($\\beta \\simeq -2.1$) and younger ages ($\\simeq 100\\,{\\rm Myr}$) than archival values. We find that the dust continuum from ALMA-CRISTAL seen in two of these galaxies correlates, as expected, with regions of redder rest-frame UV slopes and the SED-derived $A_{\\rm V}$, as well as the peak in the stellar mass map. We compute the resolved IRX-$\\beta$ relation, showing that the IRX is consistent with the local starburst attenuation curve and further demonstrating the presence of an inhomogeneous dust distribution within the galaxies. A comparison of the CRISTAL sources to those from the FirstLight zoom-in simulation of galaxies with the same $M_{\\star}$ and SFR reveals similar age and colour gradients, suggesting that major mergers may be important in the formation of clumpy galaxies at this epoch.",
+      "paper_authors": [
+        "N. E. P. Lines",
+        "R. A. A. Bowler",
+        "N. J. Adams",
+        "R. Fisher",
+        "R. G. Varadaraj",
+        "Y. Nakazato",
+        "M. Aravena",
+        "R. J. Assef",
+        "J. E. Birkin",
+        "D. Ceverino",
+        "E. da Cunha",
+        "F. Cullen",
+        "I. De Looze",
+        "C. T. Donnan",
+        "J. S. Dunlop",
+        "A. Ferrara",
+        "N. A. Grogin",
+        "R. Herrera-Camus",
+        "R. Ikeda",
+        "A. M. Koekemoer",
+        "M. Killi",
+        "J. Li",
+        "D. J. McLeod",
+        "R. J. McLure",
+        "I. Mitsuhashi",
+        "P. G. P\u00e9rez-Gonz\u00e1lez",
+        "M. Relano",
+        "M. Solimano",
+        "J. S. Spilker",
+        "V. Villanueva",
+        "N. Yoshida"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "16 pages, 8 figures, 3 tables, plus 4 page appendix. Submitted to\n  MNRAS",
+      "repo_url": "#"
+    },
+    "2409.10961": {
+      "paper_id": "2409.10961v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10961v1",
+      "paper_key": "2409.10961",
+      "paper_title": "The ALMA-CRISTAL Survey: Spatially-resolved Star Formation Activity and Dust Content in 4 < z < 6 Star-forming Galaxies",
+      "paper_url": "http://arxiv.org/abs/2409.10961v1",
+      "paper_abstract": "Using a combination of HST, JWST, and ALMA data, we perform spatially resolved spectral energy distributions (SED) fitting of fourteen 4<z<6 UV-selected main-sequence galaxies targeted by the [CII] Resolved ISM in Star-forming Galaxies with ALMA (CRISTAL) Large Program. We consistently model the emission from stars and dust in ~0.5-1kpc spatial bins to obtain maps of their physical properties. We find no offsets between the stellar masses (M*) and star formation rates (SFRs) derived from their global emission and those from adding up the values in our spatial bins, suggesting there is no bias of outshining by young stars on the derived global properties. We show that ALMA observations are important to derive robust parameter maps because they reduce the uncertainties in Ldust (hence Av and SFR). Using these maps we explore the resolved star-forming main sequence for z~5 galaxies, finding that this relation persists in typical star-forming galaxies in the early Universe. We find less obscured star formation where the M* (and SFR) surface densities are highest, typically in the central regions, contrary to the global relation between these parameters. We speculate this could be caused by feedback driving gas and dust out of these regions. However, more observations of infrared luminosities with ALMA are needed to verify this. Finally, we test empirical SFR prescriptions based on the UV+IR and [CII] line luminosity, finding they work well at the scales probed (~kpc). Our work demonstrates the usefulness of joint HST, JWST, and ALMA resolved SED modeling analyses at high redshift.",
+      "paper_authors": [
+        "Juno Li",
+        "Elisabete Da Cunha",
+        "Jorge Gonz\u00e1lez-L\u00f3pez",
+        "Manuel Aravena",
+        "Ilse De Looze",
+        "N. M. F\u00f6rster Schreiber",
+        "Rodrigo Herrera-Camus",
+        "Justin Spilker",
+        "Ken-ichi Tadaki",
+        "Loreto Barcos-Munoz",
+        "Andrew J. Battisti",
+        "Jack E. Birkin",
+        "Rebecca A. A. Bowler",
+        "Rebecca Davies",
+        "Tanio D\u00edaz-Santos",
+        "Andrea Ferrara",
+        "Deanne B. Fisher",
+        "Jacqueline Hodge",
+        "Ryota Ikeda",
+        "Meghana Killi",
+        "Lilian Lee",
+        "Daizhong Liu",
+        "Dieter Lutz",
+        "Ikki Mitsuhashi",
+        "Thorsten Naab",
+        "Ana Posses",
+        "Monica Rela\u00f1o",
+        "Manuel Solimano",
+        "Hannah \u00dcbler",
+        "Stefan Anthony van der Giessen",
+        "Vicente Villanueva"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "30 pages, 16 figures; re-submitted to ApJ",
+      "repo_url": "#"
+    },
+    "2409.10959": {
+      "paper_id": "2409.10959v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10959v1",
+      "paper_key": "2409.10959",
+      "paper_title": "Leveraging Reviewer Experience in Code Review Comment Generation",
+      "paper_url": "http://arxiv.org/abs/2409.10959v1",
+      "paper_abstract": "Modern code review is a ubiquitous software quality assurance process aimed at identifying potential issues within newly written code. Despite its effectiveness, the process demands large amounts of effort from the human reviewers involved. To help alleviate this workload, researchers have trained deep learning models to imitate human reviewers in providing natural language code reviews. Formally, this task is known as code review comment generation. Prior work has demonstrated improvements in this task by leveraging machine learning techniques and neural models, such as transfer learning and the transformer architecture. However, the quality of the model generated reviews remain sub-optimal due to the quality of the open-source code review data used in model training. This is in part due to the data obtained from open-source projects where code reviews are conducted in a public forum, and reviewers possess varying levels of software development experience, potentially affecting the quality of their feedback. To accommodate for this variation, we propose a suite of experience-aware training methods that utilise the reviewers' past authoring and reviewing experiences as signals for review quality. Specifically, we propose experience-aware loss functions (ELF), which use the reviewers' authoring and reviewing ownership of a project as weights in the model's loss function. Through this method, experienced reviewers' code reviews yield larger influence over the model's behaviour. Compared to the SOTA model, ELF was able to generate higher quality reviews in terms of accuracy, informativeness, and comment types generated. The key contribution of this work is the demonstration of how traditional software engineering concepts such as reviewer experience can be integrated into the design of AI-based automated code review models.",
+      "paper_authors": [
+        "Hong Yi Lin",
+        "Patanamon Thongtanunam",
+        "Christoph Treude",
+        "Michael W. Godfrey",
+        "Chunhua Liu",
+        "Wachiraphan Charoenwet"
+      ],
+      "primary_category": "cs.SE",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10940": {
+      "paper_id": "2409.10940v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10940v1",
+      "paper_key": "2409.10940",
+      "paper_title": "RoadRunner M&M -- Learning Multi-range Multi-resolution Traversability Maps for Autonomous Off-road Navigation",
+      "paper_url": "http://arxiv.org/abs/2409.10940v1",
+      "paper_abstract": "Autonomous robot navigation in off-road environments requires a comprehensive understanding of the terrain geometry and traversability. The degraded perceptual conditions and sparse geometric information at longer ranges make the problem challenging especially when driving at high speeds. Furthermore, the sensing-to-mapping latency and the look-ahead map range can limit the maximum speed of the vehicle. Building on top of the recent work RoadRunner, in this work, we address the challenge of long-range (100 m) traversability estimation. Our RoadRunner (M&M) is an end-to-end learning-based framework that directly predicts the traversability and elevation maps at multiple ranges (50 m, 100 m) and resolutions (0.2 m, 0.8 m) taking as input multiple images and a LiDAR voxel map. Our method is trained in a self-supervised manner by leveraging the dense supervision signal generated by fusing predictions from an existing traversability estimation stack (X-Racer) in hindsight and satellite Digital Elevation Maps. RoadRunner M&M achieves a significant improvement of up to 50% for elevation mapping and 30% for traversability estimation over RoadRunner, and is able to predict in 30% more regions compared to X-Racer while achieving real-time performance. Experiments on various out-of-distribution datasets also demonstrate that our data-driven approach starts to generalize to novel unstructured environments. We integrate our proposed framework in closed-loop with the path planner to demonstrate autonomous high-speed off-road robotic navigation in challenging real-world environments. Project Page: https://leggedrobotics.github.io/roadrunner_mm/",
+      "paper_authors": [
+        "Manthan Patel",
+        "Jonas Frey",
+        "Deegan Atha",
+        "Patrick Spieler",
+        "Marco Hutter",
+        "Shehryar Khattak"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "Under review for IEEE RA-L",
+      "repo_url": "#"
+    },
+    "2409.10920": {
+      "paper_id": "2409.10920v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10920v1",
+      "paper_key": "2409.10920",
+      "paper_title": "A review of a work by Raymond: Sturmian Hamiltonians with a large coupling constant -- periodic approximations and gap labels",
+      "paper_url": "http://arxiv.org/abs/2409.10920v1",
+      "paper_abstract": "We present a review of the work L. Raymond from 1995. The review aims at making this work more accessible and offers adaptations of some statements and proofs. In addition, this review forms an applicable framework for the complete solution of the Dry Ten Martini Problem for Sturmian Hamiltonians as appears in the work arXiv:2402.16703 by R. Band, S. Beckus and R. Loewy. A Sturmian Hamiltonian is a one-dimensional Schr\\\"odinger operator whose potential is a Sturmian sequence multiplied by a coupling constant, $V\\in\\mathbb{R}$. The spectrum of such an operator is commonly approximated by the spectra of designated periodic operators. If $V>4$, then the spectral bands of the periodic operators exhibit a particular combinatorial structure. This structure provides a formula for the integrated density of states. Employing this, it is shown that if $V>4$, then all the gaps, as predicted by the gap labelling theorem, are there.",
+      "paper_authors": [
+        "Ram Band",
+        "Siegfried Beckus",
+        "Barak Biber",
+        "Laurent Raymond",
+        "Yannik Thomas"
+      ],
+      "primary_category": "math-ph",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "63 pages, 5 figures",
+      "repo_url": "#"
+    },
+    "2409.10903": {
+      "paper_id": "2409.10903v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10903v1",
+      "paper_key": "2409.10903",
+      "paper_title": "Efficient Computation of Whole-Body Control Utilizing Simplified Whole-Body Dynamics via Centroidal Dynamics",
+      "paper_url": "http://arxiv.org/abs/2409.10903v1",
+      "paper_abstract": "In this study, we present a novel method for enhancing the computational efficiency of whole-body control for humanoid robots, a challenge accentuated by their high degrees of freedom. The reduced-dimension rigid body dynamics of a floating base robot is constructed by segmenting its kinematic chain into constrained and unconstrained chains, simplifying the dynamics of the unconstrained chain through the centroidal dynamics. The proposed dynamics model is possible to be applied to whole-body control methods, allowing the problem to be divided into two parts for more efficient computation. The efficiency of the framework is demonstrated by comparative experiments in simulations. The calculation results demonstrate a significant reduction in processing time, highlighting an improvement over the times reported in current methodologies. Additionally, the results also shows the computational efficiency increases as the degrees of freedom of robot model increases.",
+      "paper_authors": [
+        "Junewhee Ahn",
+        "Jaesug Jung",
+        "Yisoo Lee",
+        "Hokyun Lee",
+        "Sami Haddadin",
+        "Jaeheung Park"
+      ],
+      "primary_category": "cs.RO",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "submitted to RA-L, under review",
+      "repo_url": "#"
+    },
+    "2409.10895": {
+      "paper_id": "2409.10895v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10895v1",
+      "paper_key": "2409.10895",
+      "paper_title": "An Exploration of Effects of Dark Mode on University Students: A Human Computer Interface Analysis",
+      "paper_url": "http://arxiv.org/abs/2409.10895v1",
+      "paper_abstract": "This research dives into exploring the dark mode effects on students of a university. Research is carried out implementing the dark mode in e-Learning sites and its impact on behavior of the users. Students are spending more time in front of the screen for their studies especially after the pandemic. The blue light from the screen during late hours affects circadian rhythm of the body which negatively impacts the health of humans including eye strain and headache. The difficulty that students faced during the time of interacting with various e-Learning sites especially during late hours was analyzed using different techniques of HCI like survey, interview, evaluation methods and principles of design. Dark mode is an option which creates a pseudo inverted adaptable interface by changing brighter elements of UI into a dim-lit friendly environment. It is said that using dark mode will lessen the amount of blue light emitted and benefit students who suffer from eye strain. Students' interactions with dark mode were investigated using a survey, and an e-learning site with a dark mode theme was created. Based on the students' comments, researchers looked into the effects of dark mode on HCI in e-learning sites. The findings indicate that students have a clear preference for dark mode: 79.7% of survey participants preferred dark mode on their phones, and 61.7% said they would be interested in seeing this feature added to e-learning websites.",
+      "paper_authors": [
+        "Awan Shrestha",
+        "Sabil Shrestha",
+        "Biplov Paneru",
+        "Bishwash Paneru",
+        "Sansrit Paudel",
+        "Ashish Adhikari",
+        "Sanjog Chhetri Sapkota"
+      ],
+      "primary_category": "cs.HC",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "none",
+      "repo_url": "#"
+    },
+    "2409.10893": {
+      "paper_id": "2409.10893v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10893v1",
+      "paper_key": "2409.10893",
+      "paper_title": "Enhancing Security Testing Software for Systems that Cannot be Subjected to the Risks of Penetration Testing Through the Incorporation of Multi-threading and and Other Capabilities",
+      "paper_url": "http://arxiv.org/abs/2409.10893v1",
+      "paper_abstract": "The development of a system vulnerability analysis tool (SVAT) for complex mission critical systems (CMCS) produced the software for operation and network attack results review (SONARR). This software builds upon the Blackboard Architecture and uses its a rule-fact logic to assess model networks to identify potential pathways that an attacker might take through them via the exploitation of vulnerabilities within the network. The SONARR objects and algorithm were developed previously; however, performance was insufficient for analyzing large networks. This paper describes and analyzes the performance of a multi-threaded SONARR algorithm and other enhancements which were developed to increase SONARR's performance and facilitate the analysis of large networks.",
+      "paper_authors": [
+        "Matthew Tassava",
+        "Cameron Kolodjski",
+        "Jordan Milbrath",
+        "Jeremy Straub"
+      ],
+      "primary_category": "cs.CR",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "The U.S. federal sponsor has requested that we not include funding\n  acknowledgement for this publication",
+      "repo_url": "#"
+    },
+    "2409.10892": {
+      "paper_id": "2409.10892v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10892v1",
+      "paper_key": "2409.10892",
+      "paper_title": "Technical Upgrades to and Enhancements of a System Vulnerability Analysis Tool Based on the Blackboard Architecture",
+      "paper_url": "http://arxiv.org/abs/2409.10892v1",
+      "paper_abstract": "A system vulnerability analysis technique (SVAT) for the analysis of complex mission critical systems (CMCS) that cannot be taken offline or subjected to the risks posed by traditional penetration testing was previously developed. This system uses path-based analysis of vulnerabilities to identify potential threats to system security. Generalization logic building on the Blackboard Architecture's rule-fact paradigm was implemented in this system, the software for operation and network attack results review (SONARR). This paper presents an overview of additional functionality that has been added to this tool and the experimentation that was conducted to analyze their efficacy and the performance benefits of the new in-memory processing capabilities of the SONARR algorithm. The results of the performance tests and their relation to networks' architecture are discussed. The paper concludes with a discussion of avenues of future work, including the implementation of multithreading, additional analysis metrics like confidentiality, integrity, and availability, and improved heuristic development.",
+      "paper_authors": [
+        "Matthew Tassava",
+        "Cameron Kolodjski",
+        "Jeremy Straub"
+      ],
+      "primary_category": "cs.CR",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "The U.S. federal sponsor has requested that we not include funding\n  acknowledgement for this publication",
+      "repo_url": "#"
+    },
+    "2409.10877": {
+      "paper_id": "2409.10877v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10877v1",
+      "paper_key": "2409.10877",
+      "paper_title": "A modified recursive transfer matrix algorithm for radiation and scattering computation of multilayer spheres",
+      "paper_url": "http://arxiv.org/abs/2409.10877v1",
+      "paper_abstract": "We discusses the electromagnetic scattering and radiation problems of multilayered spheres, reviewing the historical expansion of the Lorentz-Mie theory and the numerical stability issues encountered in handling multilayered spheres. By combining recursive methods with the transfer matrix method, we propose a modified transfer matrix algorithm designed for the stable and efficient calculation of electromagnetic scattering coefficients of multilayered spheres. The new algorithm simplifies the recursive formulas by introducing Debye potentials and logarithmic derivatives, effectively avoiding numerical overflow issues associated with Bessel functions under large complex variables. Numerical test results demonstrate that this algorithm offers superior stability and applicability when dealing with complex cases such as thin shells and strongly absorbing media.",
+      "paper_authors": [
+        "Jianing Zhang"
+      ],
+      "primary_category": "physics.comp-ph",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10843": {
+      "paper_id": "2409.10843v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10843v1",
+      "paper_key": "2409.10843",
+      "paper_title": "An Observer-Based View of Euclidean Geometry",
+      "paper_url": "http://arxiv.org/abs/2409.10843v1",
+      "paper_abstract": "Influence network of events is a view of the universe based on events that may be related to one another via influence. The network of events form a partially-ordered set which, when quantified consistently via a technique called chain projection, results in the emergence of spacetime and the Minkowski metric as well as the Lorentz transformation through changing an observer from one frame to another. Interestingly, using this approach, the motion of a free electron as well as the Dirac equation can be described. Indeed, the same approach can be employed to show how a discrete version of some of the features of Euclidean geometry, including directions, dimensions, subspaces, Pythagorean theorem, and geometric shapes can emerge.   In this paper, after reviewing the essentials of the influence network formalism, we build on some of our previous works to further develop aspects of Euclidean geometry. Specifically, we present the emergence of geometric shapes, a discrete version of the Parallel postulate, the dot product, and the outer (wedge product) in 2+1 dimensions. Finally, we show that the scalar quantification of two concatenated orthogonal intervals exhibits features that are similar to those of the well-known concept of geometric product in geometric Clifford algebras.",
+      "paper_authors": [
+        "Newshaw Bahreyni",
+        "Carlo Cafaro",
+        "Leonardo Rossetti"
+      ],
+      "primary_category": "math-ph",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "37 pages, 13 figures",
+      "repo_url": "#"
+    },
+    "2409.10814": {
+      "paper_id": "2409.10814v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10814v1",
+      "paper_key": "2409.10814",
+      "paper_title": "Advanced Halide Scintillators: From the Bulk to Nano",
+      "paper_url": "http://arxiv.org/abs/2409.10814v1",
+      "paper_abstract": "Halide scintillators play a crucial role in the detection of ionizing radiation since the discovery of scintillation in NaI:Tl in 1948. The discovery of NaI:Tl motivated the research and development (R&D) of halide scintillators resulting in the development of CsI:Tl, CsI:Na, CaF$_2$:Eu, etc. Later, the R&D shifted toward oxide materials due to their high mechanical and chemical stability, good scintillation properties, and relative ease of bulk single crystal growth. However, the development in crystal growth technology allowed for the growth of high-quality single crystals of hygroscopic and mechanically fragile materials including SrI$_2$ and LaBr$_3$. Scintillators based on these materials exhibit excellent performance and push the limits of inorganic scintillators. These results motivated intense research of a large variety of halide-based scintillators. Moreover, materials based on lead halide perovskites found application in the fields of photovoltaics, solid-state lighting, and lasers. The first studies show also the significant potential of lead halide perovskites as ultrafast scintillators in the form of NCs. The purpose of this review is to summarize the R&D in the field of halide scintillators during the last decade and to highlight perspectives for future development.",
+      "paper_authors": [
+        "Vojtech Vanecek",
+        "Katerina Decka",
+        "Eva Mihokova",
+        "Vaclav Cuba",
+        "Robert Kral",
+        "Martin Nikl"
+      ],
+      "primary_category": "physics.app-ph",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "22 pgaes,16 figures, 355 references",
+      "repo_url": "#"
+    },
+    "2409.10805": {
+      "paper_id": "2409.10805v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10805v1",
+      "paper_key": "2409.10805",
+      "paper_title": "Opportunities and challenges of mRNA technologies in development of Dengue Virus Vaccine",
+      "paper_url": "http://arxiv.org/abs/2409.10805v1",
+      "paper_abstract": "Dengue virus (DENV) is a mosquito-borne virus with a significant human health concern. With 390 million infections annually and 96 million showing clinical symptoms, severe dengue can lead to life-threatening conditions like dengue hemorrhagic fever (DHF) and dengue shock syndrome (DSS). The only FDA-approved vaccine, Dengvaxia, has limitations due to antibody-dependent enhancement (ADE), necessitating careful administration. The recent pre-approval of TAK-003 by WHO in 2024 highlights ongoing efforts to improve vaccine options. This review explores recent advancements in dengue vaccine development, emphasizing potential utility of mRNA-based vaccines. By examining current clinical trial data and innovations, we aim to identify promising strategies to address the limitations of existing vaccines and enhance global dengue prevention efforts.",
+      "paper_authors": [
+        "Xiaoyang Liu",
+        "Daniel Salmon"
+      ],
+      "primary_category": "q-bio.OT",
+      "publish_time": "2024-09-17",
+      "update_time": "2024-09-17",
+      "comments": "16 pages, 1 figure, 1 table",
+      "repo_url": "#"
+    },
+    "2409.10776": {
+      "paper_id": "2409.10776v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10776v1",
+      "paper_key": "2409.10776",
+      "paper_title": "Research evolution of metal organic frameworks: A scientometric approach with human-in-the-loop",
+      "paper_url": "http://arxiv.org/abs/2409.10776v1",
+      "paper_abstract": "This paper reports on a scientometric analysis bolstered by human in the loop, domain experts, to examine the field of metal organic frameworks (MOFs) research. Scientometric analyses reveal the intellectual landscape of a field. The study engaged MOF scientists in the design and review of our research workflow. MOF materials are an essential component in next generation renewable energy storage and biomedical technologies. The research approach demonstrates how engaging experts, via human in the loop processes, can help develop a comprehensive view of a field research trends, influential works, and specialized topics.",
+      "paper_authors": [
+        "Xintong Zhao",
+        "Kyle Langlois",
+        "Jacob Furst",
+        "Yuan An",
+        "Xiaohua Hu",
+        "Diego Gomez Gualdron",
+        "Fernando Uribe-Romo",
+        "Jane Greenberg"
+      ],
+      "primary_category": "cs.DL",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10764": {
+      "paper_id": "2409.10764v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10764v1",
+      "paper_key": "2409.10764",
+      "paper_title": "Federated Learning for Smart Grid: A Survey on Applications and Potential Vulnerabilities",
+      "paper_url": "http://arxiv.org/abs/2409.10764v1",
+      "paper_abstract": "The Smart Grid (SG) is a critical energy infrastructure that collects real-time electricity usage data to forecast future energy demands using information and communication technologies (ICT). Due to growing concerns about data security and privacy in SGs, federated learning (FL) has emerged as a promising training framework. FL offers a balance between privacy, efficiency, and accuracy in SGs by enabling collaborative model training without sharing private data from IoT devices. In this survey, we thoroughly review recent advancements in designing FL-based SG systems across three stages: generation, transmission and distribution, and consumption. Additionally, we explore potential vulnerabilities that may arise when implementing FL in these stages. Finally, we discuss the gap between state-of-the-art FL research and its practical applications in SGs and propose future research directions. These focus on potential attack and defense strategies for FL-based SG systems and the need to build a robust FL-based SG infrastructure. Unlike traditional surveys that address security issues in centralized machine learning methods for SG systems, this survey specifically examines the applications and security concerns in FL-based SG systems for the first time. Our aim is to inspire further research into applications and improvements in the robustness of FL-based SG systems.",
+      "paper_authors": [
+        "Zikai Zhang",
+        "Suman Rath",
+        "Jiaohao Xu",
+        "Tingsong Xiao"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10754": {
+      "paper_id": "2409.10754v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10754v1",
+      "paper_key": "2409.10754",
+      "paper_title": "Impact Of Emotions on Information Seeking And Sharing Behaviors During Pandemic",
+      "paper_url": "http://arxiv.org/abs/2409.10754v1",
+      "paper_abstract": "We propose a novel approach to assess the public's coping behavior during the COVID-19 outbreak by examining the emotions. Specifically, we explore (1) changes in the public's emotions with the COVID-19 crisis progression and (2) the impacts of the public's emotions on their information-seeking, information-sharing behaviors, and compliance with stay-at-home policies. We base the study on the appraisal tendency framework, detect the public's emotions by fine-tuning a pre-trained RoBERTa model, and cross-analyze third-party behavioral data. We demonstrate the feasibility and reliability of our proposed approach in providing a large-scale examination of the publi's emotions and coping behaviors in a real-world crisis: COVID-19. The approach complements prior crisis communication research, mainly based on self-reported, small-scale experiments and survey data. Our results show that anger and fear are more prominent than other emotions experienced by the public at the pandemic's outbreak stage. Results also show that the extent of low certainty and passive emotions (e.g., sadness, fear) was related to increased information-seeking and information-sharing behaviors. Additionally, high-certainty (e.g., anger) and low-certainty (e.g., sadness, fear) emotions during the outbreak correlated to the public's compliance with stay-at-home orders.",
+      "paper_authors": [
+        "Smitha Muthya Sudheendra",
+        "Hao Xu",
+        "Jisu Huh",
+        "Jaideep Srivastava"
+      ],
+      "primary_category": "cs.SI",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "Presented at 10th International Conference on Computational Social\n  Science (IC2S2) 2024",
+      "repo_url": "#"
+    },
+    "2409.10735": {
+      "paper_id": "2409.10735v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10735v1",
+      "paper_key": "2409.10735",
+      "paper_title": "Notas sobre Teor\u00eda de colas y algunas aplicaciones",
+      "paper_url": "http://arxiv.org/abs/2409.10735v1",
+      "paper_abstract": "This paper presents a comprehensive review of stochastic processes, with a particular focus on Markov chains and jump processes. The main results related to queuing systems are analyzed. Additionally, conditions that ensure the stability, or ergodicity, of such systems are presented. The paper also discusses stability results for queuing networks and their extension to visiting systems. Finally, key contributions concerning the Probability Generating Function, an essential tool in the analysis of the aforementioned processes, are introduced. The review is conducted from the perspective of queuing theory, grounded in the Kendall-Lee notation, emphasizing stability results and the computation of performance measures based on the specific characteristics of each process.",
+      "paper_authors": [
+        "Carlos E. Mart\u00ednez-Rodr\u00edguez"
+      ],
+      "primary_category": "math.PR",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "in Spanish language",
+      "repo_url": "#"
+    },
+    "2409.10701": {
+      "paper_id": "2409.10701v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10701v1",
+      "paper_key": "2409.10701",
+      "paper_title": "A Novel Optimal Transport-Based Approach for Interpolating Spectral Time Series: Paving the Way for Photometric Classification of Supernovae",
+      "paper_url": "http://arxiv.org/abs/2409.10701v1",
+      "paper_abstract": "This paper introduces a novel method for creating spectral time series, which can be used for generating synthetic light curves for photometric classification but also for applications like K-corrections and bolometric corrections. This approach is particularly valuable in the era of large astronomical surveys, where it can significantly enhance the analysis and understanding of an increasing number of SNe, even in the absence of extensive spectroscopic data. methods: By employing interpolations based on optimal transport theory, starting from a spectroscopic sequence, we derive weighted average spectra with high cadence. The weights incorporate an uncertainty factor, for penalizing interpolations between spectra with significant epoch differences and with poor match between the synthetic and observed photometry. results: Our analysis reveals that even with phase difference of up to 40 days between pairs of spectra, optical transport can generate interpolated spectral time series that closely resemble the original ones. Synthetic photometry extracted from these spectral time series aligns well with observed photometry. The best results are achieved in the V band, with relative residuals less than 10% for 87% and 84% of the data for type Ia and II, respectively. For the B, g, R and r bands the relative residuals are between 65% and 87% within the previously mentioned 10% threshold for both classes. The worse results correspond to the i and I bands where, in the case, of SN~Ia the values drop to 53% and 42%, respectively. conclusions: We introduce a new method to construct spectral time series for individual SN starting from a sparse spectroscopic sequence, demonstrating its capability to produce reliable light curves that can be used for photometric classification.",
+      "paper_authors": [
+        "M. Ramirez",
+        "G. Pignata",
+        "Francisco F\u00f6rster",
+        "Santiago Gonz\u00e1les-Gait\u00e1n",
+        "Claudia P. Guti\u00e9rrez",
+        "B. Ayala",
+        "Guillermo Cabrera-Vives",
+        "M\u00e1rcio Catelan",
+        "A. M. Mu\u00f1oz Arancibia",
+        "J. Pineda-Garc\u00eda"
+      ],
+      "primary_category": "astro-ph.HE",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "Accepted for publication in A&A",
+      "repo_url": "#"
+    },
+    "2409.10690": {
+      "paper_id": "2409.10690v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10690v1",
+      "paper_key": "2409.10690",
+      "paper_title": "Centralization potential of automotive E/E architectures",
+      "paper_url": "http://arxiv.org/abs/2409.10690v1",
+      "paper_abstract": "Current automotive E/E architectures are subject to significant transformations: Computing-power-intensive advanced driver-assistance systems, bandwidth-hungry infotainment systems, the connection of the vehicle with the internet and the consequential need for cyber-security drives the centralization of E/E architectures. A centralized architecture is often seen as a key enabler to master those challenges. Available research focuses mostly on the different types of E/E architectures and contrasts their advantages and disadvantages. There is a research gap on guidelines for system designers and function developers to analyze the potential of their systems for centralization. The present paper aims to quantify centralization potential reviewing relevant literature and conducting qualitative interviews with industry practitioners. In literature, we identified seven key automotive system properties reaching limitations in current automotive architectures: busload, functional safety, computing power, feature dependencies, development and maintenance costs, error rate, modularity and flexibility. These properties serve as quantitative evaluation criteria to estimate whether centralization would enhance overall system performance. In the interviews, we have validated centralization and its fundament - the conceptual systems engineering - as capabilities to mitigate these limitations. By focusing on practical insights and lessons learned, this research provides system designers with actionable guidance to optimize their systems, addressing the outlined challenges while avoiding monolithic architecture. This paper bridges the gap between theoretical research and practical application, offering valuable takeaways for practitioners.",
+      "paper_authors": [
+        "Lucas Mauser",
+        "Stefan Wagner"
+      ],
+      "primary_category": "cs.SE",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "In Practice track paper submitted as preprint to 'The Journal of\n  Systems & Software'. 1 page for highlights, 28 pages for content and 3 pages\n  for references. 5 figures, 10 tables",
+      "repo_url": "#"
+    },
+    "2409.10679": {
+      "paper_id": "2409.10679v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10679v1",
+      "paper_key": "2409.10679",
+      "paper_title": "SPORES-HWO. II. Limits on Planetary Companions of Future High-contrast Imaging Targets from $>$20 Years of HIRES and HARPS Radial Velocities",
+      "paper_url": "http://arxiv.org/abs/2409.10679v1",
+      "paper_abstract": "Future large, space-based observatories with starlight suppression technology, e.g., the Habitable Worlds Observatory (HWO), will directly image and characterize nearby Earth-like exoplanets. Prior limits on planet masses and system architectures from radial velocity (RV) measurements of potential exo-Earth hosts are critical to the success of HWO's science goals. Here, we present a uniform analysis of archival RVs from HIRES/Keck and HARPS/ESO of the most promising targets for the HWO exo-Earth survey. We analyze RVs and stellar activity indicators of 90 stars in the NASA ExEP Mission Star List and SPORES-HWO Catalog, finding 33 Keplerian signals associated with known planets and 12 signals associated with stellar activity. We also identify 5 new RV signals that we classify as either planet candidates or sources requiring confirmation, noting that the RV observations are biased toward cooler and less active stars. Assessing the sensitivity of the HIRES and HARPS data, we calculate RV limits ranging from $K_{\\rm RV} = 0.6 \\,{\\rm m\\,s}^{-1}$ (HD 10700) to $371 \\,{\\rm m\\,s}^{-1}$ (HD 17925) in the middle of the conservative habitable zone (HZ), corresponding to projected planet masses of $5.4 \\,{\\rm M_\\oplus}$ and $10.6 \\,{\\rm M_{Jup}}$ for those stars. The median HZ sensitivity limit of our sample is $M_{\\rm p} \\sin i \\simeq 66 \\,{\\rm M_\\oplus}$. This work demonstrates the need for future extreme precision radial velocity (EPRV) monitoring of high-priority targets for the next generation of DI missions that will search for habitable extrasolar systems. We advocate for the use of these results in developing future EPRV strategies.",
+      "paper_authors": [
+        "Caleb K. Harada",
+        "Courtney D. Dressing",
+        "Stephen R. Kane",
+        "Sarah Blunt",
+        "Jamie Dietrich",
+        "Natalie R. Hinkel",
+        "Zhexing Li",
+        "Eric Mamajek",
+        "Malena Rice",
+        "Noah W. Tuchow",
+        "Emma V. Turtelboom",
+        "Robert A. Wittenmyer"
+      ],
+      "primary_category": "astro-ph.EP",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "55 pages, 12 figures, 9 tables, submitted to AAS Journals",
+      "repo_url": "#"
+    },
+    "2409.10645": {
+      "paper_id": "2409.10645v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10645v1",
+      "paper_key": "2409.10645",
+      "paper_title": "Excess entropy of strongly coupled Yukawa fluids",
+      "paper_url": "http://arxiv.org/abs/2409.10645v1",
+      "paper_abstract": "The entropy of strongly coupled Yukawa fluids is discussed from several perspectives. First, it is demonstrated that a vibrational paradigm of atomic dynamics in dense fluids can be used to obtain a simple and accurate estimate of the entropy without any adjustable parameters. Second, it is explained why a quasiuniversal value of the excess entropy of simple fluids at the freezing point should be expected, and it is demonstrated that a remaining very weak dependence of the freezing point entropy on the screening parameter in the Yukawa fluid can be described by a simple linear function. Third, a scaling of the excess entropy with the freezing temperature is examined, a modified form of the Rosenfeld-Tarazona scaling is put forward, and some consequences are briefly discussed. Fourth, the location of the Frenkel line on the phase diagram of Yukawa systems is discussed in terms of the excess entropy and compared with some predictions made in the literature. Fifth, the excess entropy scaling of the transport coefficients (self-diffusion, viscosity, and thermal conductivity) is reexamined using the contemporary datasets for the transport properties of Yukawa fluids. The results could be of particular interest in the context of complex (dusty) plasmas, colloidal suspensions, electrolytes, and other related systems with soft pairwise interactions.",
+      "paper_authors": [
+        "Sergey Khrapak"
+      ],
+      "primary_category": "cond-mat.soft",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "11 pages, 6 figures",
+      "repo_url": "#"
+    },
+    "2409.10638": {
+      "paper_id": "2409.10638v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10638v1",
+      "paper_key": "2409.10638",
+      "paper_title": "The Sun's Birth Environment: Context for Meteoritics",
+      "paper_url": "http://arxiv.org/abs/2409.10638v1",
+      "paper_abstract": "Meteorites trace planet formation in the Sun's protoplanetary disk, but they also record the influence of the Sun's birth environment. Whether the Sun formed in a region like Taurus-Auriga with ~10^2 stars, or a region like the Carina Nebula with ~10^6 stars, matters for how large the Sun's disk was, for how long and from how far away it accreted gas from the molecular cloud, and how it acquired radionuclides like 26Al. To provide context for the interpretation of meteoritic data, we review what is known about the Sun's birth environment. Based on an inferred gas disk outer radius ~50-90 AU, radial transport in the disk, and the abundances of noble gases in Jupiter's atmosphere, the Sun's molecular cloud and protoplanetary disk were exposed to an ultraviolet flux G0 ~30-3000 during its birth and first ~10 Myr of evolution. Based on the orbits of Kuiper Belt objects, the Solar System was subsequently exposed to a stellar density ~100 Msol/pc^3 for ~100 Myr, strongly implying formation in a bound cluster. These facts suggest formation in a region like the outskirts of the Orion Nebula, perhaps 2 pc from the center. The protoplanetary disk might have accreted gas for many Myr, but a few x10^5 yr seems more likely. It probably inherited radionuclides from its molecular cloud, enriched by inputs from supernovae and especially Wolf-Rayet star winds, and acquired a typical amount of 26Al.",
+      "paper_authors": [
+        "Steve Desch",
+        "N\u00faria Miret-Roig"
+      ],
+      "primary_category": "astro-ph.EP",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "Accepted for publication in Space Science Reviews as part of\n  International Space Science Institute \"Evolution of the Solar System:\n  Constraints from Meteorites\" meeting, June 5-9, 2023",
+      "repo_url": "#"
+    },
+    "2409.10632": {
+      "paper_id": "2409.10632v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10632v1",
+      "paper_key": "2409.10632",
+      "paper_title": "SpectrAx: Spectral Search of Axion-Like Particles Using Multi-Band Observations of Galaxy Clusters from SKA, SO, CMB-S4 and eROSITA",
+      "paper_url": "http://arxiv.org/abs/2409.10632v1",
+      "paper_abstract": "The existence of axions or Axion-Like Particles (ALPs) has been predicted by various Beyond Standard Model (BSM) theories, and the proposed photon-ALP interaction is one of the ways to probe them. Such an interaction will lead to photon-ALP resonant conversion in galaxy clusters, resulting in a polarized spectral distortion in the CMB along the cluster line of sight. The estimation of this signal from galaxy clusters requires an estimation of the electron density and magnetic field in galaxy clusters. We have developed a new Bayesian framework \\texttt{SpectrAx} that can use observations from different electromagnetic bands such as radio, CMB, optical, and X-ray to infer the astrophysical properties of a galaxy cluster, such as cluster its redshift, electron density and magnetic field, along with the BSM physics such as ALPs. By using the simulated data for upcoming CMB surveys such as Simons Observatory (SO) and CMB-S4 in combination with Square Kilometer Array (SKA) and extended ROentgen Survey with an Imaging Telescope Array (eROSITA) we demonstrate the capability in accurately inferring the ALPs coupling strength along with the radial profile of electron density and magnetic field from galaxy clusters. The application of this framework to the data from future surveys by combining SKA+SO+eROSITA and SKA+CMB-S4+eROSITA will make it possible for the first time to explore both astrophysics and BSM physics from low-redshift galaxy clusters using a multi-band approach.",
+      "paper_authors": [
+        "Harsh Mehta",
+        "Suvodip Mukherjee"
+      ],
+      "primary_category": "astro-ph.CO",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "31 pages, 11 figures, 6 tables, Submitted to JCAP",
+      "repo_url": "#"
+    },
+    "2409.10631": {
+      "paper_id": "2409.10631v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10631v1",
+      "paper_key": "2409.10631",
+      "paper_title": "Spatially Resolved Kinematics of SLACS Lens Galaxies. I: Data and Kinematic Classification",
+      "paper_url": "http://arxiv.org/abs/2409.10631v1",
+      "paper_abstract": "We obtain spatially resolved kinematics with the Keck Cosmic Web Imager (KCWI) integral-field spectrograph for a sample of 14 massive (11 < log10 M* < 12) lensing early-type galaxies (ETGs) at redshifts z=0.15-0.35 from the Sloan Lens ACS (SLACS) survey. We integrate within the galaxy effective radius and examine the rotational and dispersion velocities, showing that 11/14 are quantitatively classified as slow rotators in comparison with local galaxy surveys. Of key interest is the ability of this data to enable the precision required for cosmological inference with lensing time delays on scales of 1-2% uncertainty. The dataset is unprecedented for galaxy-scale lens galaxies, in terms of signal-to-noise ratio, sampling, and calibration. We test sources of systematic error and identify primary contributions from choice of stellar template library and wavelength range of the spectral fit. Systematics are quantified at the spatial bin level, resulting in systematic error at 3% and positive spatial covariance of 2%. We examine the effects of integration of the kinematic maps within circular apertures of different sizes and compare with SDSS single-aperture velocity dispersions. The most recent velocity dispersion estimates from SDSS spectra are found to be biased by a factor of 5.3% with respect to KCWI data, and to underestimate uncertainties. We examine correlations between scaling relations and show the correlations to agree with previous SLACS analysis with no statistically significant disagreement. A follow-up paper will present Jeans modeling and discuss the context of these observations within broader studies of galaxy evolution and cosmology.",
+      "paper_authors": [
+        "Shawn Knabel",
+        "Tommaso Treu",
+        "Michele Cappellari",
+        "Anowar J. Shajib",
+        "Chih-Fan Chen",
+        "Vardha N. Bennert"
+      ],
+      "primary_category": "astro-ph.CO",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "33 pages, 14 figures, submitted for publication in ApJ",
+      "repo_url": "#"
+    },
+    "2409.10629": {
+      "paper_id": "2409.10629v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10629v1",
+      "paper_key": "2409.10629",
+      "paper_title": "Approximation by Fourier sums on the classes of generalized Poisson integrals",
+      "paper_url": "http://arxiv.org/abs/2409.10629v1",
+      "paper_abstract": "We present a survey of results related to the solution of Kolmogorov--Nikolsky problem for Fourier sums on the classes of generalized Poisson integrals $C^{\\alpha,r}_{\\beta,p}$, which consists in finding of asymptotic equalities for exact upper boundaries o f uniform norms of deviations of partial Fourier sums on the classes of $2\\pi$--periodic functions $C^{\\alpha,r}_{\\beta,p}$, which are defined as convolutions of the functions, which belong to the unit balls pf the spaces $L_{p}$, $1\\leq p\\leq \\infty$, with generalized Poisson kernels $$ P_{\\alpha,r,\\beta}(t)=\\sum\\limits_{k=1}^{\\infty}e^{-\\alpha k^{r}}\\cos \\big(kt-\\frac{\\beta\\pi}{2}\\big), \\ \\alpha>0, r>0, \\ \\beta\\in \\mathbb{R}.$$",
+      "paper_authors": [
+        "Anatoly Serdyuk",
+        "Tetiana Stepaniuk"
+      ],
+      "primary_category": "math.CA",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "Survey article",
+      "repo_url": "#"
+    },
+    "2409.10624": {
+      "paper_id": "2409.10624v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10624v1",
+      "paper_key": "2409.10624",
+      "paper_title": "Physical Representations of Corner Symmetries",
+      "paper_url": "http://arxiv.org/abs/2409.10624v1",
+      "paper_abstract": "We give the full representation theory of the gravitational extended corner symmetry group in two-dimensions. This includes projective representations, which correspond to representations of the quantum corner symmetry group. We begin with a review of Mackey's theory of induced representations and then proceed to its application to the corner symmetries. The field representations, induced from the irreducible representations of the special linear group are worked out first. The little group method is then applied to the extended corner symmetry group to obtain the irreducible unitary representations. Finally, we focus on projective representations and their application to the description of local subsystems.",
+      "paper_authors": [
+        "Ludovic Varrin"
+      ],
+      "primary_category": "hep-th",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "24 pages",
+      "repo_url": "#"
+    },
+    "2409.10621": {
+      "paper_id": "2409.10621v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10621v1",
+      "paper_key": "2409.10621",
+      "paper_title": "Inferring stellar parameters and their uncertainties from high-resolution spectroscopy using invertible neural networks",
+      "paper_url": "http://arxiv.org/abs/2409.10621v1",
+      "paper_abstract": "Context: New spectroscopic surveys will increase the number of astronomical objects requiring characterization by over tenfold.. Machine learning tools are required to address this data deluge in a fast and accurate fashion. Most machine learning algorithms can not estimate error directly, making them unsuitable for reliable science.   Aims: We aim to train a supervised deep-learning algorithm tailored for high-resolution observational stellar spectra. This algorithm accurately infer precise estimates while providing coherent estimates of uncertainties by leveraging information from both the neural network and the spectra.   Methods: We train a conditional Invertible Neural Network (cINN) on observational spectroscopic data obtained from the GIRAFFE spectrograph (HR10 and HR21 setups) within the Gaia-ESO survey. A key features of cINN is its ability to produce the Bayesian posterior distribution of parameters for each spectrum. By analyzing this distribution, we inferred parameters and their uncertainties. Several tests have been applied to study how parameters and errors are estimated.   Results: We achieved an accuracy of 28K in $T_{\\text{eff}}$, 0.06 dex in $\\log g$, 0.03 dex in $[\\text{Fe/H}]$, and between 0.05 dex and 0.17 dex for the other abundances for high quality spectra. Accuracy remains stable with low signal-to-noise ratio spectra. The uncertainties obtained are well within the same order of magnitude. The network accurately reproduces astrophysical relationships both on the scale of the Milky Way and within smaller star clusters. We created a table containing the new parameters generated by our cINN.   Conclusion: This neural network represents a compelling proposition for future astronomical surveys. These coherent derived uncertainties make it possible to reuse these estimates in other works as Bayesian priors and thus present a solid basis for future work.",
+      "paper_authors": [
+        "Nils Candebat",
+        "Giuseppe Germano Sacco",
+        "Laura Magrini",
+        "Francesco Belfiore",
+        "Mathieu Van-der-Swaelmen",
+        "Stefano Zibetti"
+      ],
+      "primary_category": "astro-ph.GA",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10596": {
+      "paper_id": "2409.10596v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10596v1",
+      "paper_key": "2409.10596",
+      "paper_title": "Unveiling the Diversity of Type IIn Supernovae via Systematic Light Curve Modeling",
+      "paper_url": "http://arxiv.org/abs/2409.10596v1",
+      "paper_abstract": "Type IIn supernovae (SNeIIn) are a highly heterogeneous subclass of core-collapse supernovae, spectroscopically characterized by signatures of interaction with a dense circumstellar medium (CSM). Here we systematically model the light curves of 142 archival SNeIIn using MOSFiT (the Modular Open Source Fitter for Transients). We find that the observed and inferred properties of SNIIn are diverse, but there are some trends. The typical SN CSM is dense ($\\sim$10$^{-12}$gcm$^{-3}$) with highly diverse CSM geometry, with a median CSM mass of $\\sim$1M$_\\odot$. The ejecta are typically massive ($\\gtrsim10$M$_\\odot$), suggesting massive progenitor systems. We find positive correlations between the CSM mass and the rise and fall times of SNeIIn. Furthermore there are positive correlations between the rise time and fall times and the $r$-band luminosity. We estimate the mass-loss rates of our sample (where spectroscopy is available) and find a high median mass-loss rate of $\\sim$10$^{-2}$M$_\\odot$yr$^{-1}$, with a range between 10$^{-4}$--1M$_\\odot$yr$^{-1}$. These mass-loss rates are most similar to the mass loss from great eruptions of luminous blue variables, consistent with the direct progenitor detections in the literature. We also discuss the role that binary interactions may play, concluding that at least some of our SNeIIn may be from massive binary systems. Finally, we estimate a detection rate of 1.6$\\times$10$^5$yr$^{-1}$ in the upcoming Legacy Survey of Space and Time at the Vera C. Rubin Observatory.",
+      "paper_authors": [
+        "C. L. Ransome",
+        "V. A. Villar"
+      ],
+      "primary_category": "astro-ph.HE",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "55 pages, 19 figures, 6 tables",
+      "repo_url": "#"
+    },
+    "2409.11184": {
+      "paper_id": "2409.11184v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11184v1",
+      "paper_key": "2409.11184",
+      "paper_title": "LASERS: LAtent Space Encoding for Representations with Sparsity for Generative Modeling",
+      "paper_url": "http://arxiv.org/abs/2409.11184v1",
+      "paper_abstract": "Learning compact and meaningful latent space representations has been shown to be very useful in generative modeling tasks for visual data. One particular example is applying Vector Quantization (VQ) in variational autoencoders (VQ-VAEs, VQ-GANs, etc.), which has demonstrated state-of-the-art performance in many modern generative modeling applications. Quantizing the latent space has been justified by the assumption that the data themselves are inherently discrete in the latent space (like pixel values). In this paper, we propose an alternative representation of the latent space by relaxing the structural assumption than the VQ formulation. Specifically, we assume that the latent space can be approximated by a union of subspaces model corresponding to a dictionary-based representation under a sparsity constraint. The dictionary is learned/updated during the training process. We apply this approach to look at two models: Dictionary Learning Variational Autoencoders (DL-VAEs) and DL-VAEs with Generative Adversarial Networks (DL-GANs). We show empirically that our more latent space is more expressive and has leads to better representations than the VQ approach in terms of reconstruction quality at the expense of a small computational overhead for the latent space computation. Our results thus suggest that the true benefit of the VQ approach might not be from discretization of the latent space, but rather the lossy compression of the latent space. We confirm this hypothesis by showing that our sparse representations also address the codebook collapse issue as found common in VQ-family models.",
+      "paper_authors": [
+        "Xin Li",
+        "Anand Sarwate"
+      ],
+      "primary_category": "cs.LG",
+      "publish_time": "2024-09-16",
+      "update_time": "2024-09-16",
+      "comments": "Preprint, under review. Submitted to 2025 IEEE/CVF Winter Conference\n  on Applications of Computer Vision (WACV)",
+      "repo_url": "#"
+    },
+    "2409.10579": {
+      "paper_id": "2409.10579v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10579v1",
+      "paper_key": "2409.10579",
+      "paper_title": "Recent advances in deep learning and language models for studying the microbiome",
+      "paper_url": "http://arxiv.org/abs/2409.10579v1",
+      "paper_abstract": "Recent advancements in deep learning, particularly large language models (LLMs), made a significant impact on how researchers study microbiome and metagenomics data. Microbial protein and genomic sequences, like natural languages, form a language of life, enabling the adoption of LLMs to extract useful insights from complex microbial ecologies. In this paper, we review applications of deep learning and language models in analyzing microbiome and metagenomics data. We focus on problem formulations, necessary datasets, and the integration of language modeling techniques. We provide an extensive overview of protein/genomic language modeling and their contributions to microbiome studies. We also discuss applications such as novel viromics language modeling, biosynthetic gene cluster prediction, and knowledge integration for metagenomics studies.",
+      "paper_authors": [
+        "Binghao Yan",
+        "Yunbi Nam",
+        "Lingyao Li",
+        "Rebecca A. Deek",
+        "Hongzhe Li",
+        "Siyuan Ma"
+      ],
+      "primary_category": "q-bio.QM",
+      "publish_time": "2024-09-15",
+      "update_time": "2024-09-15",
+      "comments": null,
+      "repo_url": "#"
+    },
+    "2409.10562": {
+      "paper_id": "2409.10562v1",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10562v1",
+      "paper_key": "2409.10562",
+      "paper_title": "Are Existing Road Design Guidelines Suitable for Autonomous Vehicles?",
+      "paper_url": "http://arxiv.org/abs/2409.10562v1",
+      "paper_abstract": "The emergence of Autonomous Vehicles (AVs) has spurred research into testing the resilience of their perception systems, i.e. to ensure they are not susceptible to making critical misjudgements. It is important that they are tested not only with respect to other vehicles on the road, but also those objects placed on the roadside. Trash bins, billboards, and greenery are all examples of such objects, typically placed according to guidelines that were developed for the human visual system, and which may not align perfectly with the needs of AVs. Existing tests, however, usually focus on adversarial objects with conspicuous shapes/patches, that are ultimately unrealistic given their unnatural appearances and the need for white box knowledge. In this work, we introduce a black box attack on the perception systems of AVs, in which the objective is to create realistic adversarial scenarios (i.e. satisfying road design guidelines) by manipulating the positions of common roadside objects, and without resorting to `unnatural' adversarial patches. In particular, we propose TrashFuzz , a fuzzing algorithm to find scenarios in which the placement of these objects leads to substantial misperceptions by the AV -- such as mistaking a traffic light's colour -- with overall the goal of causing it to violate traffic laws. To ensure the realism of these scenarios, they must satisfy several rules encoding regulatory guidelines about the placement of objects on public streets. We implemented and evaluated these attacks for the Apollo, finding that TrashFuzz induced it into violating 15 out of 24 different traffic laws.",
+      "paper_authors": [
+        "Yang Sun",
+        "Christopher M. Poskitt",
+        "Jun Sun"
+      ],
+      "primary_category": "cs.CV",
+      "publish_time": "2024-09-13",
+      "update_time": "2024-09-13",
+      "comments": "Currently under review by IEEE Transactions on Software Engineering\n  (TSE)",
       "repo_url": "#"
     }
   }
