@@ -12302,11 +12302,11 @@
       "repo_url": "#"
     },
     "2406.12536": {
-      "paper_id": "2406.12536v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.12536v1",
+      "paper_id": "2406.12536v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2406.12536v2",
       "paper_key": "2406.12536",
       "paper_title": "ViDSOD-100: A New Dataset and a Baseline Model for RGB-D Video Salient Object Detection",
-      "paper_url": "http://arxiv.org/abs/2406.12536v1",
+      "paper_url": "http://arxiv.org/abs/2406.12536v2",
       "paper_abstract": "With the rapid development of depth sensor, more and more RGB-D videos could be obtained. Identifying the foreground in RGB-D videos is a fundamental and important task. However, the existing salient object detection (SOD) works only focus on either static RGB-D images or RGB videos, ignoring the collaborating of RGB-D and video information. In this paper, we first collect a new annotated RGB-D video SOD (ViDSOD-100) dataset, which contains 100 videos within a total of 9,362 frames, acquired from diverse natural scenes. All the frames in each video are manually annotated to a high-quality saliency annotation. Moreover, we propose a new baseline model, named attentive triple-fusion network (ATF-Net), for RGB-D video salient object detection. Our method aggregates the appearance information from an input RGB image, spatio-temporal information from an estimated motion map, and the geometry information from the depth map by devising three modality-specific branches and a multi-modality integration branch. The modality-specific branches extract the representation of different inputs, while the multi-modality integration branch combines the multi-level modality-specific features by introducing the encoder feature aggregation (MEA) modules and decoder feature aggregation (MDA) modules. The experimental findings conducted on both our newly introduced ViDSOD-100 dataset and the well-established DAVSOD dataset highlight the superior performance of the proposed ATF-Net. This performance enhancement is demonstrated both quantitatively and qualitatively, surpassing the capabilities of current state-of-the-art techniques across various domains, including RGB-D saliency detection, video saliency detection, and video object segmentation. Our data and our code are available at github.com/jhl-Det/RGBD_Video_SOD.",
       "paper_authors": [
         "Junhao Lin",
@@ -12318,7 +12318,7 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-06-18",
-      "update_time": "2024-06-18",
+      "update_time": "2024-09-19",
       "comments": null,
       "repo_url": "https://github.com/jhl-det/rgbd_video_sod"
     },
@@ -18168,11 +18168,11 @@
       "repo_url": "#"
     },
     "2408.05817": {
-      "paper_id": "2408.05817v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.05817v1",
+      "paper_id": "2408.05817v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.05817v2",
       "paper_key": "2408.05817",
-      "paper_title": "High Probability Low Latency Sequential Change Detection over an Unknown Finite Horizon",
-      "paper_url": "http://arxiv.org/abs/2408.05817v1",
+      "paper_title": "High Probability Latency Sequential Change Detection over an Unknown Finite Horizon",
+      "paper_url": "http://arxiv.org/abs/2408.05817v2",
       "paper_abstract": "A finite horizon variant of the quickest change detection problem is studied, in which the goal is to minimize a delay threshold (latency), under constraints on the probability of false alarm and the probability that the latency is exceeded. In addition, the horizon is not known to the change detector. A variant of the cumulative sum (CuSum) test with a threshold that increasing logarithmically with time is proposed as a candidate solution to the problem. An information-theoretic lower bound on the minimum value of the latency under the constraints is then developed. This lower bound is used to establish certain asymptotic optimality properties of the proposed test in terms of the horizon and the false alarm probability. Some experimental results are given to illustrate the performance of the test.",
       "paper_authors": [
         "Yu-Han Huang",
@@ -18180,7 +18180,7 @@
       ],
       "primary_category": "cs.DS",
       "publish_time": "2024-08-11",
-      "update_time": "2024-08-11",
+      "update_time": "2024-09-18",
       "comments": "7 pages, 2 figures, International Symposium of Information Theory",
       "repo_url": "#"
     },
@@ -22251,7 +22251,7 @@
       "publish_time": "2024-09-04",
       "update_time": "2024-09-04",
       "comments": null,
-      "repo_url": "#"
+      "repo_url": "https://github.com/koninik/htg_evaluation"
     },
     "2409.02492": {
       "paper_id": "2409.02492v1",
@@ -25183,11 +25183,11 @@
       "repo_url": "#"
     },
     "2405.16038": {
-      "paper_id": "2405.16038v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.16038v1",
+      "paper_id": "2405.16038v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2405.16038v2",
       "paper_key": "2405.16038",
       "paper_title": "Rethinking Early-Fusion Strategies for Improved Multispectral Object Detection",
-      "paper_url": "http://arxiv.org/abs/2405.16038v1",
+      "paper_url": "http://arxiv.org/abs/2405.16038v2",
       "paper_abstract": "Most recent multispectral object detectors employ a two-branch structure to extract features from RGB and thermal images. While the two-branch structure achieves better performance than a single-branch structure, it overlooks inference efficiency. This conflict is increasingly aggressive, as recent works solely pursue higher performance rather than both performance and efficiency. In this paper, we address this issue by improving the performance of efficient single-branch structures. We revisit the reasons causing the performance gap between these structures. For the first time, we reveal the information interference problem in the naive early-fusion strategy adopted by previous single-branch structures. Besides, we find that the domain gap between multispectral images, and weak feature representation of the single-branch structure are also key obstacles for performance. Focusing on these three problems, we propose corresponding solutions, including a novel shape-priority early-fusion strategy, a weakly supervised learning method, and a core knowledge distillation technique. Experiments demonstrate that single-branch networks equipped with these three contributions achieve significant performance enhancements while retaining high efficiency. Our code will be available at \\url{https://github.com/XueZ-phd/Efficient-RGB-T-Early-Fusion-Detection}.",
       "paper_authors": [
         "Xue Zhang",
@@ -25201,8 +25201,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-05-25",
-      "update_time": "2024-05-25",
-      "comments": null,
+      "update_time": "2024-09-19",
+      "comments": "This paper has been accepted by IEEE T-IV journal. Please jump to\n  External DOI to view the official version",
       "repo_url": "https://github.com/xuez-phd/efficient-rgb-t-early-fusion-detection"
     },
     "2405.15903": {
@@ -26236,11 +26236,11 @@
       "repo_url": "#"
     },
     "2409.09464": {
-      "paper_id": "2409.09464v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09464v1",
+      "paper_id": "2409.09464v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09464v2",
       "paper_key": "2409.09464",
       "paper_title": "Rethinking the Influence of Source Code on Test Case Generation",
-      "paper_url": "http://arxiv.org/abs/2409.09464v1",
+      "paper_url": "http://arxiv.org/abs/2409.09464v2",
       "paper_abstract": "Large language models (LLMs) have been widely applied to assist test generation with the source code under test provided as the context. This paper aims to answer the question: If the source code under test is incorrect, will LLMs be misguided when generating tests? The effectiveness of test cases is measured by their accuracy, coverage, and bug detection effectiveness. Our evaluation results with five open- and six closed-source LLMs on four datasets demonstrate that incorrect code can significantly mislead LLMs in generating correct, high-coverage, and bug-revealing tests. For instance, in the HumanEval dataset, LLMs achieve 80.45% test accuracy when provided with task descriptions and correct code, but only 57.12% when given task descriptions and incorrect code. For the APPS dataset, prompts with correct code yield tests that detect 39.85% of the bugs, while prompts with incorrect code detect only 19.61%. These findings have important implications for the deployment of LLM-based testing: using it on mature code may help protect against future regression, but on early-stage immature code, it may simply bake in errors. Our findings also underscore the need for further research to improve LLMs resilience against incorrect code in generating reliable and bug-revealing tests.",
       "paper_authors": [
         "Dong Huang",
@@ -26251,9 +26251,9 @@
       ],
       "primary_category": "cs.SE",
       "publish_time": "2024-09-14",
-      "update_time": "2024-09-14",
+      "update_time": "2024-09-19",
       "comments": "23 pages",
-      "repo_url": "#"
+      "repo_url": "https://github.com/huangd1999/EmpiricalStudyofTestGeneration"
     }
   },
   "Survey": {
@@ -33167,11 +33167,11 @@
       "repo_url": "#"
     },
     "2409.09363": {
-      "paper_id": "2409.09363v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09363v1",
+      "paper_id": "2409.09363v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09363v2",
       "paper_key": "2409.09363",
       "paper_title": "Security and Privacy Perspectives of People Living in Shared Home Environments",
-      "paper_url": "http://arxiv.org/abs/2409.09363v1",
+      "paper_url": "http://arxiv.org/abs/2409.09363v2",
       "paper_abstract": "Security and privacy perspectives of people in a multi-user home are a growing area of research, with many researchers reflecting on the complicated power imbalance and challenging access control issues of the devices involved. However, these studies primarily focused on the multi-user scenarios in traditional family home settings, leaving other types of multi-user home environments, such as homes shared by co-habitants without a familial relationship, under-studied. This paper closes this research gap via quantitative and qualitative analysis of results from an online survey and content analysis of sampled online posts on Reddit. It explores the complex roles of shared home users, which depend on various factors unique to the shared home environment, e.g., who owns what home devices, how home devices are used by multiple users, and more complicated relationships between the landlord and people in the shared home and among co-habitants. Half (50.7%) of our survey participants thought that devices in a shared home are less secure than in a traditional family home. This perception was found statistically significantly associated with factors such as the fear of devices being tampered with in their absence and (lack of) trust in other co-habitants and their visitors. Our study revealed new user types and relationships in a multi-user environment such as ExternalPrimary-InternalPrimary while analysing the landlord and shared home resident relationship with regard to shared home device use. We propose a threat actor model for shared home environments, which has a focus on possible malicious behaviours of current and past co-habitants of a shared home, as a special type of insider threat in a home environment. We also recommend further research to understand the complex roles co-habitants can play in navigating and adapting to a shared home environment's security and privacy landscape.",
       "paper_authors": [
         "Nandita Pattnaik",
@@ -33180,8 +33180,8 @@
       ],
       "primary_category": "cs.HC",
       "publish_time": "2024-09-14",
-      "update_time": "2024-09-14",
-      "comments": "40 pages, 3 figures, Accepted to be presented in CSCW (November 2024)",
+      "update_time": "2024-09-19",
+      "comments": "Published in Proceedings of the ACM on Human-Computer Interaction\n  (PACMHCI), Volume 8, Issue CSCW2, Article Number 368, 39 pages, ACM, 2024,\n  accepted to CSCW 2024 (27th ACM Conference on Computer-Supported Cooperative\n  Work and Social Computing) for presentation, https://doi.org/10.1145/3686907",
       "repo_url": "#"
     },
     "2409.09356": {
@@ -33353,19 +33353,18 @@
       "repo_url": "#"
     },
     "2409.09227": {
-      "paper_id": "2409.09227v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09227v1",
+      "paper_id": "2409.09227v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09227v2",
       "paper_key": "2409.09227",
       "paper_title": "Exploring Dimensionality Reduction of SDSS Spectral Abundances",
-      "paper_url": "http://arxiv.org/abs/2409.09227v1",
+      "paper_url": "http://arxiv.org/abs/2409.09227v2",
       "paper_abstract": "High-resolution stellar spectra offer valuable insights into atmospheric parameters and chemical compositions. However, their inherent complexity and high-dimensionality present challenges in fully utilizing the information they contain. In this study, we utilize data from the Apache Point Observatory Galactic Evolution Experiment (APOGEE) within the Sloan Digital Sky Survey IV (SDSS-IV) to explore latent representations of chemical abundances by applying five dimensionality reduction techniques: PCA, t-SNE, UMAP, Autoencoder, and VAE. Through this exploration, we evaluate the preservation of information and compare reconstructed outputs with the original 19 chemical abundance data. Our findings reveal a performance ranking of PCA < UMAP < t-SNE < VAE < Autoencoder, through comparing their explained variance under optimized MSE. The performance of non-linear (Autoencoder and VAE) algorithms has approximately 10\\% improvement compared to linear (PCA) algorithm. This difference can be referred to as the \"non-linearity gap.\" Future work should focus on incorporating measurement errors into extension VAEs, thereby enhancing the reliability and interpretability of chemical abundance exploration in astronomical spectra.",
       "paper_authors": [
-        "Qianyu Fan",
-        "Joshua S. Speagle"
+        "Qianyu Fan"
       ],
       "primary_category": "astro-ph.IM",
       "publish_time": "2024-09-13",
-      "update_time": "2024-09-13",
+      "update_time": "2024-09-19",
       "comments": null,
       "repo_url": "#"
     },
@@ -35299,11 +35298,11 @@
       "repo_url": "https://github.com/JojiJoseph/3dgs-gradient-segmentation"
     },
     "2409.11668": {
-      "paper_id": "2409.11668v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11668v1",
+      "paper_id": "2409.11668v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11668v2",
       "paper_key": "2409.11668",
       "paper_title": "WALLABY Pilot Survey: HI source-finding with a machine learning framework",
-      "paper_url": "http://arxiv.org/abs/2409.11668v1",
+      "paper_url": "http://arxiv.org/abs/2409.11668v2",
       "paper_abstract": "The data volumes generated by the WALLABY atomic Hydrogen (HI) survey using the Australiian Square Kilometre Array Pathfinder (ASKAP) necessitate greater automation and reliable automation in the task of source-finding and cataloguing. To this end, we introduce and explore a novel deep learning framework for detecting low Signal-to-Noise Ratio (SNR) HI sources in an automated fashion. Specfically, our proposed method provides an automated process for separating true HI detections from false positives when used in combination with the Source Finding Application (SoFiA) output candidate catalogues. Leveraging the spatial and depth capabilities of 3D Convolutional Neural Networks (CNNs), our method is specifically designed to recognise patterns and features in three-dimensional space, making it uniquely suited for rejecting false positive sources in low SNR scenarios generated by conventional linear methods. As a result, our approach is significantly more accurate in source detection and results in considerably fewer false detections compared to previous linear statistics-based source finding algorithms. Performance tests using mock galaxies injected into real ASKAP data cubes reveal our method's capability to achieve near-100% completeness and reliability at a relatively low integrated SNR~3-5. An at-scale version of this tool will greatly maximise the science output from the upcoming widefield HI surveys.",
       "paper_authors": [
         "Li Wang",
@@ -35317,11 +35316,12 @@
         "Jonghwan Rhee",
         "Helga D\u00e9nes",
         "Nathan Deg",
-        "Peter Kamphuis"
+        "Peter Kamphuis",
+        "Barbara Catinella"
       ],
       "primary_category": "astro-ph.GA",
       "publish_time": "2024-09-18",
-      "update_time": "2024-09-18",
+      "update_time": "2024-09-19",
       "comments": "14 pages, 12 figures, accepted for publication in the Publications of\n  the Astronomical Society of Australia",
       "repo_url": "#"
     },
