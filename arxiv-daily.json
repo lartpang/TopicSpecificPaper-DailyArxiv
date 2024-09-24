@@ -16128,11 +16128,11 @@
   },
   "Camouflaged Object Detection": {
     "2408.15020": {
-      "paper_id": "2408.15020v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15020v1",
+      "paper_id": "2408.15020v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2408.15020v2",
       "paper_key": "2408.15020",
       "paper_title": "Hierarchical Graph Interaction Transformer with Dynamic Token Clustering for Camouflaged Object Detection",
-      "paper_url": "http://arxiv.org/abs/2408.15020v1",
+      "paper_url": "http://arxiv.org/abs/2408.15020v2",
       "paper_abstract": "Camouflaged object detection (COD) aims to identify the objects that seamlessly blend into the surrounding backgrounds. Due to the intrinsic similarity between the camouflaged objects and the background region, it is extremely challenging to precisely distinguish the camouflaged objects by existing approaches. In this paper, we propose a hierarchical graph interaction network termed HGINet for camouflaged object detection, which is capable of discovering imperceptible objects via effective graph interaction among the hierarchical tokenized features. Specifically, we first design a region-aware token focusing attention (RTFA) with dynamic token clustering to excavate the potentially distinguishable tokens in the local region. Afterwards, a hierarchical graph interaction transformer (HGIT) is proposed to construct bi-directional aligned communication between hierarchical features in the latent interaction space for visual semantics enhancement. Furthermore, we propose a decoder network with confidence aggregated feature fusion (CAFF) modules, which progressively fuses the hierarchical interacted features to refine the local detail in ambiguous regions. Extensive experiments conducted on the prevalent datasets, i.e. COD10K, CAMO, NC4K and CHAMELEON demonstrate the superior performance of HGINet compared to existing state-of-the-art methods. Our code is available at https://github.com/Garyson1204/HGINet.",
       "paper_authors": [
         "Siyuan Yao",
@@ -16143,8 +16143,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-08-27",
-      "update_time": "2024-08-27",
-      "comments": "Submitted to IEEE Transactions on Image Processing",
+      "update_time": "2024-09-21",
+      "comments": "Accepted by IEEE Transactions on Image Processing",
       "repo_url": "https://github.com/garyson1204/hginet"
     },
     "2408.14562": {
@@ -19634,12 +19634,12 @@
       "repo_url": "#"
     },
     "2404.11243": {
-      "paper_id": "2404.11243v2",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2404.11243v2",
+      "paper_id": "2404.11243v3",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2404.11243v3",
       "paper_key": "2404.11243",
-      "paper_title": "Patch-Consistent Optical Translation Across Sensors: Large-Scale Denoising Diffusion with Heterogeneous Change Detection as a Use Case",
-      "paper_url": "http://arxiv.org/abs/2404.11243v2",
-      "paper_abstract": "In the field of remote sensing, the challenge of comparing images captured by disparate sensors is a common obstacle. This requires image translation -- converting imagery from one sensor domain to another while preserving the original content. Denoising Diffusion Implicit Models (DDIM) are potential state-of-the-art solutions for such domain translation due to their proven superiority in multiple image-to-image translation tasks in classic computer vision. However, these models struggle with large-scale multi-patch imagery, often focusing solely on small patches and resulting in inconsistencies across the full image. To overcome these limitations, we propose a novel method that leverages DDIM for effective optical image translation over large areas. Our approach is tailored to super-resolve large-scale low spatial resolution images into high-resolution equivalents from disparate optical sensors, ensuring uniformity across hundreds of patches. Extensive experiments with a dataset of paired Sentinel-II and Planet Dove images show that our approach provides precise domain adaptation and artifact reduction. Our technique preserves the image content while also improving radiometric (color) accuracy and feature representations. The outcome is a high-resolution large-scale image with consistent patches, vital for applications such as heterogeneous change detection (HCD). We present a unique training and testing algorithm rooted in DDIMs, a thorough image quality assessment, and a comparative study against the standard classifier-free guided DDIM framework and five other leading methods. The efficacy of our approach is further demonstrated by substantial enhancements in HCD tasks performed in the urban settings of Beirut, Lebanon, and Austin, USA.",
+      "paper_title": "Multi-Sensor Diffusion-Driven Optical Image Translation for Large-Scale Applications",
+      "paper_url": "http://arxiv.org/abs/2404.11243v3",
+      "paper_abstract": "Comparing images captured by disparate sensors is a common challenge in remote sensing. This requires image translation -- converting imagery from one sensor domain to another while preserving the original content. Denoising Diffusion Implicit Models (DDIM) are potential state-of-the-art solutions for such domain translation due to their proven superiority in multiple image-to-image translation tasks in classic computer vision. However, these models struggle with large-scale multi-patch imagery, often focusing solely on small patches and resulting in inconsistencies across the full image. To overcome these limitations, we propose a novel method that leverages DDIM for effective optical image translation over large areas. Our approach super-resolves large-scale low spatial resolution images into high-resolution equivalents from disparate optical sensors, ensuring uniformity across hundreds of patches. Our contributions lie in new forward and reverse diffusion processes, which are crucial for addressing the challenges of large-scale image translation. Extensive experiments with a dataset of paired Sentinel-II and Planet Dove images demonstrate that our approach provides precise domain adaptation and artifact reduction. The proposed method preserves image content while improving radiometric (color) accuracy and feature representation. The outcome is a high-resolution large-scale image with consistent patches, vital for applications such as heterogeneous change detection (HCD). We present a unique training and testing algorithm rooted in DDIMs, a thorough image quality assessment, and a comparative study against the standard classifier-free guided DDIM framework and five other leading methods. The usefulness of our approach is further demonstrated in HCD tasks performed in the urban settings of Beirut, Lebanon, and Austin, USA.",
       "paper_authors": [
         "Jo\u00e3o Gabriel Vinholi",
         "Marco Chini",
@@ -19650,8 +19650,8 @@
       ],
       "primary_category": "cs.CV",
       "publish_time": "2024-04-17",
-      "update_time": "2024-07-15",
-      "comments": null,
+      "update_time": "2024-09-23",
+      "comments": "22 pages",
       "repo_url": "#"
     },
     "2404.10842": {
@@ -31603,15 +31603,15 @@
       "publish_time": "2024-09-16",
       "update_time": "2024-09-16",
       "comments": "5+15 pages; 3+15 figures",
-      "repo_url": "#"
+      "repo_url": "https://github.com/LSSTDESC/NaMaster"
     },
     "2409.10509": {
-      "paper_id": "2409.10509v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10509v1",
+      "paper_id": "2409.10509v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.10509v2",
       "paper_key": "2409.10509",
-      "paper_title": "Pennsieve - A Collaborative Platform for Translational Neuroscience and Beyond",
-      "paper_url": "http://arxiv.org/abs/2409.10509v1",
-      "paper_abstract": "The exponential growth of neuroscientific data necessitates platforms that facilitate data management and multidisciplinary collaboration. In this paper, we introduce Pennsieve - an open-source, cloud-based scientific data management platform built to meet these needs. Pennsieve supports complex multimodal datasets and provides tools for data visualization and analyses. It takes a comprehensive approach to data integration, enabling researchers to define custom metadata schemas and utilize advanced tools to filter and query their data. Pennsieve's modular architecture allows external applications to extend its capabilities, and collaborative workspaces with peer-reviewed data publishing mechanisms promote high-quality datasets optimized for downstream analysis, both in the cloud and on-premises.   Pennsieve forms the core for major neuroscience research programs including the NIH SPARC Initiative, NIH HEAL Initiative's PRECISION Human Pain Network, and NIH HEAL RE-JOIN Initiative. It serves more than 80 research groups worldwide, along with several large-scale, inter-institutional projects at clinical sites through the University of Pennsylvania. Underpinning the SPARC.Science, Epilepsy.Science, and Pennsieve Discover portals, Pennsieve stores over 125 TB of scientific data, with 35 TB of data publicly available across more than 350 high-impact datasets. It adheres to the findable, accessible, interoperable, and reusable (FAIR) principles of data sharing and is recognized as one of the NIH-approved Data Repositories. By facilitating scientific data management, discovery, and analysis, Pennsieve fosters a robust and collaborative research ecosystem for neuroscience and beyond.",
+      "paper_title": "Pennsieve: A Collaborative Platform for Translational Neuroscience and Beyond",
+      "paper_url": "http://arxiv.org/abs/2409.10509v2",
+      "paper_abstract": "The exponential growth of neuroscientific data necessitates platforms that facilitate data management and multidisciplinary collaboration. In this paper, we introduce Pennsieve - an open-source, cloud-based scientific data management platform built to meet these needs. Pennsieve supports complex multimodal datasets and provides tools for data visualization and analyses. It takes a comprehensive approach to data integration, enabling researchers to define custom metadata schemas and utilize advanced tools to filter and query their data. Pennsieve's modular architecture allows external applications to extend its capabilities, and collaborative workspaces with peer-reviewed data publishing mechanisms promote high-quality datasets optimized for downstream analysis, both in the cloud and on-premises.   Pennsieve forms the core for major neuroscience research programs including NIH SPARC Initiative, NIH HEAL Initiative's PRECISION Human Pain Network, and NIH HEAL RE-JOIN Initiative. It serves more than 80 research groups worldwide, along with several large-scale, inter-institutional projects at clinical sites through the University of Pennsylvania. Underpinning the SPARC.Science, Epilepsy.Science, and Pennsieve Discover portals, Pennsieve stores over 125 TB of scientific data, with 35 TB of data publicly available across more than 350 high-impact datasets. It adheres to the findable, accessible, interoperable, and reusable (FAIR) principles of data sharing and is recognized as one of the NIH-approved Data Repositories. By facilitating scientific data management, discovery, and analysis, Pennsieve fosters a robust and collaborative research ecosystem for neuroscience and beyond.",
       "paper_authors": [
         "Zack Goldblum",
         "Zhongchuan Xu",
@@ -31625,7 +31625,7 @@
       ],
       "primary_category": "cs.CY",
       "publish_time": "2024-09-16",
-      "update_time": "2024-09-16",
+      "update_time": "2024-09-20",
       "comments": "71 pages, 12 figures",
       "repo_url": "#"
     },
@@ -32500,12 +32500,12 @@
       "repo_url": "#"
     },
     "2409.09874": {
-      "paper_id": "2409.09874v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09874v1",
+      "paper_id": "2409.09874v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.09874v2",
       "paper_key": "2409.09874",
       "paper_title": "The Landscape of GPU-Centric Communication",
-      "paper_url": "http://arxiv.org/abs/2409.09874v1",
-      "paper_abstract": "n recent years, GPUs have become the preferred accelerators for HPC and ML applications due to their parallelism and fast memory bandwidth. While GPUs boost computation, inter-GPU communication can create scalability bottlenecks, especially as the number of GPUs per node and cluster grows. Traditionally, the CPU managed multi-GPU communication, but advancements in GPU-centric communication now challenge this CPU dominance by reducing its involvement, granting GPUs more autonomy in communication tasks, and addressing mismatches in multi-GPU communication and computation.   This paper provides a landscape of GPU-centric communication, focusing on vendor mechanisms and user-level library supports. It aims to clarify the complexities and diverse options in this field, define the terminology, and categorize existing approaches within and across nodes. The paper discusses vendor-provided mechanisms for communication and memory management in multi-GPU execution and reviews major communication libraries, their benefits, challenges, and performance insights. Then, it explores key research paradigms, future outlooks, and open research questions. By extensively describing GPU-centric communication techniques across the software and hardware stacks, we provide researchers, programmers, engineers, and library designers insights on how to exploit multi-GPU systems at their best.",
+      "paper_url": "http://arxiv.org/abs/2409.09874v2",
+      "paper_abstract": "In recent years, GPUs have become the preferred accelerators for HPC and ML applications due to their parallelism and fast memory bandwidth. While GPUs boost computation, inter-GPU communication can create scalability bottlenecks, especially as the number of GPUs per node and cluster grows. Traditionally, the CPU managed multi-GPU communication, but advancements in GPU-centric communication now challenge this CPU dominance by reducing its involvement, granting GPUs more autonomy in communication tasks, and addressing mismatches in multi-GPU communication and computation.   This paper provides a landscape of GPU-centric communication, focusing on vendor mechanisms and user-level library supports. It aims to clarify the complexities and diverse options in this field, define the terminology, and categorize existing approaches within and across nodes. The paper discusses vendor-provided mechanisms for communication and memory management in multi-GPU execution and reviews major communication libraries, their benefits, challenges, and performance insights. Then, it explores key research paradigms, future outlooks, and open research questions. By extensively describing GPU-centric communication techniques across the software and hardware stacks, we provide researchers, programmers, engineers, and library designers insights on how to exploit multi-GPU systems at their best.",
       "paper_authors": [
         "Didem Unat",
         "Ilyas Turimbetov",
@@ -32517,7 +32517,7 @@
       ],
       "primary_category": "cs.DC",
       "publish_time": "2024-09-15",
-      "update_time": "2024-09-15",
+      "update_time": "2024-09-23",
       "comments": null,
       "repo_url": "#"
     },
@@ -35031,24 +35031,24 @@
       "repo_url": "#"
     },
     "2409.11884": {
-      "paper_id": "2409.11884v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11884v1",
+      "paper_id": "2409.11884v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11884v2",
       "paper_key": "2409.11884",
       "paper_title": "Recent Advances in OOD Detection: Problems and Approaches",
-      "paper_url": "http://arxiv.org/abs/2409.11884v1",
-      "paper_abstract": "Out-of-distribution (OOD) detection aims to detect test samples outside the training category space, which is an essential component in building reliable machine learning systems. Existing reviews on OOD detection primarily focus on method taxonomy, surveying the field by categorizing various approaches. However, many recent works concentrate on non-traditional OOD detection scenarios, such as test-time adaptation, multi-modal data sources and other novel contexts. In this survey, we uniquely review recent advances in OOD detection from the problem scenario perspective for the first time. According to whether the training process is completely controlled, we divide OOD detection methods into training-driven and training-agnostic. Besides, considering the rapid development of pre-trained models, large pre-trained model-based OOD detection is also regarded as an important category and discussed separately. Furthermore, we provide a discussion of the evaluation scenarios, a variety of applications, and several future research directions. We believe this survey with new taxonomy will benefit the proposal of new methods and the expansion of more practical scenarios. A curated list of related papers is provided in the Github repository: \\url{https://github.com/shuolucs/Awesome-Out-Of-Distribution-Detection}",
+      "paper_url": "http://arxiv.org/abs/2409.11884v2",
+      "paper_abstract": "Out-of-distribution (OOD) detection aims to detect test samples outside the training category space, which is an essential component in building reliable machine learning systems. Existing reviews on OOD detection primarily focus on method taxonomy, surveying the field by categorizing various approaches. However, many recent works concentrate on non-traditional OOD detection scenarios, such as test-time adaptation, multi-modal data sources and other novel contexts. In this survey, we uniquely review recent advances in OOD detection from the problem scenario perspective for the first time. According to whether the training process is completely controlled, we divide OOD detection methods into training-driven and training-agnostic. Besides, considering the rapid development of pre-trained models, large pre-trained model-based OOD detection is also regarded as an important category and discussed separately. Furthermore, we provide a discussion of the evaluation scenarios, a variety of applications, and several future research directions. We believe this survey with new taxonomy will benefit the proposal of new methods and the expansion of more practical scenarios. A curated list of related papers is provided in the Github repository: https://github.com/shuolucs/Awesome-Out-Of-Distribution-Detection",
       "paper_authors": [
         "Shuo Lu",
-        "YingSheng Wang",
-        "LuJun Sheng",
-        "AiHua Zheng",
-        "LinXiao He",
+        "Yingsheng Wang",
+        "Lijun Sheng",
+        "Aihua Zheng",
+        "Lingxiao He",
         "Jian Liang"
       ],
       "primary_category": "cs.LG",
       "publish_time": "2024-09-18",
-      "update_time": "2024-09-18",
-      "comments": "September 18, 2024",
+      "update_time": "2024-09-21",
+      "comments": "First Submitted in May 2024",
       "repo_url": "#"
     },
     "2409.11881": {
@@ -35519,11 +35519,11 @@
       "repo_url": "#"
     },
     "2409.11533": {
-      "paper_id": "2409.11533v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11533v1",
+      "paper_id": "2409.11533v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11533v2",
       "paper_key": "2409.11533",
       "paper_title": "A search for persistent radio sources toward repeating fast radio bursts discovered by CHIME/FRB",
-      "paper_url": "http://arxiv.org/abs/2409.11533v1",
+      "paper_url": "http://arxiv.org/abs/2409.11533v2",
       "paper_abstract": "The identification of persistent radio sources (PRSs) coincident with two repeating fast radio bursts (FRBs) supports FRB theories requiring a compact central engine. However, deep non-detections in other cases highlight the diversity of repeating FRBs and their local environments. Here, we perform a systematic search for radio sources towards 37 CHIME/FRB repeaters using their arcminute localizations and a combination of archival surveys and targeted observations. Through multi-wavelength analysis of individual radio sources, we identify two (20181030A-S1 and 20190417A-S1) for which we disfavor an origin of either star formation or an active galactic nucleus in their host galaxies and thus consider them candidate PRSs. We do not find any associated PRSs for the majority of the repeating FRBs in our sample. For 8 FRB fields with Very Large Array imaging, we provide deep limits on the presence of PRSs that are 2--4 orders of magnitude fainter than the PRS associated with FRB\\,20121102A. Using Very Large Array Sky Survey imaging of all 37 fields, we constrain the rate of luminous ($\\gtrsim$10$^{40}$ erg s$^{-1}$) PRSs associated with repeating FRBs to be low. Within the context of FRB-PRS models, we find that 20181030A-S1 and 20190417A-S1 can be reasonably explained within the context of magnetar, hypernebulae, gamma-ray burst afterglow, or supernova ejecta models -- although we note that both sources follow the radio luminosity versus rotation measure relationship predicted in the nebula model framework. Future observations will be required to both further characterize and confirm the association of these PRS candidates with the FRBs.",
       "paper_authors": [
         "Adaeze L. Ibik",
@@ -35532,6 +35532,7 @@
         "Paul Scholz",
         "Navin Sridhar",
         "Ben Margalit",
+        "Casey J. Law",
         "Tracy E. Clarke",
         "Shriharsh P. Tendulkar",
         "Daniele Michilli",
@@ -35556,7 +35557,7 @@
       ],
       "primary_category": "astro-ph.HE",
       "publish_time": "2024-09-17",
-      "update_time": "2024-09-17",
+      "update_time": "2024-09-23",
       "comments": "37 pages, 12 figures",
       "repo_url": "#"
     },
