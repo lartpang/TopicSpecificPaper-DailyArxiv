@@ -35603,11 +35603,11 @@
       "repo_url": "#"
     },
     "2409.11482": {
-      "paper_id": "2409.11482v1",
-      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11482v1",
+      "paper_id": "2409.11482v2",
+      "code_url": "https://arxiv.paperswithcode.com/api/v0/papers/2409.11482v2",
       "paper_key": "2409.11482",
       "paper_title": "Female representation across mythologies",
-      "paper_url": "http://arxiv.org/abs/2409.11482v1",
+      "paper_url": "http://arxiv.org/abs/2409.11482v2",
       "paper_abstract": "Social groups have been studied throughout history to understand how different configurations impact those within them. Along with this came the interest in investigating social groups of both fictional and mythological works. Over the last decade these social groups have been studied through the lens of network science allowing for a new level of comparison between these stories. We use this approach to focus on the attributes of the characters within these networks, specifically looking at their gender. With this we review how the female populations within various narratives and to some extent the societies they are based in are portrayed. Through this we find that although there is not a trend of all narratives of the same origin having similar levels of representation some are noticeably better than others. We also observe which narratives overall prioritise important female characters and which do not.",
       "paper_authors": [
         "M. Janickyj",
@@ -35617,7 +35617,7 @@
       ],
       "primary_category": "physics.soc-ph",
       "publish_time": "2024-09-17",
-      "update_time": "2024-09-17",
+      "update_time": "2024-09-24",
       "comments": "12 pages, 4 tables",
       "repo_url": "#"
     },

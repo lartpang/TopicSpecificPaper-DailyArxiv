@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.09.24
+> Updated on 2024.09.25
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1459,7 +1459,7 @@
 2024-09-17 | A search for persistent radio sources toward repeating fast radio bursts discovered by CHIME/FRB | *Adaeze L. Ibik, Maria R. Drout, Bryan M. Gaensler, Paul Scholz, Navin Sridhar, Ben Margalit, Casey J. Law, Tracy E. Clarke, Shriharsh P. Tendulkar, Daniele Michilli, Tarraneh Eftekhari, Mohit Bhardwaj, Sarah Burke-Spolaor, Shami Chatterjee, Amanda M. Cook, Jason W. T. Hessels, Franz Kirsten, Ronniy C. Joseph, Victoria M. Kaspi, Mattias Lazda, Kiyoshi W. Masui, Kenzie Nimmo, Ayush Pandhi, Aaron B. Pearlman, Ziggy Pleunis, Masoud Rafiei-Ravandi, Kaitlyn Shin, Kendrick M. Smith* | [2409.11533v2](http://arxiv.org/abs/2409.11533v2), [Code](#)
 2024-09-17 | Enhancing the Reliability of LiDAR Point Cloud Sampling: A Colorization and Super-Resolution Approach Based on LiDAR-Generated Images | *Sier Ha, Honghao Du, Xianjia Yu, Jian Song, Tomi Westerlund* | [2409.11532v1](http://arxiv.org/abs/2409.11532v1), [Code](#)
 2024-09-17 | Survey of Orion Disks with ALMA (SODA) III: Disks in wide binary systems in L1641 and L1647 | *Giulia Ricciardi, Sierk E. van Terwisga, Veronica Roccatagliata, Alvaro Hacar, Thomas Henning, Walter Del Pozzo* | [2409.11485v1](http://arxiv.org/abs/2409.11485v1), [Code](#)
-2024-09-17 | Female representation across mythologies | *M. Janickyj, P. MacCarron, J. Yose, R. Kenna* | [2409.11482v1](http://arxiv.org/abs/2409.11482v1), [Code](#)
+2024-09-17 | Female representation across mythologies | *M. Janickyj, P. MacCarron, J. Yose, R. Kenna* | [2409.11482v2](http://arxiv.org/abs/2409.11482v2), [Code](#)
 2024-09-17 | The MDW Hα Sky Survey: Data Release 0 | *Noor Aftab, Xunhe, Zhang, David R. Mittelman, Dennis di Cicco, Sean Walker, David H. Sliski, Julia Homa, Colin Holm-Hansen, Mary Putman, David Schiminovich, Arne Henden, Gary Walker* | [2409.11481v1](http://arxiv.org/abs/2409.11481v1), [Code](#)
 2024-09-17 | Hyperboloidal Approach to Quasinormal Modes | *Rodrigo Panosso Macedo, Anil Zenginoglu* | [2409.11478v1](http://arxiv.org/abs/2409.11478v1), [Code](#)
 2024-09-17 | A VLBI Calibrator Grid at 600MHz for Fast Radio Transient Localizations with CHIME/FRB Outriggers | *Shion Andrew, Calvin Leung, Alexander Li, Kiyoshi W. Masui, Bridget C. Andersen, Kevin Bandura, Alice P. Curtin, Jane Kaczmarek, Adam E. Lanman, Mattias Lazda, Juan Mena-Parra, Daniele Michilli, Kenzie Nimmo, Aaron B. Pearlman, Mubdi Rahman, Vishwangi Shah, Kaitlyn Shin, Haochen Wang* | [2409.11476v1](http://arxiv.org/abs/2409.11476v1), [Code](#)
