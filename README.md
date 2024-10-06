@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.10.05
+> Updated on 2024.10.06
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1471,7 +1471,7 @@
 2024-10-02 | The effect of gravity on bubble-particle collisions in turbulence | *Timothy T. K. Chan, Dominik Krug* | [2410.01557v1](http://arxiv.org/abs/2410.01557v1), [Code](#)
 2024-10-02 | DLP-LoRA: Efficient Task-Specific LoRA Fusion with a Dynamic, Lightweight Plugin for Large Language Models | *Yuxuan Zhang, Ruizhe Li* | [2410.01497v1](http://arxiv.org/abs/2410.01497v1), [Code](https://github.com/mecuping/dlp-lora)
 2024-10-02 | Probing Dark Relativistic Species and Their Interactions with Dark Matter through CMB and 21cm surveys | *Hugo Plombat, Théo Simon, Jordan Flitter, Vivian Poulin* | [2410.01486v1](http://arxiv.org/abs/2410.01486v1), [Code](#)
-2024-10-02 | Verbalized Graph Representation Learning: A Fully Interpretable Graph Model Based on Large Language Models Throughout the Entire Process | *Xingyu Ji, Jiale Liu, Lu Li, Maojun Wang, Zeyu Zhang* | [2410.01457v1](http://arxiv.org/abs/2410.01457v1), [Code](#)
+2024-10-02 | Verbalized Graph Representation Learning: A Fully Interpretable Graph Model Based on Large Language Models Throughout the Entire Process | *Xingyu Ji, Jiale Liu, Lu Li, Maojun Wang, Zeyu Zhang* | [2410.01457v1](http://arxiv.org/abs/2410.01457v1), [Code](https://github.com/Erican-Ji/VGRL)
 2024-10-02 | Geometric Signatures of Compositionality Across a Language Model's Lifetime | *Jin Hwa Lee, Thomas Jiralerspong, Lei Yu, Yoshua Bengio, Emily Cheng* | [2410.01444v1](http://arxiv.org/abs/2410.01444v1), [Code](#)
 2024-10-02 | Graphene MEMS and NEMS | *Xuge Fan, Chang He, Jie Ding, Qiang Gao, Hongliang Ma, Max C. Lemme, Wendong Zhang* | [2410.01439v1](http://arxiv.org/abs/2410.01439v1), [Code](#)
 2024-10-02 | AGN -- host galaxy photometric decomposition using a fast, accurate and precise deep learning approach | *Berta Margalef-Bentabol, Lingyu Wang, Antonio La Marca, Vicente Rodriguez-Gomez* | [2410.01437v1](http://arxiv.org/abs/2410.01437v1), [Code](#)
