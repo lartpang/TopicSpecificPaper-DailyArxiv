@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.10.12
+> Updated on 2024.10.13
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -985,7 +985,7 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2024-10-10 | Exploring Foundation Models in Remote Sensing Image Change Detection: A Comprehensive Survey | *Zihan Yu, Tianxiao Li, Yuxin Zhu, Rongze Pan* | [2410.07824v1](http://arxiv.org/abs/2410.07824v1), [Code](#)
-2024-10-10 | Almost Minimax Optimal Best Arm Identification in Piecewise Stationary Linear Bandits | *Yunlong Hou, Vincent Y. F. Tan, Zixin Zhong* | [2410.07638v1](http://arxiv.org/abs/2410.07638v1), [Code](#)
+2024-10-10 | Almost Minimax Optimal Best Arm Identification in Piecewise Stationary Linear Bandits | *Yunlong Hou, Vincent Y. F. Tan, Zixin Zhong* | [2410.07638v1](http://arxiv.org/abs/2410.07638v1), [Code](https://github.com/Y-Hou/BAI-in-PSLB)
 2024-10-08 | TEOChat: A Large Vision-Language Assistant for Temporal Earth Observation Data | *Jeremy Andrew Irvin, Emily Ruoyu Liu, Joyce Chuyi Chen, Ines Dormoy, Jinyoung Kim, Samar Khanna, Zhuo Zheng, Stefano Ermon* | [2410.06234v1](http://arxiv.org/abs/2410.06234v1), [Code](https://github.com/ermongroup/teochat)
 2024-10-08 | Diminishing Exploration: A Minimalist Approach to Piecewise Stationary Multi-Armed Bandits | *Kuan-Ta Li, Ping-Chun Hsieh, Yu-Chih Huang* | [2410.05734v1](http://arxiv.org/abs/2410.05734v1), [Code](#)
 2024-10-04 | Robust Quickest Correlation Change Detection in High-Dimensional Random Vectors | *Assma Alghamdi, Taposh Banerjee, Jayant Rajgopal* | [2410.03593v1](http://arxiv.org/abs/2410.03593v1), [Code](#)
@@ -1492,7 +1492,7 @@
 2024-10-10 | I-Max: Maximize the Resolution Potential of Pre-trained Rectified Flow Transformers with Projected Flow | *Ruoyi Du, Dongyang Liu, Le Zhuo, Qin Qi, Hongsheng Li, Zhanyu Ma, Peng Gao* | [2410.07536v1](http://arxiv.org/abs/2410.07536v1), [Code](#)
 2024-10-10 | Continuous-wave amplitude control via the interference phenomenon in acoustic structures | *Bingyi Liu, Shanshan Liu, Liulin Li, Chuanxing Bi, Kai Guo, Yong Li, Zhongyi Guo* | [2410.07529v1](http://arxiv.org/abs/2410.07529v1), [Code](#)
 2024-10-10 | News Reporter: A Multi-lingual LLM Framework for Broadcast T.V News | *Tarun Jain, Yufei Gao, Sridhar Vanga, Karan Singla* | [2410.07520v1](http://arxiv.org/abs/2410.07520v1), [Code](#)
-2024-10-10 | CSGDN: Contrastive Signed Graph Diffusion Network for Predicting Crop Gene-Trait Associations | *Yiru Pan, Xingyu Ji, Jiaqi You, Lu Li, Zhenping Liu, Xianlong Zhang, Zeyu Zhang, Maojun Wang* | [2410.07511v1](http://arxiv.org/abs/2410.07511v1), [Code](#)
+2024-10-10 | CSGDN: Contrastive Signed Graph Diffusion Network for Predicting Crop Gene-Trait Associations | *Yiru Pan, Xingyu Ji, Jiaqi You, Lu Li, Zhenping Liu, Xianlong Zhang, Zeyu Zhang, Maojun Wang* | [2410.07511v1](http://arxiv.org/abs/2410.07511v1), [Code](https://github.com/Erican-Ji/CSGDN)
 2024-10-10 | Autonomous Robotic System with Optical Coherence Tomography Guidance for Vascular Anastomosis | *Jesse Haworth, Rishi Biswas, Justin Opfermann, Michael Kam, Yaning Wang, Desire Pantalone, Francis X. Creighton, Robin Yang, Jin U. Kang, Axel Krieger* | [2410.07493v1](http://arxiv.org/abs/2410.07493v1), [Code](#)
 2024-10-09 | An Approach for Auto Generation of Labeling Functions for Software Engineering Chatbots | *Ebube Alor, Ahmad Abdellatif, SayedHassan Khatoonabadi, Emad Shihab* | [2410.07094v1](http://arxiv.org/abs/2410.07094v1), [Code](#)
 2024-10-09 | Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology | *Xiangyu Wang, Donglin Yang, Ziqin Wang, Hohin Kwan, Jinyu Chen, Wenjun Wu, Hongsheng Li, Yue Liao, Si Liu* | [2410.07087v1](http://arxiv.org/abs/2410.07087v1), [Code](#)
@@ -1588,7 +1588,7 @@
 2024-10-08 | Multi-Criteria Decision Making in Chemical and Process Engineering: Methods, Progress and Potential | *Zhiyuan Wang, Seyed Reza Nabavi, Gade Pandu Rangaiah* | [2410.05713v1](http://arxiv.org/abs/2410.05713v1), [Code](#)
 2024-10-08 | DiffusionGuard: A Robust Defense Against Malicious Diffusion-based Image Editing | *June Suk Choi, Kyungmin Lee, Jongheon Jeong, Saining Xie, Jinwoo Shin, Kimin Lee* | [2410.05694v1](http://arxiv.org/abs/2410.05694v1), [Code](https://github.com/choi403/diffusionguard)
 2024-10-08 | Bilayer Graphene on hexagonal Boron Nitride and the Family of quantum MetaMaterial | *Takuya Iwasaki, Yoshifumi Morita* | [2410.05649v1](http://arxiv.org/abs/2410.05649v1), [Code](#)
-2024-10-08 | Synthesizing Efficient and Permissive Programmatic Runtime Shields for Neural Policies | *Jieke Shi, Junda He, Zhou Yang, Đorđe Žikelić, David Lo* | [2410.05641v1](http://arxiv.org/abs/2410.05641v1), [Code](#)
+2024-10-08 | Synthesizing Efficient and Permissive Programmatic Runtime Shields for Neural Policies | *Jieke Shi, Junda He, Zhou Yang, Đorđe Žikelić, David Lo* | [2410.05641v1](http://arxiv.org/abs/2410.05641v1), [Code](https://github.com/jiekeshi/AEGIS)
 2024-10-08 | A Survey on Annotations in Information Visualization: Empirical Insights, Applications, and Challenges | *Md Dilshadur Rahman, Bhavana Doppalapudi, Ghulam Jilani Quadri, Paul Rosen* | [2410.05579v1](http://arxiv.org/abs/2410.05579v1), [Code](#)
 2024-10-08 | Underwater Object Detection in the Era of Artificial Intelligence: Current, Challenge, and Future | *Long Chen, Yuzhi Huang, Junyu Dong, Qi Xu, Sam Kwong, Huimin Lu, Huchuan Lu, Chongyi Li* | [2410.05577v1](http://arxiv.org/abs/2410.05577v1), [Code](https://github.com/longchencv/uodreview)
 2024-10-08 | A Survey: Collaborative Hardware and Software Design in the Era of Large Language Models | *Cong Guo, Feng Cheng, Zhixu Du, James Kiessling, Jonathan Ku, Shiyu Li, Ziru Li, Mingyuan Ma, Tergel Molom-Ochir, Benjamin Morris, Haoxuan Shan, Jingwei Sun, Yitu Wang, Chiyue Wei, Xueying Wu, Yuhao Wu, Hao Frank Yang, Jingyang Zhang, Junyao Zhang, Qilin Zheng, Guanglei Zhou, Hai, Li, Yiran Chen* | [2410.07265v1](http://arxiv.org/abs/2410.07265v1), [Code](#)
