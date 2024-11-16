@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.11.15
+> Updated on 2024.11.16
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1306,7 +1306,7 @@
 2024-11-08 | Other Worlds: Using AI to Revisit Cybersyn and Rethink Economic Futures | *Luke Munn, Liam Magee* | [2411.05992v1](http://arxiv.org/abs/2411.05992v1), [Code](#)
 2024-11-08 | The Grass of the Universe: Rethinking Technosphere, Planetary History, and Sustainability with Fermi Paradox | *Lukáš Likavčan* | [2411.08057v1](http://arxiv.org/abs/2411.08057v1), [Code](#)
 2024-11-07 | Rethinking Bradley-Terry Models in Preference-Based Reward Modeling: Foundations, Theory, and Alternatives | *Hao Sun, Yunyi Shen, Jean-Francois Ton* | [2411.04991v1](http://arxiv.org/abs/2411.04991v1), [Code](https://github.com/holarissun/rewardmodelingbeyondbradleyterry)
-2024-11-07 | Rethinking Deep Learning: Non-backpropagation and Non-optimization Machine Learning Approach Using Hebbian Neural Networks | *Kei Itoh* | [2411.05861v1](http://arxiv.org/abs/2411.05861v1), [Code](#)
+2024-11-07 | Rethinking Deep Learning: Non-backpropagation and Non-optimization Machine Learning Approach Using Hebbian Neural Networks | *Kei Itoh* | [2411.05861v1](http://arxiv.org/abs/2411.05861v1), [Code](https://github.com/KeiItoh219/arXiv-2409.03760)
 2024-11-05 | Rethinking Decoders for Transformer-based Semantic Segmentation: Compression is All You Need | *Qishuai Wen, Chun-Guang Li* | [2411.03033v1](http://arxiv.org/abs/2411.03033v1), [Code](https://github.com/qishuaiwen/depict)
 2024-11-05 | CIT: Rethinking Class-incremental Semantic Segmentation with a Class Independent Transformation | *Jinchao Ge, Bowen Zhang, Akide Liu, Minh Hieu Phan, Qi Chen, Yangyang Shu, Yang Zhao* | [2411.02715v1](http://arxiv.org/abs/2411.02715v1), [Code](#)
 2024-11-04 | What Goes Into a LM Acceptability Judgment? Rethinking the Impact of Frequency and Length | *Lindia Tjuatja, Graham Neubig, Tal Linzen, Sophie Hao* | [2411.02528v1](http://arxiv.org/abs/2411.02528v1), [Code](https://github.com/lindiatjuatja/morcela)
