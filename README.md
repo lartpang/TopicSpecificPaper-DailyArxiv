@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.11.30
+> Updated on 2024.12.01
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -26,7 +26,7 @@
 2024-11-25 | Scaling Spike-driven Transformer with Efficient Spike Firing Approximation Training | *Man Yao, Xuerui Qiu, Tianxiang Hu, Jiakui Hu, Yuhong Chou, Keyu Tian, Jianxing Liao, Luziwei Leng, Bo Xu, Guoqi Li* | [2411.16061v1](http://arxiv.org/abs/2411.16061v1), [Code](https://github.com/biclab/spike-driven-transformer-v3)
 2024-11-23 | Exploring the Sparsity-Quantization Interplay on a Novel Hybrid SNN Event-Driven Architecture | *Ilkin Aliyev, Jesus Lopez, Tosiron Adegbija* | [2411.15409v1](http://arxiv.org/abs/2411.15409v1), [Code](https://github.com/githubofaliyev/snn-dse)
 2024-11-22 | Iterative Reweighted Framework Based Algorithms for Sparse Linear Regression with Generalized Elastic Net Penalty | *Yanyun Ding, Zhenghua Yao, Peili Li, Yunhai Xiao* | [2411.14875v1](http://arxiv.org/abs/2411.14875v1), [Code](#)
-2024-11-22 | Minimizing information loss reduces spiking neuronal networks to differential equations | *Jie Chang, Zhuoran Li, Zhongyi Wang, Louis Tao, Zhuo-Cheng Xiao* | [2411.14801v1](http://arxiv.org/abs/2411.14801v1), [Code](#)
+2024-11-22 | Minimizing information loss reduces spiking neuronal networks to differential equations | *Jie Chang, Zhuoran Li, Zhongyi Wang, Louis Tao, Zhuo-Cheng Xiao* | [2411.14801v1](http://arxiv.org/abs/2411.14801v1), [Code](https://github.com/changjie98/dsODE)
 2024-11-22 | Mode-conditioned music learning and composition: a spiking neural network inspired by neuroscience and psychology | *Qian Liang, Yi Zeng, Menghaoran Tang* | [2411.14773v1](http://arxiv.org/abs/2411.14773v1), [Code](#)
 2024-11-22 | TSkips: Efficiency Through Explicit Temporal Delay Connections in Spiking Neural Networks | *Prajna G. Malettira, Shubham Negi, Wachirawit Ponghiran, Kaushik Roy* | [2411.16711v1](http://arxiv.org/abs/2411.16711v1), [Code](#)
 2024-11-21 | Uncertainty Quantification in Working Memory via Moment Neural Networks | *Hengyuan Ma, Wenlian Lu, Jianfeng Feng* | [2411.14196v1](http://arxiv.org/abs/2411.14196v1), [Code](https://github.com/awakermhy/mnn_wm_uq)
@@ -761,7 +761,7 @@
 2024-09-07 | SSFam: Scribble Supervised Salient Object Detection Family | *Zhengyi Liu, Sheng Deng, Xinrui Wang, Linbo Wang, Xianyong Fang, Bin Tang* | [2409.04817v1](http://arxiv.org/abs/2409.04817v1), [Code](https://github.com/liuzywen/ssfam)
 2024-09-04 | Pluralistic Salient Object Detection | *Xuelu Feng, Yunsheng Li, Dongdong Chen, Chunming Qiao, Junsong Yuan, Lu Yuan, Gang Hua* | [2409.02368v1](http://arxiv.org/abs/2409.02368v1), [Code](#)
 2024-09-02 | CONDA: Condensed Deep Association Learning for Co-Salient Object Detection | *Long Li, Nian Liu, Dingwen Zhang, Zhongyu Li, Salman Khan, Rao Anwer, Hisham Cholakkal, Junwei Han, Fahad Shahbaz Khan* | [2409.01021v3](http://arxiv.org/abs/2409.01021v3), [Code](#)
-2024-08-29 | SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection | *Rohit Venkata Sai Dulam, Chandra Kambhamettu* | [2408.16645v1](http://arxiv.org/abs/2408.16645v1), [Code](#)
+2024-08-29 | SODAWideNet++: Combining Attention and Convolutions for Salient Object Detection | *Rohit Venkata Sai Dulam, Chandra Kambhamettu* | [2408.16645v1](http://arxiv.org/abs/2408.16645v1), [Code](https://github.com/vimslab/sodawidenetplusplus)
 2024-08-27 | Adapting Segment Anything Model to Multi-modal Salient Object Detection with Semantic Feature Fusion Guidance | *Kunpeng Wang, Danying Lin, Chenglong Li, Zhengzheng Tu, Bin Luo* | [2408.15063v4](http://arxiv.org/abs/2408.15063v4), [Code](https://github.com/angknpng/sammese)
 2024-08-17 | Depth-guided Texture Diffusion for Image Semantic Segmentation | *Wei Sun, Yuan Li, Qixiang Ye, Jianbin Jiao, Yanzhao Zhou* | [2408.09097v1](http://arxiv.org/abs/2408.09097v1), [Code](#)
 2024-08-16 | SAM2-UNet: Segment Anything 2 Makes Strong Encoder for Natural and Medical Image Segmentation | *Xinyu Xiong, Zihuang Wu, Shuangyi Tan, Wenxue Li, Feilong Tang, Ying Chen, Siying Li, Jie Ma, Guanbin Li* | [2408.08870v1](http://arxiv.org/abs/2408.08870v1), [Code](https://github.com/wzh0120/sam2-unet)
