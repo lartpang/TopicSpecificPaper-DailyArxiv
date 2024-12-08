@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.12.07
+> Updated on 2024.12.08
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1083,7 +1083,7 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2024-12-05 | Text Change Detection in Multilingual Documents Using Image Comparison | *Doyoung Park, Naresh Reddy Yarram, Sunjin Kim, Minkyu Kim, Seongho Cho, Taehee Lee* | [2412.04137v1](http://arxiv.org/abs/2412.04137v1), [Code](#)
-2024-12-05 | Multi-View Pose-Agnostic Change Localization with Zero Labels | *Chamuditha Jayanga Galappaththige, Jason Lai, Lloyd Windrim, Donald Dansereau, Niko Suenderhauf, Dimity Miller* | [2412.03911v1](http://arxiv.org/abs/2412.03911v1), [Code](#)
+2024-12-05 | Multi-View Pose-Agnostic Change Localization with Zero Labels | *Chamuditha Jayanga Galappaththige, Jason Lai, Lloyd Windrim, Donald Dansereau, Niko Suenderhauf, Dimity Miller* | [2412.03911v1](http://arxiv.org/abs/2412.03911v1), [Code](https://github.com/Chumsy0725/PASLCD)
 2024-12-04 | Validity and efficiency of the conformal CUSUM procedure | *Vladimir Vovk, Ilia Nouretdinov, Alex Gammerman* | [2412.03464v1](http://arxiv.org/abs/2412.03464v1), [Code](#)
 2024-12-04 | Benchmarking Attention Mechanisms and Consistency Regularization Semi-Supervised Learning for Post-Flood Building Damage Assessment in Satellite Images | *Jiaxi Yu, Tomohiro Fukuda, Nobuyoshi Yabuki* | [2412.03015v1](http://arxiv.org/abs/2412.03015v1), [Code](#)
 2024-12-03 | Words and Action: Modeling Linguistic Leadership in #BlackLivesMatter Communities | *Dani Roytburg, Deborah Olorunisola, Sandeep Soni, Lauren Klein* | [2412.02637v1](http://arxiv.org/abs/2412.02637v1), [Code](#)
@@ -1697,7 +1697,7 @@
 2024-12-05 | Multi-Layer Privacy-Preserving Record Linkage with Clerical Review based on gradual information disclosure | *Florens Rohde, Victor Christen, Martin Franke, Erhard Rahm* | [2412.04178v1](http://arxiv.org/abs/2412.04178v1), [Code](#)
 2024-12-05 | DHOST theories as disformal gravity: From black holes to radiative spacetimes | *Jibril Ben Achour* | [2412.04135v1](http://arxiv.org/abs/2412.04135v1), [Code](#)
 2024-12-05 | Missing Melodies: AI Music Generation and its "Nearly" Complete Omission of the Global South | *Atharva Mehta, Shivam Chauhan, Monojit Choudhury* | [2412.04100v1](http://arxiv.org/abs/2412.04100v1), [Code](#)
-2024-12-05 | Towards a multi-tracer neutrino mass measurement with line-intensity mapping | *Gali Shmueli, Sarah Libanore, Ely D. Kovetz* | [2412.04071v1](http://arxiv.org/abs/2412.04071v1), [Code](#)
+2024-12-05 | Towards a multi-tracer neutrino mass measurement with line-intensity mapping | *Gali Shmueli, Sarah Libanore, Ely D. Kovetz* | [2412.04071v1](http://arxiv.org/abs/2412.04071v1), [Code](https://github.com/shmuelig/lss-velocities)
 2024-12-05 | Space to Policy: Scalable Brick Kiln Detection and Automatic Compliance Monitoring with Geospatial Data | *Zeel B Patel, Rishabh Mondal, Shataxi Dubey, Suraj Jaiswal, Sarath Guttikunda, Nipun Batra* | [2412.04065v1](http://arxiv.org/abs/2412.04065v1), [Code](#)
 2024-12-05 | The physical and chemical structure of Sagittarius B2, VIII. Full molecular line survey of hot cores | *T. Möller, P. Schilke, Á. Sánchez-Monge, A. Schmiedeke* | [2412.04040v1](http://arxiv.org/abs/2412.04040v1), [Code](#)
 2024-12-05 | Quality Control in Open-Ended Crowdsourcing: A Survey | *Lei Chai, Hailong Sun, Jing Zhang* | [2412.03991v1](http://arxiv.org/abs/2412.03991v1), [Code](#)
@@ -1706,7 +1706,7 @@
 2024-12-05 | Exact: Exploring Space-Time Perceptive Clues for Weakly Supervised Satellite Image Time Series Semantic Segmentation | *Hao Zhu, Yan Zhu, Jiayu Xiao, Tianxiang Xiao, Yike Ma, Yucheng Zhang, Feng Dai* | [2412.03968v1](http://arxiv.org/abs/2412.03968v1), [Code](https://github.com/missu-hh/exact)
 2024-12-05 | Measuring our peculiar velocity from spectroscopic redshift surveys | *Mohamed Yousry Elkhashab, Cristiano Porciani, Daniele Bertacca* | [2412.03953v1](http://arxiv.org/abs/2412.03953v1), [Code](#)
 2024-12-05 | Perspective on 2D perovskite ferroelectrics and multiferroics | *Junting Zhang, Yu Xie, Ke Ji, Xiaofan Shen* | [2412.03952v1](http://arxiv.org/abs/2412.03952v1), [Code](#)
-2024-12-05 | Learning Speed-Adaptive Walking Agent Using Imitation Learning with Physics-Informed Simulation | *Yi-Hung Chiu, Ung Hee Lee, Changseob Song, Manaen Hu, Inseung Kang* | [2412.03949v1](http://arxiv.org/abs/2412.03949v1), [Code](#)
+2024-12-05 | Learning Speed-Adaptive Walking Agent Using Imitation Learning with Physics-Informed Simulation | *Yi-Hung Chiu, Ung Hee Lee, Changseob Song, Manaen Hu, Inseung Kang* | [2412.03949v1](http://arxiv.org/abs/2412.03949v1), [Code](https://github.com/MetaMobilityLabCMU/speed-adaptive-agent)
 2024-12-05 | Exploring AI Text Generation, Retrieval-Augmented Generation, and Detection Technologies: a Comprehensive Overview | *Fnu Neha, Deepshikha Bhati, Deepak Kumar Shukla, Angela Guercio, Ben Ward* | [2412.03933v1](http://arxiv.org/abs/2412.03933v1), [Code](#)
 2024-12-05 | Privacy-Preserving in Medical Image Analysis: A Review of Methods and Applications | *Yanming Zhu, Xuefei Yin, Alan Wee-Chung Liew, Hui Tian* | [2412.03924v1](http://arxiv.org/abs/2412.03924v1), [Code](#)
 2024-12-05 | A Survey on Large Language Model-Based Social Agents in Game-Theoretic Scenarios | *Xiachong Feng, Longxu Dou, Ella Li, Qinghao Wang, Haochuan Wang, Yu Guo, Chang Ma, Lingpeng Kong* | [2412.03920v1](http://arxiv.org/abs/2412.03920v1), [Code](#)
