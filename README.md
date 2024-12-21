@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.12.20
+> Updated on 2024.12.21
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1380,7 +1380,7 @@
 2024-12-19 | Rethinking Uncertainty Estimation in Natural Language Generation | *Lukas Aichberger, Kajetan Schweighofer, Sepp Hochreiter* | [2412.15176v1](http://arxiv.org/abs/2412.15176v1), [Code](#)
 2024-12-19 | IDOL: Instant Photorealistic 3D Human Creation from a Single Image | *Yiyu Zhuang, Jiaxi Lv, Hao Wen, Qing Shuai, Ailing Zeng, Hao Zhu, Shifeng Chen, Yujiu Yang, Xun Cao, Wei Liu* | [2412.14963v1](http://arxiv.org/abs/2412.14963v1), [Code](#)
 2024-12-18 | What If: Causal Analysis with Graph Databases | *Amedeo Pachera, Mattia Palmiotto, Angela Bonifati, Andrea Mauri* | [2412.13965v1](http://arxiv.org/abs/2412.13965v1), [Code](#)
-2024-12-18 | Rethink the Evaluation Protocol of Model Merging on Classification Task | *Fanshuang Kong, Richong Zhang, Zhijie Nie, Ziqiao Wang* | [2412.13526v1](http://arxiv.org/abs/2412.13526v1), [Code](#)
+2024-12-18 | Rethink the Evaluation Protocol of Model Merging on Classification Task | *Fanshuang Kong, Richong Zhang, Zhijie Nie, Ziqiao Wang* | [2412.13526v1](http://arxiv.org/abs/2412.13526v1), [Code](https://github.com/fskong/FT-Classifier-for-Model-Merging)
 2024-12-17 | F-Bench: Rethinking Human Preference Evaluation Metrics for Benchmarking Face Generation, Customization, and Restoration | *Lu Liu, Huiyu Duan, Qiang Hu, Liu Yang, Chunlei Cai, Tianxiao Ye, Huayu Liu, Xiaoyun Zhang, Guangtao Zhai* | [2412.13155v1](http://arxiv.org/abs/2412.13155v1), [Code](#)
 2024-12-17 | Rethinking Diffusion-Based Image Generators for Fundus Fluorescein Angiography Synthesis on Limited Data | *Chengzhou Yu, Huihui Fang, Hongqiu Wang, Ting Deng, Qing Du, Yanwu Xu, Weihua Yang* | [2412.12778v1](http://arxiv.org/abs/2412.12778v1), [Code](#)
 2024-12-16 | Gramian Multimodal Representation Learning and Alignment | *Giordano Cicchetti, Eleonora Grassucci, Luigi Sigillo, Danilo Comminiello* | [2412.11959v1](http://arxiv.org/abs/2412.11959v1), [Code](#)
@@ -1754,7 +1754,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
-2024-12-19 | LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks | *Yushi Bai, Shangqing Tu, Jiajie Zhang, Hao Peng, Xiaozhi Wang, Xin Lv, Shulin Cao, Jiazheng Xu, Lei Hou, Yuxiao Dong, Jie Tang, Juanzi Li* | [2412.15204v1](http://arxiv.org/abs/2412.15204v1), [Code](#)
+2024-12-19 | LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks | *Yushi Bai, Shangqing Tu, Jiajie Zhang, Hao Peng, Xiaozhi Wang, Xin Lv, Shulin Cao, Jiazheng Xu, Lei Hou, Yuxiao Dong, Jie Tang, Juanzi Li* | [2412.15204v1](http://arxiv.org/abs/2412.15204v1), [Code](https://github.com/thudm/longbench)
 2024-12-19 | Language Models as Continuous Self-Evolving Data Engineers | *Peidong Wang, Ming Wang, Zhiming Ma, Xiaocui Yang, Shi Feng, Daling Wang, Yifei Zhang* | [2412.15151v1](http://arxiv.org/abs/2412.15151v1), [Code](#)
 2024-12-19 | Primordial Gravitational Wave Probes of Non-Standard Thermal Histories | *Annet Konings, Mariia Marinichenko, Oleksii Mikulenko, Subodh P. Patil* | [2412.15144v1](http://arxiv.org/abs/2412.15144v1), [Code](#)
 2024-12-19 | A review of high order strong stability preserving two-derivative explicit, implicit, and IMEX methods | *Sigal Gottlieb, Zachary J. Grant* | [2412.15142v1](http://arxiv.org/abs/2412.15142v1), [Code](#)
@@ -1826,7 +1826,7 @@
 2024-12-18 | MedCoT: Medical Chain of Thought via Hierarchical Expert | *Jiaxiang Liu, Yuan Wang, Jiawei Du, Joey Tianyi Zhou, Zuozhu Liu* | [2412.13736v1](http://arxiv.org/abs/2412.13736v1), [Code](https://github.com/jxliu-ai/medcot)
 2024-12-18 | 3D Registration in 30 Years: A Survey | *Jiaqi Yang, Chu'ai Zhang, Zhengbao Wang, Xinyue Cao, Xuan Ouyang, Xiyu Zhang, Zhenxuan Zeng, Zhao Zeng, Borui Lu, Zhiyi Xia, Qian Zhang, Yulan Guo, Yanning Zhang* | [2412.13735v2](http://arxiv.org/abs/2412.13735v2), [Code](https://github.com/amyyyy11/3d-registration-in-30-years-a-survey)
 2024-12-18 | Testing local position invariance with odd multipoles of galaxy clustering statistics | *Takuya Inoue, Teppei Okumura, Shohei Saga, Atsushi Taruya* | [2412.13701v1](http://arxiv.org/abs/2412.13701v1), [Code](#)
-2024-12-18 | Splitting criteria for ordinal decision trees: an experimental study | *Rafael Ayllón-Gavilán, Francisco José Martínez-Estudillo, David Guijo-Rubio, César Hervás-Martínez, Pedro Antonio Gutiérrez* | [2412.13697v1](http://arxiv.org/abs/2412.13697v1), [Code](#)
+2024-12-18 | Splitting criteria for ordinal decision trees: an experimental study | *Rafael Ayllón-Gavilán, Francisco José Martínez-Estudillo, David Guijo-Rubio, César Hervás-Martínez, Pedro Antonio Gutiérrez* | [2412.13697v1](http://arxiv.org/abs/2412.13697v1), [Code](https://github.com/ayrna/decision-trees-from-scratch)
 2024-12-18 | Optical aberrations in autonomous driving: Physics-informed parameterized temperature scaling for neural network uncertainty calibration | *Dominik Werner Wolf, Alexander Braun, Markus Ulrich* | [2412.13695v1](http://arxiv.org/abs/2412.13695v1), [Code](#)
 2024-12-18 | Clio: Privacy-Preserving Insights into Real-World AI Use | *Alex Tamkin, Miles McCain, Kunal Handa, Esin Durmus, Liane Lovitt, Ankur Rathi, Saffron Huang, Alfred Mountfield, Jerry Hong, Stuart Ritchie, Michael Stern, Brian Clarke, Landon Goldberg, Theodore R. Sumers, Jared Mueller, William McEachen, Wes Mitchell, Shan Carter, Jack Clark, Jared Kaplan, Deep Ganguli* | [2412.13678v1](http://arxiv.org/abs/2412.13678v1), [Code](#)
 2024-12-18 | Learning to Control an Android Robot Head for Facial Animation | *Marcel Heisler, Christian Becker-Asano* | [2412.13641v1](http://arxiv.org/abs/2412.13641v1), [Code](#)
