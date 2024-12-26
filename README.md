@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.12.25
+> Updated on 2024.12.26
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1872,8 +1872,8 @@
 2024-12-22 | Modular Conversational Agents for Surveys and Interviews | *Jiangbo Yu, Jinhua Zhao, Luis Miranda-Moreno, Matthew Korp* | [2412.17049v1](http://arxiv.org/abs/2412.17049v1), [Code](#)
 2024-12-22 | On the Spectral Shape of the Structural Relaxation in Deeply Supercooled Liquids | *Till Böhmer, Florian Pabst, Jan Gabriel, Rolf Zeißler, Thomas Blochowicz* | [2412.17014v1](http://arxiv.org/abs/2412.17014v1), [Code](#)
 2024-12-22 | Robustness of Large Language Models Against Adversarial Attacks | *Yiyi Tao, Yixian Shen, Hang Zhang, Yanxin Shen, Lun Wang, Chuanqi Shi, Shaoshuai Du* | [2412.17011v1](http://arxiv.org/abs/2412.17011v1), [Code](#)
-2024-12-22 | Competition of the shell closure and deformations across the doubly magic \textsuperscript{78}Ni | *Ryo Taniuchi* | [2412.16972v1](http://arxiv.org/abs/2412.16972v1), [Code](#)
-2024-12-22 | The Island of Inversion at N=40 | *Martha Liliana Cortes* | [2412.16940v1](http://arxiv.org/abs/2412.16940v1), [Code](#)
+2024-12-22 | Competition of the shell closure and deformations across the doubly magic $^{78}$Ni | *Ryo Taniuchi* | [2412.16972v1](http://arxiv.org/abs/2412.16972v1), [Code](#)
+2024-12-22 | The Island of Inversion at $N=40$ | *Martha Liliana Cortes* | [2412.16940v1](http://arxiv.org/abs/2412.16940v1), [Code](#)
 2024-12-22 | Photometric Stellar Parameters for 195,478 Kepler Input Catalog (KIC) Stars | *Bowen Zhang, Yang Huang, Timothy C. Beers, Kai Xiao, Jifeng Liu, Lei Jia, Henggeng Han, Zhirui Li, Chuanjie Zheng, Yongkang Sun, Ruifeng Shi, Hongrui Gu* | [2412.16930v2](http://arxiv.org/abs/2412.16930v2), [Code](#)
 2024-12-22 | Learning an Adaptive Fall Recovery Controller for Quadrupeds on Complex Terrains | *Yidan Lu, Yinzhao Dong, Ji Ma, Jiahui Zhang, Peng Lu* | [2412.16924v1](http://arxiv.org/abs/2412.16924v1), [Code](#)
 2024-12-22 | Trees that can be grown in "too many" ways: A review of Bouch's construction | *Hal Tasaki* | [2412.16912v1](http://arxiv.org/abs/2412.16912v1), [Code](#)
