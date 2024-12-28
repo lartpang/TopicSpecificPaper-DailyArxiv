@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.12.27
+> Updated on 2024.12.28
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1801,7 +1801,7 @@
 2024-12-24 | SPARC4 control system | *Denis Bernardes, Orlando Verducci Junior, Francisco Rodrigues, Claudia Vilega Rodrigues, Luciano Fraga, Eder Martioli, Clemens D. Gneiding, André Luiz de Moura Alves, Juliano Romão, Laerte Andrade, Leandro de Almeida, Ana Carolina Mattiuci, Flavio Felipe Ribeiro, Wagner Schlindwein, Jesulino Bispo dos Santos, Francisco Jose Jablonski, Julio Cesar Neves Campagnolo, Rene Laporte* | [2412.18410v1](http://arxiv.org/abs/2412.18410v1), [Code](#)
 2024-12-24 | Unveiling the Threat of Fraud Gangs to Graph Neural Networks: Multi-Target Graph Injection Attacks against GNN-Based Fraud Detectors | *Jinhyeok Choi, Heehyeon Kim, Joyce Jiyoung Whang* | [2412.18370v1](http://arxiv.org/abs/2412.18370v1), [Code](https://github.com/bdi-lab/monti)
 2024-12-24 | Exploring Graph Mamba: A Comprehensive Survey on State-Space Models for Graph Learning | *Safa Ben Atitallah, Chaima Ben Rabah, Maha Driss, Wadii Boulila, Anis Koubaa* | [2412.18322v1](http://arxiv.org/abs/2412.18322v1), [Code](#)
-2024-12-24 | Quo Vadis, Anomaly Detection? LLMs and VLMs in the Spotlight | *Xi Ding, Lei Wang* | [2412.18298v1](http://arxiv.org/abs/2412.18298v1), [Code](https://github.com/Darcyddx/VAD-LLM)
+2024-12-24 | Quo Vadis, Anomaly Detection? LLMs and VLMs in the Spotlight | *Xi Ding, Lei Wang* | [2412.18298v1](http://arxiv.org/abs/2412.18298v1), [Code](https://github.com/Darcyddx/Video-LLM)
 2024-12-24 | DeepCRCEval: Revisiting the Evaluation of Code Review Comment Generation | *Junyi Lu, Xiaojia Li, Zihan Hua, Lei Yu, Shiqi Cheng, Li Yang, Fengjun Zhang, Chun Zuo* | [2412.18291v1](http://arxiv.org/abs/2412.18291v1), [Code](#)
 2024-12-24 | Investigating Large Language Models for Code Vulnerability Detection: An Experimental Study | *Xuefeng Jiang, Lvhua Wu, Sheng Sun, Jia Li, Jingjing Xue, Yuwei Wang, Tingting Wu, Min Liu* | [2412.18260v1](http://arxiv.org/abs/2412.18260v1), [Code](https://github.com/sakirinn/llm4cvd)
 2024-12-24 | An Automatic Graph Construction Framework based on Large Language Models for Recommendation | *Rong Shan, Jianghao Lin, Chenxu Zhu, Bo Chen, Menghui Zhu, Kangning Zhang, Jieming Zhu, Ruiming Tang, Yong Yu, Weinan Zhang* | [2412.18241v1](http://arxiv.org/abs/2412.18241v1), [Code](https://github.com/lavieenrose365/autograph)
