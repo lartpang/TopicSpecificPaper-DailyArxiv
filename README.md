@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2024.12.28
+> Updated on 2024.12.29
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1860,7 +1860,7 @@
 2024-12-23 | Optimization of Convolutional Neural Network Hyperparameter for Medical Image Diagnosis using Metaheuristic Algorithms: A short Recent Review (2019-2022) | *Qusay Shihab Hamad, Hussein Samma, Shahrel Azmin Suandi* | [2412.17956v1](http://arxiv.org/abs/2412.17956v1), [Code](#)
 2024-12-23 | Reinforcement Learning for Motor Control: A Comprehensive Review | *Danial Kazemikia* | [2412.17936v1](http://arxiv.org/abs/2412.17936v1), [Code](#)
 2024-12-23 | Contemporary implementations of spiking bio-inspired neural networks | *Andrey E. Schegolev, Marina V. Bastrakova, Michael A. Sergeev, Anastasia A. Maksimovskaya, Nikolay V. Klenov, Igor I. Soloviev* | [2412.17926v1](http://arxiv.org/abs/2412.17926v1), [Code](#)
-2024-12-23 | Methods for differential network estimation: an empirical comparison | *Anna Plaksienko, Magne Thoresen, Vera Djordjilović* | [2412.17922v1](http://arxiv.org/abs/2412.17922v1), [Code](#)
+2024-12-23 | Methods for differential network estimation: an empirical comparison | *Anna Plaksienko, Magne Thoresen, Vera Djordjilović* | [2412.17922v1](http://arxiv.org/abs/2412.17922v1), [Code](https://github.com/annaplaksienko/Diff_networks_review_simulation)
 2024-12-23 | Detectors for next-generation quasi-free scattering experiments | *Junki Tanaka, Martha Liliana Cortés, Hongna Liu, Ryo Taniuchi* | [2412.17887v1](http://arxiv.org/abs/2412.17887v1), [Code](#)
 2024-12-23 | Exploring Modular Mobility: Industry Advancements, Research Trends, and Future Directions on Modular Autonomous Vehicles | *Lanhang Ye, Toshiyuki Yamamoto* | [2412.17885v1](http://arxiv.org/abs/2412.17885v1), [Code](#)
 2024-12-22 | Survey on Abstractive Text Summarization: Dataset, Models, and Metrics | *Gospel Ozioma Nnadi, Flavio Bertini* | [2412.17165v1](http://arxiv.org/abs/2412.17165v1), [Code](https://github.com/gospelnnadi/text-summarization-sota-experiment)
@@ -1897,7 +1897,7 @@
 2024-12-21 | The Good, the Bad, and the (Un)Usable: A Rapid Literature Review on Privacy as Code | *Nicolás E. Díaz Ferreyra, Sirine Khelifi, Nalin Arachchilage, Riccardo Scandariato* | [2412.16667v1](http://arxiv.org/abs/2412.16667v1), [Code](#)
 2024-12-21 | Reaction mechanism of quasi-free knockout processes in exotic RI beam era | *Kazuki Yoshida, Junki Tanaka* | [2412.16649v1](http://arxiv.org/abs/2412.16649v1), [Code](#)
 2024-12-21 | A Systems Thinking Approach to Algorithmic Fairness | *Chris Lam* | [2412.16641v1](http://arxiv.org/abs/2412.16641v1), [Code](#)
-2024-12-21 | Deep Learning for Spatio-Temporal Fusion in Land Surface Temperature Estimation: A Comprehensive Survey, Experimental Analysis, and Future Trends | *Sofiane Bouaziz, Adel Hafiane, Raphael Canals, Rachid Nedjai* | [2412.16631v1](http://arxiv.org/abs/2412.16631v1), [Code](#)
+2024-12-21 | Deep Learning for Spatio-Temporal Fusion in Land Surface Temperature Estimation: A Comprehensive Survey, Experimental Analysis, and Future Trends | *Sofiane Bouaziz, Adel Hafiane, Raphael Canals, Rachid Nedjai* | [2412.16631v1](http://arxiv.org/abs/2412.16631v1), [Code](https://github.com/Sofianebouaziz1/STF-LST_Dataset)
 2024-12-21 | Ambient-pressure superconductivity onset above 40 K in bilayer nickelate ultrathin films | *Guangdi Zhou, Wei Lv, Heng Wang, Zihao Nie, Yaqi Chen, Yueying Li, Haoliang Huang, Weiqiang Chen, Yujie Sun, Qi-Kun Xue, Zhuoyu Chen* | [2412.16622v1](http://arxiv.org/abs/2412.16622v1), [Code](#)
 2024-12-21 | Trade-off between coherence and dissipation for excitable phase oscillators | *Chunming Zheng* | [2412.16603v1](http://arxiv.org/abs/2412.16603v1), [Code](#)
 2024-12-21 | Data-Driven Economic Agent-Based Models | *Marco Pangallo, R. Maria del Rio-Chanona* | [2412.16591v1](http://arxiv.org/abs/2412.16591v1), [Code](#)
@@ -1946,7 +1946,7 @@
 2024-12-20 | Hidden Figures in Software Engineering: A Replication Study Exploring Undergraduate Software Students' Awareness of Distinguished Scientists from Underrepresented Groups | *Ronnie de Souza Santos, Italo Santos, Robson Santos, Cleyton Magalhaes* | [2412.15500v1](http://arxiv.org/abs/2412.15500v1), [Code](#)
 2024-12-20 | Toward Appearance-based Autonomous Landing Site Identification for Multirotor Drones in Unstructured Environments | *Joshua Springer, Gylfi Þór Guðmundsson, Marcel Kyas* | [2412.15486v1](http://arxiv.org/abs/2412.15486v1), [Code](#)
 2024-12-20 | A Review of the Marathi Natural Language Processing | *Asang Dani, Shailesh R Sathe* | [2412.15471v2](http://arxiv.org/abs/2412.15471v2), [Code](#)
-2024-12-20 | The Landscape of College-level Data Visualization Courses, and the Benefits of Incorporating Statistical Thinking | *Zach Branson, Monica Paz Parra, Ronald Yurko* | [2412.16402v1](http://arxiv.org/abs/2412.16402v1), [Code](#)
+2024-12-20 | The Landscape of College-level Data Visualization Courses, and the Benefits of Incorporating Statistical Thinking | *Zach Branson, Monica Paz Parra, Ronald Yurko* | [2412.16402v1](http://arxiv.org/abs/2412.16402v1), [Code](https://github.com/ryurko/teaching-data-viz)
 2024-12-20 | A Comprehensive Study of the Dust Declines in R Coronae Borealis Stars | *Courtney L. Crawford, Jamie Soon, Geoffrey C. Clayton, Patrick Tisserand, Timothy R. Bedding, Caleb J. Clark, Chung-Uk Lee* | [2412.16393v1](http://arxiv.org/abs/2412.16393v1), [Code](#)
 2024-12-20 | Algorithmic Contract Theory: A Survey | *Paul Duetting, Michal Feldman, Inbal Talgam-Cohen* | [2412.16384v1](http://arxiv.org/abs/2412.16384v1), [Code](#)
 2024-12-20 | FairREAD: Re-fusing Demographic Attributes after Disentanglement for Fair Medical Image Classification | *Yicheng Gao, Jinkui Hao, Bo Zhou* | [2412.16373v1](http://arxiv.org/abs/2412.16373v1), [Code](#)
