@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.01.04
+> Updated on 2025.01.05
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -17,6 +17,9 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2025-01-02 | Energy-Efficient and Intelligent ISAC in V2X Networks with Spiking Neural Networks-Driven DRL | *Chen Shang, Jiadong Yu, Dinh Thai Hoang* | [2501.01038v1](http://arxiv.org/abs/2501.01038v1), [Code](#)
+2025-01-01 | Hybrid Opto-Electrical Excitation of Spin-Transfer Torque Nano-Oscillators for Advanced Computing | *Felix Oberbauer, Tristan Joachim Winkel, Tim Böhnert, Marcel S. Claro, Luana Benetti, Ihsan Çaha, Leonard Francis, Farshad Moradi, Ricardo Ferreira, Markus Münzenberg, Tahereh Sadat Parvini* | [2501.00813v1](http://arxiv.org/abs/2501.00813v1), [Code](#)
+2024-12-31 | Temporal Information Reconstruction and Non-Aligned Residual in Spiking Neural Networks for Speech Classification | *Qi Zhang, Huamin Wang, Hangchi Shen, Shukai Duan, Shiping Wen, Tingwen Huang* | [2501.00348v1](http://arxiv.org/abs/2501.00348v1), [Code](#)
 2024-12-30 | Effective and Efficient Intracortical Brain Signal Decoding with Spiking Neural Networks | *Haotian Fu, Peng Zhang, Song Yang, Herui Zhang, Ziwei Wang, Dongrui Wu* | [2412.20714v1](http://arxiv.org/abs/2412.20714v1), [Code](https://github.com/1439278026/lss-ca-snn)
 2024-12-23 | Enhanced Temporal Processing in Spiking Neural Networks for Static Object Detection Using 3D Convolutions | *Huaxu He* | [2412.17654v1](http://arxiv.org/abs/2412.17654v1), [Code](#)
 2024-12-23 | HPCNeuroNet: A Neuromorphic Approach Merging SNN Temporal Dynamics with Transformer Attention for FPGA-based Particle Physics | *Murat Isik, Hiruna Vishwamith, Jonathan Naoukin, I. Can Dikmen* | [2412.17571v1](http://arxiv.org/abs/2412.17571v1), [Code](#)
@@ -1031,6 +1034,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2024-12-31 | B2Net: Camouflaged Object Detection via Boundary Aware and Boundary Fusion | *Junmin Cai, Han Sun, Ningzhong Liu* | [2501.00426v1](http://arxiv.org/abs/2501.00426v1), [Code](#)
 2024-12-25 | CGCOD: Class-Guided Camouflaged Object Detection | *Chenxi Zhang, Qing Zhang, Jiayun Wu, Youwei Pang* | [2412.18977v1](http://arxiv.org/abs/2412.18977v1), [Code](#)
 2024-12-22 | Seamless Detection: Unifying Salient Object Detection and Camouflaged Object Detection | *Yi Liu, Chengxin Li, Xiaohui Dong, Lei Li, Dingwen Zhang, Shoukun Xu, Jungong Han* | [2412.16840v1](http://arxiv.org/abs/2412.16840v1), [Code](https://github.com/liuyi1989/seamless-detection)
 2024-12-14 | Unconstrained Salient and Camouflaged Object Detection | *Zhangjun Zhou, Yiping Li, Chunlin Zhong, Jianuo Huang, Jialun Pei, He Tang* | [2412.10943v1](http://arxiv.org/abs/2412.10943v1), [Code](#)
@@ -1134,6 +1138,8 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2025-01-02 | Change Detection-Based Procedures for Piecewise Stationary MABs: A Modular Approach | *Yu-Han Huang, Argyrios Gerogiannis, Subhonmesh Bose, Venugopal V. Veeravalli* | [2501.01291v1](http://arxiv.org/abs/2501.01291v1), [Code](#)
+2025-01-02 | EHCTNet: Enhanced Hybrid of CNN and Transformer Network for Remote Sensing Image Change Detection | *Junjie Yang, Haibo Wan, Zhihai Shang* | [2501.01238v1](http://arxiv.org/abs/2501.01238v1), [Code](#)
 2024-12-28 | Robust Quickest Change Detection with Sampling Control | *Yingze Hou, Hoda Bidkhori, Taposh Banerjee* | [2412.20207v1](http://arxiv.org/abs/2412.20207v1), [Code](#)
 2024-12-26 | Mask Approximation Net: Merging Feature Extraction and Distribution Learning for Remote Sensing Change Captioning | *Dongwei Sun, Xiangyong Cao* | [2412.19179v1](http://arxiv.org/abs/2412.19179v1), [Code](#)
 2024-12-23 | STeInFormer: Spatial-Temporal Interaction Transformer Architecture for Remote Sensing Change Detection | *Xiaowen Ma, Zhenkai Wu, Mengting Ma, Mengjiao Zhao, Fan Yang, Zhenhong Du, Wei Zhang* | [2412.17247v1](http://arxiv.org/abs/2412.17247v1), [Code](https://github.com/xwmaxwma/rschange)
@@ -1401,6 +1407,13 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2025-01-02 | Rethinking Relation Extraction: Beyond Shortcuts to Generalization with a Debiased Benchmark | *Liang He, Yougang Chu, Zhen Wu, Jianbing Zhang, Xinyu Dai, Jiajun Chen* | [2501.01349v1](http://arxiv.org/abs/2501.01349v1), [Code](#)
+2025-01-01 | Rethinking Addressing in Language Models via Contexualized Equivariant Positional Encoding | *Jiajun Zhu, Peihao Wang, Ruisi Cai, Jason D. Lee, Pan Li, Zhangyang Wang* | [2501.00712v1](http://arxiv.org/abs/2501.00712v1), [Code](#)
+2024-12-31 | Rethink Delay Doppler Channels and Time-Frequency Coding | *Xiang-Gen Xia* | [2501.00641v1](http://arxiv.org/abs/2501.00641v1), [Code](#)
+2024-12-31 | DiC: Rethinking Conv3x3 Designs in Diffusion Models | *Yuchuan Tian, Jing Han, Chengcheng Wang, Yuchen Liang, Chao Xu, Hanting Chen* | [2501.00603v1](http://arxiv.org/abs/2501.00603v1), [Code](#)
+2024-12-31 | Proactive Conversational Agents with Inner Thoughts | *Xingyu Bruce Liu, Shitao Fang, Weiyan Shi, Chien-Sheng Wu, Takeo Igarashi, Xiang `Anthony' Chen* | [2501.00383v1](http://arxiv.org/abs/2501.00383v1), [Code](#)
+2024-12-31 | Rethinking Layer Removal: Preserving Critical Components with Task-Aware Singular Value Decomposition | *Kainan Liu, Yong Zhang, Ning Cheng, Zhitao Li, Shaojun Wang, Jing Xiao* | [2501.00339v1](http://arxiv.org/abs/2501.00339v1), [Code](#)
+2024-12-31 | Have We Designed Generalizable Structural Knowledge Promptings? Systematic Evaluation and Rethinking | *Yichi Zhang, Zhuo Chen, Lingbing Guo, Yajing Xu, Shaokai Chen, Mengshu Sun, Binbin Hu, Zhiqiang Zhang, Lei Liang, Wen Zhang, Huajun Chen* | [2501.00244v1](http://arxiv.org/abs/2501.00244v1), [Code](#)
 2024-12-30 | Rethinking Aleatoric and Epistemic Uncertainty | *Freddie Bickford Smith, Jannik Kossen, Eleanor Trollope, Mark van der Wilk, Adam Foster, Tom Rainforth* | [2412.20892v1](http://arxiv.org/abs/2412.20892v1), [Code](#)
 2024-12-30 | Analog Alchemy: Neural Computation with In-Memory Inference, Learning and Routing | *Yigit Demirag* | [2412.20848v1](http://arxiv.org/abs/2412.20848v1), [Code](#)
 2024-12-30 | Enhancing Visual Representation for Text-based Person Searching | *Wei Shen, Ming Fang, Yuxia Wang, Jiafeng Xiao, Diping Li, Huangqun Chen, Ling Xu, Weifeng Zhang* | [2412.20646v1](http://arxiv.org/abs/2412.20646v1), [Code](https://github.com/zhangweifeng1218/vfe_tps)
@@ -1514,7 +1527,7 @@
 2024-10-30 | System Reliability Engineering in the Age of Industry 4.0: Challenges and Innovations | *Antoine Tordeux, Tim M. Julitz, Isabelle Müller, Zikai Zhang, Jannis Pietruschka, Nicola Fricke, Nadine Schlüter, Stefan Bracke, Manuel Löwer* | [2411.08913v1](http://arxiv.org/abs/2411.08913v1), [Code](#)
 2024-10-29 | Rethinking Code Refinement: Learning to Judge Code Efficiency | *Minju Seo, Jinheon Baek, Sung Ju Hwang* | [2410.22375v1](http://arxiv.org/abs/2410.22375v1), [Code](https://github.com/going-doer/judge_code_efficiency)
 2024-10-28 | Lifting the Veil on the Large Language Model Supply Chain: Composition, Risks, and Mitigations | *Kaifeng Huang, Bihuan Chen, You Lu, Susheng Wu, Dingji Wang, Yiheng Huang, Haowen Jiang, Zhuotong Zhou, Junming Cao, Xin Peng* | [2410.21218v2](http://arxiv.org/abs/2410.21218v2), [Code](#)
-2024-10-28 | ByteNet: Rethinking Multimedia File Fragment Classification through Visual Perspectives | *Wenyang Liu, Kejun Wu, Tianyi Liu, Yi Wang, Kim-Hui Yap, Lap-Pui Chau* | [2410.20855v1](http://arxiv.org/abs/2410.20855v1), [Code](#)
+2024-10-28 | ByteNet: Rethinking Multimedia File Fragment Classification through Visual Perspectives | *Wenyang Liu, Kejun Wu, Tianyi Liu, Yi Wang, Kim-Hui Yap, Lap-Pui Chau* | [2410.20855v1](http://arxiv.org/abs/2410.20855v1), [Code](https://github.com/wenyang001/byte2image)
 2024-10-28 | Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification | *Hsun-Yu Kuo, Yin-Hsiang Liao, Yu-Chieh Chao, Wei-Yun Ma, Pu-Jen Cheng* | [2410.21526v1](http://arxiv.org/abs/2410.21526v1), [Code](#)
 2024-10-27 | Rethinking Reconstruction-based Graph-Level Anomaly Detection: Limitations and a Simple Remedy | *Sunwoo Kim, Soo Yong Lee, Fanchen Bu, Shinhwan Kang, Kyungho Kim, Jaemin Yoo, Kijung Shin* | [2410.20366v1](http://arxiv.org/abs/2410.20366v1), [Code](https://github.com/kswoo97/GLAD_MUSE)
 2024-10-27 | Rethinking Data Synthesis: A Teacher Model Training Recipe with Interpretation | *Yifang Chen, David Zhu, Simon Du, Kevin Jamieson, Yang Liu* | [2410.20362v2](http://arxiv.org/abs/2410.20362v2), [Code](#)
@@ -1795,6 +1808,64 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
+2025-01-02 | Current constraints on cosmological scenarios with very low reheating temperatures | *Nicola Barbieri, Thejs Brinckmann, Stefano Gariazzo, Massimiliano Lattanzi, Sergio Pastor, Ofelia Pisanti* | [2501.01369v1](http://arxiv.org/abs/2501.01369v1), [Code](#)
+2025-01-02 | Tracking behavioural differences across chronotypes: A case study in Finland using Oura rings | *Chandreyee Roy, Kunal Bhattacharya, Kimmo Kaski* | [2501.01350v1](http://arxiv.org/abs/2501.01350v1), [Code](#)
+2025-01-02 | Large Vision-Language Model Alignment and Misalignment: A Survey Through the Lens of Explainability | *Dong Shu, Haiyan Zhao, Jingyu Hu, Weiru Liu, Lu Cheng, Mengnan Du* | [2501.01346v1](http://arxiv.org/abs/2501.01346v1), [Code](#)
+2025-01-02 | Inequality of opportunity under current China's license plate policy | *Nina Xiaochun Sun, Zaifang He, Yi Pang* | [2501.01298v1](http://arxiv.org/abs/2501.01298v1), [Code](#)
+2025-01-02 | Language Models for Code Optimization: Survey, Challenges and Future Directions | *Jingzhi Gong, Vardan Voskanyan, Paul Brookes, Fan Wu, Wei Jie, Jie Xu, Rafail Giavrimis, Mike Basios, Leslie Kanthan, Zheng Wang* | [2501.01277v1](http://arxiv.org/abs/2501.01277v1), [Code](#)
+2025-01-02 | Digital Guardians: Can GPT-4, Perspective API, and Moderation API reliably detect hate speech in reader comments of German online newspapers? | *Manuel Weber, Moritz Huber, Maximilian Auch, Alexander Döschl, Max-Emanuel Keller, Peter Mandl* | [2501.01256v1](http://arxiv.org/abs/2501.01256v1), [Code](#)
+2025-01-02 | About the Keplerization of motion in any central force field | *Christian Carimalo* | [2501.01247v1](http://arxiv.org/abs/2501.01247v1), [Code](#)
+2025-01-02 | A Survey and Tutorial of Redundancy Mitigation for Vehicular Cooperative Perception: Standards, Strategies and Open Issues | *Tengfei Lyu, Md Noor-A-Rahim, Dirk Pesch, Aisling O'Driscoll* | [2501.01200v1](http://arxiv.org/abs/2501.01200v1), [Code](#)
+2025-01-02 | Science of a coffee cup: a physicist walks into a bar... | *Aleksi Bossart, Romain Fleury, Benjamin Apffel* | [2501.01180v1](http://arxiv.org/abs/2501.01180v1), [Code](#)
+2025-01-02 | Deep Learning in Palmprint Recognition-A Comprehensive Survey | *Chengrui Gao, Ziyuan Yang, Wei Jia, Lu Leng, Bob Zhang, Andrew Beng Jin Teoh* | [2501.01166v1](http://arxiv.org/abs/2501.01166v1), [Code](#)
+2025-01-02 | Graph2text or Graph2token: A Perspective of Large Language Models for Graph Learning | *Shuo Yu, Yingbo Wang, Ruolin Li, Guchun Liu, Yanming Shen, Shaoxiong Ji, Bowen Li, Fengling Han, Xiuzhen Zhang, Feng Xia* | [2501.01124v1](http://arxiv.org/abs/2501.01124v1), [Code](#)
+2025-01-02 | Gluon mass scale through the Schwinger mechanism | *M. N. Ferreira, J. Papavassiliou* | [2501.01080v1](http://arxiv.org/abs/2501.01080v1), [Code](#)
+2025-01-02 | SpecPT (Spectroscopy Pre-trained Transformer) Model for Extragalactic Spectroscopy: I. Architecture and Automated Redshift Measurement | *Rohan Pattnaik, Jeyhan S. Kartaltepe, Clive Binu* | [2501.01070v1](http://arxiv.org/abs/2501.01070v1), [Code](#)
+2025-01-02 | Higher serum 25(OH)D concentration is associated with lower risk of metabolic syndrome among Aboriginal and Torres Strait Islander peoples in Australia | *Belinda Neo, Dale Tilbrook, Noel Nannup, John Jacky, Carol Michie, Cindy Prior, Eleanor Dunlop, Brad Farrant, Won Sun Chen, Carrington C. J. Shepherd, Lucinda J. Black, .* | [2501.01043v1](http://arxiv.org/abs/2501.01043v1), [Code](#)
+2025-01-02 | ValuesRAG: Enhancing Cultural Alignment Through Retrieval-Augmented Contextual Learning | *Wonduk Seo, Zonghao Yuan, Yi Bu* | [2501.01031v1](http://arxiv.org/abs/2501.01031v1), [Code](#)
+2025-01-02 | Reasoning based on symbolic and parametric knowledge bases: a survey | *Mayi Xu, Yunfeng Ning, Yongqi Li, Jianhao Chen, Jintao Wen, Yao Xiao, Shen Zhou, Birong Pan, Zepeng Bao, Xin Miao, Hankun Kang, Ke Sun, Tieyun Qian* | [2501.01030v1](http://arxiv.org/abs/2501.01030v1), [Code](#)
+2025-01-02 | State-of-the-art AI-based Learning Approaches for Deepfake Generation and Detection, Analyzing Opportunities, Threading through Pros, Cons, and Future Prospects | *Harshika Goyal, Mohammad Saif Wajid, Mohd Anas Wajid, Akib Mohi Ud Din Khanday, Mehdi Neshat, Amir Gandomi* | [2501.01029v1](http://arxiv.org/abs/2501.01029v1), [Code](#)
+2025-01-02 | Deep Reinforcement Learning for Job Scheduling and Resource Management in Cloud Computing: An Algorithm-Level Review | *Yan Gu, Zhaoze Liu, Shuhong Dai, Cong Liu, Ying Wang, Shen Wang, Georgios Theodoropoulos, Long Cheng* | [2501.01007v1](http://arxiv.org/abs/2501.01007v1), [Code](#)
+2025-01-02 | Stochastic Simulation and Monte Carlo Method | *Davoud Mirzaei* | [2501.00997v1](http://arxiv.org/abs/2501.00997v1), [Code](#)
+2025-01-02 | Photometric Objects Around Cosmic Webs (PAC). VII. Disentangling Mass and Environment Quenching with the Aid of Galaxy-halo Connection in Simulations | *Yun Zheng, Kun Xu, Donghai Zhao, Y. P. Jing, Hongyu Gao, Xiaolin Luo, Ming Li* | [2501.00986v1](http://arxiv.org/abs/2501.00986v1), [Code](#)
+2025-01-02 | The $z \gtrsim 9$ galaxy UV luminosity function from the JWST Advanced Deep Extragalactic Survey: insights into early galaxy evolution and reionization | *Lily Whitler, Daniel P. Stark, Michael W. Topping, Brant Robertson, Marcia Rieke, Kevin N. Hainline, Ryan Endsley, Zuyi Chen, William M. Baker, Rachana Bhatawdekar, Andrew J. Bunker, Stefano Carniani, Stéphane Charlot, Jacopo Chevallard, Emma Curtis-Lake, Eiichi Egami, Daniel J. Eisenstein, Jakob M. Helton, Zhiyuan Ji, Benjamin D. Johnson, Pablo G. Pérez-González, Pierluigi Rinaldi, Sandro Tacchella, Christina C. Williams, Christopher N. A. Willmer, Chris Willott, Joris Witstok* | [2501.00984v1](http://arxiv.org/abs/2501.00984v1), [Code](#)
+2025-01-02 | Are LLMs effective psychological assessors? Leveraging adaptive RAG for interpretable mental health screening through psychometric practice | *Federico Ravenda, Seyed Ali Bahrainian, Andrea Raballo, Antonietta Mira, Noriko Kando* | [2501.00982v1](http://arxiv.org/abs/2501.00982v1), [Code](#)
+2025-01-01 | On the Origin and Fate of Our Universe | *Cumrun Vafa* | [2501.00966v1](http://arxiv.org/abs/2501.00966v1), [Code](#)
+2025-01-01 | 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining | *Wenqi Zhang, Hang Zhang, Xin Li, Jiashuo Sun, Yongliang Shen, Weiming Lu, Deli Zhao, Yueting Zhuang, Lidong Bing* | [2501.00958v1](http://arxiv.org/abs/2501.00958v1), [Code](#)
+2025-01-01 | Incremental Dialogue Management: Survey, Discussion, and Implications for HRI | *Casey Kennington, Pierre Lison, David Schlangen* | [2501.00953v1](http://arxiv.org/abs/2501.00953v1), [Code](#)
+2025-01-01 | Fisher Information in Kinetic Theory | *Cédric Villani* | [2501.00925v1](http://arxiv.org/abs/2501.00925v1), [Code](#)
+2025-01-01 | Rational approximation | *Lloyd N. Trefethen* | [2501.00902v1](http://arxiv.org/abs/2501.00902v1), [Code](#)
+2025-01-01 | Representation in large language models | *Cameron C. Yetman* | [2501.00885v1](http://arxiv.org/abs/2501.00885v1), [Code](#)
+2025-01-01 | Paternalism and Deliberation: An Experiment on Making Formal Rules | *Max R. P. Grossmann* | [2501.00863v1](http://arxiv.org/abs/2501.00863v1), [Code](#)
+2025-01-01 | Advances in UAV Avionics Systems Architecture, Classification and Integration: A Comprehensive Review and Future Perspectives | *Hashim A. Hashim* | [2501.00856v1](http://arxiv.org/abs/2501.00856v1), [Code](#)
+2025-01-01 | Scale-wise Bidirectional Alignment Network for Referring Remote Sensing Image Segmentation | *Kun Li, George Vosselman, Michael Ying Yang* | [2501.00851v1](http://arxiv.org/abs/2501.00851v1), [Code](#)
+2025-01-01 | A Survey of Secure Semantic Communications | *Rui Meng, Song Gao, Dayu Fan, Haixiao Gao, Yining Wang, Xiaodong Xu, Bizhu Wang, Suyu Lv, Zhidi Zhang, Mengying Sun, Shujun Han, Chen Dong, Xiaofeng Tao, Ping Zhang* | [2501.00842v1](http://arxiv.org/abs/2501.00842v1), [Code](#)
+2025-01-01 | Spatially-guided Temporal Aggregation for Robust Event-RGB Optical Flow Estimation | *Qianang Zhou, Junhui Hou, Meiyi Yang, Yongjian Deng, Youfu Li, Junlin Xiong* | [2501.00838v1](http://arxiv.org/abs/2501.00838v1), [Code](#)
+2025-01-01 | Complexity of Finite Semigroups: History and Decidability | *StuarT Margolis, John Rhodes, Anne Schilling* | [2501.00770v1](http://arxiv.org/abs/2501.00770v1), [Code](#)
+2025-01-01 | Gravitational Instantons, old and new | *Maciej Dunajski* | [2501.00688v1](http://arxiv.org/abs/2501.00688v1), [Code](#)
+2024-12-31 | Unexpected Rise in Nuclear Collectivity from Short-Range Physics | *Kevin S. Becker, Kristina D. Launey, Andreas Ekström, Tomáš Dytrych, Daniel Langr, Grigor H. Sargsyan, Jerry P. Draayer* | [2501.00682v1](http://arxiv.org/abs/2501.00682v1), [Code](#)
+2024-12-31 | Why Are Positional Encodings Nonessential for Deep Autoregressive Transformers? Revisiting a Petroglyph | *Kazuki Irie* | [2501.00659v1](http://arxiv.org/abs/2501.00659v1), [Code](#)
+2024-12-31 | Efficient Standardization of Clinical Notes using Large Language Models | *Daniel B. Hier, Michael D. Carrithers, Thanh Son Do, Tayo Obafemi-Ajayi* | [2501.00644v1](http://arxiv.org/abs/2501.00644v1), [Code](#)
+2024-12-31 | Sampling the Bayesian Elastic Net | *Christopher M. Hans, Ningyi Liu* | [2501.00594v1](http://arxiv.org/abs/2501.00594v1), [Code](#)
+2024-12-31 | Setting Standards in Turkish NLP: TR-MMLU for Large Language Model Evaluation | *M. Ali Bayram, Ali Arda Fincan, Ahmet Semih G"um"uş, Banu Diri, Savaş Yıldırım, "Oner Aytaş* | [2501.00593v1](http://arxiv.org/abs/2501.00593v1), [Code](#)
+2024-12-31 | AI and Quantum Computing in Binary Photocatalytic Hydrogen Production | *Dennis Delali Kwesi Wayo, Leonardo Goliatt, Darvish Ganji* | [2501.00575v1](http://arxiv.org/abs/2501.00575v1), [Code](#)
+2024-12-31 | Angle-resolved photoemission of topological materials | *Jaime Sánchez-Barriga, Oliver J. Clark, Oliver Rader* | [2501.00497v1](http://arxiv.org/abs/2501.00497v1), [Code](#)
+2024-12-31 | Efficient support ticket resolution using Knowledge Graphs | *Sherwin Varghese, James Tian* | [2501.00461v1](http://arxiv.org/abs/2501.00461v1), [Code](#)
+2024-12-31 | A Novel Survey for Young Substellar Objects with the W-band Filter. VII. Water-Bearing Objects in the Core of the Rho Ophiuchi Cloud Complex | *Tanvi Sharma, Wen-Ping Chen, Beth Biller, Loic Albert, Belinda Damian, Jessy Jose, Bhavana Lalchand, Michael C. Liu, Yumiko Oasa* | [2501.00433v1](http://arxiv.org/abs/2501.00433v1), [Code](#)
+2024-12-31 | Topic Review: Hatsugai-Kohmoto models: Exactly solvable playground for Mottness and Non-Fermi Liquid | *Miaomiao Zhao, Wei-Wei Yang, Yin Zhong* | [2501.00388v1](http://arxiv.org/abs/2501.00388v1), [Code](#)
+2024-12-31 | Low-Rank Adaptation for Foundation Models: A Comprehensive Review | *Menglin Yang, Jialin Chen, Yifei Zhang, Jiahong Liu, Jiasheng Zhang, Qiyao Ma, Harshit Verma, Qianru Zhang, Min Zhou, Irwin King, Rex Ying* | [2501.00365v1](http://arxiv.org/abs/2501.00365v1), [Code](#)
+2024-12-31 | Spin waves in magnetic nanodisks, nanorings, and 3D nanovolcanoes | *Oleksandr Dobrovolskiy, Gleb Kakazei* | [2501.00333v1](http://arxiv.org/abs/2501.00333v1), [Code](#)
+2024-12-31 | MapEval: A Map-Based Evaluation of Geo-Spatial Reasoning in Foundation Models | *Mahir Labib Dihan, Md Tanvir Hassan, Md Tanvir Parvez, Md Hasebul Hasan, Md Almash Alam, Muhammad Aamir Cheema, Mohammed Eunus Ali, Md Rizwan Parvez* | [2501.00316v1](http://arxiv.org/abs/2501.00316v1), [Code](https://github.com/MapEval/MapEval-Visual)
+2024-12-31 | Retrieval-Augmented Generation with Graphs (GraphRAG) | *Haoyu Han, Yu Wang, Harry Shomer, Kai Guo, Jiayuan Ding, Yongjia Lei, Mahantesh Halappanavar, Ryan A. Rossi, Subhabrata Mukherjee, Xianfeng Tang, Qi He, Zhigang Hua, Bo Long, Tong Zhao, Neil Shah, Amin Javari, Yinglong Xia, Jiliang Tang* | [2501.00309v1](http://arxiv.org/abs/2501.00309v1), [Code](#)
+2024-12-31 | A novel analysis of contamination in Lyman-break galaxy samples at $\boldsymbol{z\sim6-8}$: spatial correlation with intermediate-redshift galaxies at $\boldsymbol{z\sim1.3-2}$ | *Miftahul Hilmi, Nicha Leethochawalit, Michele Trenti, Benjamin Metha* | [2501.00301v1](http://arxiv.org/abs/2501.00301v1), [Code](#)
+2024-12-31 | A review of faithfulness metrics for hallucination assessment in Large Language Models | *Ben Malin, Tatiana Kalganova, Nikoloas Boulgouris* | [2501.00269v1](http://arxiv.org/abs/2501.00269v1), [Code](#)
+2024-12-31 | Automotive Speed Estimation: Sensor Types and Error Characteristics from OBD-II to ADAS | *Hany Ragab, Sidney Givigi, Aboelmagd Noureldin* | [2501.00242v1](http://arxiv.org/abs/2501.00242v1), [Code](#)
+2024-12-31 | CancerKG.ORG A Web-scale, Interactive, Verifiable Knowledge Graph-LLM Hybrid for Assisting with Optimal Cancer Treatment and Care | *Michael Gubanov, Anna Pyayt, Aleksandra Karolak* | [2501.00223v1](http://arxiv.org/abs/2501.00223v1), [Code](#)
+2024-12-31 | Debunking the CUDA Myth Towards GPU-based AI Systems | *Yunjae Lee, Juntaek Lim, Jehyeon Bang, Eunyeong Cho, Huijong Jeong, Taesu Kim, Hyungjun Kim, Joonhyung Lee, Jinseop Im, Ranggi Hwang, Se Jung Kwon, Dongsoo Lee, Minsoo Rhu* | [2501.00210v1](http://arxiv.org/abs/2501.00210v1), [Code](#)
+2024-12-31 | Unraveling the switching dynamics in a quantum double-well potential | *Qile Su, Rodrigo G. Cortiñas, Jayameenakshi Venkatraman, Shruti Puri* | [2501.00209v1](http://arxiv.org/abs/2501.00209v1), [Code](#)
+2024-12-31 | Parallel I/O Characterization and Optimization on Large-Scale HPC Systems: A 360-Degree Survey | *Hammad Ather, Jean Luca Bez, Chen Wang, Hank Childs, Allen D. Malony, Suren Byna* | [2501.00203v1](http://arxiv.org/abs/2501.00203v1), [Code](#)
+2024-12-31 | Towards Unraveling and Improving Generalization in World Models | *Qiaoyi Fang, Weiyu Du, Hang Wang, Junshan Zhang* | [2501.00195v1](http://arxiv.org/abs/2501.00195v1), [Code](#)
+2024-12-31 | Minimal Models for RNA Simulations | *D. Thirumalai, Naoto Hori, Hung T. Nguyen* | [2501.00194v1](http://arxiv.org/abs/2501.00194v1), [Code](#)
 2024-12-30 | The Many Colours of Amplitudes | *Jacob L. Bourjaily, Michael Plesser, Cristian Vergu* | [2412.21189v1](http://arxiv.org/abs/2412.21189v1), [Code](#)
 2024-12-30 | Holographic observers for time-band algebras | *Kristan Jensen, Suvrat Raju, Antony J. Speranza* | [2412.21185v1](http://arxiv.org/abs/2412.21185v1), [Code](#)
 2024-12-30 | Open-Source 5G Core Platforms: A Low-Cost Solution and Performance Evaluation | *Maria Barbosa, Marcelo Silva, Ednelson Cavalcanti, Kelvin Dias* | [2412.21162v1](http://arxiv.org/abs/2412.21162v1), [Code](#)
@@ -1820,6 +1891,12 @@
 2024-12-30 | On Discrete Curvatures of Trees | *Sawyer Jack Robertson* | [2412.20661v1](http://arxiv.org/abs/2412.20661v1), [Code](#)
 2024-12-30 | Chaos synchronization: a review | *Rosario D. Laureano, Diana A. Mendes, Manuel Alberto M. Ferreira* | [2412.20649v1](http://arxiv.org/abs/2412.20649v1), [Code](#)
 2024-12-30 | Graph Neural Networks for Next-Generation-IoT: Recent Advances and Open Challenges | *Nguyen Xuan Tung, Le Tung Giang, Bui Duc Son, Seon Geun Jeong, Trinh Van Chien, Won Joo Hwang, Lajos Hanzo* | [2412.20634v1](http://arxiv.org/abs/2412.20634v1), [Code](#)
+2024-12-30 | Electromotive field in space and astrophysical plasmas | *Philippe-A. Bourdin, Yasuhito Narita* | [2501.00181v1](http://arxiv.org/abs/2501.00181v1), [Code](#)
+2024-12-30 | The Extreme Space Weather Event of 1872 February: Sunspots, Magnetic Disturbance, and Auroral Displays | *Hisashi Hayakawa, Edward W. Cliver, Frédéric Clette, Yusuke Ebihara, Shin Toriumi, Ilaria Ermolli, Theodosios Chatzistergos, Kentaro Hattori, Delores J. Knipp, Séan P. Blake, Gianna Cauzzi, Kevin Reardon, Philippe-A. Bourdin, Dorothea Just, Mikhail Vokhmyanin, Keitaro Matsumoto, Yoshizumi Miyoshi, José R. Ribeiro, Ana P. Correia, David M. Willis, Matthew N. Wild, Sam M. Silverman* | [2501.00176v1](http://arxiv.org/abs/2501.00176v1), [Code](#)
+2024-12-30 | The Text Classification Pipeline: Starting Shallow going Deeper | *Marco Siino, Ilenia Tinnirello, Marco La Cascia* | [2501.00174v1](http://arxiv.org/abs/2501.00174v1), [Code](#)
+2024-12-30 | Autoencoder Reconstruction of Cosmological Microlensing Magnification Maps | *Somayeh Khakpash, Federica Bianco, Georgios Vernardos, Gregory Dobler, Charles Keeton* | [2501.00153v1](http://arxiv.org/abs/2501.00153v1), [Code](#)
+2024-12-30 | Quantum Geometry in Quantum Materials | *Jiabin Yu, B. Andrei Bernevig, Raquel Queiroz, Enrico Rossi, Päivi Törmä, Bohm-Jung Yang* | [2501.00098v1](http://arxiv.org/abs/2501.00098v1), [Code](#)
+2024-12-30 | Human-Centered Design for AI-based Automatically Generated Assessment Reports: A Systematic Review | *Ehsan Latif, Ying Chen, Xiaoming Zhai, Yue Yin* | [2501.00081v1](http://arxiv.org/abs/2501.00081v1), [Code](#)
 2024-12-29 | Bridging the Gap: A Decade Review of Time-Series Clustering Methods | *John Paparrizos, Fan Yang, Haojun Li* | [2412.20582v1](http://arxiv.org/abs/2412.20582v1), [Code](#)
 2024-12-29 | Regge poles and cuts and the Lipatov vertex | *Samuel Abreu, Giulio Falcioni, Einan Gardi, Calum Milloy, Leonardo Vernazza* | [2412.20577v1](http://arxiv.org/abs/2412.20577v1), [Code](#)
 2024-12-29 | A Survey on Time-Series Distance Measures | *John Paparrizos, Haojun Li, Fan Yang, Kaize Wu, Jens E. d'Hondt, Odysseas Papapetrou* | [2412.20574v1](http://arxiv.org/abs/2412.20574v1), [Code](#)
@@ -1836,6 +1913,8 @@
 2024-12-29 | Artificial Intelligence for Quantum Error Correction: A Comprehensive Review | *Zihao Wang, Hao Tang* | [2412.20380v1](http://arxiv.org/abs/2412.20380v1), [Code](#)
 2024-12-29 | Enhancing Code LLMs with Reinforcement Learning in Code Generation: A Survey | *Junqiao Wang, Zeng Zhang, Yangfan He, Yuyang Song, Tianyu Shi, Yuchen Li, Hengyuan Xu, Kunyu Wu, Guangwu Qian, Qiuwu Chen, Lewei He* | [2412.20367v2](http://arxiv.org/abs/2412.20367v2), [Code](#)
 2024-12-29 | Distilling Desired Comments for Enhanced Code Review with Large Language Models | *Yongda Yu, Lei Zhang, Guoping Rong, Haifeng Shen, Jiahao Zhang, Haoxiang Yan, Guohao Shi, Dong Shao, Ruiqi Pan, Yuan Li, Qiushi Wang, Zhao Tian* | [2412.20340v1](http://arxiv.org/abs/2412.20340v1), [Code](#)
+2024-12-29 | ICLR: In-Context Learning of Representations | *Core Francisco Park, Andrew Lee, Ekdeep Singh Lubana, Yongyi Yang, Maya Okawa, Kento Nishi, Martin Wattenberg, Hidenori Tanaka* | [2501.00070v1](http://arxiv.org/abs/2501.00070v1), [Code](#)
+2024-12-29 | ELECTRA and GPT-4o: Cost-Effective Partners for Sentiment Analysis | *James P. Beno* | [2501.00062v1](http://arxiv.org/abs/2501.00062v1), [Code](#)
 2024-12-28 | No Preference Left Behind: Group Distributional Preference Optimization | *Binwei Yao, Zefan Cai, Yun-Shiuan Chuang, Shanglin Yang, Ming Jiang, Diyi Yang, Junjie Hu* | [2412.20299v1](http://arxiv.org/abs/2412.20299v1), [Code](https://github.com/BigBinnie/GDPO)
 2024-12-28 | "Feeling that I was Collaborating with Them": A 20 years Systematic Literature Review of Social Virtual Reality Leveraging Collaboration | *Niloofar Sayadi, Sadie Co, Diego Gomez-Zara* | [2412.20266v1](http://arxiv.org/abs/2412.20266v1), [Code](#)
 2024-12-28 | Next-Gen Interconnection Systems with Compute Express Link: a Comprehensive Survey | *Chen Chen, Xinkui Zhao, Guanjie Cheng, Yuesheng Xu, Shuiguang Deng, Jianwei Yin* | [2412.20249v1](http://arxiv.org/abs/2412.20249v1), [Code](#)
@@ -1937,6 +2016,7 @@
 2024-12-24 | Gamma-ray bursts: what do we know today that we did not know 10 years ago? | *Asaf Pe'er* | [2412.18681v1](http://arxiv.org/abs/2412.18681v1), [Code](#)
 2024-12-24 | State-of-the-Art Underwater Vehicles and Technologies Enabling Smart Ocean: Survey and Classifications | *Jiajie Xu, Xabier Irigoien, Mohamed-Slim Alouini* | [2412.18667v1](http://arxiv.org/abs/2412.18667v1), [Code](#)
 2024-12-24 | A Review of Latent Representation Models in Neuroimaging | *C. Vázquez-García, F. J. Martínez-Murcia, F. Segovia Román, Juan M. Górriz* | [2412.19844v1](http://arxiv.org/abs/2412.19844v1), [Code](#)
+2024-12-24 | Effects of Turbulence Modeling and Parcel Approach on Dispersed Two-Phase Swirling Flow | *Osama A. Marzouk, E. David Huckaby* | [2501.00037v1](http://arxiv.org/abs/2501.00037v1), [Code](#)
 2024-12-23 | ResearchTown: Simulator of Human Research Community | *Haofei Yu, Zhaochen Hong, Zirui Cheng, Kunlun Zhu, Keyang Xuan, Jinwei Yao, Tao Feng, Jiaxuan You* | [2412.17767v1](http://arxiv.org/abs/2412.17767v1), [Code](https://github.com/ulab-uiuc/research-town)
 2024-12-23 | Survey of Large Multimodal Model Datasets, Application Categories and Taxonomy | *Priyaranjan Pattnayak, Hitesh Laxmichand Patel, Bhargava Kumar, Amit Agarwal, Ishan Banerjee, Srikant Panda, Tejaswini Kumar* | [2412.17759v1](http://arxiv.org/abs/2412.17759v1), [Code](#)
 2024-12-23 | Warped accretion disks and quasars with episodic periodicity of long-term variations | *Yue-Chang Peng, Jian-Min Wang, Pu Du, Shuo Zhai, Yan-Rong Li* | [2412.17728v2](http://arxiv.org/abs/2412.17728v2), [Code](#)
