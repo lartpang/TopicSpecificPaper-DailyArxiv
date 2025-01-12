@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.01.11
+> Updated on 2025.01.12
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1864,7 +1864,7 @@
 2025-01-09 | The Progenitor Systems of Classical Novae in M31 | *C. S. Abelson, Carles Badenes, Laura Chomiuk, Benjamin F. Williams, Katelyn Breivik, Lluís Galbany, Cristina Jimenez Palau* | [2501.04925v1](http://arxiv.org/abs/2501.04925v1), [Code](#)
 2025-01-09 | SpecTf: Transformers Enable Data-Driven Imaging Spectroscopy Cloud Detection | *Jake H. Lee, Michael Kiper, David R. Thompson, Philip G. Brodrick* | [2501.04916v1](http://arxiv.org/abs/2501.04916v1), [Code](https://github.com/emit-sds/SpecTf)
 2025-01-09 | Another piece to the puzzle: radio detection of a JWST discovered AGN candidate | *Anniek J. Gloudemans, Kenneth J. Duncan, Anna-Christina Eilers, Emanuele Paolo Farina, Yuichi Harikane, Kohei Inayoshi, Erini Lambrides, Eleni Vardoulaki* | [2501.04912v1](http://arxiv.org/abs/2501.04912v1), [Code](#)
-2025-01-09 | Online Continual Learning: A Systematic Literature Review of Approaches, Challenges, and Benchmarks | *Seyed Amir Bidaki, Amir Mohammadkhah, Kiyan Rezaee, Faeze Hassani, Sadegh Eskandari, Maziar Salahi, Mohammad M. Ghassemi* | [2501.04897v1](http://arxiv.org/abs/2501.04897v1), [Code](#)
+2025-01-09 | Online Continual Learning: A Systematic Literature Review of Approaches, Challenges, and Benchmarks | *Seyed Amir Bidaki, Amir Mohammadkhah, Kiyan Rezaee, Faeze Hassani, Sadegh Eskandari, Maziar Salahi, Mohammad M. Ghassemi* | [2501.04897v1](http://arxiv.org/abs/2501.04897v1), [Code](https://github.com/kiyan-rezaee/systematic-literature-review-on-online-continual-learning)
 2025-01-08 | A study of the frequency and characteristics of stellar companions and Jupiter-like planets in nearby open clusters | *R. Gratton, M. Bonavita, D. Mesa, S. Desidera, A. Zurlo, S. Marino, V. D'Orazi, E. Rigliaco, V. Nascimbeni, D. Barbato, G. Columba, V. Squicciarini* | [2501.04692v1](http://arxiv.org/abs/2501.04692v1), [Code](#)
 2025-01-08 | URSA: Understanding and Verifying Chain-of-thought Reasoning in Multimodal Mathematics | *Ruilin Luo, Zhuofan Zheng, Yifan Wang, Yiyao Yu, Xinzhe Ni, Zicheng Lin, Jin Zeng, Yujiu Yang* | [2501.04686v1](http://arxiv.org/abs/2501.04686v1), [Code](#)
 2025-01-08 | A Novel Highly Parallelizable Machine-Learning Based Method for the Fast Solution of Integral Equations for Electromagnetic Scattering Problems | *Enes Koç, Mert Kalfa, Secil E. Dogan, Vakur B. Ertürk* | [2501.04684v1](http://arxiv.org/abs/2501.04684v1), [Code](#)
