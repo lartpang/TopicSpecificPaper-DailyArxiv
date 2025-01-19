@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.01.18
+> Updated on 2025.01.19
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -825,7 +825,7 @@
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
 2025-01-14 | Learning Motion and Temporal Cues for Unsupervised Video Object Segmentation | *Yunzhi Zhuge, Hongyu Gu, Lu Zhang, Jinqing Qi, Huchuan Lu* | [2501.07806v1](http://arxiv.org/abs/2501.07806v1), [Code](https://github.com/hy0523/mtnet)
-2025-01-11 | CPDR: Towards Highly-Efficient Salient Object Detection via Crossed Post-decoder Refinement | *Yijie Li, Hewei Wang, Aggelos Katsaggelos* | [2501.06441v1](http://arxiv.org/abs/2501.06441v1), [Code](#)
+2025-01-11 | CPDR: Towards Highly-Efficient Salient Object Detection via Crossed Post-decoder Refinement | *Yijie Li, Hewei Wang, Aggelos Katsaggelos* | [2501.06441v1](http://arxiv.org/abs/2501.06441v1), [Code](https://github.com/Att100/CPDR)
 2025-01-08 | Boosting Salient Object Detection with Knowledge Distillated from Large Foundation Models | *Miaoyang He, Shuyong Gao, Tsui Qin Mok, Weifeng Ge, Wengqiang Zhang* | [2501.04582v1](http://arxiv.org/abs/2501.04582v1), [Code](#)
 2025-01-03 | Dual Mutual Learning Network with Global-local Awareness for RGB-D Salient Object Detection | *Kang Yi, Haoran Tang, Yumeng Li, Jing Xu, Jun Zhang* | [2501.01648v1](http://arxiv.org/abs/2501.01648v1), [Code](https://github.com/kingkung2016/gl-dmnet)
 2024-12-24 | Spectrum-oriented Point-supervised Saliency Detector for Hyperspectral Images | *Peifu Liu, Tingfa Xu, Guokai Shi, Jingxuan Xu, Huan Chen, Jianan Li* | [2412.18112v1](http://arxiv.org/abs/2412.18112v1), [Code](https://github.com/laprf/spsd)
