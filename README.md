@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.02.15
+> Updated on 2025.02.16
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -1503,7 +1503,7 @@
 2025-02-11 | Rethinking Timing Residuals: Advancing PET Detectors with Explicit TOF Corrections | *Stephan Naunheim, Luis Lopes de Paiva, Vanessa Nadig, Yannick Kuhl, Stefan Gundacker, Florian Mueller, Volkmar Schulz* | [2502.07630v1](http://arxiv.org/abs/2502.07630v1), [Code](#)
 2025-02-11 | LASP-2: Rethinking Sequence Parallelism for Linear Attention and Its Hybrid | *Weigao Sun, Disen Lan, Yiran Zhong, Xiaoye Qu, Yu Cheng* | [2502.07563v1](http://arxiv.org/abs/2502.07563v1), [Code](https://github.com/opensparsellms/linear-moe)
 2025-02-11 | Rethinking Fine-Tuning when Scaling Test-Time Compute: Limiting Confidence Improves Mathematical Reasoning | *Feng Chen, Allan Raventos, Nan Cheng, Surya Ganguli, Shaul Druckmann* | [2502.07154v1](http://arxiv.org/abs/2502.07154v1), [Code](https://github.com/allanraventos/refine)
-2025-02-10 | Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling | *Runze Liu, Junqi Gao, Jian Zhao, Kaiyan Zhang, Xiu Li, Biqing Qi, Wanli Ouyang, Bowen Zhou* | [2502.06703v1](http://arxiv.org/abs/2502.06703v1), [Code](#)
+2025-02-10 | Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling | *Runze Liu, Junqi Gao, Jian Zhao, Kaiyan Zhang, Xiu Li, Biqing Qi, Wanli Ouyang, Bowen Zhou* | [2502.06703v1](http://arxiv.org/abs/2502.06703v1), [Code](https://github.com/RyanLiu112/compute-optimal-tts)
 2025-02-10 | Rethinking Large-scale Dataset Compression: Shifting Focus From Labels to Images | *Lingao Xiao, Songhua Liu, Yang He, Xinchao Wang* | [2502.06434v1](http://arxiv.org/abs/2502.06434v1), [Code](#)
 2025-02-08 | Rethinking Link Prediction for Directed Graphs | *Mingguo He, Yuhe Guo, Yanping Zheng, Zhewei Wei, Stephan Günnemann, Xiaokui Xiao* | [2502.05724v1](http://arxiv.org/abs/2502.05724v1), [Code](#)
 2025-02-08 | Rethinking Word Similarity: Semantic Similarity through Classification Confusion | *Kaitlyn Zhou, Haishan Gao, Sarah Chen, Dan Edelstein, Dan Jurafsky, Chen Shani* | [2502.05704v1](http://arxiv.org/abs/2502.05704v1), [Code](#)
