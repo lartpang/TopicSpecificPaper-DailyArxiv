@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.03.21
+> Updated on 2025.03.22
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -2239,7 +2239,7 @@
 2025-03-18 | Characterizing Data Visualization Literacy: a Systematic Literature Review | *Sara Beschi, Davide Falessi, Silvia Golia, Angela Locoro* | [2503.14468v1](http://arxiv.org/abs/2503.14468v1), [Code](#)
 2025-03-18 | Low-Metallicity Star Formation Survey in Sh2-284 (LZ-STAR). I. Ordered massive star formation in the outer Galaxy | *Yu Cheng, Jonathan C. Tan, Morten Andersen, Rubén Fedriani, Yichen Zhang, Massimo Robberto, Zhi-Yun Li, Kei E. I. Tanaka* | [2503.14460v1](http://arxiv.org/abs/2503.14460v1), [Code](#)
 2025-03-18 | The Distance to the Magellanic Stream: Constraints from Optical Absorption along Stellar Sightlines | *Sapna Mishra, Andrew J. Fox, J. V. Smoker, Scott Lucchini, Elena D'Onghia* | [2503.14368v1](http://arxiv.org/abs/2503.14368v1), [Code](#)
-2025-03-18 | Constraints on the early Universe star formation efficiency from galaxy clustering and halo modeling of H$α$ and [O III] emitters | *Marko Shuntov, Pascal A. Oesch, Sune Toft, Romain A. Meyer, Alba Covelo-Paz, Louise Paquereau, Rychard Bouwens, Gabriel Brammer, Viola Gelli, Emma Giovinazzo, Thomas Herard-Demanche, Garth D. Illingworth, Charlotte Mason, Rohan P. Naidu, Andrea Weibel, Mengyuan Xiao* | [2503.14280v1](http://arxiv.org/abs/2503.14280v1), [Code](#)
+2025-03-18 | Constraints on the early Universe star formation efficiency from galaxy clustering and halo modeling of H$α$ and [O III] emitters | *Marko Shuntov, Pascal A. Oesch, Sune Toft, Romain A. Meyer, Alba Covelo-Paz, Louise Paquereau, Rychard Bouwens, Gabriel Brammer, Viola Gelli, Emma Giovinazzo, Thomas Herard-Demanche, Garth D. Illingworth, Charlotte Mason, Rohan P. Naidu, Andrea Weibel, Mengyuan Xiao* | [2503.14280v1](http://arxiv.org/abs/2503.14280v1), [Code](https://github.com/mShuntov/Clustering_and_HOD_of_Ha-and-OIII_emitters)
 2025-03-18 | How does Bike Absence Influence Mode Shifts Among Dockless Bike-Sharing Users? Evidence From Nanjing, China | *Hongjun Cui, Zhixiao Ren, Xinwei Ma, Minqing Zhu* | [2503.14265v1](http://arxiv.org/abs/2503.14265v1), [Code](#)
 2025-03-18 | CTSAC: Curriculum-Based Transformer Soft Actor-Critic for Goal-Oriented Robot Exploration | *Chunyu Yang, Shengben Bi, Yihui Xu, Xin Zhang* | [2503.14254v1](http://arxiv.org/abs/2503.14254v1), [Code](#)
 2025-03-18 | Mapping Urban Villages in China: Progress and Challenges | *Rui Cao, Wei Tu, Dongsheng Chen, Wenyu Zhang* | [2503.14195v1](http://arxiv.org/abs/2503.14195v1), [Code](https://github.com/rui-research/urban-village-review)
@@ -2254,7 +2254,7 @@
 2025-03-18 | Variations in the Radiation Intensity of Pulsar B0950+08: Nine Years of Monitoring at 110 MHz | *T. V. Smirnova, M. O. Toropov, S. A. Tyul'bashev* | [2503.14030v1](http://arxiv.org/abs/2503.14030v1), [Code](#)
 2025-03-18 | Synthetic Data Generation Using Large Language Models: Advances in Text and Code | *Mihai Nadas, Laura Diosan, Andreea Tomescu* | [2503.14023v1](http://arxiv.org/abs/2503.14023v1), [Code](#)
 2025-03-18 | Securing Automated Insulin Delivery Systems: A Review of Security Threats and Protectives Strategies | *Yuchen Niu, Siew-Kei Lam* | [2503.14006v1](http://arxiv.org/abs/2503.14006v1), [Code](#)
-2025-03-18 | Augmenting Software Bills of Materials with Software Vulnerability Description: A Preliminary Study on GitHub | *Davide Fucci, Massimiliano Di Penta, Simone Romano, Giuseppe Scannielllo* | [2503.13998v1](http://arxiv.org/abs/2503.13998v1), [Code](#)
+2025-03-18 | Augmenting Software Bills of Materials with Software Vulnerability Description: A Preliminary Study on GitHub | *Davide Fucci, Massimiliano Di Penta, Simone Romano, Giuseppe Scannielllo* | [2503.13998v1](http://arxiv.org/abs/2503.13998v1), [Code](https://github.com/SESAM-project/SBOM-VEX-acceptance)
 2025-03-18 | Stratified Permutational Berry--Esseen Bounds and Their Applications to Statistics | *Pengfei Tian, Fan Yang, Peng Ding* | [2503.13986v1](http://arxiv.org/abs/2503.13986v1), [Code](#)
 2025-03-18 | Illuminating Youth: Decades of Mid-Infrared Variability and Color Evolution of Young Stellar Objects | *Neha S., Saurabh* | [2503.13971v1](http://arxiv.org/abs/2503.13971v1), [Code](#)
 2025-03-18 | Survey of Adversarial Robustness in Multimodal Large Language Models | *Chengze Jiang, Zhuangzhuang Wang, Minjing Dong, Jie Gui* | [2503.13962v1](http://arxiv.org/abs/2503.13962v1), [Code](#)
