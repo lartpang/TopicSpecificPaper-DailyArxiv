@@ -1,6 +1,6 @@
 # Daily ArXiv
 
-> Updated on 2025.04.04
+> Updated on 2025.04.05
 
 [![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) [![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) [![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) [![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) 
 
@@ -2209,7 +2209,7 @@
 
  Publish Date | Title | Authors | Links 
 :-------------|:------|:------- |:------
-2025-04-03 | An Assessment of the CO2 Emission Reduction Potential of Residential Load Management in Developing and Developed Countries | *Alona Zharova, Felix Creutzig* | [2504.02811v1](http://arxiv.org/abs/2504.02811v1), [Code](#)
+2025-04-03 | An Assessment of the CO$_2$ Emission Reduction Potential of Residential Load Management in Developing and Developed Countries | *Alona Zharova, Felix Creutzig* | [2504.02811v1](http://arxiv.org/abs/2504.02811v1), [Code](#)
 2025-04-03 | Fractional attractors in light of the latest ACT observations | *Christian Dioguardi, Antonio J. Iovino, Antonio Racioppi* | [2504.02809v1](http://arxiv.org/abs/2504.02809v1), [Code](#)
 2025-04-03 | A Survey of Large Language Models in Mental Health Disorder Detection on Social Media | *Zhuohan Ge, Nicole Hu, Darian Li, Yubo Wang, Shihao Qi, Yuming Xu, Han Shi, Jason Zhang* | [2504.02800v1](http://arxiv.org/abs/2504.02800v1), [Code](#)
 2025-04-03 | North+Lone Star Supernova Host Survey I: Local Host-Galaxy H$α$ Surface Brightness and the Hubble Residuals of Type Ia Supernovae | *Ann M. Isaacs, Patrick Kelly, J. Craig Wheeler* | [2504.02798v1](http://arxiv.org/abs/2504.02798v1), [Code](#)
