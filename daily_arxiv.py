@@ -1,9 +1,8 @@
 import datetime
 import json
 import os
-import re
 from collections import defaultdict
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import arxiv
 import requests
@@ -79,12 +78,10 @@ def update_json_file(json_path: str, papers: Dict[str, List[ArXivPaper]]) -> Non
         json.dump(json_data, f, indent=2)
 
 
-def json_to_md(
+def json_to_html(
     json_path: str,
-    markdown_path: str,
-    title: str = "Daily ArXiv",
-    show_badge: bool = True,
-    show_toc: bool = True,
+    html_path: str = "index.html",
+    title: str = "Daily ArXiv Papers",
 ):
     current_date = str(datetime.date.today())
     current_date = current_date.replace("-", ".")
@@ -93,53 +90,157 @@ def json_to_md(
     with open(json_path, "r", encoding="utf-8") as f:
         data: Dict[str, Dict[str, Dict[str, str]]] = json.load(f)
 
-    # convert data into the string list
-    title_line = f"# {title}"
-    lines = [title_line]
-    lines.append(f"> Updated on {current_date}")
+    # Generate navigation HTML with dropdown
+    nav_html = f"""
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">{title}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="d-flex align-items-center ms-auto">
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button"
+                                id="topicDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Topic
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="topicDropdown">
+    """
 
-    if show_badge:
-        lines.append(
-            "[![](https://img.shields.io/github/contributors/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/graphs/contributors) "
-            "[![](https://img.shields.io/github/forks/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/network/members) "
-            "[![](https://img.shields.io/github/stars/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/stargazers) "
-            "[![](https://img.shields.io/github/issues/lartpang/TopicSpecificPaper-DailyArxiv.svg?style=for-the-badge)](https://github.com/lartpang/TopicSpecificPaper-DailyArxiv/issues) "
-        )
+    # Add dropdown items
+    for i, keyword in enumerate(data.keys()):
+        active = "active" if i == 0 else ""
+        nav_html += f"""
+                            <li><a class="dropdown-item {active}" href="#" onclick="showTopic('{keyword}')">{keyword}</a></li>
+        """
 
-    if show_toc:
-        toc_strings = ["**Table of Contents**"]
-        for keyword in data.keys():
-            toc_strings.append(f"- [{keyword}](#{keyword.replace(' ', '-').lower()})")
-        lines.append("\n".join(toc_strings))
+    nav_html += f"""
+                        </ul>
+                    </div>
+                    <span class="navbar-text">
+                        Updated on {current_date}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    """
 
-    for keyword, day_content in data.items():
-        # the head of each part
-        section_lines = [f"## {keyword}\n"]
-        section_lines.append(" Publish Date | Title | Authors | Links ")
-        section_lines.append(":-------------|:------|:------- |:------")
+    # Generate tab content HTML (all abstracts collapsed)
+    content_html = []
+    for i, (keyword, day_content) in enumerate(data.items()):
+        display = "" if i == 0 else "display: none;"
+        paper_items = []
 
-        sorted_by = "publish_time"  # use the publish_time string as the key to sort
-        day_content: Tuple[str, Dict[str, str]] = sorted(
-            day_content.items(), key=lambda item: item[1][sorted_by.replace("-", "")], reverse=True
-        )
-        for idx, (paper_key, paper_info) in enumerate(day_content):
-            print(idx, paper_key, paper_info["paper_title"])
-            paper_line_splits = [
-                paper_info["publish_time"],
-                f"{paper_info['paper_title']}",
-                f"*{', '.join(paper_info['paper_authors'])}*",
-                f"[{paper_info['paper_id']}]({paper_info['paper_url']}), [Code]({paper_info['repo_url']})",
-            ]
-            section_lines.append(" | ".join(paper_line_splits))
+        sorted_papers = sorted(day_content.items(), key=lambda item: item[1]["publish_time"], reverse=True)
 
-        # Add: back to top
-        top_info = title_line.replace("# ", "#").replace(" ", "-").replace(".", "").lower()
-        section_lines.append(f'\n<p align=right>(<a href="{top_info}">back to top</a>)</p>')
-        lines.append("\n".join(section_lines))
+        for paper_key, paper_info in sorted_papers:
+            # 只有当repo_url存在且不为空时才生成代码链接
+            code_link = (
+                f"""
+                <a href="{paper_info["repo_url"]}" class="btn btn-sm btn-success ms-2" target="_blank">
+                    <i class="fas fa-code"></i> Code
+                </a>
+            """
+                if paper_info.get("repo_url", "#") != "#"
+                else ""
+            )
 
-    with open(markdown_path, "w", encoding="utf-8") as f:
-        f.write("\n\n".join(lines))
-    print("finished")
+            paper_items.append(f"""
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{paper_info["paper_title"]}</h5>
+                    <div class="d-flex flex-wrap gap-2 mb-2 text-muted">
+                        <small>{paper_info["publish_time"]}</small>
+                        <small><i>{", ".join(paper_info["paper_authors"])}</i></small>
+                    </div>
+
+                    <button class="btn btn-sm btn-outline-primary mb-2"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#abstract-{paper_key.replace(".", "-")}">
+                        <i class="fas fa-align-left"></i> Show Abstract
+                    </button>
+
+                    <div class="collapse" id="abstract-{paper_key.replace(".", "-")}">
+                        <div class="card card-body bg-light mb-2">
+                            {paper_info["paper_abstract"]}
+                        </div>
+                    </div>
+
+                    <div class="paper-actions">
+                        <a href="{paper_info["paper_url"]}" class="btn btn-sm btn-primary" target="_blank">
+                            <i class="fas fa-file-alt"></i> arXiv
+                        </a>
+                        {code_link}
+                    </div>
+                </div>
+            </div>
+            """)
+
+        content_html.append(f"""
+        <div id="{keyword}" class="topic-content container mt-4" style="{display}">
+            <h2 class="mb-4">{keyword}</h2>
+            {"".join(paper_items)}
+        </div>
+        """)
+
+    # Complete HTML template with Bootstrap
+    html_template = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .topic-content {{
+            padding-top: 20px;
+        }}
+        .navbar {{
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }}
+        .paper-actions {{
+            margin-top: 10px;
+        }}
+    </style>
+</head>
+<body>
+    {nav_html}
+
+    {"".join(content_html)}
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Show selected topic and hide others
+        function showTopic(topicName) {{
+            // Hide all topic contents
+            document.querySelectorAll('.topic-content').forEach(content => {{
+                content.style.display = 'none';
+            }});
+
+            // Show selected topic
+            document.getElementById(topicName).style.display = '';
+
+            // Update dropdown button text
+            document.getElementById('topicDropdown').textContent = topicName;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }}
+    </script>
+</body>
+</html>"""
+
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(html_template)
+    print(f"HTML file generated at {html_path}")
 
 
 def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
@@ -169,7 +270,7 @@ def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str
 
 def main():
     json_file = "arxiv-daily.json"
-    md_file = "README.md"
+    html_file = "index.html"
     keywords = {
         "Rethinking": '"Rethinking"',
         "Survey": '"Survey"OR"Review"',
@@ -182,7 +283,7 @@ def main():
 
     papers = get_papers(keywords, max_results_per_keyword=200)
     update_json_file(json_file, papers)
-    json_to_md(json_file, md_file)
+    json_to_html(json_file, html_file)
 
 
 if __name__ == "__main__":
