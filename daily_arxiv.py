@@ -1,9 +1,14 @@
 import datetime
 import json
 import os
+import sys
 from collections import defaultdict
 from string import Template
 from typing import TYPE_CHECKING, Dict, List
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 if TYPE_CHECKING:
     from arxiv import Result
