@@ -714,13 +714,20 @@ def main():
     json_file = "arxiv-daily.json"
     html_file = "index.html"
     keywords = {
-        "Rethinking": '"Rethinking"',
-        "Survey": '"Survey"OR"Review"',
-        "Spiking Neural Network": '"Spiking Neural Network"OR"Spiking Neural Networks"OR"Spiking Neuron"OR"SNN"',
-        "Infrared Small Target Detection": '"Infrared Small Target Detection"OR"IRSTD"',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
-        "Salient Object Detection": '"Salient Object Detection"OR"Video Salient Object Detection"',
-        "Camouflaged Object Detection": '"Camouflaged Object Detection"OR"Video Camouflaged Object Detection"',
-        "Change Detection": '"Change Detection"',
+        # Comprehensive Topics
+        "Dataset": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Benchmark OR ti:Dataset OR ti:"Data Set" OR abs:"benchmark dataset" OR abs:"new dataset" OR abs:"large-scale dataset")',
+        "Evaluation": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Evaluation OR ti:Benchmarking OR abs:"evaluation protocol" OR abs:"evaluation benchmark" OR abs:"benchmarking")',
+        "Rethinking": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND ti:Rethinking',
+        "Survey": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:Survey OR ti:Review OR ti:"A Survey" OR ti:"A Review")',
+        # Special Architecture
+        "Spiking Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:"Spiking Neural Network" OR abs:"Spiking Neural Network" OR ti:"Spiking Neural Networks" OR abs:"Spiking Neural Networks" OR ti:"Spiking Neuron" OR abs:"Spiking Neuron" OR (all:SNN AND all:spiking))',
+        "Recurrent Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE) AND (ti:"Recurrent Neural Network" OR abs:"Recurrent Neural Network" OR ti:"Recurrent Network" OR abs:"recurrent network" OR ti:"Recursive Neural Network" OR abs:"recursive neural network" OR ti:RNN OR abs:RNN)',
+        # Context Dependent Understanding
+        "Salient Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Salient Object Detection" OR abs:"Salient Object Detection" OR ti:"Video Salient Object Detection" OR abs:"Video Salient Object Detection" OR ti:"Saliency Detection")',
+        "Camouflaged Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Camouflaged Object Detection" OR abs:"Camouflaged Object Detection" OR ti:"Video Camouflaged Object Detection" OR abs:"Video Camouflaged Object Detection")',
+        "Change Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Change Detection" OR abs:"Change Detection" OR ti:"Semantic Change Detection" OR abs:"Semantic Change Detection") AND (all:"remote sensing" OR all:image OR all:video OR all:segmentation)',
+        # Remote Sense Segmentation
+        "Infrared Small Target Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Infrared Small Target Detection" OR abs:"Infrared Small Target Detection" OR ti:"Infrared Small Target" OR abs:"Infrared Small Target" OR all:IRSTD)',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
     }
 
     papers = get_papers(keywords, max_results_per_keyword=200)
