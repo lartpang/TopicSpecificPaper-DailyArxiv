@@ -7,13 +7,17 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "17 2 * * *"
   # Triggers the workflow on push or pull request events but only for the main branch
 #   push:
 #     branches:
 #     - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+concurrency:
+  group: arxiv-daily
+  cancel-in-progress: true
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -37,6 +41,14 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run daily arxiv
+        env:
+          ARXIV_MAX_RESULTS_PER_KEYWORD: "100"
+          ARXIV_PAGE_SIZE: "100"
+          ARXIV_DELAY_SECONDS: "10"
+          ARXIV_CLIENT_RETRIES: "2"
+          ARXIV_KEYWORD_RETRIES: "4"
+          ARXIV_BACKOFF_SECONDS: "60"
+          ARXIV_MAX_BACKOFF_SECONDS: "900"
         run: |
           python daily_arxiv.py
 

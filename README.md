@@ -31,8 +31,8 @@ Then open `http://localhost:8000` in your browser.
 
 ### 3. GitHub Actions (Automated)
 
-A GitHub Actions workflow (`.github/workflows/arxiv-daily.yml`) is configured to run daily at UTC 02:00 (Beijing 10:00), ensuring arXiv's latest daily submission batch has been published. It automatically fetches the latest papers and commits updates. You can also manually trigger it from the Actions tab via `workflow_dispatch`.
+A GitHub Actions workflow (`.github/workflows/arxiv-daily.yml`) is configured to run daily at UTC 02:17 (Beijing 10:17), ensuring arXiv's latest daily submission batch has been published while avoiding the busiest exact-hour trigger time. It automatically fetches the latest papers and commits updates. You can also manually trigger it from the Actions tab via `workflow_dispatch`.
 
 ### Customization
 
-Edit the `keywords` dictionary and `max_results_per_keyword` in `daily_arxiv.py` to adjust search topics and result counts per topic.
+Edit the `keywords` dictionary in `daily_arxiv.py` to adjust search topics. In GitHub Actions, tune `ARXIV_MAX_RESULTS_PER_KEYWORD`, `ARXIV_PAGE_SIZE`, `ARXIV_DELAY_SECONDS`, and retry/backoff environment variables in `.github/workflows/arxiv-daily.yml` if arXiv rate limits requests.

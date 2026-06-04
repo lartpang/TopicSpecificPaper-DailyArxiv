@@ -2,9 +2,10 @@ import datetime
 import json
 import os
 import sys
+import time
 from collections import defaultdict
 from string import Template
-from typing import TYPE_CHECKING, Dict, List
+from typing import TYPE_CHECKING, Dict, List, Optional
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -49,6 +50,35 @@ class ArXivPaper:
 
 def remove_obsolete_fields(paper_info: Dict[str, object]) -> Dict[str, object]:
     return {key: value for key, value in paper_info.items() if key not in {"code_url", "repo_url"}}
+
+
+def get_env_int(name: str, default: int, minimum: int = 1) -> int:
+    value = os.getenv(name)
+    if value is None:
+        return default
+
+    try:
+        parsed = int(value)
+    except ValueError:
+        print(f"Invalid {name}={value!r}; using default {default}.", file=sys.stderr)
+        return default
+
+    if parsed < minimum:
+        print(f"Invalid {name}={parsed}; using minimum {minimum}.", file=sys.stderr)
+        return minimum
+    return parsed
+
+
+def get_http_status(error: Exception) -> Optional[int]:
+    status = getattr(error, "status", None) or getattr(error, "status_code", None)
+    if isinstance(status, int):
+        return status
+
+    message = str(error)
+    for status_code in (429, 500, 502, 503, 504):
+        if f"HTTP {status_code}" in message:
+            return status_code
+    return None
 
 
 def update_json_file(json_path: str, papers: Dict[str, List[ArXivPaper]]) -> None:
@@ -691,8 +721,16 @@ def json_to_html(
 def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
     import arxiv
 
-    # Construct the default API client.
-    client = arxiv.Client(page_size=200, delay_seconds=3, num_retries=5)
+    page_size = get_env_int("ARXIV_PAGE_SIZE", 100)
+    delay_seconds = get_env_int("ARXIV_DELAY_SECONDS", 10)
+    client_retries = get_env_int("ARXIV_CLIENT_RETRIES", 2)
+    keyword_retries = get_env_int("ARXIV_KEYWORD_RETRIES", 4)
+    backoff_seconds = get_env_int("ARXIV_BACKOFF_SECONDS", 60)
+    max_backoff_seconds = get_env_int("ARXIV_MAX_BACKOFF_SECONDS", 900)
+
+    # GitHub-hosted runners often hit arXiv API 429/503 responses. Keep requests slow and
+    # retry per keyword so one transient outage does not discard the existing archive.
+    client = arxiv.Client(page_size=page_size, delay_seconds=delay_seconds, num_retries=client_retries)
 
     counts = 0
     papers: Dict[str, List[ArXivPaper]] = {}
@@ -705,7 +743,34 @@ def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str
         )
 
         keyword_specific_papers = []
-        for result in client.results(search):
+        results = []
+        for attempt in range(1, keyword_retries + 1):
+            try:
+                results = list(client.results(search))
+                break
+            except arxiv.HTTPError as error:
+                status = get_http_status(error)
+                retryable = status in {429, 500, 502, 503, 504}
+                if not retryable:
+                    raise
+
+                if attempt == keyword_retries:
+                    print(
+                        f"Warning: skipped keyword {keyword!r} after {attempt} attempts because arXiv returned "
+                        f"HTTP {status}. Existing JSON entries for this keyword will be preserved.",
+                        file=sys.stderr,
+                    )
+                    break
+
+                wait_seconds = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1)))
+                print(
+                    f"Warning: arXiv returned HTTP {status} for keyword {keyword!r}; retrying in "
+                    f"{wait_seconds} seconds ({attempt}/{keyword_retries}).",
+                    file=sys.stderr,
+                )
+                time.sleep(wait_seconds)
+
+        for result in results:
             paper = ArXivPaper(result)
             keyword_specific_papers.append(paper)
 
@@ -735,7 +800,8 @@ def main():
         "Infrared Small Target Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Infrared Small Target Detection" OR abs:"Infrared Small Target Detection" OR ti:"Infrared Small Target" OR abs:"Infrared Small Target" OR all:IRSTD)',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
     }
 
-    papers = get_papers(keywords, max_results_per_keyword=200)
+    max_results_per_keyword = get_env_int("ARXIV_MAX_RESULTS_PER_KEYWORD", 100)
+    papers = get_papers(keywords, max_results_per_keyword=max_results_per_keyword)
     update_json_file(json_file, papers)
     json_to_html(json_file, html_file)
 
