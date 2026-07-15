@@ -1,1 +1,1 @@
-arxiv
+arxiv>=2.1,<3

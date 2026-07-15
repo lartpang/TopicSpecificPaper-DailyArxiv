@@ -1,11 +1,15 @@
 import datetime
+import html
 import json
 import os
+import re
 import sys
 import time
+import unicodedata
 from collections import defaultdict
 from string import Template
-from typing import TYPE_CHECKING, Dict, List, Optional
+from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple, Union
+from urllib import error, parse, request
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -29,6 +33,7 @@ class ArXivPaper:
         self.publish_time = str(paper_item.published.date())
         self.update_time = str(paper_item.updated.date())
         self.comments = paper_item.comment
+        self.source = "arxiv"
 
     def __repr__(self) -> str:
         return f"Time={self.update_time} title={self.paper_title} author={self.paper_authors[0]}"
@@ -45,11 +50,196 @@ class ArXivPaper:
             "publish_time": self.publish_time,
             "update_time": self.update_time,
             "comments": self.comments,
+            "source": self.source,
         }
+
+
+class PreprintsPaper:
+    def __init__(self, paper_item: Dict[str, object]) -> None:
+        doi = str(paper_item.get("DOI", ""))
+        self.paper_id = doi
+        self.paper_key = re.sub(r"\.v\d+$", "", doi.lower())
+        self.paper_title = first_string(paper_item.get("title"))
+        resource = paper_item.get("resource")
+        primary = resource.get("primary", {}) if isinstance(resource, dict) else {}
+        self.paper_url = str(primary.get("URL") or paper_item.get("URL") or f"https://doi.org/{doi}")
+        self.paper_abstract = clean_jats(str(paper_item.get("abstract", "")))
+        self.paper_authors = crossref_authors(paper_item.get("author"))
+        self.primary_category = str(paper_item.get("group-title") or "Preprints.org")
+        self.publish_time = crossref_date(paper_item, "posted", "published", "issued")
+        self.update_time = crossref_date(paper_item, "created", "deposited") or self.publish_time
+        self.comments = "Preprints.org"
+        self.source = "preprints.org"
+
+    def __repr__(self) -> str:
+        return f"Time={self.publish_time} title={self.paper_title}"
+
+    def to_dict(self) -> Dict[str, object]:
+        return {
+            "paper_id": self.paper_id,
+            "paper_key": self.paper_key,
+            "paper_title": self.paper_title,
+            "paper_url": self.paper_url,
+            "paper_abstract": self.paper_abstract,
+            "paper_authors": self.paper_authors,
+            "primary_category": self.primary_category,
+            "publish_time": self.publish_time,
+            "update_time": self.update_time,
+            "comments": self.comments,
+            "source": self.source,
+        }
+
+
+Paper = Union[ArXivPaper, PreprintsPaper]
+
+
+ARXIV_KEYWORDS = {
+    # Comprehensive Topics
+    "Dataset": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Benchmark OR ti:Dataset OR ti:"Data Set" OR abs:"benchmark dataset" OR abs:"new dataset" OR abs:"large-scale dataset")',
+    "Evaluation": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Evaluation OR ti:Benchmarking OR abs:"evaluation protocol" OR abs:"evaluation benchmark" OR abs:"benchmarking")',
+    "Rethinking": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND ti:Rethinking',
+    "Survey": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:Survey OR ti:Review OR ti:"A Survey" OR ti:"A Review")',
+    "Feature Coding": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.MM OR cat:eess.IV OR cat:eess.SP) AND (all:"feature coding" OR all:"feature compression" OR all:"deep feature compression" OR all:"intermediate feature compression" OR all:"feature map compression" OR all:"feature tensor compression" OR all:"semantic feature coding" OR all:"feature codec")',
+    "Gaussian Splatting": '(cat:cs.CV OR cat:cs.GR OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (all:"Gaussian Splatting" OR all:"Gaussian Splat" OR all:3DGS)',
+    # Special Architecture
+    "Spiking Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:"Spiking Neural Network" OR abs:"Spiking Neural Network" OR ti:"Spiking Neural Networks" OR abs:"Spiking Neural Networks" OR ti:"Spiking Neuron" OR abs:"Spiking Neuron" OR (all:SNN AND all:spiking))',
+    "Recurrent Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE) AND (ti:"Recurrent Neural Network" OR abs:"Recurrent Neural Network" OR ti:"Recurrent Network" OR abs:"recurrent network" OR ti:"Recursive Neural Network" OR abs:"recursive neural network" OR ti:RNN OR abs:RNN)',
+    # Context Dependent Understanding
+    "Salient Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Salient Object Detection" OR abs:"Salient Object Detection" OR ti:"Video Salient Object Detection" OR abs:"Video Salient Object Detection" OR ti:"Saliency Detection")',
+    "Camouflaged Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Camouflaged Object Detection" OR abs:"Camouflaged Object Detection" OR ti:"Video Camouflaged Object Detection" OR abs:"Video Camouflaged Object Detection")',
+    "Change Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Change Detection" OR abs:"Change Detection" OR ti:"Semantic Change Detection" OR abs:"Semantic Change Detection") AND (all:"remote sensing" OR all:image OR all:video OR all:segmentation)',
+    # Remote Sense Segmentation
+    "Infrared Small Target Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Infrared Small Target Detection" OR abs:"Infrared Small Target Detection" OR ti:"Infrared Small Target" OR abs:"Infrared Small Target" OR all:IRSTD)',
+}
+
+PREPRINT_ALLOWED_FIELDS = {"Computer Science and Mathematics", "Engineering"}
+LOCALLY_FILTERED_TOPICS = {"Feature Coding", "Gaussian Splatting"}
+KNOWN_SOURCES = ("arxiv", "preprints.org")
 
 
 def remove_obsolete_fields(paper_info: Dict[str, object]) -> Dict[str, object]:
     return {key: value for key, value in paper_info.items() if key not in {"code_url", "repo_url"}}
+
+
+def normalized_paper_title(title: object) -> str:
+    normalized = unicodedata.normalize("NFKC", str(title or "")).casefold()
+    return "".join(character for character in normalized if character.isalnum())
+
+
+def paper_sources(paper_info: Dict[str, object]) -> List[str]:
+    raw_sources = paper_info.get("sources")
+    candidates = raw_sources if isinstance(raw_sources, list) else str(paper_info.get("source") or "arxiv").split("+")
+    present = {str(source).lower() for source in candidates}
+    sources = [source for source in KNOWN_SOURCES if source in present]
+    return sources or ["arxiv"]
+
+
+def add_source_metadata(paper_info: Dict[str, object]) -> Dict[str, object]:
+    result = remove_obsolete_fields(dict(paper_info))
+    sources = paper_sources(result)
+    raw_urls = result.get("source_urls")
+    raw_ids = result.get("source_ids")
+    source_urls = dict(raw_urls) if isinstance(raw_urls, dict) else {}
+    source_ids = dict(raw_ids) if isinstance(raw_ids, dict) else {}
+
+    if len(sources) == 1:
+        source = sources[0]
+        source_urls.setdefault(source, str(result.get("paper_url") or ""))
+        source_ids.setdefault(source, str(result.get("paper_id") or result.get("paper_key") or ""))
+
+    result["source"] = "+".join(sources)
+    result["sources"] = sources
+    result["source_urls"] = {source: str(source_urls.get(source) or "") for source in sources}
+    result["source_ids"] = {source: str(source_ids.get(source) or "") for source in sources}
+    return result
+
+
+def compact_source_metadata(paper_info: Dict[str, object]) -> Dict[str, object]:
+    result = dict(paper_info)
+    sources = paper_sources(result)
+    if len(sources) == 1:
+        result["source"] = sources[0]
+        result.pop("sources", None)
+        result.pop("source_urls", None)
+        result.pop("source_ids", None)
+    return result
+
+
+def merge_paper_records(first: Dict[str, object], second: Dict[str, object]) -> Dict[str, object]:
+    first = add_source_metadata(first)
+    second = add_source_metadata(second)
+    first_sources = paper_sources(first)
+    second_sources = paper_sources(second)
+    sources = [source for source in KNOWN_SOURCES if source in set(first_sources + second_sources)]
+
+    # arXiv remains the canonical record when available because its identifier is stable
+    # and existing archive keys already use it.
+    if "arxiv" in second_sources and (
+        "arxiv" not in first_sources or (len(first_sources) > 1 and second_sources == ["arxiv"])
+    ):
+        base, other = second, first
+    else:
+        base, other = first, second
+    merged = dict(base)
+
+    for field in ("paper_title", "primary_category", "comments"):
+        if not merged.get(field) and other.get(field):
+            merged[field] = other[field]
+    if len(str(other.get("paper_abstract") or "")) > len(str(merged.get("paper_abstract") or "")):
+        merged["paper_abstract"] = other.get("paper_abstract")
+    if len(other.get("paper_authors") or []) > len(merged.get("paper_authors") or []):
+        merged["paper_authors"] = other.get("paper_authors")
+
+    publish_dates = [str(value) for value in (first.get("publish_time"), second.get("publish_time")) if value]
+    update_dates = [str(value) for value in (first.get("update_time"), second.get("update_time")) if value]
+    if publish_dates:
+        merged["publish_time"] = min(publish_dates)
+    if update_dates:
+        merged["update_time"] = max(update_dates)
+
+    source_urls = dict(first.get("source_urls") or {})
+    source_urls.update(dict(second.get("source_urls") or {}))
+    source_ids = dict(first.get("source_ids") or {})
+    source_ids.update(dict(second.get("source_ids") or {}))
+    merged["source"] = "+".join(sources)
+    merged["sources"] = sources
+    merged["source_urls"] = {source: str(source_urls.get(source) or "") for source in sources}
+    merged["source_ids"] = {source: str(source_ids.get(source) or "") for source in sources}
+    return merged
+
+
+def merge_cross_source_duplicates(
+    keyword_papers: Dict[str, Dict[str, object]],
+) -> Tuple[Dict[str, Dict[str, object]], int]:
+    merged_papers = {key: add_source_metadata(info) for key, info in keyword_papers.items()}
+    title_groups: Dict[str, List[str]] = defaultdict(list)
+    for paper_key, paper_info in merged_papers.items():
+        normalized_title = normalized_paper_title(paper_info.get("paper_title"))
+        if normalized_title:
+            title_groups[normalized_title].append(paper_key)
+
+    merge_count = 0
+    for paper_keys in title_groups.values():
+        existing_keys = [key for key in paper_keys if key in merged_papers]
+        mixed_keys = [key for key in existing_keys if set(paper_sources(merged_papers[key])) == set(KNOWN_SOURCES)]
+        arxiv_keys = [key for key in existing_keys if paper_sources(merged_papers[key]) == ["arxiv"]]
+        preprint_keys = [key for key in existing_keys if paper_sources(merged_papers[key]) == ["preprints.org"]]
+
+        if mixed_keys:
+            canonical_key = mixed_keys[0]
+            canonical = merged_papers[canonical_key]
+            for duplicate_key in arxiv_keys + preprint_keys + mixed_keys[1:]:
+                canonical = merge_paper_records(canonical, merged_papers.pop(duplicate_key))
+                merge_count += 1
+            merged_papers[canonical_key] = canonical
+        elif len(arxiv_keys) == 1 and len(preprint_keys) == 1:
+            canonical_key = arxiv_keys[0]
+            merged_papers[canonical_key] = merge_paper_records(
+                merged_papers[canonical_key], merged_papers.pop(preprint_keys[0])
+            )
+            merge_count += 1
+
+    return merged_papers, merge_count
 
 
 def get_env_int(name: str, default: int, minimum: int = 1) -> int:
@@ -81,7 +271,152 @@ def get_http_status(error: Exception) -> Optional[int]:
     return None
 
 
-def update_json_file(json_path: str, papers: Dict[str, List[ArXivPaper]]) -> None:
+def first_string(value: object) -> str:
+    if isinstance(value, list) and value:
+        return str(value[0])
+    return str(value or "")
+
+
+def clean_jats(value: str) -> str:
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", value)).split())
+
+
+def crossref_authors(value: object) -> List[str]:
+    if not isinstance(value, list):
+        return []
+    authors = []
+    for author in value:
+        if isinstance(author, dict):
+            name = " ".join(str(author.get(part, "")).strip() for part in ("given", "family")).strip()
+            if name:
+                authors.append(name)
+    return authors
+
+
+def crossref_date(item: Dict[str, object], *fields: str) -> str:
+    for field in fields:
+        date_value = item.get(field)
+        if not isinstance(date_value, dict):
+            continue
+        parts = date_value.get("date-parts")
+        if not isinstance(parts, list) or not parts or not isinstance(parts[0], list) or not parts[0]:
+            continue
+        values = [int(value) for value in parts[0][:3]]
+        values += [1] * (3 - len(values))
+        return datetime.date(*values).isoformat()
+    return ""
+
+
+def matches_preprint_topics(title: str, abstract: str) -> List[str]:
+    title_text = " ".join(title.lower().split())
+    all_text = f"{title_text} {' '.join(abstract.lower().split())}"
+
+    def title_has(*terms: str) -> bool:
+        return any(term in title_text for term in terms)
+
+    def text_has(*terms: str) -> bool:
+        return any(term in all_text for term in terms)
+
+    matches = []
+    if title_has("benchmark", "dataset", "data set") or text_has(
+        "benchmark dataset", "new dataset", "large-scale dataset"
+    ):
+        matches.append("Dataset")
+    if title_has("evaluation", "benchmarking") or text_has(
+        "evaluation protocol", "evaluation benchmark", "benchmarking"
+    ):
+        matches.append("Evaluation")
+    if title_has("rethinking"):
+        matches.append("Rethinking")
+    if title_has("survey", "review"):
+        matches.append("Survey")
+    feature_phrases = (
+        "feature coding",
+        "feature compression",
+        "deep feature compression",
+        "intermediate feature compression",
+        "feature map compression",
+        "feature tensor compression",
+        "semantic feature coding",
+        "feature codec",
+    )
+    feature_in_title = any(term in title_text for term in feature_phrases)
+    feature_in_abstract = any(term in abstract.lower() for term in feature_phrases)
+    representation_only = "representation learning" in title_text and not feature_in_title
+    coding_context = text_has(
+        "rate-distortion",
+        "bitrate",
+        "bitstream",
+        "bandwidth",
+        "transmission",
+        "transmitted",
+        "communication",
+        "quantiz",
+        "codec",
+        "encoder",
+        "decoder",
+        "encode",
+        "decode",
+        "symbol stream",
+        "bottleneck",
+        "data volume",
+        "memory-constrained",
+        "compression module",
+        "compresses",
+        "compressed feature",
+        "compression ratio",
+    )
+    if not representation_only and (feature_in_title or (feature_in_abstract and coding_context)):
+        matches.append("Feature Coding")
+    if text_has("gaussian splatting", "gaussian splat") or re.search(r"\b3dgs\b", all_text):
+        matches.append("Gaussian Splatting")
+    if text_has("spiking neural network", "spiking neural networks", "spiking neuron") or (
+        re.search(r"\bsnn\b", all_text) and "spiking" in all_text
+    ):
+        matches.append("Spiking Network")
+    if text_has("recurrent neural network", "recurrent network", "recursive neural network") or re.search(
+        r"\brnn\b", all_text
+    ):
+        matches.append("Recurrent Network")
+    if text_has("salient object detection", "video salient object detection", "saliency detection"):
+        matches.append("Salient Object Detection")
+    if text_has("camouflaged object detection", "video camouflaged object detection"):
+        matches.append("Camouflaged Object Detection")
+    if text_has("change detection", "semantic change detection") and text_has(
+        "remote sensing", "image", "video", "segmentation"
+    ):
+        matches.append("Change Detection")
+    if text_has("infrared small target detection", "infrared small target") or re.search(r"\birstd\b", all_text):
+        matches.append("Infrared Small Target Detection")
+    return matches
+
+
+def paper_archive_date(paper_info: Dict[str, object]) -> str:
+    return max(str(paper_info.get("publish_time", "")), str(paper_info.get("update_time", "")))
+
+
+def paper_is_retained(topic: str, paper_info: Dict[str, object], cutoff: str) -> bool:
+    if paper_archive_date(paper_info) < cutoff:
+        return False
+    if topic in LOCALLY_FILTERED_TOPICS:
+        return topic in matches_preprint_topics(
+            str(paper_info.get("paper_title", "")), str(paper_info.get("paper_abstract", ""))
+        )
+    if paper_info.get("source") != "preprints.org":
+        return True
+    if paper_info.get("primary_category") not in PREPRINT_ALLOWED_FIELDS:
+        return False
+    return topic in matches_preprint_topics(
+        str(paper_info.get("paper_title", "")), str(paper_info.get("paper_abstract", ""))
+    )
+
+
+def update_json_file(
+    json_path: str,
+    papers: Dict[str, List[Paper]],
+    retention_days: Optional[int] = None,
+    max_size_mib: Optional[int] = None,
+) -> None:
     if os.path.exists(json_path):
         with open(json_path, "r", encoding="utf-8") as f:
             json_data: Dict[str, Dict[str, Dict[str, object]]] = json.load(f)
@@ -94,15 +429,46 @@ def update_json_file(json_path: str, papers: Dict[str, List[ArXivPaper]]) -> Non
             json_data[keyword] = {}
 
         for paper_item in paper_items:
-            json_data[keyword][paper_item.paper_key] = paper_item.to_dict()
+            incoming = add_source_metadata(paper_item.to_dict())
+            existing = json_data[keyword].get(paper_item.paper_key)
+            if existing and len(paper_sources(existing)) > 1:
+                json_data[keyword][paper_item.paper_key] = merge_paper_records(existing, incoming)
+            else:
+                json_data[keyword][paper_item.paper_key] = incoming
 
-    json_data = {
-        keyword: {paper_key: remove_obsolete_fields(paper_info) for paper_key, paper_info in keyword_papers.items()}
-        for keyword, keyword_papers in json_data.items()
-    }
+    retention_days = retention_days or get_env_int("PAPER_RETENTION_DAYS", 180)
+    max_size_mib = max_size_mib or get_env_int("JSON_MAX_SIZE_MIB", 45)
+    utc_today = datetime.datetime.now(datetime.timezone.utc).date()
+    cutoff = (utc_today - datetime.timedelta(days=retention_days)).isoformat()
+    retained_data = {}
+    merged_duplicates = 0
+    for keyword, keyword_papers in json_data.items():
+        retained_papers = {
+            paper_key: add_source_metadata(paper_info)
+            for paper_key, paper_info in keyword_papers.items()
+            if paper_is_retained(keyword, paper_info, cutoff)
+        }
+        merged_papers, topic_merges = merge_cross_source_duplicates(retained_papers)
+        retained_data[keyword] = {
+            paper_key: compact_source_metadata(paper_info) for paper_key, paper_info in merged_papers.items()
+        }
+        merged_duplicates += topic_merges
+    json_data = retained_data
 
-    with open(json_path, "w", encoding="utf-8") as f:
+    temp_path = f"{json_path}.tmp"
+    with open(temp_path, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
+    size_mib = os.path.getsize(temp_path) / (1024 * 1024)
+    if size_mib > max_size_mib:
+        os.remove(temp_path)
+        raise RuntimeError(
+            f"Generated JSON is {size_mib:.1f} MiB, above JSON_MAX_SIZE_MIB={max_size_mib}. "
+            "Reduce PAPER_RETENTION_DAYS before GitHub's 100 MiB hard limit is reached."
+        )
+    os.replace(temp_path, json_path)
+    print(f"JSON archive contains the latest {retention_days} days ({size_mib:.1f} MiB).")
+    if merged_duplicates:
+        print(f"Merged {merged_duplicates} cross-source duplicate record(s) by normalized title.")
 
 
 def json_to_html(
@@ -134,6 +500,10 @@ def json_to_html(
             --accent: #1b4f8f;
             --accent-soft: #e8eef7;
             --accent-strong: #163c6f;
+            --arxiv: #b31b1b;
+            --arxiv-strong: #8f1515;
+            --preprints: #eab308;
+            --preprints-strong: #a16207;
             --radius: 6px;
             --font-sans: "Inter", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             --font-serif: "Iowan Old Style", "Charter", "Palatino Linotype", Georgia, "Times New Roman", serif;
@@ -244,13 +614,19 @@ def json_to_html(
             background: var(--paper);
             border: 1px solid var(--line);
             border-radius: var(--radius);
+            display: grid;
+            gap: 0.42rem;
             min-height: 44vh;
             overflow: hidden;
+            padding: 0.42rem;
         }
         .paper-card {
-            background: var(--paper);
-            border: 0;
-            border-bottom: 1px solid var(--line);
+            --card-fill: var(--paper);
+            --source-border: linear-gradient(var(--line), var(--line));
+            background: linear-gradient(var(--card-fill), var(--card-fill)) padding-box,
+                        var(--source-border) border-box;
+            border: 2px solid transparent;
+            border-radius: 4px;
             display: grid;
             gap: 0.9rem;
             grid-template-columns: minmax(7.2rem, 9rem) minmax(0, 1fr);
@@ -258,13 +634,19 @@ def json_to_html(
             padding: 0.72rem 0.82rem;
             transition: background-color 0.12s;
         }
-        .paper-card:last-child {
-            border-bottom: 0;
+        .paper-card.source-arxiv {
+            --source-border: linear-gradient(var(--arxiv), var(--arxiv));
+        }
+        .paper-card.source-preprints {
+            --source-border: linear-gradient(var(--preprints), var(--preprints));
+        }
+        .paper-card.source-mixed {
+            --source-border: linear-gradient(90deg, var(--arxiv) 0 50%, var(--preprints) 50% 100%);
         }
         .paper-card:hover {
-            background: #fbfcff;
+            --card-fill: #fbfcff;
         }
-        .paper-arxiv-panel {
+        .paper-source-panel {
             align-content: start;
             color: var(--quiet);
             display: grid;
@@ -276,20 +658,38 @@ def json_to_html(
             overflow-wrap: anywhere;
             padding-top: 0.08rem;
         }
-        .arxiv-id {
+        .source-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.28rem;
+        }
+        .source-id {
             color: var(--ink);
             font-weight: 700;
         }
-        .arxiv-link {
-            color: var(--accent);
+        .source-link {
+            border-radius: 3px;
+            display: inline-block;
             font-weight: 700;
+            padding: 0.06rem 0.32rem;
             text-decoration: none;
         }
-        .arxiv-link:hover {
-            color: var(--accent-strong);
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
+        .source-link-arxiv {
+            background: var(--arxiv);
+            color: #fff;
+        }
+        .source-link-arxiv:hover {
+            background: var(--arxiv-strong);
+            color: #fff;
+        }
+        .source-link-preprints {
+            background: var(--preprints);
+            color: #111;
+        }
+        .source-link-preprints:hover {
+            background: #facc15;
+            color: #111;
         }
         .paper-content {
             min-width: 0;
@@ -449,7 +849,7 @@ def json_to_html(
                 gap: 0.42rem;
                 padding: 0.62rem 0.68rem;
             }
-            .paper-arxiv-panel {
+            .paper-source-panel {
                 display: flex;
                 flex-wrap: wrap;
                 font-size: 0.68rem;
@@ -482,7 +882,7 @@ def json_to_html(
 <body>
     <nav class="navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><span class="brand-mark">arXiv</span><span>$title</span></a>
+            <a class="navbar-brand" href="#"><span class="brand-mark">Feeds</span><span>$title</span></a>
             <span class="navbar-text">Updated $current_date</span>
         </div>
     </nav>
@@ -549,17 +949,29 @@ def json_to_html(
 
         function normalizePaper(paperKey, paperInfo) {
             const authors = Array.isArray(paperInfo.paper_authors) ? paperInfo.paper_authors : [];
+            const rawSources = Array.isArray(paperInfo.sources)
+                ? paperInfo.sources
+                : String(paperInfo.source || "arxiv").split("+");
+            const sources = ["arxiv", "preprints.org"].filter((source) => rawSources.includes(source));
+            if (!sources.length) sources.push("arxiv");
+            const sourceUrls = Object.assign({}, paperInfo.source_urls || {});
+            const sourceIds = Object.assign({}, paperInfo.source_ids || {});
+            if (sources.length === 1) {
+                sourceUrls[sources[0]] ||= paperInfo.paper_url || "";
+                sourceIds[sources[0]] ||= paperInfo.paper_id || paperKey;
+            }
             const paper = {
                 key: paperKey,
-                id: paperInfo.paper_id || paperKey,
                 title: paperInfo.paper_title || "",
-                url: paperInfo.paper_url || "",
                 abstract: paperInfo.paper_abstract || "",
                 authors,
                 category: paperInfo.primary_category || "",
                 publishTime: paperInfo.publish_time || "",
                 updateTime: paperInfo.update_time || "",
                 comments: paperInfo.comments || "",
+                sources,
+                sourceUrls,
+                sourceIds,
             };
             paper.searchText = [
                 paper.title,
@@ -569,6 +981,8 @@ def json_to_html(
                 paper.updateTime,
                 paper.comments,
                 authors.join(" "),
+                Object.values(sourceIds).join(" "),
+                sources.join(" "),
             ].join(" ").toLowerCase();
             return paper;
         }
@@ -613,13 +1027,24 @@ def json_to_html(
             const commentsHtml = paper.comments ? '<p class="paper-comments">' + escapeHtml(paper.comments) + '</p>' : "";
             const categoryHtml = paper.category ? '<span class="badge-cat">' + escapeHtml(paper.category) + '</span>' : "";
             const dateHtml = paper.publishTime ? '<span class="badge-date">' + escapeHtml(paper.publishTime) + '</span>' : "";
+            const sourceClass = paper.sources.length > 1
+                ? "source-mixed"
+                : (paper.sources[0] === "preprints.org" ? "source-preprints" : "source-arxiv");
+            const sourceRows = paper.sources.map((source) => {
+                const isPreprints = source === "preprints.org";
+                const label = isPreprints ? "Preprints.org" : "arXiv";
+                const linkClass = isPreprints ? "source-link-preprints" : "source-link-arxiv";
+                return '<div class="source-row">'
+                    + '<span class="source-id">' + escapeHtml(paper.sourceIds[source] || label) + '</span>'
+                    + '<a href="' + escapeHtml(safeUrl(paper.sourceUrls[source])) + '" class="source-link ' + linkClass + '" target="_blank" rel="noopener">' + label + '</a>'
+                    + '</div>';
+            }).join("");
 
-            return '<article class="paper-card">'
-                + '<div class="paper-arxiv-panel">'
+            return '<article class="paper-card ' + sourceClass + '">'
+                + '<div class="paper-source-panel">'
                 + dateHtml
-                + '<span class="arxiv-id">' + escapeHtml(paper.id) + '</span>'
+                + sourceRows
                 + categoryHtml
-                + '<a href="' + escapeHtml(safeUrl(paper.url)) + '" class="arxiv-link" target="_blank" rel="noopener">arXiv Abs</a>'
                 + '</div>'
                 + '<div class="paper-content">'
                 + '<h2 class="card-title">' + escapeHtml(paper.title) + '</h2>'
@@ -718,22 +1143,25 @@ def json_to_html(
     print(f"HTML file generated at {html_path}")
 
 
-def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str, List[ArXivPaper]]:
+def get_papers(
+    keywords: Dict[str, str], max_results_per_keyword: int = 100
+) -> Tuple[Dict[str, List[ArXivPaper]], Set[str]]:
     import arxiv
+    import requests
 
     page_size = get_env_int("ARXIV_PAGE_SIZE", 100)
-    delay_seconds = get_env_int("ARXIV_DELAY_SECONDS", 10)
-    client_retries = get_env_int("ARXIV_CLIENT_RETRIES", 2)
-    keyword_retries = get_env_int("ARXIV_KEYWORD_RETRIES", 4)
-    backoff_seconds = get_env_int("ARXIV_BACKOFF_SECONDS", 60)
-    max_backoff_seconds = get_env_int("ARXIV_MAX_BACKOFF_SECONDS", 900)
+    delay_seconds = get_env_int("ARXIV_DELAY_SECONDS", 4, minimum=3)
+    client_retries = get_env_int("ARXIV_CLIENT_RETRIES", 1, minimum=0)
+    keyword_retries = get_env_int("ARXIV_KEYWORD_RETRIES", 2)
+    backoff_seconds = get_env_int("ARXIV_BACKOFF_SECONDS", 30)
+    max_backoff_seconds = get_env_int("ARXIV_MAX_BACKOFF_SECONDS", 120)
 
     # GitHub-hosted runners often hit arXiv API 429/503 responses. Keep requests slow and
     # retry per keyword so one transient outage does not discard the existing archive.
     client = arxiv.Client(page_size=page_size, delay_seconds=delay_seconds, num_retries=client_retries)
 
-    counts = 0
     papers: Dict[str, List[ArXivPaper]] = {}
+    succeeded: Set[str] = set()
     for keyword, query in keywords.items():
         print(f"Keyword: {keyword}")
         search = arxiv.Search(
@@ -747,24 +1175,27 @@ def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str
         for attempt in range(1, keyword_retries + 1):
             try:
                 results = list(client.results(search))
+                succeeded.add(keyword)
                 break
-            except arxiv.HTTPError as error:
+            except (arxiv.ArxivError, requests.RequestException) as error:
                 status = get_http_status(error)
-                retryable = status in {429, 500, 502, 503, 504}
+                retryable = isinstance(error, requests.RequestException) or status in {429, 500, 502, 503, 504}
                 if not retryable:
                     raise
+
+                reason = f"HTTP {status}" if status else error.__class__.__name__
 
                 if attempt == keyword_retries:
                     print(
                         f"Warning: skipped keyword {keyword!r} after {attempt} attempts because arXiv returned "
-                        f"HTTP {status}. Existing JSON entries for this keyword will be preserved.",
+                        f"{reason}. Existing JSON entries for this keyword will be preserved.",
                         file=sys.stderr,
                     )
                     break
 
                 wait_seconds = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1)))
                 print(
-                    f"Warning: arXiv returned HTTP {status} for keyword {keyword!r}; retrying in "
+                    f"Warning: arXiv returned {reason} for keyword {keyword!r}; retrying in "
                     f"{wait_seconds} seconds ({attempt}/{keyword_retries}).",
                     file=sys.stderr,
                 )
@@ -772,38 +1203,163 @@ def get_papers(keywords: Dict[str, str], max_results_per_keyword=10) -> Dict[str
 
         for result in results:
             paper = ArXivPaper(result)
+            if keyword in LOCALLY_FILTERED_TOPICS and keyword not in matches_preprint_topics(
+                paper.paper_title, paper.paper_abstract
+            ):
+                continue
             keyword_specific_papers.append(paper)
-
-            counts += 1
-            print(f"{counts} {paper}")
+        if keyword in succeeded:
+            print(f"arXiv {keyword}: fetched {len(keyword_specific_papers)} records.")
         papers[keyword] = keyword_specific_papers
-    return papers
+    return papers, succeeded
+
+
+def fetch_crossref_json(url: str, attempts: int = 3) -> Dict[str, object]:
+    user_agent = "DailyArxiv/2.0 (https://github.com/lartpang/DailyArxiv)"
+    req = request.Request(url, headers={"User-Agent": user_agent, "Accept": "application/json"})
+    for attempt in range(1, attempts + 1):
+        try:
+            with request.urlopen(req, timeout=45) as response:
+                return json.load(response)
+        except error.HTTPError as exc:
+            retryable = exc.code == 429 or 500 <= exc.code <= 599
+            if not retryable or attempt == attempts:
+                raise
+            retry_after = exc.headers.get("Retry-After")
+            wait_seconds = int(retry_after) if retry_after and retry_after.isdigit() else 10 * attempt
+        except error.URLError:
+            if attempt == attempts:
+                raise
+            wait_seconds = 10 * attempt
+        print(f"Warning: Crossref request failed; retrying in {wait_seconds} seconds.", file=sys.stderr)
+        time.sleep(wait_seconds)
+    raise RuntimeError("Crossref request failed")
+
+
+def get_preprints(since_date: datetime.date) -> Tuple[Dict[str, List[PreprintsPaper]], bool]:
+    rows = get_env_int("CROSSREF_ROWS", 1000)
+    max_pages = get_env_int("CROSSREF_MAX_PAGES", 5)
+    contact = os.getenv("CROSSREF_MAILTO", "").strip()
+    cursor = "*"
+    papers: Dict[str, List[PreprintsPaper]] = defaultdict(list)
+    count = 0
+
+    try:
+        for page in range(1, max_pages + 1):
+            params = {
+                "filter": f"prefix:10.20944,type:posted-content,from-created-date:{since_date.isoformat()}",
+                "rows": str(rows),
+                "cursor": cursor,
+            }
+            if contact:
+                params["mailto"] = contact
+            url = "https://api.crossref.org/works?" + parse.urlencode(params)
+            payload = fetch_crossref_json(url)
+            message = payload.get("message")
+            if not isinstance(message, dict):
+                raise RuntimeError("Crossref returned an invalid response")
+            items = message.get("items", [])
+            if not isinstance(items, list):
+                raise RuntimeError("Crossref returned an invalid item list")
+
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                paper = PreprintsPaper(item)
+                if "preprints.org" not in paper.paper_url.lower():
+                    continue
+                if paper.primary_category not in PREPRINT_ALLOWED_FIELDS:
+                    continue
+                for topic in matches_preprint_topics(paper.paper_title, paper.paper_abstract):
+                    papers[topic].append(paper)
+                count += 1
+            if len(items) < rows:
+                print(f"Preprints.org: checked {count} new Crossref records; {sum(map(len, papers.values()))} topic matches.")
+                return dict(papers), True
+            cursor = str(message.get("next-cursor", ""))
+            if not cursor:
+                raise RuntimeError("Crossref response did not include a pagination cursor")
+        raise RuntimeError(f"Crossref results exceeded CROSSREF_MAX_PAGES={max_pages}")
+    except (error.URLError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
+        print(f"Warning: Preprints.org metadata was not updated: {exc}", file=sys.stderr)
+        return {}, False
+
+
+def load_state(path: str) -> Dict[str, object]:
+    if not os.path.exists(path):
+        return {"arxiv": {}, "preprints": ""}
+    with open(path, "r", encoding="utf-8") as f:
+        state = json.load(f)
+    return state if isinstance(state, dict) else {"arxiv": {}, "preprints": ""}
+
+
+def save_state(path: str, state: Dict[str, object]) -> None:
+    temp_path = f"{path}.tmp"
+    with open(temp_path, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    os.replace(temp_path, path)
+
+
+def succeeded_today(value: object, today: datetime.date) -> bool:
+    return isinstance(value, str) and value[:10] == today.isoformat()
+
+
+def merge_papers(target: Dict[str, List[Paper]], incoming: Dict[str, List[Paper]]) -> None:
+    for topic, paper_items in incoming.items():
+        target.setdefault(topic, []).extend(paper_items)
 
 
 def main():
     json_file = "arxiv-daily.json"
     html_file = "index.html"
-    keywords = {
-        # Comprehensive Topics
-        "Dataset": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Benchmark OR ti:Dataset OR ti:"Data Set" OR abs:"benchmark dataset" OR abs:"new dataset" OR abs:"large-scale dataset")',
-        "Evaluation": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:eess.IV) AND (ti:Evaluation OR ti:Benchmarking OR abs:"evaluation protocol" OR abs:"evaluation benchmark" OR abs:"benchmarking")',
-        "Rethinking": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND ti:Rethinking',
-        "Survey": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:Survey OR ti:Review OR ti:"A Survey" OR ti:"A Review")',
-        # Special Architecture
-        "Spiking Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE OR cat:eess.IV) AND (ti:"Spiking Neural Network" OR abs:"Spiking Neural Network" OR ti:"Spiking Neural Networks" OR abs:"Spiking Neural Networks" OR ti:"Spiking Neuron" OR abs:"Spiking Neuron" OR (all:SNN AND all:spiking))',
-        "Recurrent Network": '(cat:cs.CV OR cat:cs.LG OR cat:cs.AI OR cat:cs.NE) AND (ti:"Recurrent Neural Network" OR abs:"Recurrent Neural Network" OR ti:"Recurrent Network" OR abs:"recurrent network" OR ti:"Recursive Neural Network" OR abs:"recursive neural network" OR ti:RNN OR abs:RNN)',
-        # Context Dependent Understanding
-        "Salient Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Salient Object Detection" OR abs:"Salient Object Detection" OR ti:"Video Salient Object Detection" OR abs:"Video Salient Object Detection" OR ti:"Saliency Detection")',
-        "Camouflaged Object Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Camouflaged Object Detection" OR abs:"Camouflaged Object Detection" OR ti:"Video Camouflaged Object Detection" OR abs:"Video Camouflaged Object Detection")',
-        "Change Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Change Detection" OR abs:"Change Detection" OR ti:"Semantic Change Detection" OR abs:"Semantic Change Detection") AND (all:"remote sensing" OR all:image OR all:video OR all:segmentation)',
-        # Remote Sense Segmentation
-        "Infrared Small Target Detection": '(cat:cs.CV OR cat:eess.IV) AND (ti:"Infrared Small Target Detection" OR abs:"Infrared Small Target Detection" OR ti:"Infrared Small Target" OR abs:"Infrared Small Target" OR all:IRSTD)',  # "ISTD" will incorrectly crawl the papers about segmentation dataset ISTD
-    }
+    state_file = ".tracker-state.json"
+    now = datetime.datetime.now(datetime.timezone.utc)
+    today = now.date()
+    timestamp = now.isoformat().replace("+00:00", "Z")
+    force_fetch = os.getenv("FORCE_FETCH", "").lower() in {"1", "true", "yes"}
+    state = load_state(state_file)
+    arxiv_state = state.setdefault("arxiv", {})
+    if not isinstance(arxiv_state, dict):
+        arxiv_state = {}
+        state["arxiv"] = arxiv_state
 
-    max_results_per_keyword = get_env_int("ARXIV_MAX_RESULTS_PER_KEYWORD", 100)
-    papers = get_papers(keywords, max_results_per_keyword=max_results_per_keyword)
+    due_keywords = {
+        topic: query
+        for topic, query in ARXIV_KEYWORDS.items()
+        if force_fetch or not succeeded_today(arxiv_state.get(topic), today)
+    }
+    preprints_due = force_fetch or not succeeded_today(state.get("preprints"), today)
+    if not due_keywords and not preprints_due:
+        print("All sources already succeeded today; skipping duplicate scheduled run.")
+        return
+
+    papers: Dict[str, List[Paper]] = {}
+    successful_sources = 0
+    if due_keywords:
+        max_results_per_keyword = get_env_int("ARXIV_MAX_RESULTS_PER_KEYWORD", 100)
+        arxiv_papers, succeeded_keywords = get_papers(
+            due_keywords, max_results_per_keyword=max_results_per_keyword
+        )
+        merge_papers(papers, arxiv_papers)
+        for topic in succeeded_keywords:
+            arxiv_state[topic] = timestamp
+        successful_sources += len(succeeded_keywords)
+
+    if preprints_due:
+        overlap_days = get_env_int("CROSSREF_LOOKBACK_DAYS", 3)
+        preprint_papers, preprints_succeeded = get_preprints(today - datetime.timedelta(days=overlap_days))
+        if preprints_succeeded:
+            merge_papers(papers, preprint_papers)
+            state["preprints"] = timestamp
+            successful_sources += 1
+
+    if not successful_sources:
+        raise RuntimeError("No due source completed successfully; existing data was left unchanged.")
+
     update_json_file(json_file, papers)
-    json_to_html(json_file, html_file)
+    json_to_html(json_file, html_file, title="Daily Research Preprints")
+    save_state(state_file, state)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily ArXiv Papers</title>
+    <title>Daily Research Preprints</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -17,6 +17,10 @@
             --accent: #1b4f8f;
             --accent-soft: #e8eef7;
             --accent-strong: #163c6f;
+            --arxiv: #b31b1b;
+            --arxiv-strong: #8f1515;
+            --preprints: #eab308;
+            --preprints-strong: #a16207;
             --radius: 6px;
             --font-sans: "Inter", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             --font-serif: "Iowan Old Style", "Charter", "Palatino Linotype", Georgia, "Times New Roman", serif;
@@ -127,13 +131,19 @@
             background: var(--paper);
             border: 1px solid var(--line);
             border-radius: var(--radius);
+            display: grid;
+            gap: 0.42rem;
             min-height: 44vh;
             overflow: hidden;
+            padding: 0.42rem;
         }
         .paper-card {
-            background: var(--paper);
-            border: 0;
-            border-bottom: 1px solid var(--line);
+            --card-fill: var(--paper);
+            --source-border: linear-gradient(var(--line), var(--line));
+            background: linear-gradient(var(--card-fill), var(--card-fill)) padding-box,
+                        var(--source-border) border-box;
+            border: 2px solid transparent;
+            border-radius: 4px;
             display: grid;
             gap: 0.9rem;
             grid-template-columns: minmax(7.2rem, 9rem) minmax(0, 1fr);
@@ -141,13 +151,19 @@
             padding: 0.72rem 0.82rem;
             transition: background-color 0.12s;
         }
-        .paper-card:last-child {
-            border-bottom: 0;
+        .paper-card.source-arxiv {
+            --source-border: linear-gradient(var(--arxiv), var(--arxiv));
+        }
+        .paper-card.source-preprints {
+            --source-border: linear-gradient(var(--preprints), var(--preprints));
+        }
+        .paper-card.source-mixed {
+            --source-border: linear-gradient(90deg, var(--arxiv) 0 50%, var(--preprints) 50% 100%);
         }
         .paper-card:hover {
-            background: #fbfcff;
+            --card-fill: #fbfcff;
         }
-        .paper-arxiv-panel {
+        .paper-source-panel {
             align-content: start;
             color: var(--quiet);
             display: grid;
@@ -159,20 +175,38 @@
             overflow-wrap: anywhere;
             padding-top: 0.08rem;
         }
-        .arxiv-id {
+        .source-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.28rem;
+        }
+        .source-id {
             color: var(--ink);
             font-weight: 700;
         }
-        .arxiv-link {
-            color: var(--accent);
+        .source-link {
+            border-radius: 3px;
+            display: inline-block;
             font-weight: 700;
+            padding: 0.06rem 0.32rem;
             text-decoration: none;
         }
-        .arxiv-link:hover {
-            color: var(--accent-strong);
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
+        .source-link-arxiv {
+            background: var(--arxiv);
+            color: #fff;
+        }
+        .source-link-arxiv:hover {
+            background: var(--arxiv-strong);
+            color: #fff;
+        }
+        .source-link-preprints {
+            background: var(--preprints);
+            color: #111;
+        }
+        .source-link-preprints:hover {
+            background: #facc15;
+            color: #111;
         }
         .paper-content {
             min-width: 0;
@@ -332,7 +366,7 @@
                 gap: 0.42rem;
                 padding: 0.62rem 0.68rem;
             }
-            .paper-arxiv-panel {
+            .paper-source-panel {
                 display: flex;
                 flex-wrap: wrap;
                 font-size: 0.68rem;
@@ -365,7 +399,7 @@
 <body>
     <nav class="navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><span class="brand-mark">arXiv</span><span>Daily ArXiv Papers</span></a>
+            <a class="navbar-brand" href="#"><span class="brand-mark">Feeds</span><span>Daily Research Preprints</span></a>
             <span class="navbar-text">Updated 2026.07.15</span>
         </div>
     </nav>
@@ -432,17 +466,29 @@
 
         function normalizePaper(paperKey, paperInfo) {
             const authors = Array.isArray(paperInfo.paper_authors) ? paperInfo.paper_authors : [];
+            const rawSources = Array.isArray(paperInfo.sources)
+                ? paperInfo.sources
+                : String(paperInfo.source || "arxiv").split("+");
+            const sources = ["arxiv", "preprints.org"].filter((source) => rawSources.includes(source));
+            if (!sources.length) sources.push("arxiv");
+            const sourceUrls = Object.assign({}, paperInfo.source_urls || {});
+            const sourceIds = Object.assign({}, paperInfo.source_ids || {});
+            if (sources.length === 1) {
+                sourceUrls[sources[0]] ||= paperInfo.paper_url || "";
+                sourceIds[sources[0]] ||= paperInfo.paper_id || paperKey;
+            }
             const paper = {
                 key: paperKey,
-                id: paperInfo.paper_id || paperKey,
                 title: paperInfo.paper_title || "",
-                url: paperInfo.paper_url || "",
                 abstract: paperInfo.paper_abstract || "",
                 authors,
                 category: paperInfo.primary_category || "",
                 publishTime: paperInfo.publish_time || "",
                 updateTime: paperInfo.update_time || "",
                 comments: paperInfo.comments || "",
+                sources,
+                sourceUrls,
+                sourceIds,
             };
             paper.searchText = [
                 paper.title,
@@ -452,6 +498,8 @@
                 paper.updateTime,
                 paper.comments,
                 authors.join(" "),
+                Object.values(sourceIds).join(" "),
+                sources.join(" "),
             ].join(" ").toLowerCase();
             return paper;
         }
@@ -496,13 +544,24 @@
             const commentsHtml = paper.comments ? '<p class="paper-comments">' + escapeHtml(paper.comments) + '</p>' : "";
             const categoryHtml = paper.category ? '<span class="badge-cat">' + escapeHtml(paper.category) + '</span>' : "";
             const dateHtml = paper.publishTime ? '<span class="badge-date">' + escapeHtml(paper.publishTime) + '</span>' : "";
+            const sourceClass = paper.sources.length > 1
+                ? "source-mixed"
+                : (paper.sources[0] === "preprints.org" ? "source-preprints" : "source-arxiv");
+            const sourceRows = paper.sources.map((source) => {
+                const isPreprints = source === "preprints.org";
+                const label = isPreprints ? "Preprints.org" : "arXiv";
+                const linkClass = isPreprints ? "source-link-preprints" : "source-link-arxiv";
+                return '<div class="source-row">'
+                    + '<span class="source-id">' + escapeHtml(paper.sourceIds[source] || label) + '</span>'
+                    + '<a href="' + escapeHtml(safeUrl(paper.sourceUrls[source])) + '" class="source-link ' + linkClass + '" target="_blank" rel="noopener">' + label + '</a>'
+                    + '</div>';
+            }).join("");
 
-            return '<article class="paper-card">'
-                + '<div class="paper-arxiv-panel">'
+            return '<article class="paper-card ' + sourceClass + '">'
+                + '<div class="paper-source-panel">'
                 + dateHtml
-                + '<span class="arxiv-id">' + escapeHtml(paper.id) + '</span>'
+                + sourceRows
                 + categoryHtml
-                + '<a href="' + escapeHtml(safeUrl(paper.url)) + '" class="arxiv-link" target="_blank" rel="noopener">arXiv Abs</a>'
                 + '</div>'
                 + '<div class="paper-content">'
                 + '<h2 class="card-title">' + escapeHtml(paper.title) + '</h2>'

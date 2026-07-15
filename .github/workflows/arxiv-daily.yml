@@ -1,31 +1,34 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Run Arxiv Papers Daily
+name: Update Daily Preprints
 
 # Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      force:
+        description: Fetch again even if today's sources already succeeded
+        required: false
+        default: false
+        type: boolean
   schedule:
-    - cron: "17 2 * * *"
-  # Triggers the workflow on push or pull request events but only for the main branch
-#   push:
-#     branches:
-#     - main
+    # Primary run after arXiv's daily API refresh; fallback protects against a dropped cron event.
+    # The state file prevents the fallback from querying sources again after a successful primary run.
+    - cron: "17 6 * * *"
+    - cron: "47 16 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 concurrency:
-  group: arxiv-daily
-  cancel-in-progress: true
+  group: daily-preprints
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
-  # This workflow contains a single job called "build"
   build:
     name: update
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,30 +37,39 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: pip
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run daily arxiv
+      - name: Update paper metadata
         env:
+          FORCE_FETCH: ${{ github.event.inputs.force || 'false' }}
           ARXIV_MAX_RESULTS_PER_KEYWORD: "100"
           ARXIV_PAGE_SIZE: "100"
-          ARXIV_DELAY_SECONDS: "10"
-          ARXIV_CLIENT_RETRIES: "2"
-          ARXIV_KEYWORD_RETRIES: "4"
-          ARXIV_BACKOFF_SECONDS: "60"
-          ARXIV_MAX_BACKOFF_SECONDS: "900"
+          ARXIV_DELAY_SECONDS: "4"
+          ARXIV_CLIENT_RETRIES: "1"
+          ARXIV_KEYWORD_RETRIES: "2"
+          ARXIV_BACKOFF_SECONDS: "30"
+          ARXIV_MAX_BACKOFF_SECONDS: "120"
+          CROSSREF_LOOKBACK_DAYS: "3"
+          CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
+          PAPER_RETENTION_DAYS: "180"
+          JSON_MAX_SIZE_MIB: "45"
         run: |
           python daily_arxiv.py
 
-      - name: Push new markdown file
-        uses: github-actions-x/commit@v2.9
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Github Action Automatic Update Arxiv Papers"
-          files: index.html arxiv-daily.json
-          rebase: "true"
-          name: "GitHub Action Bot"
-          email: "action-bot-for-lartpang@github.com"
+      - name: Commit updated metadata
+        run: |
+          git config user.name "GitHub Action Bot"
+          git config user.email "action-bot-for-lartpang@github.com"
+          git add index.html arxiv-daily.json .tracker-state.json
+          if git diff --cached --quiet; then
+            echo "No files changed."
+            exit 0
+          fi
+          git commit -m "Update daily preprints"
+          git pull --rebase origin main
+          git push origin HEAD:main
