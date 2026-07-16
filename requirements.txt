@@ -1,1 +1,8 @@
-arxiv>=2.1,<3
+arxiv==2.4.1
+certifi==2026.5.20
+charset-normalizer==3.4.7
+feedparser==6.0.12
+idna==3.17
+requests==2.32.5
+sgmllib3k==1.0.0
+urllib3==2.7.0

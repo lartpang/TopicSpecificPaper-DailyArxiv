@@ -1,14 +1,13 @@
 import datetime
 import html
+import http.client
 import json
 import os
 import re
 import sys
 import time
 import unicodedata
-import xml.etree.ElementTree as ET
 from collections import defaultdict
-from email.utils import parsedate_to_datetime
 from string import Template
 from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple, Union
 from urllib import error, parse, request
@@ -123,8 +122,8 @@ ARXIV_KEYWORDS = {
 
 LOCALLY_FILTERED_TOPICS = {"Feature Coding", "Gaussian Splatting"}
 KNOWN_SOURCES = ("arxiv", "preprints.org")
-PREPRINTS_OAI_URL = "https://www.preprints.org/oaipmh"
-PREPRINTS_RSS_URL = "https://www.preprints.org/rss"
+PREPRINTS_CROSSREF_URL = "https://api.crossref.org/prefixes/10.20944/works"
+PREPRINTS_OPENALEX_URL = "https://api.openalex.org/works"
 PREPRINTS_DOI_PATTERN = re.compile(r"10\.20944/preprints\d{6}\.\d+(?:\.v\d+)?", re.IGNORECASE)
 PREPRINTS_MANUSCRIPT_PATTERN = re.compile(
     r"(?:https?://(?:www\.)?preprints\.org/)?(?:manuscript/)?(\d{6}\.\d+)(?:/v(\d+))?",
@@ -299,28 +298,9 @@ def clean_markup(value: str) -> str:
     return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", value)).split())
 
 
-def xml_local_name(element: ET.Element) -> str:
-    return element.tag.rsplit("}", 1)[-1]
-
-
-def xml_values(element: Optional[ET.Element], name: str) -> List[str]:
-    if element is None:
-        return []
-    return [
-        " ".join((child.text or "").split())
-        for child in element.iter()
-        if xml_local_name(child) == name and (child.text or "").strip()
-    ]
-
-
-def normalized_date(value: str) -> str:
-    value = value.strip()
-    if re.match(r"^\d{4}-\d{2}-\d{2}", value):
-        return value[:10]
-    try:
-        return parsedate_to_datetime(value).date().isoformat()
-    except (TypeError, ValueError, OverflowError):
-        return ""
+def normalized_date(value: object) -> str:
+    text = str(value or "").strip()
+    return text[:10] if re.match(r"^\d{4}-\d{2}-\d{2}", text) else ""
 
 
 def extract_preprints_doi(*values: str) -> str:
@@ -343,81 +323,180 @@ def preprints_url_from_doi(doi: str) -> str:
     return f"https://www.preprints.org/manuscript/{match.group(1)}{version}"
 
 
-def parse_preprints_oai_record(record: ET.Element) -> Optional[PreprintsPaper]:
-    header = next((child for child in record if xml_local_name(child) == "header"), None)
-    if header is not None and header.attrib.get("status") == "deleted":
-        return None
-    metadata = next((child for child in record if xml_local_name(child) == "metadata"), None)
-    titles = xml_values(metadata, "title")
-    identifiers = xml_values(metadata, "identifier")
-    descriptions = xml_values(metadata, "description")
-    header_ids = xml_values(header, "identifier")
-    doi = extract_preprints_doi(*(identifiers + header_ids))
-    paper_id = doi or (header_ids[0] if header_ids else "")
-    if not paper_id or not titles:
-        return None
-    preprints_urls = [value for value in identifiers if "preprints.org/" in value.lower()]
-    dates = [normalized_date(value) for value in xml_values(metadata, "date")]
-    dates = [value for value in dates if value]
-    header_dates = [normalized_date(value) for value in xml_values(header, "datestamp")]
-    return PreprintsPaper(
-        paper_id=paper_id,
-        title=titles[0],
-        url=preprints_urls[0] if preprints_urls else preprints_url_from_doi(doi),
-        abstract=max(descriptions, key=len, default=""),
-        authors=xml_values(metadata, "creator"),
-        category=(xml_values(metadata, "subject") or ["Preprints.org"])[0],
-        publish_time=min(dates, default=header_dates[0] if header_dates else ""),
-        update_time=header_dates[0] if header_dates else max(dates, default=""),
-    )
-
-
-def parse_preprints_rss_item(item: ET.Element) -> Optional[PreprintsPaper]:
-    titles = xml_values(item, "title")
-    links = xml_values(item, "link") + xml_values(item, "guid")
-    descriptions = xml_values(item, "description")
-    doi = extract_preprints_doi(*(links + descriptions))
-    if not doi or not titles:
-        return None
-    dates = [normalized_date(value) for value in xml_values(item, "pubDate") + xml_values(item, "date")]
-    dates = [value for value in dates if value]
-    preprints_urls = [value for value in links if "preprints.org/" in value.lower()]
-    authors = xml_values(item, "creator") or xml_values(item, "author")
-    return PreprintsPaper(
-        paper_id=doi,
-        title=titles[0],
-        url=preprints_urls[0] if preprints_urls else preprints_url_from_doi(doi),
-        abstract=max(descriptions, key=len, default=""),
-        authors=authors,
-        category=(xml_values(item, "category") or ["Preprints.org"])[0],
-        publish_time=dates[0] if dates else "",
-        update_time=dates[0] if dates else "",
-    )
-
-
-def fetch_xml(url: str, params: Optional[Dict[str, str]] = None, attempts: int = 3) -> ET.Element:
-    target_url = f"{url}?{parse.urlencode(params)}" if params else url
+def fetch_json(
+    url: str,
+    params: Dict[str, object],
+    provider: str,
+    attempts: int = 3,
+    user_agent: str = "DailyArxiv/3.0 (https://github.com/lartpang/DailyArxiv)",
+) -> Dict[str, object]:
+    target_url = f"{url}?{parse.urlencode(params)}"
+    max_response_bytes = min(get_env_int("HTTP_MAX_RESPONSE_MIB", 64), 256) * 1024 * 1024
     headers = {
-        "User-Agent": "DailyArxiv/3.0 (https://github.com/lartpang/DailyArxiv)",
-        "Accept": "application/xml, text/xml, application/rss+xml",
+        "User-Agent": user_agent,
+        "Accept": "application/json",
     }
     for attempt in range(1, attempts + 1):
         try:
-            with request.urlopen(request.Request(target_url, headers=headers), timeout=45) as response:
-                return ET.fromstring(response.read())
+            with request.urlopen(request.Request(target_url, headers=headers), timeout=60) as response:
+                content_length = str(response.headers.get("Content-Length") or "").strip()
+                if content_length.isdigit() and int(content_length) > max_response_bytes:
+                    raise ValueError(f"{provider} response exceeds HTTP_MAX_RESPONSE_MIB")
+                response_body = response.read(max_response_bytes + 1)
+                if len(response_body) > max_response_bytes:
+                    raise ValueError(f"{provider} response exceeds HTTP_MAX_RESPONSE_MIB")
+                payload = json.loads(response_body.decode("utf-8"))
+                if not isinstance(payload, dict):
+                    raise ValueError(f"{provider} returned a non-object JSON response")
+                return payload
         except error.HTTPError as exc:
             retryable = exc.code == 429 or 500 <= exc.code <= 599
             if not retryable or attempt == attempts:
                 raise
             retry_after = exc.headers.get("Retry-After")
             wait_seconds = int(retry_after) if retry_after and retry_after.isdigit() else 10 * attempt
-        except error.URLError:
+        except (error.URLError, OSError, http.client.HTTPException, json.JSONDecodeError, UnicodeDecodeError):
             if attempt == attempts:
                 raise
             wait_seconds = 10 * attempt
-        print(f"Warning: Preprints.org request failed; retrying in {wait_seconds} seconds.", file=sys.stderr)
+        print(f"Warning: {provider} request failed; retrying in {wait_seconds} seconds.", file=sys.stderr)
         time.sleep(wait_seconds)
-    raise RuntimeError("Preprints.org request failed")
+    raise RuntimeError(f"{provider} request failed")
+
+
+def crossref_date(item: Dict[str, object], *fields: str) -> str:
+    for field in fields:
+        value = item.get(field)
+        if not isinstance(value, dict):
+            continue
+        direct_date = normalized_date(value.get("date-time"))
+        if direct_date:
+            return direct_date
+        date_parts = value.get("date-parts")
+        if isinstance(date_parts, list) and date_parts and isinstance(date_parts[0], list):
+            parts = date_parts[0]
+            if parts:
+                try:
+                    year = int(parts[0])
+                    month = int(parts[1]) if len(parts) > 1 else 1
+                    day = int(parts[2]) if len(parts) > 2 else 1
+                    return datetime.date(year, month, day).isoformat()
+                except (TypeError, ValueError):
+                    continue
+    return ""
+
+
+def parse_crossref_preprint(item: Dict[str, object]) -> Optional[PreprintsPaper]:
+    doi = extract_preprints_doi(str(item.get("DOI") or ""))
+    if not doi or PREPRINTS_DOI_PATTERN.fullmatch(doi) is None:
+        return None
+    raw_titles = item.get("title")
+    titles = raw_titles if isinstance(raw_titles, list) else []
+    title = clean_markup(str(titles[0])) if titles else ""
+    if not title:
+        return None
+    raw_authors = item.get("author")
+    authors = []
+    if isinstance(raw_authors, list):
+        for author in raw_authors:
+            if not isinstance(author, dict):
+                continue
+            name = " ".join(
+                str(author.get(part) or "").strip() for part in ("given", "family")
+            ).strip()
+            if name:
+                authors.append(name)
+    category = str(item.get("group-title") or item.get("subtype") or "Preprints.org")
+    publish_time = crossref_date(item, "posted", "published", "issued", "created")
+    update_time = crossref_date(item, "deposited", "indexed", "created") or publish_time
+    return PreprintsPaper(
+        paper_id=doi,
+        title=title,
+        url=preprints_url_from_doi(doi),
+        abstract=str(item.get("abstract") or ""),
+        authors=authors,
+        category=category,
+        publish_time=publish_time,
+        update_time=update_time,
+    )
+
+
+def openalex_abstract(inverted_index: object) -> str:
+    if not isinstance(inverted_index, dict):
+        return ""
+    positioned_words = []
+    for word, positions in inverted_index.items():
+        if not isinstance(positions, list):
+            continue
+        for position in positions:
+            if isinstance(position, int):
+                positioned_words.append((position, str(word)))
+    return " ".join(word for _, word in sorted(positioned_words))
+
+
+def parse_openalex_preprint(item: Dict[str, object]) -> Optional[PreprintsPaper]:
+    doi = extract_preprints_doi(str(item.get("doi") or ""))
+    if not doi or PREPRINTS_DOI_PATTERN.fullmatch(doi) is None:
+        return None
+    title = clean_markup(str(item.get("display_name") or item.get("title") or ""))
+    if not title:
+        return None
+    raw_authorships = item.get("authorships")
+    authors = []
+    if isinstance(raw_authorships, list):
+        for authorship in raw_authorships:
+            if not isinstance(authorship, dict) or not isinstance(authorship.get("author"), dict):
+                continue
+            name = str(authorship["author"].get("display_name") or "").strip()
+            if name:
+                authors.append(name)
+    primary_topic = item.get("primary_topic")
+    category = (
+        str(primary_topic.get("display_name") or "Preprints.org")
+        if isinstance(primary_topic, dict)
+        else "Preprints.org"
+    )
+    publish_time = normalized_date(item.get("publication_date"))
+    update_time = normalized_date(item.get("updated_date")) or publish_time
+    return PreprintsPaper(
+        paper_id=doi,
+        title=title,
+        url=preprints_url_from_doi(doi),
+        abstract=openalex_abstract(item.get("abstract_inverted_index")),
+        authors=authors,
+        category=category,
+        publish_time=publish_time,
+        update_time=update_time,
+    )
+
+
+def preprint_version(paper: PreprintsPaper) -> int:
+    version_match = re.search(r"\.v(\d+)$", paper.paper_id, re.IGNORECASE)
+    return int(version_match.group(1)) if version_match else 0
+
+
+def merge_preprint_provider_records(
+    first: PreprintsPaper,
+    second: PreprintsPaper,
+) -> PreprintsPaper:
+    first_rank = (preprint_version(first), first.update_time)
+    second_rank = (preprint_version(second), second.update_time)
+    base, other = (second, first) if second_rank > first_rank else (first, second)
+    publish_dates = [date for date in (first.publish_time, second.publish_time) if date]
+    update_dates = [date for date in (first.update_time, second.update_time) if date]
+    category = base.primary_category
+    if category == "Preprints.org" and other.primary_category != "Preprints.org":
+        category = other.primary_category
+    return PreprintsPaper(
+        paper_id=base.paper_id,
+        title=base.paper_title or other.paper_title,
+        url=base.paper_url or other.paper_url,
+        abstract=max((first.paper_abstract, second.paper_abstract), key=len),
+        authors=max((first.paper_authors, second.paper_authors), key=len),
+        category=category,
+        publish_time=min(publish_dates, default=""),
+        update_time=max(update_dates, default=""),
+    )
 
 
 def deduplicate_preprint_versions(
@@ -427,24 +506,12 @@ def deduplicate_preprint_versions(
     for topic, topic_papers in papers.items():
         latest: Dict[str, PreprintsPaper] = {}
         for paper in topic_papers:
-            version_match = re.search(r"\.v(\d+)$", paper.paper_id, re.IGNORECASE)
-            version = int(version_match.group(1)) if version_match else 0
             current = latest.get(paper.paper_key)
-            current_version_match = (
-                re.search(r"\.v(\d+)$", current.paper_id, re.IGNORECASE) if current else None
+            latest[paper.paper_key] = (
+                merge_preprint_provider_records(current, paper) if current else paper
             )
-            current_version = int(current_version_match.group(1)) if current_version_match else 0
-            if current is None or (paper.update_time, version) > (current.update_time, current_version):
-                latest[paper.paper_key] = paper
         deduplicated[topic] = list(latest.values())
     return deduplicated
-
-
-def oai_date_argument(value: datetime.date, granularity: str, end_of_day: bool = False) -> str:
-    if "Thh:mm:ssZ" not in granularity:
-        return value.isoformat()
-    time_suffix = "T23:59:59Z" if end_of_day else "T00:00:00Z"
-    return f"{value.isoformat()}{time_suffix}"
 
 
 def matches_preprint_topics(title: str, abstract: str) -> List[str]:
@@ -532,6 +599,8 @@ def matches_preprint_topics(title: str, abstract: str) -> List[str]:
 
 
 def paper_archive_date(paper_info: Dict[str, object]) -> str:
+    if "preprints.org" in paper_sources(paper_info):
+        return str(paper_info.get("publish_time") or paper_info.get("update_time") or "")
     return max(str(paper_info.get("publish_time", "")), str(paper_info.get("update_time", "")))
 
 
@@ -583,7 +652,7 @@ def update_json_file(
 
     retention_days = retention_days or get_env_int("PAPER_RETENTION_DAYS", 180)
     preprint_retention_days = preprint_retention_days or get_env_int("PREPRINT_RETENTION_DAYS", 1826)
-    max_size_mib = max_size_mib or get_env_int("JSON_MAX_SIZE_MIB", 45)
+    max_size_mib = max_size_mib or get_env_int("JSON_MAX_SIZE_MIB", 75)
     utc_today = datetime.datetime.now(datetime.timezone.utc).date()
     arxiv_cutoff = (utc_today - datetime.timedelta(days=retention_days)).isoformat()
     preprint_cutoff = (utc_today - datetime.timedelta(days=preprint_retention_days)).isoformat()
@@ -636,8 +705,9 @@ def json_to_html(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
     <title>$title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --ink: #17181c;
@@ -662,6 +732,9 @@ def json_to_html(
         * {
             box-sizing: border-box;
         }
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
         body {
             background:
                 linear-gradient(180deg, #fbfbfc 0, var(--surface) 240px),
@@ -670,6 +743,20 @@ def json_to_html(
             font-family: var(--font-sans);
             font-size: 0.9rem;
             line-height: 1.42;
+            margin: 0;
+        }
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1180px;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            width: 100%;
+        }
+        .sticky-top {
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         .navbar {
             background: rgba(255, 255, 255, 0.95) !important;
@@ -678,6 +765,9 @@ def json_to_html(
             backdrop-filter: blur(10px);
         }
         .navbar .container {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
             max-width: 1180px;
         }
         .navbar-brand {
@@ -710,6 +800,8 @@ def json_to_html(
         }
         .page-shell {
             max-width: 1180px;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
         }
         .toolbar-wrap {
             align-items: center;
@@ -738,13 +830,19 @@ def json_to_html(
         .toolbar-wrap .form-select,
         .toolbar-wrap .form-control {
             background-color: #fbfcfd;
-            border-color: var(--line);
+            border: 1px solid var(--line);
             border-radius: 4px;
             color: var(--ink);
+            display: block;
+            font-family: inherit;
             font-size: 0.82rem;
+            line-height: 1.5;
             min-height: 2rem;
-            padding-bottom: 0.28rem;
-            padding-top: 0.28rem;
+            padding: 0.28rem 0.5rem;
+            width: 100%;
+        }
+        .toolbar-wrap .form-select {
+            cursor: pointer;
         }
         .toolbar-wrap .form-select:focus,
         .toolbar-wrap .form-control:focus {
@@ -925,7 +1023,12 @@ def json_to_html(
             margin: 0.42rem 0 0;
         }
         .pagination-bar {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
             gap: 0.28rem;
+            justify-content: center;
+            margin-top: 1rem;
         }
         .pagination-bar .btn-page {
             background: var(--paper);
@@ -1037,7 +1140,7 @@ def json_to_html(
         </div>
     </nav>
 
-    <main class="container page-shell py-2 py-md-3">
+    <main class="container page-shell">
         <section class="toolbar-wrap" aria-label="Paper filters">
             <div class="control-row">
                 <label class="control-label" for="topicSelect">Topic</label>
@@ -1053,7 +1156,7 @@ def json_to_html(
             <span>Loading papers&hellip;</span>
         </div>
         <div id="paperList" class="paper-list"></div>
-        <div id="pagination" class="d-flex flex-wrap align-items-center justify-content-center mt-3 pagination-bar"></div>
+        <div id="pagination" class="pagination-bar"></div>
     </main>
 
     <script>
@@ -1088,10 +1191,17 @@ def json_to_html(
                 .replace(/'/g, "&#39;");
         }
 
-        function safeUrl(value) {
+        function safeSourceUrl(value, source) {
             try {
                 const url = new URL(value, window.location.href);
-                return ["http:", "https:"].includes(url.protocol) ? url.href : "#";
+                const allowedHosts = source === "preprints.org"
+                    ? ["preprints.org", "www.preprints.org", "doi.org"]
+                    : ["arxiv.org", "www.arxiv.org", "export.arxiv.org"];
+                if (!["http:", "https:"].includes(url.protocol) || !allowedHosts.includes(url.hostname)) {
+                    return "#";
+                }
+                url.protocol = "https:";
+                return url.href;
             } catch {
                 return "#";
             }
@@ -1186,7 +1296,7 @@ def json_to_html(
                 const linkClass = isPreprints ? "source-link-preprints" : "source-link-arxiv";
                 return '<div class="source-row">'
                     + '<span class="source-id">' + escapeHtml(paper.sourceIds[source] || label) + '</span>'
-                    + '<a href="' + escapeHtml(safeUrl(paper.sourceUrls[source])) + '" class="source-link ' + linkClass + '" target="_blank" rel="noopener">' + label + '</a>'
+                    + '<a href="' + escapeHtml(safeSourceUrl(paper.sourceUrls[source], source)) + '" class="source-link ' + linkClass + '" target="_blank" rel="noopener noreferrer">' + label + '</a>'
                     + '</div>';
             }).join("");
 
@@ -1242,7 +1352,7 @@ def json_to_html(
         }
 
         function showError(error) {
-            elements.loading.outerHTML = '<div class="empty-state"><p>Failed to load papers. Serve this page through a local web server (e.g., <code>python -m http.server</code>).</p><p class="mt-2 text-muted" style="font-size:0.8rem">' + escapeHtml(error.message) + '</p></div>';
+            elements.loading.outerHTML = '<div class="empty-state"><p>Failed to load papers. Serve this page through a local web server (e.g., <code>python -m http.server</code>).</p><p style="color:var(--muted);font-size:0.8rem;margin-top:0.5rem">' + escapeHtml(error.message) + '</p></div>';
         }
 
         async function init() {
@@ -1364,84 +1474,224 @@ def get_papers(
     return papers, succeeded
 
 
-def get_preprints_rss() -> Tuple[Dict[str, List[PreprintsPaper]], bool]:
-    papers: Dict[str, List[PreprintsPaper]] = defaultdict(list)
-    try:
-        root = fetch_xml(PREPRINTS_RSS_URL)
-        items = [element for element in root.iter() if xml_local_name(element) == "item"]
-        parsed = [paper for item in items if (paper := parse_preprints_rss_item(item)) is not None]
-        for paper in parsed:
-            for topic in matches_preprint_topics(paper.paper_title, paper.paper_abstract):
-                papers[topic].append(paper)
-        deduplicated = deduplicate_preprint_versions(dict(papers))
-        print(
-            f"Preprints.org RSS: checked {len(parsed)} records; "
-            f"{sum(map(len, deduplicated.values()))} topic matches."
-        )
-        return deduplicated, True
-    except (error.HTTPError, error.URLError, ET.ParseError, RuntimeError, ValueError) as exc:
-        print(f"Warning: Preprints.org RSS was not updated: {describe_request_error(exc)}", file=sys.stderr)
-        return {}, False
-
-
-def get_preprints_oai(
+def get_crossref_preprints(
     since_date: datetime.date,
     until_date: datetime.date,
-) -> Tuple[Dict[str, List[PreprintsPaper]], bool]:
-    papers: Dict[str, List[PreprintsPaper]] = defaultdict(list)
-    max_pages = get_env_int("PREPRINTS_OAI_MAX_PAGES", 5000)
-    delay_seconds = get_env_int("PREPRINTS_OAI_DELAY_SECONDS", 1)
-    record_count = 0
+    historical: bool = False,
+) -> Tuple[List[PreprintsPaper], bool]:
+    papers: List[PreprintsPaper] = []
+    rows = get_env_int("CROSSREF_ROWS", 1000)
+    rows = min(rows, 1000)
+    max_pages = get_env_int("PREPRINTS_METADATA_MAX_PAGES", 5000)
+    delay_seconds = get_env_int("PREPRINTS_METADATA_DELAY_SECONDS", 1, minimum=0)
+    date_filter = "created" if historical else "update"
+    cursor = "*"
+    scanned_items = 0
+    total_results: Optional[int] = None
+    contact = os.getenv("CROSSREF_MAILTO", "").strip()
+    if contact and re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", contact) is None:
+        print("Warning: CROSSREF_MAILTO is not a valid email address; ignoring it.", file=sys.stderr)
+        contact = ""
+    user_agent = "DailyArxiv/3.0 (https://github.com/lartpang/DailyArxiv)"
+    if contact:
+        user_agent = f"{user_agent}; mailto:{contact}"
     try:
-        identify = fetch_xml(PREPRINTS_OAI_URL, {"verb": "Identify"})
-        identify_errors = [element for element in identify.iter() if xml_local_name(element) == "error"]
-        if identify_errors:
-            code = identify_errors[0].attrib.get("code", "unknown")
-            raise RuntimeError(f"OAI-PMH Identify returned {code}: {(identify_errors[0].text or '').strip()}")
-        granularities = xml_values(identify, "granularity")
-        granularity = granularities[0] if granularities else "YYYY-MM-DD"
-        params = {
-            "verb": "ListRecords",
-            "metadataPrefix": "oai_dc",
-            "from": oai_date_argument(since_date, granularity),
-            "until": oai_date_argument(until_date, granularity, end_of_day=True),
-        }
         for page in range(1, max_pages + 1):
-            root = fetch_xml(PREPRINTS_OAI_URL, params)
-            errors = [element for element in root.iter() if xml_local_name(element) == "error"]
-            if errors:
-                code = errors[0].attrib.get("code", "unknown")
-                if code == "noRecordsMatch":
-                    return {}, True
-                raise RuntimeError(f"OAI-PMH returned {code}: {(errors[0].text or '').strip()}")
-            records = [element for element in root.iter() if xml_local_name(element) == "record"]
-            for record in records:
-                paper = parse_preprints_oai_record(record)
-                if paper is None:
-                    continue
-                for topic in matches_preprint_topics(paper.paper_title, paper.paper_abstract):
-                    papers[topic].append(paper)
-                record_count += 1
-            if page % 10 == 0:
-                print(f"Preprints.org OAI-PMH: harvested {record_count} records...", flush=True)
-            tokens = [element for element in root.iter() if xml_local_name(element) == "resumptionToken"]
-            token = (tokens[0].text or "").strip() if tokens else ""
-            if not token:
-                deduplicated = deduplicate_preprint_versions(dict(papers))
+            filters = [
+                "type:posted-content",
+                f"from-{date_filter}-date:{since_date.isoformat()}",
+                f"until-{date_filter}-date:{until_date.isoformat()}",
+            ]
+            params: Dict[str, object] = {
+                "filter": ",".join(filters),
+                "rows": rows,
+                "cursor": cursor,
+            }
+            if contact:
+                params["mailto"] = contact
+            payload = fetch_json(
+                PREPRINTS_CROSSREF_URL,
+                params,
+                "Crossref",
+                attempts=1,
+                user_agent=user_agent,
+            )
+            message = payload.get("message")
+            if not isinstance(message, dict):
+                raise ValueError("Crossref response has no message object")
+            raw_items = message.get("items")
+            items = raw_items if isinstance(raw_items, list) else []
+            scanned_items += len(items)
+            if total_results is None:
+                raw_total = message.get("total-results")
+                total_results = int(raw_total) if isinstance(raw_total, int) else None
+            for item in items:
+                if isinstance(item, dict):
+                    paper = parse_crossref_preprint(item)
+                    if paper is not None:
+                        papers.append(paper)
+            if page % 25 == 0:
                 print(
-                    f"Preprints.org OAI-PMH: harvested {record_count} records; "
-                    f"{sum(map(len, deduplicated.values()))} topic matches."
+                    f"Crossref: scanned {page} pages; retained "
+                    f"{len(papers)} Preprints.org records...",
+                    flush=True,
                 )
-                return deduplicated, True
-            params = {"verb": "ListRecords", "resumptionToken": token}
-            time.sleep(delay_seconds)
-        raise RuntimeError(f"OAI-PMH results exceeded PREPRINTS_OAI_MAX_PAGES={max_pages}")
-    except (error.HTTPError, error.URLError, ET.ParseError, RuntimeError, ValueError) as exc:
+            next_cursor = str(message.get("next-cursor") or "")
+            reached_total = total_results is not None and scanned_items >= total_results
+            if len(items) < rows or reached_total or not next_cursor:
+                print(f"Crossref: retained {len(papers)} Preprints.org records from {page} page(s).")
+                return papers, True
+            cursor = next_cursor
+            if delay_seconds:
+                time.sleep(delay_seconds)
+        raise RuntimeError(f"Crossref results exceeded PREPRINTS_METADATA_MAX_PAGES={max_pages}")
+    except (error.HTTPError, error.URLError, OSError, http.client.HTTPException, RuntimeError, ValueError) as exc:
         print(
-            f"Warning: Preprints.org OAI-PMH backfill failed: {describe_request_error(exc)}",
+            f"Warning: Crossref Preprints.org sync failed: {describe_request_error(exc)}",
             file=sys.stderr,
         )
+        return [], False
+
+
+def get_openalex_preprints(
+    since_date: datetime.date,
+    until_date: datetime.date,
+    api_key: Optional[str] = None,
+) -> Tuple[List[PreprintsPaper], Optional[bool]]:
+    api_key = (api_key if api_key is not None else os.getenv("OPENALEX_API_KEY", "")).strip()
+    if not api_key:
+        print("OpenAlex: skipped because OPENALEX_API_KEY is not configured.")
+        return [], None
+
+    papers: List[PreprintsPaper] = []
+    max_pages = get_env_int("PREPRINTS_METADATA_MAX_PAGES", 5000)
+    delay_seconds = get_env_int("PREPRINTS_METADATA_DELAY_SECONDS", 1, minimum=0)
+    cursor = "*"
+    try:
+        for page in range(1, max_pages + 1):
+            params: Dict[str, object] = {
+                "api_key": api_key,
+                "filter": ",".join(
+                    (
+                        "doi_starts_with:10.20944/preprints",
+                        f"from_created_date:{since_date.isoformat()}",
+                        f"to_created_date:{until_date.isoformat()}",
+                    )
+                ),
+                "per-page": 100,
+                "cursor": cursor,
+                "select": (
+                    "doi,display_name,abstract_inverted_index,authorships,publication_date,"
+                    "updated_date,primary_topic"
+                ),
+            }
+            payload = fetch_json(PREPRINTS_OPENALEX_URL, params, "OpenAlex")
+            raw_results = payload.get("results")
+            results = raw_results if isinstance(raw_results, list) else []
+            for item in results:
+                if isinstance(item, dict):
+                    paper = parse_openalex_preprint(item)
+                    if paper is not None:
+                        papers.append(paper)
+            meta = payload.get("meta")
+            next_cursor = str(meta.get("next_cursor") or "") if isinstance(meta, dict) else ""
+            if len(results) < 100 or not next_cursor or next_cursor == cursor:
+                print(f"OpenAlex: retained {len(papers)} Preprints.org records from {page} page(s).")
+                return papers, True
+            cursor = next_cursor
+            if delay_seconds:
+                time.sleep(delay_seconds)
+        raise RuntimeError(f"OpenAlex results exceeded PREPRINTS_METADATA_MAX_PAGES={max_pages}")
+    except (error.HTTPError, error.URLError, RuntimeError, ValueError) as exc:
+        print(
+            f"Warning: OpenAlex Preprints.org sync failed: {describe_request_error(exc)}",
+            file=sys.stderr,
+        )
+        return [], False
+
+
+def get_preprints_metadata(
+    since_date: datetime.date,
+    until_date: datetime.date,
+    historical: bool = False,
+    openalex_api_key: Optional[str] = None,
+) -> Tuple[Dict[str, List[PreprintsPaper]], bool]:
+    windows = [(since_date, until_date)]
+    if historical:
+        windows = []
+        window_start = since_date
+        while window_start <= until_date:
+            window_end = min(window_start + datetime.timedelta(days=365), until_date)
+            windows.append((window_start, window_end))
+            window_start = window_end + datetime.timedelta(days=1)
+
+    crossref_papers: List[PreprintsPaper] = []
+    crossref_succeeded = True
+    window_retries = get_env_int("PREPRINTS_WINDOW_RETRIES", 3)
+    window_backoff_seconds = get_env_int("PREPRINTS_WINDOW_BACKOFF_SECONDS", 15)
+    for window_index, (window_start, window_end) in enumerate(windows, start=1):
+        if historical:
+            print(
+                f"Crossref history window {window_index}/{len(windows)}: "
+                f"{window_start} to {window_end}"
+            )
+        window_papers: List[PreprintsPaper] = []
+        window_succeeded = False
+        for window_attempt in range(1, window_retries + 1):
+            window_papers, window_succeeded = get_crossref_preprints(
+                window_start, window_end, historical=historical
+            )
+            if window_succeeded:
+                break
+            if window_attempt < window_retries:
+                wait_seconds = window_backoff_seconds * window_attempt
+                print(
+                    f"Crossref window {window_index}/{len(windows)} failed; restarting it in "
+                    f"{wait_seconds} seconds ({window_attempt}/{window_retries}).",
+                    file=sys.stderr,
+                )
+                time.sleep(wait_seconds)
+        if not window_succeeded:
+            crossref_papers = []
+            crossref_succeeded = False
+            break
+        crossref_papers.extend(window_papers)
+
+    openalex_papers: List[PreprintsPaper] = []
+    openalex_succeeded: Optional[bool] = True
+    for window_index, (window_start, window_end) in enumerate(windows, start=1):
+        if historical and openalex_api_key:
+            print(
+                f"OpenAlex history window {window_index}/{len(windows)}: "
+                f"{window_start} to {window_end}"
+            )
+        window_papers, window_succeeded = get_openalex_preprints(
+            window_start, window_end, api_key=openalex_api_key
+        )
+        if window_succeeded is None:
+            openalex_succeeded = None
+            break
+        if not window_succeeded:
+            openalex_papers = []
+            openalex_succeeded = False
+            break
+        openalex_papers.extend(window_papers)
+
+    if not crossref_succeeded and openalex_succeeded is not True:
         return {}, False
+
+    all_papers = crossref_papers + openalex_papers
+    unique_papers = deduplicate_preprint_versions({"all": all_papers}).get("all", [])
+    routed: Dict[str, List[PreprintsPaper]] = defaultdict(list)
+    for paper in unique_papers:
+        for topic in matches_preprint_topics(paper.paper_title, paper.paper_abstract):
+            routed[topic].append(paper)
+    deduplicated = deduplicate_preprint_versions(dict(routed))
+    print(
+        f"Preprints.org metadata: merged {len(all_papers)} provider records into "
+        f"{len(unique_papers)} papers; {sum(map(len, deduplicated.values()))} topic matches."
+    )
+    return deduplicated, True
 
 
 def load_state(path: str) -> Dict[str, object]:
@@ -1476,8 +1726,20 @@ def main():
     now = datetime.datetime.now(datetime.timezone.utc)
     today = now.date()
     timestamp = now.isoformat().replace("+00:00", "Z")
+    # Remove the optional secret before importing third-party arXiv code. It is passed
+    # directly to the OpenAlex fetcher later and is never written to generated files.
+    openalex_api_key = os.environ.pop("OPENALEX_API_KEY", "").strip()
     force_fetch = os.getenv("FORCE_FETCH", "").lower() in {"1", "true", "yes"}
     preprint_backfill_days = get_env_int("PREPRINTS_BACKFILL_DAYS", 0, minimum=0)
+    preprint_lookback_days = get_env_int("PREPRINTS_LOOKBACK_DAYS", 3)
+    preprint_retention_days = get_env_int("PREPRINT_RETENTION_DAYS", 1826)
+    if preprint_backfill_days > preprint_retention_days:
+        print(
+            f"PREPRINTS_BACKFILL_DAYS={preprint_backfill_days} exceeds the retained history; "
+            f"using {preprint_retention_days} days instead.",
+            file=sys.stderr,
+        )
+        preprint_backfill_days = preprint_retention_days
     state = load_state(state_file)
     arxiv_state = state.setdefault("arxiv", {})
     if not isinstance(arxiv_state, dict):
@@ -1491,7 +1753,11 @@ def main():
     }
     if preprint_backfill_days:
         due_keywords = {}
-    preprints_due = preprint_backfill_days > 0 or force_fetch or not succeeded_today(state.get("preprints"), today)
+    preprints_due = (
+        preprint_backfill_days > 0
+        or force_fetch
+        or not succeeded_today(state.get("preprints"), today)
+    )
     if not due_keywords and not preprints_due:
         print("All sources already succeeded today; skipping duplicate scheduled run.")
         return
@@ -1509,12 +1775,15 @@ def main():
         successful_sources += len(succeeded_keywords)
 
     if preprints_due:
-        if preprint_backfill_days:
-            preprint_papers, preprints_succeeded = get_preprints_oai(
-                today - datetime.timedelta(days=preprint_backfill_days), today
-            )
-        else:
-            preprint_papers, preprints_succeeded = get_preprints_rss()
+        since_date = today - datetime.timedelta(
+            days=preprint_backfill_days or preprint_lookback_days
+        )
+        preprint_papers, preprints_succeeded = get_preprints_metadata(
+            since_date,
+            today,
+            historical=preprint_backfill_days > 0,
+            openalex_api_key=openalex_api_key,
+        )
         if preprints_succeeded:
             merge_papers(papers, preprint_papers)
             state["preprints"] = timestamp
