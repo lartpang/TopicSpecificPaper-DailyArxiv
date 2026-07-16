@@ -9,6 +9,11 @@ on:
         required: false
         default: false
         type: boolean
+      preprints_backfill_days:
+        description: OAI-PMH history window in days (0 runs the normal daily RSS update)
+        required: false
+        default: 0
+        type: number
   schedule:
     # Primary run after arXiv's daily API refresh; fallback protects against a dropped cron event.
     # The state file prevents the fallback from querying sources again after a successful primary run.
@@ -27,7 +32,7 @@ jobs:
   build:
     name: update
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 180
 
     steps:
       - name: Checkout
@@ -47,6 +52,7 @@ jobs:
       - name: Update paper metadata
         env:
           FORCE_FETCH: ${{ github.event.inputs.force || 'false' }}
+          PREPRINTS_BACKFILL_DAYS: ${{ github.event.inputs.preprints_backfill_days || '0' }}
           ARXIV_MAX_RESULTS_PER_KEYWORD: "100"
           ARXIV_PAGE_SIZE: "100"
           ARXIV_DELAY_SECONDS: "4"
@@ -54,9 +60,10 @@ jobs:
           ARXIV_KEYWORD_RETRIES: "2"
           ARXIV_BACKOFF_SECONDS: "30"
           ARXIV_MAX_BACKOFF_SECONDS: "120"
-          CROSSREF_LOOKBACK_DAYS: "3"
-          CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
+          PREPRINTS_OAI_DELAY_SECONDS: "1"
+          PREPRINTS_OAI_MAX_PAGES: "5000"
           PAPER_RETENTION_DAYS: "180"
+          PREPRINT_RETENTION_DAYS: "1826"
           JSON_MAX_SIZE_MIB: "45"
         run: |
           python daily_arxiv.py
