@@ -413,7 +413,7 @@ def parse_crossref_preprint(item: Dict[str, object]) -> Optional[PreprintsPaper]
         paper_id=doi,
         title=title,
         url=preprints_url_from_doi(doi),
-        abstract=str(item.get("abstract") or ""),
+        abstract=clean_markup(str(item.get("abstract") or "")),
         authors=authors,
         category=category,
         publish_time=publish_time,
@@ -1602,7 +1602,7 @@ def get_openalex_preprints(
             if delay_seconds:
                 time.sleep(delay_seconds)
         raise RuntimeError(f"OpenAlex results exceeded PREPRINTS_METADATA_MAX_PAGES={max_pages}")
-    except (error.HTTPError, error.URLError, RuntimeError, ValueError) as exc:
+    except (error.HTTPError, error.URLError, OSError, http.client.HTTPException, RuntimeError, ValueError) as exc:
         print(
             f"Warning: OpenAlex Preprints.org sync failed: {describe_request_error(exc)}",
             file=sys.stderr,
