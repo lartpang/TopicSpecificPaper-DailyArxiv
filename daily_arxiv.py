@@ -1,4 +1,5 @@
 import datetime
+import hashlib
 import html
 import http.client
 import json
@@ -624,18 +625,126 @@ def paper_is_retained(
     )
 
 
-def update_json_file(
-    json_path: str,
+def load_sharded_archive(data_dir: str) -> Dict[str, Dict[str, Dict[str, object]]]:
+    manifest_path = os.path.join(data_dir, "topics.json")
+    if not os.path.exists(manifest_path):
+        return {}
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("topics"), list):
+        raise ValueError("Invalid data/topics.json manifest")
+
+    archive = {}
+    for topic_info in manifest["topics"]:
+        if not isinstance(topic_info, dict):
+            raise ValueError("Invalid topic entry in data/topics.json")
+        topic = topic_info.get("name")
+        chunks = topic_info.get("chunks")
+        count = topic_info.get("count")
+        if not isinstance(topic, str) or not isinstance(chunks, list) or not isinstance(count, int):
+            raise ValueError("Invalid topic metadata in data/topics.json")
+        topic_data = {}
+        for filename in chunks:
+            if not isinstance(filename, str):
+                raise ValueError(f"Invalid chunk path for topic {topic}")
+            chunk_name = os.path.basename(filename.replace("/", os.sep))
+            legacy_name = f"{os.path.basename(os.path.normpath(data_dir))}/{chunk_name}"
+            if filename.replace("\\", "/") not in {chunk_name, legacy_name}:
+                raise ValueError(f"Invalid chunk path for topic {topic}")
+            chunk_path = os.path.join(data_dir, chunk_name)
+            with open(chunk_path, "r", encoding="utf-8") as f:
+                entries = json.load(f)
+            if not isinstance(entries, list):
+                raise ValueError(f"Invalid chunk data for topic {topic}")
+            for entry in entries:
+                if (
+                    not isinstance(entry, list)
+                    or len(entry) != 2
+                    or not isinstance(entry[0], str)
+                    or not isinstance(entry[1], dict)
+                    or entry[0] in topic_data
+                ):
+                    raise ValueError(f"Invalid or duplicate paper entry for topic {topic}")
+                topic_data[entry[0]] = entry[1]
+        if len(topic_data) != count:
+            raise ValueError(f"Topic count mismatch for {topic}: expected {count}, loaded {len(topic_data)}")
+        archive[topic] = topic_data
+    return archive
+
+
+def write_sharded_archive(
+    data_dir: str,
+    archive: Dict[str, Dict[str, Dict[str, object]]],
+    max_size_mib: int,
+) -> float:
+    os.makedirs(data_dir, exist_ok=True)
+    topics = []
+    expected_shards = set()
+    pending_files = []
+    chunk_size = 225
+    try:
+        for topic, topic_data in archive.items():
+            topic_hash = hashlib.sha256(topic.encode("utf-8")).hexdigest()[:16]
+            sorted_papers = sorted(
+                topic_data.items(),
+                key=lambda item: (
+                    str(item[1].get("publish_time") or ""),
+                    str(item[1].get("update_time") or ""),
+                ),
+                reverse=True,
+            )
+            chunks = []
+            for chunk_index, start in enumerate(range(0, len(sorted_papers), chunk_size)):
+                filename = f"topic-{topic_hash}-{chunk_index:03d}.json"
+                expected_shards.add(filename)
+                shard_path = os.path.join(data_dir, filename)
+                shard_temp_path = f"{shard_path}.tmp"
+                with open(shard_temp_path, "w", encoding="utf-8") as f:
+                    json.dump(
+                        sorted_papers[start : start + chunk_size],
+                        f,
+                        ensure_ascii=False,
+                        separators=(",", ":"),
+                    )
+                pending_files.append((shard_temp_path, shard_path))
+                chunks.append(filename)
+            topics.append({"name": topic, "count": len(topic_data), "chunkSize": chunk_size, "chunks": chunks})
+
+        manifest_path = os.path.join(data_dir, "topics.json")
+        manifest_temp_path = f"{manifest_path}.tmp"
+        with open(manifest_temp_path, "w", encoding="utf-8") as f:
+            json.dump({"topics": topics}, f, ensure_ascii=False, separators=(",", ":"))
+        pending_files.append((manifest_temp_path, manifest_path))
+
+        size_bytes = sum(os.path.getsize(temp_path) for temp_path, _ in pending_files)
+        size_mib = size_bytes / (1024 * 1024)
+        if size_mib > max_size_mib:
+            raise RuntimeError(
+                f"Generated data is {size_mib:.1f} MiB, above JSON_MAX_SIZE_MIB={max_size_mib}. "
+                "Reduce PAPER_RETENTION_DAYS or PREPRINT_RETENTION_DAYS before GitHub's file limits are reached."
+            )
+
+        for temp_path, final_path in pending_files:
+            os.replace(temp_path, final_path)
+        for filename in os.listdir(data_dir):
+            if filename.startswith("topic-") and filename.endswith(".json") and filename not in expected_shards:
+                os.remove(os.path.join(data_dir, filename))
+        return size_mib
+    except Exception:
+        for temp_path, _ in pending_files:
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+        raise
+
+
+def update_sharded_archive(
+    data_dir: str,
     papers: Dict[str, List[Paper]],
     retention_days: Optional[int] = None,
     preprint_retention_days: Optional[int] = None,
     max_size_mib: Optional[int] = None,
 ) -> None:
-    if os.path.exists(json_path):
-        with open(json_path, "r", encoding="utf-8") as f:
-            json_data: Dict[str, Dict[str, Dict[str, object]]] = json.load(f)
-    else:
-        json_data: Dict[str, Dict[str, Dict[str, object]]] = defaultdict(dict)
+    json_data = load_sharded_archive(data_dir)
 
     # update papers in each keywords
     for keyword, paper_items in papers.items():
@@ -671,19 +780,9 @@ def update_json_file(
         merged_duplicates += topic_merges
     json_data = retained_data
 
-    temp_path = f"{json_path}.tmp"
-    with open(temp_path, "w", encoding="utf-8") as f:
-        json.dump(json_data, f, ensure_ascii=False, indent=2)
-    size_mib = os.path.getsize(temp_path) / (1024 * 1024)
-    if size_mib > max_size_mib:
-        os.remove(temp_path)
-        raise RuntimeError(
-            f"Generated JSON is {size_mib:.1f} MiB, above JSON_MAX_SIZE_MIB={max_size_mib}. "
-            "Reduce PAPER_RETENTION_DAYS or PREPRINT_RETENTION_DAYS before GitHub's 100 MiB hard limit is reached."
-        )
-    os.replace(temp_path, json_path)
+    size_mib = write_sharded_archive(data_dir, json_data, max_size_mib)
     print(
-        f"JSON archive retains {retention_days} days of arXiv and "
+        f"Sharded archive retains {retention_days} days of arXiv and "
         f"{preprint_retention_days} days of Preprints.org data ({size_mib:.1f} MiB)."
     )
     if merged_duplicates:
@@ -691,14 +790,16 @@ def update_json_file(
 
 
 def json_to_html(
-    json_path: str,
+    data_dir: str,
     html_path: str = "index.html",
     title: str = "Daily ArXiv Papers",
 ):
     current_date = str(datetime.date.today()).replace("-", ".")
 
-    assert os.path.exists(json_path), f"{json_path} does not exist"
-    json_url = os.path.relpath(json_path, start=os.path.dirname(html_path) or ".").replace(os.sep, "/")
+    manifest_path = os.path.join(data_dir, "topics.json")
+    assert os.path.exists(manifest_path), f"{manifest_path} does not exist"
+    html_dir = os.path.dirname(html_path) or "."
+    data_index_url = os.path.relpath(manifest_path, start=html_dir).replace(os.sep, "/")
 
     html_template = Template("""<!DOCTYPE html>
 <html lang="en">
@@ -1160,17 +1261,19 @@ def json_to_html(
     </main>
 
     <script>
-        const DATA_URL = "$json_url";
+        const DATA_INDEX_URL = "$data_index_url";
         const PAGE_SIZE = 45;
 
         const state = {
-            rawData: {},
             topics: [],
+            topicsByName: {},
             papersByTopic: {},
+            chunkCache: {},
+            chunkPromises: {},
             currentTopic: "",
             currentPage: 1,
             query: "",
-            filteredPapers: [],
+            loadRequest: 0,
         };
 
         const elements = {
@@ -1247,38 +1350,96 @@ def json_to_html(
             return paper;
         }
 
-        function prepareTopic(topic) {
-            if (state.papersByTopic[topic]) return;
-            const topicData = state.rawData[topic] || {};
-            state.papersByTopic[topic] = Object.entries(topicData)
-                .map(([paperKey, paperInfo]) => normalizePaper(paperKey, paperInfo))
-                .sort((a, b) => {
-                    const c = b.publishTime.localeCompare(a.publishTime);
-                    return c || b.updateTime.localeCompare(a.updateTime);
-                });
+        async function loadChunk(topic, chunkIndex) {
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) throw new Error("Unknown topic: " + topic);
+            const cacheKey = JSON.stringify([topic, chunkIndex]);
+            if (state.chunkCache[cacheKey]) return state.chunkCache[cacheKey];
+            if (state.chunkPromises[cacheKey]) return state.chunkPromises[cacheKey];
+            const promise = (async () => {
+                const manifestUrl = new URL(DATA_INDEX_URL, window.location.href);
+                const chunkUrl = new URL(topicInfo.chunks[chunkIndex], manifestUrl).href;
+                if (!chunkUrl) return [];
+                const res = await fetch(chunkUrl, { cache: "no-cache" });
+                if (!res.ok) throw new Error(res.status + " " + res.statusText);
+                const entries = await res.json();
+                if (!Array.isArray(entries)) throw new Error("Invalid topic data");
+                const papers = entries.map(([paperKey, paperInfo]) => normalizePaper(paperKey, paperInfo));
+                state.chunkCache[cacheKey] = papers;
+                return papers;
+            })();
+            state.chunkPromises[cacheKey] = promise;
+            try {
+                return await promise;
+            } finally {
+                delete state.chunkPromises[cacheKey];
+            }
+        }
+
+        async function loadTopic(topic) {
+            if (state.papersByTopic[topic]) return state.papersByTopic[topic];
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) throw new Error("Unknown topic: " + topic);
+            const chunks = await Promise.all(topicInfo.chunks.map((_, index) => loadChunk(topic, index)));
+            state.papersByTopic[topic] = chunks.flat();
+            return state.papersByTopic[topic];
         }
 
         function renderTopicSelect() {
-            elements.topicSelect.innerHTML = state.topics.map((topic) => {
-                const count = Object.keys(state.rawData[topic] || {}).length;
-                return '<option value="' + escapeHtml(topic) + '">' + escapeHtml(topic) + ' (' + count + ')</option>';
+            elements.topicSelect.innerHTML = state.topics.map((topicInfo) => {
+                return '<option value="' + escapeHtml(topicInfo.name) + '">' + escapeHtml(topicInfo.name) + ' (' + topicInfo.count + ')</option>';
             }).join("");
         }
 
-        function setTopic(topic) {
+        async function setTopic(topic) {
             state.currentTopic = topic;
             state.currentPage = 1;
             elements.topicSelect.value = topic;
-            prepareTopic(topic);
-            applyFilter();
             window.scrollTo(0, 0);
+            await refresh();
         }
 
-        function applyFilter() {
-            const term = state.query.trim().toLowerCase();
-            const papers = state.papersByTopic[state.currentTopic] || [];
-            state.filteredPapers = term ? papers.filter((p) => p.searchText.includes(term)) : papers;
-            render();
+        async function refresh() {
+            const request = ++state.loadRequest;
+            const topic = state.currentTopic;
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) return;
+            elements.loading.style.display = "flex";
+            elements.paperList.innerHTML = "";
+            elements.pagination.innerHTML = "";
+            elements.resultInfo.textContent = "";
+            try {
+                const term = state.query.trim().toLowerCase();
+                let filteredPapers = [];
+                let total = topicInfo.count;
+                if (term) {
+                    const papers = await loadTopic(topic);
+                    filteredPapers = papers.filter((paper) => paper.searchText.includes(term));
+                    total = filteredPapers.length;
+                }
+
+                const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+                state.currentPage = Math.min(Math.max(state.currentPage, 1), totalPages);
+                const start = (state.currentPage - 1) * PAGE_SIZE;
+                let currentPapers = filteredPapers.slice(start, start + PAGE_SIZE);
+                if (!term && total) {
+                    const chunkIndex = Math.floor(start / topicInfo.chunkSize);
+                    const chunk = await loadChunk(topic, chunkIndex);
+                    const chunkOffset = start - chunkIndex * topicInfo.chunkSize;
+                    currentPapers = chunk.slice(chunkOffset, chunkOffset + PAGE_SIZE);
+                }
+                if (request !== state.loadRequest) return;
+                render(currentPapers, total, start);
+            } catch (error) {
+                if (request !== state.loadRequest) return;
+                elements.paperList.innerHTML = '<div class="empty-state"><p>Failed to load this topic.</p><p style="color:var(--muted);font-size:0.8rem;margin-top:0.5rem">' + escapeHtml(error.message) + '</p></div>';
+                elements.pagination.innerHTML = "";
+                elements.resultInfo.textContent = "";
+            } finally {
+                if (request === state.loadRequest) {
+                    elements.loading.style.display = "none";
+                }
+            }
         }
 
         function renderPaper(paper) {
@@ -1333,13 +1494,9 @@ def json_to_html(
                 + '<button class="btn-page" data-page="' + totalPages + '"' + (nextDisabled ? " disabled" : "") + '>&#187;</button>';
         }
 
-        function render() {
-            const total = state.filteredPapers.length;
+        function render(currentPapers, total, start) {
             const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-            state.currentPage = Math.min(Math.max(state.currentPage, 1), totalPages);
-            const start = (state.currentPage - 1) * PAGE_SIZE;
             const end = Math.min(start + PAGE_SIZE, total);
-            const currentPapers = state.filteredPapers.slice(start, start + PAGE_SIZE);
             elements.resultInfo.textContent = total ? (start + 1) + "-" + end + " of " + total + " papers" : "0 papers";
 
             if (!total) {
@@ -1357,15 +1514,16 @@ def json_to_html(
 
         async function init() {
             try {
-                const res = await fetch(DATA_URL);
+                const res = await fetch(DATA_INDEX_URL, { cache: "no-cache" });
                 if (!res.ok) throw new Error(res.status + " " + res.statusText);
-                state.rawData = await res.json();
-                state.topics = Object.keys(state.rawData);
+                const manifest = await res.json();
+                state.topics = Array.isArray(manifest.topics) ? manifest.topics : [];
+                state.topicsByName = Object.fromEntries(state.topics.map((topicInfo) => [topicInfo.name, topicInfo]));
                 renderTopicSelect();
-                elements.loading.style.display = "none";
                 if (state.topics.length) {
-                    setTopic(state.topics[0]);
+                    await setTopic(state.topics[0].name);
                 } else {
+                    elements.loading.style.display = "none";
                     elements.paperList.innerHTML = '<div class="empty-state"><p>No papers available.</p></div>';
                 }
             } catch (error) {
@@ -1379,17 +1537,17 @@ def json_to_html(
             searchTimer = window.setTimeout(() => {
                 state.query = e.target.value;
                 state.currentPage = 1;
-                applyFilter();
+                void refresh();
             }, 120);
         });
 
-        elements.topicSelect.addEventListener("change", (e) => setTopic(e.target.value));
+        elements.topicSelect.addEventListener("change", (e) => void setTopic(e.target.value));
 
         elements.pagination.addEventListener("click", (e) => {
             const btn = e.target.closest("button[data-page]");
             if (!btn || btn.disabled) return;
             state.currentPage = Number(btn.dataset.page);
-            render();
+            void refresh();
             window.scrollTo(0, 0);
         });
 
@@ -1399,7 +1557,7 @@ def json_to_html(
 </html>""")
 
     with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html_template.substitute(title=title, current_date=current_date, json_url=json_url))
+        f.write(html_template.substitute(title=title, current_date=current_date, data_index_url=data_index_url))
     print(f"HTML file generated at {html_path}")
 
 
@@ -1720,7 +1878,7 @@ def merge_papers(target: Dict[str, List[Paper]], incoming: Dict[str, List[Paper]
 
 
 def main():
-    json_file = "arxiv-daily.json"
+    data_dir = "data"
     html_file = "index.html"
     state_file = ".tracker-state.json"
     now = datetime.datetime.now(datetime.timezone.utc)
@@ -1792,8 +1950,8 @@ def main():
     if not successful_sources:
         raise RuntimeError("No due source completed successfully; existing data was left unchanged.")
 
-    update_json_file(json_file, papers)
-    json_to_html(json_file, html_file, title="Daily Research Preprints")
+    update_sharded_archive(data_dir, papers)
+    json_to_html(data_dir, html_file, title="Daily Research Preprints")
     save_state(state_file, state)
 
 

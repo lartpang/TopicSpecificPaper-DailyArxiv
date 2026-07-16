@@ -89,7 +89,7 @@ jobs:
         run: |
           git config user.name "GitHub Action Bot"
           git config user.email "action-bot-for-lartpang@github.com"
-          git add index.html arxiv-daily.json .tracker-state.json
+          git add index.html data .tracker-state.json
           if git diff --cached --quiet; then
             echo "No files changed."
             exit 0

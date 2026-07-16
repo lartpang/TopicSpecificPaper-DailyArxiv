@@ -458,17 +458,19 @@
     </main>
 
     <script>
-        const DATA_URL = "arxiv-daily.json";
+        const DATA_INDEX_URL = "data/topics.json";
         const PAGE_SIZE = 45;
 
         const state = {
-            rawData: {},
             topics: [],
+            topicsByName: {},
             papersByTopic: {},
+            chunkCache: {},
+            chunkPromises: {},
             currentTopic: "",
             currentPage: 1,
             query: "",
-            filteredPapers: [],
+            loadRequest: 0,
         };
 
         const elements = {
@@ -545,38 +547,96 @@
             return paper;
         }
 
-        function prepareTopic(topic) {
-            if (state.papersByTopic[topic]) return;
-            const topicData = state.rawData[topic] || {};
-            state.papersByTopic[topic] = Object.entries(topicData)
-                .map(([paperKey, paperInfo]) => normalizePaper(paperKey, paperInfo))
-                .sort((a, b) => {
-                    const c = b.publishTime.localeCompare(a.publishTime);
-                    return c || b.updateTime.localeCompare(a.updateTime);
-                });
+        async function loadChunk(topic, chunkIndex) {
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) throw new Error("Unknown topic: " + topic);
+            const cacheKey = JSON.stringify([topic, chunkIndex]);
+            if (state.chunkCache[cacheKey]) return state.chunkCache[cacheKey];
+            if (state.chunkPromises[cacheKey]) return state.chunkPromises[cacheKey];
+            const promise = (async () => {
+                const manifestUrl = new URL(DATA_INDEX_URL, window.location.href);
+                const chunkUrl = new URL(topicInfo.chunks[chunkIndex], manifestUrl).href;
+                if (!chunkUrl) return [];
+                const res = await fetch(chunkUrl, { cache: "no-cache" });
+                if (!res.ok) throw new Error(res.status + " " + res.statusText);
+                const entries = await res.json();
+                if (!Array.isArray(entries)) throw new Error("Invalid topic data");
+                const papers = entries.map(([paperKey, paperInfo]) => normalizePaper(paperKey, paperInfo));
+                state.chunkCache[cacheKey] = papers;
+                return papers;
+            })();
+            state.chunkPromises[cacheKey] = promise;
+            try {
+                return await promise;
+            } finally {
+                delete state.chunkPromises[cacheKey];
+            }
+        }
+
+        async function loadTopic(topic) {
+            if (state.papersByTopic[topic]) return state.papersByTopic[topic];
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) throw new Error("Unknown topic: " + topic);
+            const chunks = await Promise.all(topicInfo.chunks.map((_, index) => loadChunk(topic, index)));
+            state.papersByTopic[topic] = chunks.flat();
+            return state.papersByTopic[topic];
         }
 
         function renderTopicSelect() {
-            elements.topicSelect.innerHTML = state.topics.map((topic) => {
-                const count = Object.keys(state.rawData[topic] || {}).length;
-                return '<option value="' + escapeHtml(topic) + '">' + escapeHtml(topic) + ' (' + count + ')</option>';
+            elements.topicSelect.innerHTML = state.topics.map((topicInfo) => {
+                return '<option value="' + escapeHtml(topicInfo.name) + '">' + escapeHtml(topicInfo.name) + ' (' + topicInfo.count + ')</option>';
             }).join("");
         }
 
-        function setTopic(topic) {
+        async function setTopic(topic) {
             state.currentTopic = topic;
             state.currentPage = 1;
             elements.topicSelect.value = topic;
-            prepareTopic(topic);
-            applyFilter();
             window.scrollTo(0, 0);
+            await refresh();
         }
 
-        function applyFilter() {
-            const term = state.query.trim().toLowerCase();
-            const papers = state.papersByTopic[state.currentTopic] || [];
-            state.filteredPapers = term ? papers.filter((p) => p.searchText.includes(term)) : papers;
-            render();
+        async function refresh() {
+            const request = ++state.loadRequest;
+            const topic = state.currentTopic;
+            const topicInfo = state.topicsByName[topic];
+            if (!topicInfo) return;
+            elements.loading.style.display = "flex";
+            elements.paperList.innerHTML = "";
+            elements.pagination.innerHTML = "";
+            elements.resultInfo.textContent = "";
+            try {
+                const term = state.query.trim().toLowerCase();
+                let filteredPapers = [];
+                let total = topicInfo.count;
+                if (term) {
+                    const papers = await loadTopic(topic);
+                    filteredPapers = papers.filter((paper) => paper.searchText.includes(term));
+                    total = filteredPapers.length;
+                }
+
+                const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+                state.currentPage = Math.min(Math.max(state.currentPage, 1), totalPages);
+                const start = (state.currentPage - 1) * PAGE_SIZE;
+                let currentPapers = filteredPapers.slice(start, start + PAGE_SIZE);
+                if (!term && total) {
+                    const chunkIndex = Math.floor(start / topicInfo.chunkSize);
+                    const chunk = await loadChunk(topic, chunkIndex);
+                    const chunkOffset = start - chunkIndex * topicInfo.chunkSize;
+                    currentPapers = chunk.slice(chunkOffset, chunkOffset + PAGE_SIZE);
+                }
+                if (request !== state.loadRequest) return;
+                render(currentPapers, total, start);
+            } catch (error) {
+                if (request !== state.loadRequest) return;
+                elements.paperList.innerHTML = '<div class="empty-state"><p>Failed to load this topic.</p><p style="color:var(--muted);font-size:0.8rem;margin-top:0.5rem">' + escapeHtml(error.message) + '</p></div>';
+                elements.pagination.innerHTML = "";
+                elements.resultInfo.textContent = "";
+            } finally {
+                if (request === state.loadRequest) {
+                    elements.loading.style.display = "none";
+                }
+            }
         }
 
         function renderPaper(paper) {
@@ -631,13 +691,9 @@
                 + '<button class="btn-page" data-page="' + totalPages + '"' + (nextDisabled ? " disabled" : "") + '>&#187;</button>';
         }
 
-        function render() {
-            const total = state.filteredPapers.length;
+        function render(currentPapers, total, start) {
             const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-            state.currentPage = Math.min(Math.max(state.currentPage, 1), totalPages);
-            const start = (state.currentPage - 1) * PAGE_SIZE;
             const end = Math.min(start + PAGE_SIZE, total);
-            const currentPapers = state.filteredPapers.slice(start, start + PAGE_SIZE);
             elements.resultInfo.textContent = total ? (start + 1) + "-" + end + " of " + total + " papers" : "0 papers";
 
             if (!total) {
@@ -655,15 +711,16 @@
 
         async function init() {
             try {
-                const res = await fetch(DATA_URL);
+                const res = await fetch(DATA_INDEX_URL, { cache: "no-cache" });
                 if (!res.ok) throw new Error(res.status + " " + res.statusText);
-                state.rawData = await res.json();
-                state.topics = Object.keys(state.rawData);
+                const manifest = await res.json();
+                state.topics = Array.isArray(manifest.topics) ? manifest.topics : [];
+                state.topicsByName = Object.fromEntries(state.topics.map((topicInfo) => [topicInfo.name, topicInfo]));
                 renderTopicSelect();
-                elements.loading.style.display = "none";
                 if (state.topics.length) {
-                    setTopic(state.topics[0]);
+                    await setTopic(state.topics[0].name);
                 } else {
+                    elements.loading.style.display = "none";
                     elements.paperList.innerHTML = '<div class="empty-state"><p>No papers available.</p></div>';
                 }
             } catch (error) {
@@ -677,17 +734,17 @@
             searchTimer = window.setTimeout(() => {
                 state.query = e.target.value;
                 state.currentPage = 1;
-                applyFilter();
+                void refresh();
             }, 120);
         });
 
-        elements.topicSelect.addEventListener("change", (e) => setTopic(e.target.value));
+        elements.topicSelect.addEventListener("change", (e) => void setTopic(e.target.value));
 
         elements.pagination.addEventListener("click", (e) => {
             const btn = e.target.closest("button[data-page]");
             if (!btn || btn.disabled) return;
             state.currentPage = Number(btn.dataset.page);
-            render();
+            void refresh();
             window.scrollTo(0, 0);
         });
 
